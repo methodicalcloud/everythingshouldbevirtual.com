@@ -1,0 +1,26 @@
+---
+# Everything Should Be Virtual Blog - Production Deployment
+# everythingshouldbevirtual.com, www.everythingshouldbevirtual.com
+#
+# Jekyll static blog
+# Deploy: Connect GitHub repo to Render and it will auto-detect this file
+
+services:
+  - type: web
+    name: esbv-blog
+    runtime: static
+    region: oregon
+    plan: free  # Static site hosting
+
+    # Jekyll build process
+    buildCommand: bundle exec jekyll build
+    staticPublishPath: ./_site
+
+    # Auto-deploy from git
+    autoDeploy: true
+    branch: main
+
+    # Environment
+    envVars:
+      - key: JEKYLL_ENV
+        value: production
