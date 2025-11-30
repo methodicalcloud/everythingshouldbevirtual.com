@@ -1,0 +1,32 @@
+# Git
+.git
+.gitignore
+
+# Jekyll build output
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# CI/CD
+.github
+.travis.yml
+
+# Documentation
+*.md
+!README.md
+
+# Development
+Gemfile.lock
+vendor
+node_modules
