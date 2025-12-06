@@ -1,39 +1,122 @@
 # Everything Should Be Virtual
 
-[Everything Should Be Virtual](https://everythingshouldbevirtual.github.io/) is a blog focused on virtualization, automation, IT infrastructure, and related technologies.
+[![Build](https://img.shields.io/badge/build-GHCR-blue)](https://github.com/methodicalcloud/everythingshouldbevirtual.github.io/pkgs/container/everythingshouldbevirtual.github.io)
+[![Deploy](https://img.shields.io/badge/deploy-Watchtower-green)](https://containrrr.dev/watchtower/)
 
-This repository contains the source code for the website, built using [Jekyll](https://jekyllrb.com/) and hosted on [GitHub Pages](https://pages.github.com/).
+[Everything Should Be Virtual](https://everythingshouldbevirtual.com) is a technical blog covering virtualization, cloud technologies, automation, and DevOps. Part of [Methodical Cloud](https://methodicalcloud.com).
 
-## Running Locally
+---
 
-To run the site locally for development and testing:
+## Tech Stack
 
-1. Install Jekyll and Bundler if you haven't already:
-    ```bash
-    gem install jekyll bundler
-    ```
-2. Clone this repository:
-    ```bash
-    git clone https://github.com/mrlesmithjr/everythingshouldbevirtual.github.io.git
-    cd everythingshouldbevirtual.github.io
-    ```
-3. Install project dependencies:
-    ```bash
-    bundle install
-    ```
-4. Serve the site locally:
-    ```bash
-    bundle exec jekyll serve
-    ```
-5. Open your browser and navigate to:
-    ```
-    http://localhost:4000
-    ```
+- **Static Site Generator**: [Jekyll](https://jekyllrb.com/) with [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) theme
+- **Container**: Docker (multi-stage build)
+- **Registry**: GitHub Container Registry (GHCR)
+- **Deployment**: Watchtower auto-deployment on Stackbox
 
-## Deployment
+---
 
-This site is automatically built and deployed by [GitHub Pages](https://pages.github.com/) from the `main` branch.
+## Deployment Architecture
+
+```text
+develop (push) → GitHub Actions → ghcr.io/methodicalcloud/everythingshouldbevirtual.github.io:develop
+                      ↓
+              PR: develop → main
+                      ↓
+  main (merge) → GitHub Actions → ghcr.io/methodicalcloud/everythingshouldbevirtual.github.io:latest
+                      ↓
+              Watchtower auto-deploys → stackbox.home.lan (within 5 min)
+```
+
+**Production URL**: https://everythingshouldbevirtual.com
+
+---
+
+## Local Development
+
+### Option 1: Native Jekyll
+
+```bash
+# Install dependencies
+gem install jekyll bundler
+bundle install
+
+# Serve locally (with drafts)
+bundle exec jekyll serve --drafts
+
+# Access at http://localhost:4000
+```
+
+### Option 2: Docker
+
+```bash
+# Build container
+docker build -t esbv:local .
+
+# Run locally
+docker run -p 4000:4000 esbv:local
+
+# Access at http://localhost:4000
+```
+
+---
+
+## Repository Structure
+
+```text
+everythingshouldbevirtual/
+├── _posts/              # Published blog posts
+├── _drafts/             # Unpublished drafts
+├── _pages/              # Static pages
+├── assets/              # CSS, JS, images
+├── _config.yml          # Jekyll configuration
+├── Dockerfile           # Multi-stage Docker build
+├── Gemfile              # Ruby dependencies
+└── package.json         # Node dependencies (build tools)
+```
+
+---
+
+## Writing New Posts
+
+1. Create file in `_posts/` with format: `YYYY-MM-DD-post-title.md`
+2. Add front matter:
+
+```yaml
+---
+title: "Post Title"
+date: 2025-12-06 10:00:00 -0500
+categories:
+  - Automation
+tags:
+  - ansible
+  - docker
+toc: true
+---
+```
+
+3. Write content in Markdown
+4. Preview locally with `bundle exec jekyll serve --drafts`
+5. Commit to `develop`, create PR to `main`
+
+---
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+- **Theme**: MIT License (Minimal Mistakes by Michael Rose)
+- **Content**: All Rights Reserved - Larry Smith Jr. / Methodical Cloud LLC
+
+See [LICENSE.md](LICENSE.md) for details.
+
+---
+
+## Contact
+
+- **Author**: Larry Smith Jr.
+- **Email**: mrlesmithjr@gmail.com
+- **GitHub**: [@mrlesmithjr](https://github.com/mrlesmithjr)
+- **Organization**: [Methodical Cloud](https://methodicalcloud.com)
+
+---
+
+**Last Updated**: December 2025
