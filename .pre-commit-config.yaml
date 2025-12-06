@@ -1,0 +1,39 @@
+# Pre-commit hooks for Everything Should Be Virtual
+# Jekyll/Markdown blog - content quality + AI reference blocking
+
+repos:
+  # Basic file quality
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: '^(Gemfile\.lock|_site/)'
+      - id: end-of-file-fixer
+        exclude: '^(Gemfile\.lock|_site/)'
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: ['--maxkb=2000']
+      - id: check-yaml
+        exclude: '^_site/'
+
+  # Markdown linting for blog posts
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.37.0
+    hooks:
+      - id: markdownlint
+        args: ['--fix']
+        exclude: '^(_site/|vendor/)'
+
+  # CRITICAL: Block AI tool references in commit messages
+  - repo: local
+    hooks:
+      - id: check-commit-message
+        name: check-commit-message
+        entry: .pre-commit-hooks/check-commit-message.py
+        language: script
+        stages: [commit-msg]
+        pass_filenames: true
+        always_run: true
+
+fail_fast: false
+default_stages: [pre-commit]

@@ -1,4 +1,5 @@
 # Claude Code configuration (override global gitignore)
+!CLAUDE.md
 !.claude/
 !.claude/**
 .claude/settings.local.json
