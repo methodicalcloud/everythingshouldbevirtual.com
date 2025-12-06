@@ -1,0 +1,103 @@
+# Markdownlint Configuration - Methodical Cloud Standard
+# Aligned with Obsidian Linter settings
+#
+# This is the organization-wide standard config.
+# All product and shared service repos should use this same configuration.
+#
+# Key alignments with Obsidian Linter:
+# - MD022: heading-blank-lines enabled (bottom: true, empty-line-after-yaml: true)
+# - MD041: disabled (YAML frontmatter comes first, not h1)
+# - MD047: enabled (line-break-at-document-end: true)
+# - MD009: trailing spaces removed (trailing-spaces: true)
+# - MD013: no line length limit (Obsidian has no restriction)
+# - MD040: no code fence language required (default-language-for-code-fences: false)
+
+# Default state for all rules
+default: true
+
+# MD009: Trailing spaces - Remove (matches Obsidian)
+# Obsidian has "trailing-spaces": true (two-space-line-break: false)
+MD009:
+  br_spaces: 0
+  list_item_empty_lines: false
+
+# MD012: Multiple consecutive blank lines - Be permissive
+# Obsidian Linter has "consecutive-blank-lines": false (not enforcing limits)
+MD012:
+  maximum: 3
+
+# MD013: Line length - Disabled
+# Obsidian Linter has no line length restriction
+MD013: false
+
+# MD022: Headings should be surrounded by blank lines - Match Obsidian
+# Obsidian has "heading-blank-lines": true (bottom: true)
+MD022:
+  lines_above: 1
+  lines_below: 1
+
+# MD024: Duplicate headings - Allow in different sections
+# Common in documentation with multiple "Tasks" or "Overview" sections
+MD024:
+  siblings_only: true
+
+# MD025: Single top-level heading - Disable
+# Obsidian uses YAML title, body can have multiple h1-style sections
+MD025: false
+
+# MD026: Trailing punctuation in headings - Disable
+# Allow flexibility in heading styles
+MD026: false
+
+# MD029: Ordered list prefix - Disable
+# Obsidian ordered-list-style uses ascending, but don't enforce
+MD029: false
+
+# MD031: Fenced code blocks surrounded by blank lines - Disable
+# Be permissive for code blocks
+MD031: false
+
+# MD032: Lists surrounded by blank lines - Disable
+# Be permissive for lists
+MD032: false
+
+# MD033: Inline HTML - Allow
+# Sometimes needed for complex formatting
+MD033: false
+
+# MD034: Bare URLs - Allow
+# Obsidian has "no-bare-urls": false
+MD034: false
+
+# MD036: Emphasis as heading - Allow
+# Obsidian doesn't restrict this, useful for styled text
+MD036: false
+
+# MD040: Fenced code language - Do NOT require
+# Obsidian Linter has "default-language-for-code-fences": false
+# Allows diagrams, plain text blocks without language tags
+MD040: false
+
+# MD041: First line in file should be top-level heading - Disable
+# Many docs have YAML frontmatter first (Obsidian yaml-title, yaml-timestamp)
+MD041: false
+
+# MD047: Files should end with a single newline - Match Obsidian
+# Obsidian has "line-break-at-document-end": true
+MD047: true
+
+# MD055: Table pipe style - Disable
+# Be permissive for tables
+MD055: false
+
+# MD056: Table column count - Disable
+# Be permissive for tables
+MD056: false
+
+# MD058: Blanks around tables - Disable
+# Be permissive for tables
+MD058: false
+
+# MD060: Table cell padding - Disable
+# Be permissive for tables
+MD060: false
