@@ -6,7 +6,14 @@
     - Ansible
   redirect_from:
     - /ansible-setting-up-an-ansible-control-machine-part-1
+toc: true
+toc_label: "Contents"
+excerpt: "In this post we will be setting up an Ansible Control Machine to execute our Ansible tasks from. This server will not have writable access to our Git..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In this post we will be setting up an Ansible Control Machine to execute
 our Ansible tasks from. This server will not have writable access to our
@@ -877,7 +884,7 @@ ls ssh_pub_keys/
 (ansible-1.9.4)remote@ansible-control:~/Git_Projects/Lab/LAMP$ ls ssh_pub_keys/
 remote@ansible-control.pub
 (ansible-1.9.4)remote@ansible-control:~/Git_Projects/Lab/LAMP$
-```
+```bash
 
 Now before we go any further we need to decide whether we will be using
 an account that already exists on our remote servers to add our ssh pub
@@ -964,7 +971,7 @@ create_users:  #defines user accounts to setup on hosts....define here or in gro
     preseed_user: false  #defines if user should be setup as default user during preseed auto-install...Only 1 user can be added...used in tftpserver Ansible role (mrlesmithjr.tftpserver or ansible-tftpserver)
     sudo: false  #define if user should have sudo access...true|false
     system_account: false  #define if account is a system account...true|falseinstall_fail2ban: false
-```
+```bash
 
 From the above we will need to define our user(s) to create on our
 remote servers. In my case I will be creating a user named remote and
@@ -1086,7 +1093,7 @@ like below:
     - role: ansible-apache2
     - role: ansible-mysql
   tasks:
-```
+```bash
 
 ## Tweaks
 

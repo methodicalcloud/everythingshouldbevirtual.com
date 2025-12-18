@@ -1,6 +1,13 @@
 ---
   title: Ansible - Generating Host/Groups YAML file
+toc: true
+toc_label: "Contents"
+excerpt: "As I have been working on a nice little project of mine (More on that in the near future) I came across the need to take my hosts inventory INI file..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 As I have been working on a nice little project of mine (More on that in
 the near future) I came across the need to take my hosts inventory INI
@@ -164,7 +171,7 @@ cmdb
         mode: 0775
       delegate_to: localhost
       run_once: true
-```
+```json
 
 {% endraw %}
 Create a template called `db_inventory_list.yml.j2` with below:
@@ -177,7 +184,7 @@ Create a template called `db_inventory_list.yml.j2` with below:
 {% for group in group_names %}
       - {{ group }}
 {% endfor %}
-```
+```json
 
 {% endraw %}
 Now execute the following:

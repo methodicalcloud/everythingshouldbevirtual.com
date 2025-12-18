@@ -1,7 +1,12 @@
 ---
   title: Nexenta NMS Web Interface Not Responding
   date: 2013-08-02 20:46:23
+excerpt: "I was just getting ready to swap out a failing drive in my Nexentastor CE NAS and tried to log into the web interface and received \"Waiting to..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I was just getting ready to swap out a failing drive in my Nexentastor
 CE NAS and tried to log into the web interface and received "Waiting to

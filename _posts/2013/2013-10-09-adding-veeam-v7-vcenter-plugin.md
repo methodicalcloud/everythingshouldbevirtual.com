@@ -1,7 +1,12 @@
 ---
   title: Adding Veeam v7 vCenter Plugin
   date: 2013-10-09 15:26:52
+excerpt: "As I have been testing out vSphere 5.5 and Veeam v7 the past week or so. I wanted to go ahead and check out the new vCenter webui plugin for Veeam v7..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 As I have been testing out vSphere 5.5 and Veeam v7 the past week or so.
 I wanted to go ahead and check out the new vCenter webui plugin for

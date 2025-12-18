@@ -6,7 +6,12 @@
     - Vagrant
   redirect_from:
     - /vagrant-adding-a-second-hard-drive
+excerpt: "I was just working on some Vagrant lab stuff and had a need to spin up a Vagrant node with more than one hard drive. So I turned to google and did some..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I was just working on some Vagrant lab stuff and had a need to spin up a
 Vagrant node with more than one hard drive. So I turned to google and

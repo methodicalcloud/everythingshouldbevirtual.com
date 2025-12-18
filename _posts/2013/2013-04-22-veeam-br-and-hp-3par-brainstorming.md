@@ -1,7 +1,12 @@
 ---
   title: Veeam B&R and HP 3Par Brainstorming
   date: 2013-04-22 11:08:45
+excerpt: "Doing a whiteboard session brainstorming on new Veeam B&R and HP 3Par design. This is just a single site to an offsite location. This same philosophy..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Doing a whiteboard session brainstorming on new Veeam B&R and HP 3Par
 design. This is just a single site to an offsite location. This same

@@ -6,7 +6,14 @@
     - Ansible
   redirect_from:
     - /ansible-clean-formatted-playbooks
+toc: true
+toc_label: "Contents"
+excerpt: "While going through and doing some cleanup to various different roles and playbooks in my Ansible collection I wanted to share what I feel is good..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 While going through and doing some cleanup to various different roles
 and playbooks in my Ansible collection I wanted to share what I feel is

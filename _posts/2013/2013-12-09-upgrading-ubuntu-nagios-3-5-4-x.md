@@ -1,7 +1,12 @@
 ---
   title: Upgrading Ubuntu Nagios 3.5 to 4.x
   date: 2013-12-09 12:44:05
+excerpt: "In this previous post we installed Nagios 3.5.0 from source. Now that the current version of Nagios is 4.0.2 I wanted to walk through upgrading the..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In [this](https://everythingshouldbevirtual.com/installing-nagios-on-ubuntu-12-04 "http\://everythingshouldbevirtual.com/installing-nagios-on-ubuntu-12-04")
 previous post we installed Nagios 3.5.0 from source. Now that the

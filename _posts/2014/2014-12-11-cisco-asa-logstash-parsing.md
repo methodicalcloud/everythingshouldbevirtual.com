@@ -1,7 +1,12 @@
 ---
   title: Cisco ASA Logstash Parsing
   date: 2014-12-11
+excerpt: "I recently had an opportunity to get around to creating some Cisco ASA parsing for logstash to detect some abnormal activity on the network. So now..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I recently had an opportunity to get around to creating some Cisco ASA
 parsing for logstash to detect some abnormal activity on the network. So

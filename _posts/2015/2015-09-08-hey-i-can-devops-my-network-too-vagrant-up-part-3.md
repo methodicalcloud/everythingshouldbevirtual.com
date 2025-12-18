@@ -6,7 +6,14 @@
     - Ansible
   redirect_from:
     - /hey-i-can-devops-my-network-too-vagrant-up-part-3
+toc: true
+toc_label: "Contents"
+excerpt: "In the last post we defined our nodes to spin up with Vagrant which will be used from here on out during our series. In this post we will actually be..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In the last
 [post](https://everythingshouldbevirtual.com/hey-i-can-devops-my-network-too-define-nodes-part-2)
@@ -310,7 +317,7 @@ to be committed.
       delegate_to: localhost
       sudo: false
       when: update_host_vars is defined and update_host_vars
-```
+```json
 
 {% endraw %}
 And with all of this out of the way you may be asking "What is this

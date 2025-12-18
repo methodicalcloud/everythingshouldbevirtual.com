@@ -1,7 +1,14 @@
 ---
   title: Highly Available ELK (Elasticsearch, Logstash and Kibana) Setup
   date: 2014-06-09
+toc: true
+toc_label: "Contents"
+excerpt: "In this post I will be going over how to setup a complete ELK (Elasticsearch, Logstash and Kibana) stack with clustered elasticsearch and all ELK..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In this post I will be going over how to setup a complete ELK
 (Elasticsearch, Logstash and Kibana) stack with clustered elasticsearch
@@ -102,7 +109,7 @@ following `net.ipv4.ip_nonlocal_bind = 1`
 
 ```bash
 sysctl -p
-```
+```bash
 
 Now you will need to restart networking on each node or reboot for the
 IP settings from above to be set.

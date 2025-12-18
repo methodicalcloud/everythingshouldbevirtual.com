@@ -7,7 +7,14 @@
     - Python
   redirect_from:
     - /python-manage-powerdns-zonesrecords
+toc: true
+toc_label: "Contents"
+excerpt: "While working on another PowerDNS project I have started working on a Python script to manage Zones/Records. Being that there is not a ton of info out..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 While working on another PowerDNS project I have started working on a
 Python script to manage Zones/Records. Being that there is not a ton of
@@ -534,7 +541,7 @@ class PDNSControl(object):
 
 if __name__ == '__main__':
     PDNSControl()
-```
+```json
 
 {% endraw %}
 

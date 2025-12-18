@@ -1,7 +1,14 @@
 ---
   title: Highly Available ELK (Elasticsearch, Logstash and Kibana) Unicast Mode
   date: 2014-06-26
+toc: true
+toc_label: "Contents"
+excerpt: "In the previous post Setup\") we setup the complete ELK stack from top to bottom. And everything should be working as needed; however one thing you will..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In the previous [post](https://everythingshouldbevirtual.com/highly-available-elk-elasticsearch-logstash-kibana-setup "Highly Available ELK (Elasticsearch, Logstash and Kibana) Setup")
 we setup the complete ELK stack from top to bottom. And everything should

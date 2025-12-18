@@ -6,7 +6,14 @@
     - Ansible
   redirect_from:
     - /ansible-using-ansible-on-windows-via-cygwin
+toc: true
+toc_label: "Contents"
+excerpt: "As I continue down the Ansible journey to automate all things it is apparent that Windows is a second class citizen in some regards. I had a need to..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 # Background
 
 As I continue down the Ansible journey to automate all things it is
@@ -115,7 +122,7 @@ python setup.py install
 cd ..
 cd PyYAML-3.10
 python setup.py install
-```
+```bash
 
 ### The second way (easy)
 
@@ -175,7 +182,7 @@ Installing Ansible **_(Easy way)_**
 ```bash
 easy_install-2.7 pip
 pip install ansible
-```
+```bash
 
 ## Testing
 

@@ -1,7 +1,12 @@
 ---
   title: Ubuntu Logstash Server with Kibana3 Front End Autoinstall
   date: 2013-11-29 18:41:09
+excerpt: "I have been using Graylog2 and VMware Log Insight for some time now and wanted to try out Logstash finally. So the first thing that I wanted to do was..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I have been using Graylog2 and VMware Log Insight for some time now and
 wanted to try out Logstash finally. So the first thing that I wanted to
@@ -49,7 +54,7 @@ cd ~
 git clone https://github.com/mrlesmithjr/Logstash_Kibana3
 chmod +x ./Logstash_Kibana3/install_logstash_1.4_kibana_ubuntu.sh
 sudo ./Logstash_Kibana3/install_logstash_1.4_kibana_ubuntu.sh
-```
+```sql
 
 You will be prompted during the script to enter your domain name,
 ~~vSphere naming convention~~ and

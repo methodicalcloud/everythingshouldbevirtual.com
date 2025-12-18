@@ -1,6 +1,9 @@
 ---
 title: Updating Git Project Structure
 date: 2020-02-20 18:00:00
+toc: true
+toc_label: "Contents"
+excerpt: "Creating and maintaining a consistent project structure is crucial for efficient collaboration and automation. In this post, I'll share how I've been..."
 ---
 
 ## Introduction

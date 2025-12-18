@@ -1,7 +1,12 @@
 ---
   title: Nexentastor/ESXi5/3750G/LACP/VDS/NFS/iSCSI - Part 2
   date: 2012-12-05 21:30:00
+excerpt: "This article is a continuation of Part 1 that we did a while back. I would highly suggest checking out that article as well prior to going through this..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 This article is a continuation of Part 1 that we did a while back.  I
 would highly suggest checking out that article as well prior to going

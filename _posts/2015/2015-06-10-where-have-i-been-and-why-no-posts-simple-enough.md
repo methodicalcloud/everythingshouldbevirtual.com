@@ -1,6 +1,11 @@
 ---
   title: Where have I been? And why no posts? Simple enough!
+excerpt: "Well I have been fairly quiet and not putting out much content lately and wanted to explain. One easy word shall explain it!"
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Well I have been fairly quiet and not putting out much content lately
 and wanted to explain.

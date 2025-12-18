@@ -1,7 +1,12 @@
 ---
   title: "Support | HOWTO: How to export and import PlateSpin Migrate/Protect/Forge database"
   date: 2012-08-11 19:43:59
+excerpt: "If you are using Platespin Protect for a disaster recovery solution for your datacenter you need to know how to do this. After attempting to upgrade to..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 If you are using Platespin Protect for a disaster recovery solution for
 your datacenter you need to know how to do this. After attempting to
@@ -28,7 +33,7 @@ administrative command prompt.
 
 First attempt at installation brought this error.
 
-![](../../assets/Platespin-Error-IIS-needs-to-be-in-32-bit-mode-300x171.png "Platespin Error - IIS needs to be in 32 bit mode")
+![Platespin Error - IIS needs to be in 32 bit mode](../../assets/Platespin-Error-IIS-needs-to-be-in-32-bit-mode-300x171.png )
 
 So I found the following link and followed it.
 
@@ -36,20 +41,20 @@ So I found the following link and followed it.
 
 Changed DefaultAppPool settings as required.
 
-![](../../assets/Platespin-install-DefaultAppPool-32bit-mode-300x120.png "Platespin install - DefaultAppPool - 32bit mode")
+![Platespin install - DefaultAppPool - 32bit mode](../../assets/Platespin-install-DefaultAppPool-32bit-mode-300x120.png )
 
 Changed Application Pool Defaults as required.
 
-![](../../assets/Platespin-install-Application-Pool-Defaults-32bit-mode-300x185.png "Platespin install - Application Pool Defaults - 32bit mode")
+![Platespin install - Application Pool Defaults - 32bit mode](../../assets/Platespin-install-Application-Pool-Defaults-32bit-mode-300x185.png )
 
 Once again got this error during install. (?>SJJ\*\*\*\*)
 
-![](../../assets/Platespin-Error-IIS-needs-to-be-in-32-bit-mode-300x171.png "Platespin Error - IIS needs to be in 32 bit mode")
+![Platespin Error - IIS needs to be in 32 bit mode](../../assets/Platespin-Error-IIS-needs-to-be-in-32-bit-mode-300x171.png )
 
 So after doing some more digging I finally had to enable these roles and
 the installation completed.
 
-![](../../assets/Platespin-install-Need-to-add-IIS6-roles-300x114.png "Platespin install - Need to add IIS6 roles")
+![Platespin install - Need to add IIS6 roles](../../assets/Platespin-install-Need-to-add-IIS6-roles-300x114.png )
 
 Update....things not going so well with the upgrade. Looks like I will
 have to start from scratch and remove all of my workloads from the old

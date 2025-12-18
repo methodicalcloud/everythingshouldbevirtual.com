@@ -1,7 +1,12 @@
 ---
   title: Bro-IDS Logstash Parsing
   date: 2014-10-13
+excerpt: "I have spent the past several days working with Bro-IDS and Logstash parsing and wanted to share this with anyone else who may be doing the same and..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I have spent the past several days working with Bro-IDS and Logstash
 parsing and wanted to share this with anyone else who may be doing the

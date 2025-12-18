@@ -6,7 +6,14 @@
     - Ansible
   redirect_from:
     - /hey-i-can-devops-my-network-too-prep-work-part-1
+toc: true
+toc_label: "Contents"
+excerpt: "In the previous post we went over the intro on what we will be setting up by going through each of these posts. In this post we will be setting up our..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In the previous
 [post](https://everythingshouldbevirtual.com/hey-i-can-devops-my-network-too-intro)

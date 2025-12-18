@@ -6,7 +6,12 @@
     - Docker
   redirect_from:
     - /docker-spinning-graphite-container
+excerpt: "As I am working through some testing methodologies for Infrastructure/app testing I wanted to throw together a usable Graphite image that I could..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 As I am working through some testing methodologies for
 Infrastructure/app testing I wanted to throw together a usable Graphite image

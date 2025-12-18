@@ -1,7 +1,12 @@
 ---
   title: Current NexentaStor Disk Layout
   date: 2013-05-15 10:35:38
+excerpt: "Here is a current view of how my NexentaStor NAS is configured from a disk and controller perspective. I will be modifying this some here soon. Go here..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Here is a current view of how my NexentaStor NAS is configured from a
 disk and controller perspective. I will be modifying this some here

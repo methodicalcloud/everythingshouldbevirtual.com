@@ -8,7 +8,12 @@
     - Docker
   redirect_from:
     - /ansible-provision-docker-swarm-mode-1-12-cluster
+excerpt: "Lately I have been working quite a bit with the latest Docker Swarm Mode released in Docker 1.12 and so far it has been pretty awesome. The days of..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Lately I have been working quite a bit with the latest Docker Swarm Mode
 released in Docker 1.12 and so far it has been pretty awesome. The days
@@ -87,7 +92,7 @@ docker_swarm_primary_manager: '{{ groups[docker_swarm_managers_ansible_group][0]
 docker_swarm_task_history_limit: '5' # Task history retention limit (default 5)
 docker_swarm_workers_ansible_group: 'docker-swarm-workers'
 docker_swarm_port: "2377"
-```
+```json
 
 {% endraw %}
 
@@ -127,7 +132,7 @@ docker_swarm_primary_manager:
   register: "docker_swarm_manager_token"
   when: >
         inventory_hostname == docker_swarm_primary_manager
-```
+```json
 
 {% endraw %}
 

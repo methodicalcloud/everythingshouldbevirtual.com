@@ -1,7 +1,12 @@
 ---
   title: Ubuntu UTM Homebrew -- Part 2 - Network Graphing
   date: 2012-11-04 10:19:55
+excerpt: "In this previous post we setup the initial UTM (Unified Threat Management). In this quick guide we will be setting up network traffic graphing. We want..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In [this](https://everythingshouldbevirtual.com/ubuntu-utm-homebrew "http\://everythingshouldbevirtual.com/ubuntu-utm-homebrew") previous post we
 setup the initial UTM (Unified Threat Management). In this quick guide we will
@@ -47,8 +52,8 @@ sudo /etc/init.d/rc.local start
 Now you will have some nice graphs and be able to see the type and
 volume of traffic on your network.
 
-![](../../assets/10-12-26-300x167.png "10-12-26")
+![10-12-26](../../assets/10-12-26-300x167.png )
 
-![](../../assets/10-12-09-300x210.png "10-12-09")
+![10-12-09](../../assets/10-12-09-300x210.png )
 
-![](../../assets/10-12-34-300x111.png "10-12-34")
+![10-12-34](../../assets/10-12-34-300x111.png )

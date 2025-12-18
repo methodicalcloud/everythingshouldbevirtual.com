@@ -1,7 +1,12 @@
 ---
   title: "Tech Field Day #VFD4"
   date: 2014-12-23
+excerpt: "Yes, you heard it right. I have been granted the honor to be a delegate at the next Virtualization Field Day in Austin, TX January 14-16, 2015. I am..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Yes, you heard it right. I have been granted the honor to be a delegate
 at the next Virtualization Field Day in Austin, TX January 14-16, 2015.

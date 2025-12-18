@@ -1,7 +1,12 @@
 ---
   title: VMware NSX Firewall Logging with Logstash
   date: 2014-10-24
+excerpt: "So the past day or so I have been working on getting some good detail from my NSX Edge's (ESG and DLR) and I have been able to get them working very..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 So the past day or so I have been working on getting some good detail
 from my NSX Edge's (ESG and DLR) and I have been able to get them

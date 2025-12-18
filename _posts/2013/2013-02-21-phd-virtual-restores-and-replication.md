@@ -1,7 +1,12 @@
 ---
   title: PHD Virtual Restores and Replication
   date: 2013-02-21 16:33:13
+excerpt: "In this article we will be going through the process of using PHD Virtual for doing file level restores, whole vm restores and replications. The..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In this article we will be going through the process of using PHD
 Virtual for doing file level restores, whole vm restores and

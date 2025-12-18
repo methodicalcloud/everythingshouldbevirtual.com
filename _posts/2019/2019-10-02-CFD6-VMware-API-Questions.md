@@ -5,6 +5,7 @@ categories:
   - Automation
 tags:
   - VMware
+excerpt: "While, attending Cloud Field Day 6 in Silicon Valley as a delegate for Tech Field Day, Dell and VMware gave us their pitch on VMware Cloud Foundation."
 ---
 
 ## CFD6 VMware API Questions

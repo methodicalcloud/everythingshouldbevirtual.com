@@ -6,7 +6,14 @@
     - Python
   redirect_from:
     - /python-nmapssh-fun
+toc: true
+toc_label: "Contents"
+excerpt: "I am currently working on some Ansible/Python project(s) _(More to come on that soon)_ and am working on integrating some functionality between some of..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I am currently working on some Ansible/Python project(s) _(More to come
 on that soon)_ and am working on integrating some functionality between
@@ -164,7 +171,7 @@ if __name__ == "__main__":
     read_cli_args()
     args = read_cli_args().parse_args()
     main(args)
-```
+```json
 
 {% endraw %}
 And if I were to run this against a subnet such as (Only scanning hosts

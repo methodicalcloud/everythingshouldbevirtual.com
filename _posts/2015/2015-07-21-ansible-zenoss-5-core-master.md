@@ -1,6 +1,11 @@
 ---
   title: Ansible - Zenoss 5 Core - Master
+excerpt: "As it has been some time since actually putting something together to install Zenoss I figured I would set out to do just that using Ansible. As I..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 As it has been some time since actually putting something together to
 install [Zenoss](http://www.zenoss.org/) I figured I would set out to do

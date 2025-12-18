@@ -1,7 +1,12 @@
 ---
   title: IP Reputation Lookups with Logstash
   date: 2014-10-09
+excerpt: "I had a great question yesterday about how to configure Logstash to integrate IP reputation lookups within Logstash and Kibana without having to copy..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I had a great question yesterday about how to configure Logstash to
 integrate IP reputation lookups within Logstash and Kibana without

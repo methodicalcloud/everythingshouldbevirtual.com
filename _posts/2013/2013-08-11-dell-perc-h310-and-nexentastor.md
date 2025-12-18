@@ -1,7 +1,12 @@
 ---
   title: Dell Perc H310 and NexentaStor
   date: 2013-08-11 14:43:00
+excerpt: "I have been using Nexenta for several years now of course. Over those years I have been using Supermicro SAS controllers reflashed into IT mode cards..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I have been using Nexenta for several years now of course. Over those
 years I have been using Supermicro SAS controllers reflashed into IT

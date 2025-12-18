@@ -1,6 +1,13 @@
 ---
   title: Ansible - RabbitMQ Cluster
+toc: true
+toc_label: "Contents"
+excerpt: "In this post I will be setting up a clustered RabbitMQ environment for logstash message queuing. Again I will be keeping this short and sweet. This..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 > UPDATE: As of 08/06/2015 the following role can be found
 > [here](https://galaxy.ansible.com/list#/roles/4594) on Ansible Galaxy.
@@ -142,7 +149,7 @@ screenshot above.
 - name: rabbitmq_clustering | marking as clustered
   file: path=/etc/rabbitmq/clustered state=touch
   when: cluster_master.changed or cluster_joined.changed
-```
+```json
 
 {% endraw %}
 
@@ -180,7 +187,7 @@ screenshot above.
   command: rabbitmqadmin declare binding source={{ item.exchange_name }} destination_type="queue" destination={{ item.queue_name }} routing_key={{ item.routing_key }}
   run_once: true
   with_items: rabbitmq_config
-```
+```json
 
 {% endraw %}
 

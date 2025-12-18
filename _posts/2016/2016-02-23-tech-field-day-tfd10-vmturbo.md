@@ -1,6 +1,11 @@
 ---
   title: "Tech Field Day - #TFD10 - VMTurbo"
+excerpt: "Once again VMTurbo presented at Tech Field Day and this time it was at #TFD10 in Austin, TX. VMTurbo is known for their unique way of managing your..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Once again [VMTurbo](http://vmturbo.com/) presented at Tech Field Day
 and this time it was at #TFD10 in Austin, TX. VMTurbo is known for

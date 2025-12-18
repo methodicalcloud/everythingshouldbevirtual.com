@@ -1,7 +1,14 @@
 ---
   title: How to install vShield 5.1 Manager, App and Endpoint
   date: 2012-11-15 17:24:27
+toc: true
+toc_label: "Contents"
+excerpt: "In this guide we will be installing the vShield Manager appliance and the installing vShield App and vShield Endpoint (Now called vShield Networking..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In this guide we will be installing the vShield Manager appliance and
 the installing vShield App and vShield Endpoint (Now called vShield

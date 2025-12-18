@@ -1,7 +1,12 @@
 ---
   title: vSphere 6.0 Syslog Configuration
   date: "2015-03-13"
+excerpt: "So in setting up a new ELK Stack from scratch (more on this later) and also standing up the GA release of vSphere 6.0 I had to go through setting up..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 So in setting up a new ELK Stack from scratch (more on this later) and
 also standing up the GA release of vSphere 6.0 I had to go through

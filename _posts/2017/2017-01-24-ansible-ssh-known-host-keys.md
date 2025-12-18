@@ -6,7 +6,12 @@
     - Ansible
   redirect_from:
     - /ansible-ssh-known-host-keys
+excerpt: "I wanted to throw this together mainly for my own reference but maybe it will help someone else as well. I had a need to add every host's ssh keys to..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I wanted to throw this together mainly for my own reference but maybe it
 will help someone else as well. I had a need to add every host's ssh

@@ -6,7 +6,14 @@
     - Vagrant
   redirect_from:
     - /vagrant-box-templates
+toc: true
+toc_label: "Contents"
+excerpt: "Over the past few months I have been putting together some Vagrant box templates based on different Linux distros all using Packer. My goal is to have..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Over the past few months I have been putting together some Vagrant box
 templates based on different Linux distros all using Packer. My goal is

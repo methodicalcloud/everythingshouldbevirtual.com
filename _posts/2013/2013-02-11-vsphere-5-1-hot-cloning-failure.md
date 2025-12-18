@@ -1,7 +1,12 @@
 ---
   title: vSphere 5.1 hot cloning failure
   date: 2013-02-11 15:42:55
+excerpt: "We have run into this issue a few times after migrating servers from vSphere 4.x to vSphere 5.x. When trying to hot clone a vm the process fails and..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 We have run into this issue a few times after migrating servers from
 vSphere 4.x to vSphere 5.x. When trying to hot clone a vm the process

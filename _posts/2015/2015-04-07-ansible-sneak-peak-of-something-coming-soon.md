@@ -1,6 +1,13 @@
 ---
   title: Ansible - Sneak Peak of something coming soon :)
+toc: true
+toc_label: "Contents"
+excerpt: "So I started working on some theoretical ideas about 6-9 months ago around using Quagga in a highly scalable HA scenario and put it down for a bit. Now..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 So I started working on some theoretical ideas about 6-9 months ago
 around using Quagga in a highly scalable HA scenario and put it down for

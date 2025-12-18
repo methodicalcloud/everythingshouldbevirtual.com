@@ -1,6 +1,11 @@
 ---
   title: Disabling SSLv3 on NSX Edge Devices
+excerpt: "So a few months back after the Poodle attack I had a request to disable SSLv3 on the NSX Edge Gateways so I started looking around and didn't find..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 So a few months back after the Poodle attack I had a request to disable
 SSLv3 on the NSX Edge Gateways so I started looking around and didn't

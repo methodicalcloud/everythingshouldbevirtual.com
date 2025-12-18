@@ -1,6 +1,7 @@
 ---
 title: Manager or Leader
 date: 2019-11-19 12:45:00
+excerpt: "Are you a manager or leader?"
 ---
 
 **Are you a manager or leader?**

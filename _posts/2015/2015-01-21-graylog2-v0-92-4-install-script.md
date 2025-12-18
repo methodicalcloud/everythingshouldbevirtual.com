@@ -1,6 +1,11 @@
 ---
   title: Graylog2 v0.92.4 Install Script
+excerpt: "This post will only cover a fresh new install of Graylog2."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 This post will only cover a fresh new install of Graylog2.
 

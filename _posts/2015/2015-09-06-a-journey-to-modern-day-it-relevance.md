@@ -1,6 +1,13 @@
 ---
   title: A Journey to modern-day IT relevance
+toc: true
+toc_label: "Contents"
+excerpt: "We keep hearing this term day in and day out it seems. Attending conferences, meet-ups and other social events keep pushing this down our throats in..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 We keep hearing this term day in and day out it seems. Attending
 conferences, meet-ups and other social events keep pushing this down our

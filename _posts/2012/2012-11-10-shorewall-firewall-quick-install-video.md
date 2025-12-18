@@ -1,7 +1,12 @@
 ---
   title: Shorewall firewall quick install video
   date: 2012-11-10 19:28:17
+excerpt: "Installing shorewall firewall on Ubuntu 12.04 for a simple single network configuration."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Installing shorewall firewall on Ubuntu 12.04 for a simple single
 network configuration.

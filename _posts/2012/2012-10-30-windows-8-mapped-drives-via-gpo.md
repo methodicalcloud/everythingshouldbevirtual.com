@@ -1,7 +1,12 @@
 ---
   title: Windows 8 Mapped Drives via GPO
   date: 2012-10-30 22:26:39
+excerpt: "So I went ahead and loaded Windows 8 Pro this past weekend. I used it a few times during the preview releases and didn't care much for it at the time...."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 So I went ahead and loaded Windows 8 Pro this past weekend. I used it a
 few times during the preview releases and didn't care much for it at
@@ -22,6 +27,6 @@ replicate, run gpupdate from an elevated cmd prompt, log out and then
 log back in and there they are. All mapped drives are now back.
 Apparently the issue has something to do with UAC on Windows 8.
 
-![](../../assets/22-22-08-269x300.png "22-22-08")
+![22-22-08](../../assets/22-22-08-269x300.png )
 
 Enjoy!

@@ -1,7 +1,12 @@
 ---
   title: New Nexenta Build Pics
   date: 2013-03-11 15:11:41
+excerpt: "Here are just some random pics of the new NexentaStor server being built. I will update this post with others as time goes on. Getting close to the..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Here are just some random pics of the new NexentaStor server being
 built. I will update this post with others as time goes on. Getting

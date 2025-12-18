@@ -6,7 +6,12 @@
     - ZFS
   redirect_from:
     - /zfs-replication-backups
+excerpt: "I recently rebuilt my lab NAS hosts with Ubuntu 16.04 and used ZFS for the storage pools (once again). In doing it this time around I wanted to get a..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I recently rebuilt my lab NAS hosts with Ubuntu 16.04 and used ZFS for
 the storage pools (once again). In doing it this time around I wanted to

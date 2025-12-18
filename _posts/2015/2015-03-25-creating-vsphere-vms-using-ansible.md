@@ -1,6 +1,13 @@
 ---
   title: Creating vSphere VM's using Ansible
+toc: true
+toc_label: "Contents"
+excerpt: "I am putting this out here in case anyone else may be interested in spinning up some VM's using Ansible. I am doing this with Ansible 1.8.4 and..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I am putting this out here in case anyone else may be interested in
 spinning up some VM's using Ansible. I am doing this with Ansible 1.8.4
@@ -117,7 +124,7 @@ Now copy and paste the below and modify to suit your requirements.
         esxi:
           datacenter: "{{ datacenter }}"
           hostname: "{{ esxi_host }}"
-```
+```json
 
 {% endraw %}
 

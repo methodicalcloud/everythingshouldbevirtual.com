@@ -3,7 +3,12 @@
   date: 2012-07-21 09:55:35
 toc: true
 toc_label: "Contents"
+excerpt: "So I have been using Nexentastor for almost 2 years now in my home lab. It is an amazing storage solution. I have used many others over the years..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 So I have been using
 [Nexentastor](http://www.nexentastor.org "Nexentastor") for almost 2
@@ -23,7 +28,7 @@ with multiple VLANs separating NFS and iSCSI traffic.
 
 Screenshot below of zpool status..
 
-![](../../assets/nexentastor-zpool-status-300x234.png "nexentastor zpool status")
+![nexentastor zpool status](../../assets/nexentastor-zpool-status-300x234.png )
 
 I have spent a good bit of time going through several scenarios on using
 this solution with vSphere 4.x and now vSphere 5.x Using different
@@ -74,9 +79,9 @@ switch01\#
 
 configure your ports on your 3750G for LACP.
 
-![](../../assets/Port-Channel-3750-300x71.png "Port-Channel (3750)")
+![Port-Channel (3750)](../../assets/Port-Channel-3750-300x71.png )
 
-![](../../assets/LACP-Ports-added-to-port-channel-300x176.png "LACP-Ports added to port-channel")
+![LACP-Ports added to port-channel](../../assets/LACP-Ports-added-to-port-channel-300x176.png )
 
 Verify that the etherchannel protocol is LACP and using L2. Bold items
 below...
@@ -223,7 +228,7 @@ vlan 129 - 172.16.129.50 (iSCSI_1)
 
 vlan 130 - 172.16.130.50 (iSCSI_2)
 
-![](../../assets/Nexentastor-Network-300x41.png "Nexentastor - Network")
+![Nexentastor - Network](../../assets/Nexentastor-Network-300x41.png )
 
 Now connect to your vCenter Server and configure your VDS (vSphere
 Distributed Switch). You cannot do VDS without vCenter.
@@ -234,7 +239,7 @@ configure this.
 
 Below is a view of what your VDS deployment may look like.
 
-![](../../assets/VDS-Switches-300x211.png "VDS - Switches")
+![VDS - Switches](../../assets/VDS-Switches-300x211.png )
 
 Let's configure the iSCSI ports first. There are two ways we can do the
 iSCSI ports. The first way is on a single vlan for both the storage and
@@ -245,12 +250,12 @@ earlier in this post. Two for NFS and two for iSCSI.
 
 Click create a new port group
 
-![](../../assets/VDS-Switches-300x211.png "VDS - Switches")
+![VDS - Switches](../../assets/VDS-Switches-300x211.png )
 
 Name it whatever you want and change the VLAN type to VLAN and enter 129
 for the VLAN ID, click next and then finish.
 
-![](../../assets/Create_Distributed_Port_Group-300x250.png "Create_Distributed_Port_Group")
+![Create_Distributed_Port_Group](../../assets/Create_Distributed_Port_Group-300x250.png )
 
 Now we need to configure the iSCSI port group that we just created.
 Right click on the port group (dvPortGroup-iSCSI_1) and select edit
@@ -260,7 +265,7 @@ Uplinks to the Unused Uplinks section. This will create the iSCSI Port
 binding rule later on in the configuration of the iSCSI software storage
 adapter.
 
-![](../../assets/VDS-iSCSI_1-Port-Group-Teaming-and-Failover1-300x223.png "VDS - iSCSI_1-Port-Group - Teaming and Failover")
+![VDS - iSCSI_1-Port-Group - Teaming and Failover](../../assets/VDS-iSCSI_1-Port-Group-Teaming-and-Failover1-300x223.png )
 
 Now do the same thing as above creating the dvportgroup but change the
 vlan to 130 and change the dvuplink teaming to only use dvuplink4
@@ -271,15 +276,15 @@ Now we have to create the vmkernel ports to use for our iSCSI VDS Ports.
 Go to the configuration tab on your host and select networking, vSphere
 distributed switch and click Manage Virtual Adapters.
 
-![](../../assets/Create_Distributed_Switch_VMK-Ports_iSCSI-300x149.png "Create_Distributed_Switch_VMK-Ports_iSCSI")
+![Create_Distributed_Switch_VMK-Ports_iSCSI](../../assets/Create_Distributed_Switch_VMK-Ports_iSCSI-300x149.png )
 
 Click add, new virtual adapter, next, vmkernel
 
-![](../../assets/Create_Distributed_Switch_VMK-Ports_iSCSI-add-300x175.png "Create_Distributed_Switch_VMK-Ports_iSCSI-add")
+![Create_Distributed_Switch_VMK-Ports_iSCSI-add](../../assets/Create_Distributed_Switch_VMK-Ports_iSCSI-add-300x175.png )
 
 Select port group dvPortGroup-iSCSI_1, next
 
-![](../../assets/Create_Distributed_Switch_VMK-Ports_iSCSI-select-Port-Group--300x223.png "Create_Distributed_Switch_VMK-Ports_iSCSI-select-Port-Group")
+![Create_Distributed_Switch_VMK-Ports_iSCSI-select-Port-Group](../../assets/Create_Distributed_Switch_VMK-Ports_iSCSI-select-Port-Group--300x223.png )
 
 Now assign an IP address, remember we used vlan129 for iSCSI_1 and
 vlan130 for iSCSI_2. Once you have assigned the IP address click next
@@ -288,13 +293,13 @@ an ip on vlan130. ex. 172.16.130.30 and follow the same process as
 creating the vmkernel port for iSCSI_1. You will need to do this on
 each of your hosts if you have more than one.
 
-![](../../assets/Create_Distributed_Switch_VMK-Ports_iSCSI-Assign_IP--300x221.png "Create_Distributed_Switch_VMK-Ports_iSCSI-Assign_IP")
+![Create_Distributed_Switch_VMK-Ports_iSCSI-Assign_IP](../../assets/Create_Distributed_Switch_VMK-Ports_iSCSI-Assign_IP--300x221.png )
 
 Below is a screenshot of the switch ports being graphed by cacti with
 this iSCSI setup. You can see how the inbound and outbound traffic is
 being spread between the two ports.
 
-![](../../assets/Nexentastor-LACP-VDS-iSCSI-Cacti-graph-300x283.png "Nexentastor LACP - VDS - iSCSI - Cacti graph")
+![Nexentastor LACP - VDS - iSCSI - Cacti graph](../../assets/Nexentastor-LACP-VDS-iSCSI-Cacti-graph-300x283.png )
 
 That's it for now.....Part 2 is
 [here](https://everythingshouldbevirtual.com/nexentastoresxi53750glacpvdsnfsiscsi-part-2-2 "http\://everythingshouldbevirtual.com/nexentastoresxi53750glacpvdsnfsiscsi-part-2-2").

@@ -6,6 +6,9 @@ categories:
 tags:
   - Python
   - vSphere
+toc: true
+toc_label: "Contents"
+excerpt: "Oh I love Terraform so so much. But why does vSphere feel like a second class citizen? Is it because my use case is a real snowflake? Maybe, maybe not!..."
 ---
 
 Oh I love [Terraform](https://terraform.io) so so much. But why does vSphere

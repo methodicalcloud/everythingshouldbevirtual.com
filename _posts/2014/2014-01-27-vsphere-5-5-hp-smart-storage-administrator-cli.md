@@ -1,7 +1,12 @@
 ---
   title: vSphere 5.5 - HP Smart Storage Administrator CLI - Emulate SSD
   date: 2014-01-27 16:33:35
+excerpt: "So I was sitting around over the weekend and decided I wanted to mess around with vSAN in a non nested environment for a bit and started going over..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 So I was sitting around over the weekend and decided I wanted to mess
 around with vSAN in a non nested environment for a bit and started going

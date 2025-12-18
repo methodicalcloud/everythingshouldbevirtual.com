@@ -6,7 +6,14 @@
     - Ansible
   redirect_from:
     - /hey-i-can-devops-my-network-too-define-nodes-part-2
+toc: true
+toc_label: "Contents"
+excerpt: "In the previous post we prepped our environment in order to get everything ready to begin building out our environment. Which means we are now ready to..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In the [previous post](https://everythingshouldbevirtual.com/hey-i-can-devops-my-network-too-prep-work-part-1)
 we prepped our environment in order to get everything ready to begin

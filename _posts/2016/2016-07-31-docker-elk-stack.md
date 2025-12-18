@@ -10,7 +10,14 @@
     - ELK
   redirect_from:
     - /docker-elk-stack
+toc: true
+toc_label: "Contents"
+excerpt: "In this post we will be going over setting up a quick and easy way to standup ELK Stack using Docker containers for each of our components required...."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In this post we will be going over setting up a quick and easy way to
 standup ELK Stack using Docker containers for each of our components
@@ -40,7 +47,7 @@ reference and more detail.
 
 `Dockerfile`:
 
-```bash
+```dockerfile
 FROM ubuntu:14.04
 
 MAINTAINER Larry Smith Jr. <mrlesmithjr@gmail.com>
@@ -154,14 +161,14 @@ CMD ["elasticsearch"]
         - 'logs'
         - 'config'
         - 'config/scripts'
-```
+```json
 
 {% endraw %}
 [**Logstash**](https://github.com/mrlesmithjr/docker-ansible-logstash)
 
 `Dockerfile`:
 
-```bash
+```dockerfile
 FROM ubuntu:14.04
 
 MAINTAINER Larry Smith Jr. <mrlesmithjr@gmail.com>
@@ -307,7 +314,7 @@ CMD ["logstash", "agent", "-f", "/etc/logstash/conf.d/"]
         - '$UDPServerRun 514'
         - '$ModLoad imtcp'
         - '$InputTCPServerRun 514'
-```
+```json
 
 {% endraw %}
 
@@ -339,13 +346,13 @@ output {
     hosts => ["http://elasticsearch:9200"]
   }
 }
-```
+```json
 
 [**Kibana**](https://github.com/mrlesmithjr/docker-ansible-kibana)
 
 `Dockerfile`:
 
-```bash
+```dockerfile
 FROM ubuntu:14.04
 
 MAINTAINER Larry Smith Jr. <mrlesmithjr@gmail.com>
@@ -454,7 +461,7 @@ CMD ["kibana"]
         dest: "/opt/kibana/config/kibana.yml"
         regexp: "^# elasticsearch.url: \"http://localhost:9200\""
         replace: "elasticsearch.url: \"http://elasticsearch:9200\""
-```
+```json
 
 {% endraw %}
 **Using docker-compose**
@@ -518,7 +525,7 @@ example:
 
 `Dockerfile`:
 
-```bash
+```dockerfile
 FROM mrlesmithjr/logstash:latest
 
 COPY config/ /etc/logstash/conf.d

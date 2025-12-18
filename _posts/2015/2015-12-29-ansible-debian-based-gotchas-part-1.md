@@ -6,7 +6,14 @@
     - Ansible
   redirect_from:
     - /ansible-debian-based-gotchas-part-1
+toc: true
+toc_label: "Contents"
+excerpt: "As I am currently running through some Docker setups between Debian Jessie and Ubuntu Trusty using Ansible I ran into a few gotchas. Now I would have..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 As I am currently running through some Docker setups between Debian
 Jessie and Ubuntu Trusty using Ansible I ran into a few gotchas. Now I
@@ -119,7 +126,7 @@ Docker.
   become: true
   with_items:
     - bridge-utils
-```
+```json
 
 {% endraw %}
 First thing I found was that for some reason when installing python-pip
@@ -168,7 +175,7 @@ Below is the code that is part of the task mentioned above.
   with_items:
     - pip
   when: ansible_distribution == "Debian"
-```
+```json
 
 {% endraw %}
 Now we could change both to use easy_install: as our module to use from
@@ -196,7 +203,7 @@ docker_ubuntu_repo_info:  #defines docker ubuntu repo info for installing from
   - id: 58118E89F3A912897C070ADBF76221572C52609D
     keyserver: hkp://p80.pool.sks-keyservers.net:80
     repo: "deb https://apt.dockerproject.org/repo {{ ansible_distribution | lower }}-{{ ansible_distribution_release }} main"
-```
+```json
 
 {% endraw %}
 **tasks/debian.yml**
@@ -208,7 +215,7 @@ docker_ubuntu_repo_info:  #defines docker ubuntu repo info for installing from
     repo: "{{ item.repo }}"
     state: present
   with_items: docker_ubuntu_repo_info
-```
+```json
 
 {% endraw %}
 Using these variables will yield the following based on OS.
@@ -219,7 +226,7 @@ Using these variables will yield the following based on OS.
 ```yaml
 {{ ansible_distribution }} will be Ubuntu
 {{ ansible_distribution_release }} will be trusty
-```
+```json
 
 {% endraw %}
 `Debian`:
@@ -228,7 +235,7 @@ Using these variables will yield the following based on OS.
 ```yaml
 {{ ansible_distribution }} will be Debian
 {{ ansible_distribution_release }} will be jessie
-```
+```json
 
 {% endraw %}
 

@@ -6,7 +6,12 @@ tags:
   - KVM
 redirect_from:
   - /kvm-vm-templates
+excerpt: "It has been a minute since I had done any KVM based VMs so I wanted to share some little tidbits on creating your KVM templates. I will be focusing on..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 It has been a minute since I had done any KVM based VMs so I wanted to
 share some little tidbits on creating your KVM templates. I will be

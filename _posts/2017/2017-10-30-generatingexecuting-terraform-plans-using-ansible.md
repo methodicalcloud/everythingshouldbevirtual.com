@@ -8,7 +8,14 @@ tags:
   - Terraform
 redirect_from:
   - /generatingexecuting-terraform-plans-using-ansible
+toc: true
+toc_label: "Contents"
+excerpt: "Recently I have been working on a little project of my own based on provisioning a vSphere environment using Ansible as the primary automation tool. My..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Recently I have been working on a little project of my own based on
 provisioning a [vSphere](https://www.vmware.com/products/vsphere.html)
@@ -119,7 +126,7 @@ pdns_api_vip: "{{ vsphere_lb_vips[0] }}"
 pdns_webserver_port: 8081
 
 vsphere_pri_domain_name: lab.etsbv.internal
-```
+```json
 
 {% endraw %}
 
@@ -265,7 +272,7 @@ variable "vsphere_server" {
 }
 variable "vsphere_username" {}
 variable "vsphere_vcenter_license_key" {}
-```
+```json
 
 {% endraw %}
 
@@ -357,7 +364,7 @@ variable "vsphere_server" {
 }
 variable "vsphere_username" {}
 variable "vsphere_vcenter_license_key" {}
-```
+```json
 
 {% endraw %}
 
@@ -386,7 +393,7 @@ vsphere_host_license_key = ""
 vsphere_password = "{{ vsphere_vcsa_sso_user_info['password'] }}"
 vsphere_username = "{{ vsphere_vcsa_sso_user_info['username'] }}"
 vsphere_vcenter_license_key = ""
-```
+```json
 
 {% endraw %}
 
@@ -398,7 +405,7 @@ vsphere_host_license_key = ""
 vsphere_password = "VMw@re1!"
 vsphere_username = "Administrator@vsphere.local"
 vsphere_vcenter_license_key = ""
-```
+```bash
 
 ## Terraform Data Sources
 
@@ -431,7 +438,7 @@ data "vsphere_network" "net" {
   name = "${var.vsphere_networks[count.index]}"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
-```
+```json
 
 {% endraw %}
 
@@ -454,7 +461,7 @@ provider "vsphere" {
   # if you have a self-signed cert
   allow_unverified_ssl = true
 }
-```
+```json
 
 {% endraw %}
 
@@ -510,7 +517,7 @@ resource "vsphere_folder" "{{ folder['group'] }}" {
 }
 {%   endif %}
 {% endfor %}
-```
+```json
 
 {% endraw %}
 
@@ -554,7 +561,7 @@ resource "vsphere_folder" "docker_swarm_workers" {
   type = "vm"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
-```
+```json
 
 {% endraw %}
 
@@ -602,7 +609,7 @@ resource "vsphere_virtual_machine" "{{ vms['group'] }}" {
   vcpu = {{ vms['vcpu'] }}
 }
 {% endfor %}
-```
+```json
 
 {% endraw %}
 
@@ -690,7 +697,7 @@ resource "vsphere_virtual_machine" "docker_swarm_workers" {
   }
   vcpu = 1
 }
-```
+```json
 
 {% endraw %}
 
@@ -859,7 +866,7 @@ configuration files and then also plan and deploy.
         - terraform_apply
         - terraform_destroy
         - terraform_inventory
-```
+```json
 
 {% endraw %}
 
@@ -900,7 +907,7 @@ you will see how we are accomplishing this.
     - terraform_apply
     - terraform_destroy
     - terraform_inventory
-```
+```json
 
 {% endraw %}
 
@@ -934,7 +941,7 @@ And the `terraform.inv.j2` Jinja2 template might look something like:
 {{ value['primary']['attributes']['name'] }} ansible_host={{ value['primary']['attributes']['network_interface.0.ipv4_address'] }} mac_address={{ value['primary']['attributes']['network_interface.0.mac_address'] }} uuid={{ value['primary']['attributes']['uuid'] }}
 {%   endif %}
 {% endfor %}
-```
+```json
 
 {% endraw %}
 And once we generate our inventory with Ansible it might look a little

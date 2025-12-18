@@ -1,7 +1,12 @@
 ---
   title: PowerCLI -- Change vSphere iSCSI Path Selection
   date: 2014-01-22 19:16:55
+excerpt: "Here is just a quick PowerCLI script to change all of your iSCSI datastores to \"Round Robin\" path selection. The default path selection for all..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Here is just a quick PowerCLI script to change all of your iSCSI
 datastores to "Round Robin" path selection. The default path selection

@@ -7,7 +7,12 @@
     - Docker
   redirect_from:
     - /docker-creating-alpine-image-ansible-installed
+excerpt: "As I am experimenting with Docker images and finding the right combination which works well for me the majority of the time. I have finally put..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 As I am experimenting with [Docker](https://www.docker.com) images and finding
 the right combination which works well for me the majority of the time. I have
@@ -24,7 +29,7 @@ for us.
 
 `Dockerfile`
 
-```bash
+```dockerfile
 FROM alpine:3.4
 
 MAINTAINER Larry Smith Jr. <mrlesmithjr@gmail.com>

@@ -1,7 +1,12 @@
 ---
   title: Super Router - PFsense & Untangle
   date: 2012-10-15 15:47:34
+excerpt: "I have been using Astaro/Sophos for the past 2 years and really like it. But I have gotten to the point where the 50 IP license restriction is getting..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I have been using Astaro/Sophos for the past 2 years and really like it.
 But I have gotten to the point where the 50 IP license restriction is
@@ -55,4 +60,4 @@ screenshot of what the vSphere Standard Switch setup might look like,
 which include the "Crossover" network inside of the vSwitch without
 any physical NICS.
 
-\[![](../../assets/10-59-09-239x300.png "10-59-09")
+\[![10-59-09](../../assets/10-59-09-239x300.png )

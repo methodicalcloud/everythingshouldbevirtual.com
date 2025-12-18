@@ -1,7 +1,12 @@
 ---
   title: vSphere 5.1 - Migrating standard switches (VSS) to distributed switches (VDS) using new web ui
   date: 2012-09-13 21:15:47
+excerpt: "Here is a quick walk-through on the process of migrating standard vSwitches (VSS) to distributed switches (VDS) using the new web ui in vSphere 5.1. In..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Here is a quick walk-through on the process of migrating standard
 vSwitches (VSS) to distributed switches (VDS) using the new web ui in

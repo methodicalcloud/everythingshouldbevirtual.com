@@ -1,6 +1,11 @@
 ---
   title: "ELK Stack demo - #vBrownBag"
+excerpt: "Watch the #vBrownBag session I did to get an idea of some of the possibilities you can achieve using ELK stack."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Watch the [#vBrownBag](https://twitter.com/hashtag/vbrownbag) session I did to get an idea of some of the possibilities you can achieve using ELK stack.
 

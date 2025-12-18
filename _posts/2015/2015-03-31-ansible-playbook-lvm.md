@@ -1,6 +1,11 @@
 ---
   title: Ansible Playbook - LVM
+excerpt: "In spending the past few weeks learning a ton about Ansible (after creating 30+ playbooks and roles - Some very complex :) more goodness coming soon..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In spending the past few weeks learning a ton about Ansible (after
 creating 30+ playbooks and roles - Some very complex :)  more goodness

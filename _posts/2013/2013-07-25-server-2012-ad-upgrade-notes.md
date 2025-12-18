@@ -1,7 +1,12 @@
 ---
   title: Server 2012 AD Upgrade Notes
   date: 2013-07-25 19:34:55
+excerpt: "So I am in the process of going through an Active Directory 2008 R2 upgrade to Server 2012 which has been going very smooth so far. So far I have..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 So I am in the process of going through an Active Directory 2008 R2
 upgrade to Server 2012 which has been going very smooth so far. So far I

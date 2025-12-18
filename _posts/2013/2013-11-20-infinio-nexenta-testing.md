@@ -1,7 +1,14 @@
 ---
   title: Infinio Install - Nexenta Testing
   date: 2013-11-20 07:00:20
+toc: true
+toc_label: "Contents"
+excerpt: "Recently I had the opportunity to speak with Infinio at VMWorld and then again at the Atlanta VMUG about their new product which at the time was Pre-GA..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Recently I had the opportunity to speak with [Infinio](http://www.infinio.com/ "http\://www.infinio.com/") at VMWorld and then again at the Atlanta VMUG about
 their new product which at the time was Pre-GA but it was a very interesting

@@ -1,7 +1,12 @@
 ---
   title: SSO Server Unavailable Using Web UI
   date: 2013-03-24 10:43:55
+excerpt: "I just ran into this issue. Tried to login to vSphere 5.1 web ui and received the \"SSO Server Unavailable\". I tried restarting the vCenter Single Sign..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I just ran into this issue. Tried to login to vSphere 5.1 web ui and
 received the "SSO Server Unavailable". I tried restarting the vCenter

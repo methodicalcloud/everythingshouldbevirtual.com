@@ -1,7 +1,12 @@
 ---
   title: Back to PFsense I go
   date: 2012-11-06 11:07:28
+excerpt: "So after 2 years that I have been using Astaro/Sophos for my firewall I have gone back to PFsense. Do not get me wrong, but I do really like..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 So after 2 years that I have been using Astaro/Sophos for my firewall I
 have gone back to PFsense. Do not get me wrong, but I do really like

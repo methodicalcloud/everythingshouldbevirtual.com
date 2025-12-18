@@ -5,6 +5,7 @@ categories:
   - Virtualization
 tags:
   - VMware Workstation
+excerpt: "Well, this was a fun exercise. While building out some VMs to execute Packer image builds for vSphere, I installed VMware Workstation via Ansible and..."
 ---
 
 Well, this was a fun exercise. While building out some VMs to execute Packer

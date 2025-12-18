@@ -1,7 +1,12 @@
 ---
 title: Solarwinds Web UI Issues with Google Chrome
 date: 2014-03-24 07:00:45
+excerpt: "So in the past few days, I have witnessed on two different environments when trying to connect to certain components of Solarwinds using Google Chrome..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 So in the past few days, I have witnessed on two different environments
 when trying to connect to certain components of Solarwinds using Google

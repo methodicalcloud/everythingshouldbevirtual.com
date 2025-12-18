@@ -1,7 +1,12 @@
 ---
   title: Veeam P4K Snapshot Backups and Recovery Video
   date: 2013-03-08 16:35:19
+excerpt: "In this video I will show you how to setup Veeam to use snapshots from an HP P4000 SAN. This is using the SAN Infrastructure module within Veeam 6.5."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In this video I will show you how to setup Veeam to use snapshots from
 an HP P4000 SAN. This is using the SAN Infrastructure module within

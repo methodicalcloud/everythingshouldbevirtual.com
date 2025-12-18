@@ -1,6 +1,11 @@
 ---
   title: "Sneak Peak #1 - Upcoming Project"
+excerpt: "I have been working on a new project for the past few weeks and it has been coming along very nice. I wanted to share some screenshots for everyone to..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I have been working on a new project for the past few weeks and it has
 been coming along very nice. I wanted to share some screenshots for

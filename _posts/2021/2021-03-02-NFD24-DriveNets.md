@@ -1,6 +1,7 @@
 ---
 title: NFD24 - DriveNets
 date: 02-03-2021 09:00:00
+excerpt: "Recently I had the privilege to attend NFD 24 in which DriveNets presented. I had never heard of them until this event. Which I am shaming myself for..."
 ---
 
 Recently I had the privilege to attend [NFD 24](https://techfieldday.com/event/nfd24/)

@@ -1,7 +1,12 @@
 ---
   title: Suricata IDS/IPS VMXNET3
   date: 2014-10-04
+excerpt: "As part of a bigger post coming soon I have been using Suricata IDS and my Logstash server has been getting hammered and unable to keep up (running a..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 As part of a bigger post coming soon I have been using [Suricata IDS](http://suricata-ids.org/ "http\://suricata-ids.org/")
 and my Logstash server has been getting hammered and unable to keep up (running

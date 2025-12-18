@@ -5,6 +5,7 @@ categories:
   - Automation
 tags:
   - Ansible
+excerpt: "Recently I had an interesting issue when using Ansible Blocks in a playbook which was skipping tasks within the block itself. I had no idea that this..."
 ---
 
 ## Ansible Blocks With Conditionals

@@ -6,7 +6,12 @@
     - Ansible
   redirect_from:
     - /ansible-parsing-csv-list-hosts-ip-hostnames-mac
+excerpt: "Recently I had a need to take an already populated spreadsheet which contained a list of hostnames, generic names, IP addresses and MAC addresses and..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Recently I had a need to take an already populated spreadsheet which
 contained a list of hostnames, generic names, IP addresses and MAC

@@ -1,7 +1,12 @@
 ---
   title: Veeam Backup and Replication v7
   date: 2013-08-21 16:45:42
+excerpt: "As you may or may not be aware of is that Veeam Backup and Replication v7 was released last week. I am definitely looking forward to getting into the..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 As you may or may not be aware of is that [Veeam](http://www.veeam.com "http\://www.veeam.com")
 Backup and Replication v7 was released last week. I am definitely looking forward

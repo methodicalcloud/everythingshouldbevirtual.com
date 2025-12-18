@@ -1,7 +1,12 @@
 ---
   title: Latest Happenings
   date: 2013-05-23 08:30:23
+excerpt: "I have been working on a ton of things lately without many posts. One big reason for this is that I have been working a lot with Openstack. This has..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I have been working on a ton of things lately without many posts. One
 big reason for this is that I have been working a lot with

@@ -1,7 +1,12 @@
 ---
   title: vSphere 5.5 - Enable SNMP
   date: 2014-01-28 14:54:19
+excerpt: "I am going through setting up Solarwinds Virtual Manager and needed to enable SNMP on my vSphere 5.5 hosts. So the service set to automatically start..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I am going through setting up Solarwinds Virtual Manager and needed to
 enable SNMP on my vSphere 5.5 hosts. So the service set to automatically

@@ -1,6 +1,11 @@
 ---
   title: Ansible - Installing open-vm-tools
+excerpt: "Just sharing this out in case someone else may be looking for a way to install open-vm-tools for Ubuntu or CentOS and wants to ensure that only virtual..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Just sharing this out in case someone else may be looking for a way to
 install open-vm-tools for Ubuntu or CentOS and wants to ensure that only

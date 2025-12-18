@@ -1,7 +1,14 @@
 ---
   title: Ubuntu 12.04 Graylog2 Installation
   date: 2013-03-26 17:20:35
+toc: true
+toc_label: "Contents"
+excerpt: "I recently wanted to check out Graylog2 for gathering syslog messages because I have heard good things about it. Well the issue was that I was not able..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I recently wanted to check out [Graylog2 ](http://graylog2.org/home "http\://graylog2.org/home")
 for gathering syslog messages because I have heard good things about it.
@@ -167,7 +174,7 @@ running. (Reference screenshot below command window)
 
 ```bash
 sudo netstat -ltnp
-```
+```sql
 
 ![Screenshot from 2014-02-21 14:50:17](../../assets/Screenshot-from-2014-02-21-145017-300x78.png)
 
@@ -261,7 +268,7 @@ console.
 tar zxvf install_graylog2.tar.gz
 chmod +x install_graylog2.sh
 nano install_graylog2.sh
-```
+```bash
 
 Change x.x.x.x to whatever your ip address is of the server you are installing
 on or let the script auto detect your IP for you. The default is auto detect.
@@ -567,7 +574,7 @@ echo "@mrlesmithjr"
 ```bash
 chmod +x install_graylog2.sh
 ./install_graylog2.sh
-```
+```bash
 
 Once the script completes connect to the ip/hostname of your Graylog2
 server with your favorite browser and create your first login account.

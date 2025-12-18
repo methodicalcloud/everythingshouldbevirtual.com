@@ -1,6 +1,13 @@
 ---
   title: Ansible Playbook - GlusterFS - Apache
+toc: true
+toc_label: "Contents"
+excerpt: "I wanted to share some of these playbooks for reference to others who may be attempting to do something similar. Overall I am setting up some Ubuntu..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I wanted to share some of these playbooks for reference to others who
 may be attempting to do something similar. Overall I am setting up some
@@ -222,7 +229,7 @@ Below is the playbook for the configuration of lvm.
 - name: config_lvm | config | resizing filesystem
   command: resize2fs /dev/{{ resize_vgname }}/{{ resize_lvname }}
   when: resize and config_lvm
-```
+```json
 
 {% endraw %}
 
@@ -256,7 +263,7 @@ Below is the playbook for the initial GlusterFS setup.
 - name: debian | config | enabling glusterfs-server
   service: name=glusterfs-server enabled=yes
   when: glusterfs_server
-```
+```json
 
 {% endraw %}
 

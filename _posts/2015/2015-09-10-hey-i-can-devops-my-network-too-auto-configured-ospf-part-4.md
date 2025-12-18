@@ -6,7 +6,14 @@
     - Ansible
   redirect_from:
     - /hey-i-can-devops-my-network-too-auto-configured-ospf-part-4
+toc: true
+toc_label: "Contents"
+excerpt: "In the last post we spun up (Vagrant Up) our environment. So at this point we are ready to start exploring and seeing how easy it is to bring up OSPF..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In the last
 [post](https://everythingshouldbevirtual.com/hey-i-can-devops-my-network-too-vagrant-up-part-3)

@@ -6,7 +6,14 @@
     - Vagrant
   redirect_from:
     - /vagrant-multi-nic-definitions-via-yaml
+toc: true
+toc_label: "Contents"
+excerpt: "I am currently working on a little routing project to use as a learning tool for others to easily consume by using Vagrant and Ansible (Inspired by..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I am currently working on a little routing project to use as a learning
 tool for others to easily consume by using Vagrant and Ansible (Inspired

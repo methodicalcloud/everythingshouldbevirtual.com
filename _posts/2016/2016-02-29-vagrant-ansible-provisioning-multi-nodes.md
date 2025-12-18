@@ -8,7 +8,12 @@
     - Vagrant
   redirect_from:
     - /vagrant-ansible-provisioning-multi-nodes
+excerpt: "I am just throwing this out here for my own reference because I seem to always forget how to do this when spinning up multiple nodes within a Vagrant..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I am just throwing this out here for my own reference because I seem to
 always forget how to do this when spinning up multiple nodes within a

@@ -3,7 +3,12 @@ title: Installing Veeam Backup and Replication
 date: 2013-02-05 16:48:11
 toc: true
 toc_label: "Installation Steps"
+excerpt: "In this post we will be installing the Backup and Replication server components. This is a fairly straight forward installation with very minimal setup..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In this post we will be installing the Backup and Replication server
 components. This is a fairly straight forward installation with very

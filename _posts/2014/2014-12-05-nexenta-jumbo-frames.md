@@ -1,7 +1,12 @@
 ---
   title: Nexenta Jumbo Frames
   date: 2014-12-05
+excerpt: "I Wanted to go through and enable jumbo frames for my lab iSCSI storage which is running on Nexenta CE (For about 4 years now). So how do you do this?..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I Wanted to go through and enable jumbo frames for my lab iSCSI storage
 which is running on Nexenta CE (For about 4 years now). So how do you do

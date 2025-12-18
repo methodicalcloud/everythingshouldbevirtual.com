@@ -5,6 +5,7 @@ categories:
   - Virtualization
 tags:
   - VMware
+excerpt: "Over the past week I have been working on a streamlined process to deploy nested ESXi 6.7 via automation tooling. Going through this I came across an..."
 ---
 
 Over the past week I have been working on a streamlined process to deploy

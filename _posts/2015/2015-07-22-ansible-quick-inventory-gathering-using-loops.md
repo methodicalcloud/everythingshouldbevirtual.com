@@ -1,6 +1,11 @@
 ---
   title: Ansible - Quick Inventory Gathering using loops
+excerpt: "I came across this today looking through the Ansible Google groups. The OP wanted something that would output something like below into separate files..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I came across this today looking through the Ansible Google groups. The
 OP wanted something that would output something like below into separate

@@ -1,7 +1,12 @@
 ---
   title: vCenter Server 5.1 Heartbeat issue
   date: 2014-06-18
+excerpt: "I ran into this today and thought I would share with anyone else who runs into this."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I ran into this today and thought I would share with anyone else who
 runs into this.

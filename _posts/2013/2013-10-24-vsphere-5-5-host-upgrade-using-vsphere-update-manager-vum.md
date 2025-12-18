@@ -1,7 +1,12 @@
 ---
 title: vSphere 5.5 Host Upgrade using vSphere Update Manager (VUM)
 date: 2013-10-24 22:00:51
+excerpt: "I am currently going through and upgrading all of my lab environment components to vSphere 5.5 so I figured I would capture a few things as I have been..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I am currently going through and upgrading all of my lab environment
 components to vSphere 5.5 so I figured I would capture a few things as I

@@ -1,6 +1,13 @@
 ---
   title: Ansible - Highly Available ELK Stack
+toc: true
+toc_label: "Contents"
+excerpt: "A little over a year ago I provided installation scripts along with this post to help setup a completely redundant ELK Stack. This post has definitely..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 A little over a year ago I provided installation scripts along with
 [this](https://everythingshouldbevirtual.com/highly-available-elk-elasticsearch-logstash-kibana-setup)
@@ -95,7 +102,7 @@ this file from Github it will not contain much.
   sudo: yes
   roles:
     - bootstrap
-```
+```json
 
 {% endraw %}
 `site.yml`:
@@ -120,7 +127,7 @@ this file from Github it will not contain much.
     - { role: sysdig, when: install_sysdig is defined and install_sysdig }
     - { role: timezone, when: change_timezone }
     - { role: zabbix-agent, when: enable_zabbix_monitoring }
-```
+```json
 
 {% endraw %}
 So you should now clone my Github repo by doing the following into a
@@ -376,7 +383,7 @@ with.
     - logstash
     - haproxy
     - elk-haproxy
-```
+```json
 
 {% endraw %}
 So if all nodes have been provisioned and naming matches the Ansible

@@ -8,7 +8,14 @@
     - Vagrant
   redirect_from:
     - /learning-vagrant-and-ansible-provisioning
+toc: true
+toc_label: "Contents"
+excerpt: "After attending Tech Field Day (#NFD10) there was a great deal of discussion around using Vagrant and Ansible for building out environments and..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 After attending Tech Field Day (#NFD10) there was a great deal of
 discussion around using Vagrant and Ansible for building out

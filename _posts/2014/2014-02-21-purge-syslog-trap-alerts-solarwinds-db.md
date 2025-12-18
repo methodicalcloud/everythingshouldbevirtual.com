@@ -1,7 +1,12 @@
 ---
   title: Purge Syslog and Trap alerts from Solarwinds DB
   date: 2014-02-21 22:28:57
+excerpt: "I was getting overloaded on the number of syslog messages in my Solarwinds DB and needed to purge them. So I wanted to share with other's what MS SQL..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I was getting overloaded on the number of syslog messages in my
 Solarwinds DB and needed to purge them. So I wanted to share with

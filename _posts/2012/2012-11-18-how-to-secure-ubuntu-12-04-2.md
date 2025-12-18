@@ -1,7 +1,12 @@
 ---
   title: How to Secure Ubuntu 12.04
   date: 2012-11-18 14:54:55
+excerpt: "This is just a list of a few tweaks and apps you can use to secure your Ubuntu 12.04 LTS system (These also apply to other versions of Ubuntu). These..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 This is just a list of a few tweaks and apps you can use to secure your
 Ubuntu 12.04 LTS system (These also apply to other versions of Ubuntu).
@@ -39,14 +44,14 @@ Restart sshd
 
 ```bash
 sudo /etc/init.d/ssh restart
-```
+```bash
 
 ## Prevent IP Spoofing
 
 ```bash
 sudo nano /etc/host.conf
 nospoof on #add this line to the end of the file
-```
+```bash
 
 ## Log scanner and banning suspicious hosts
 
@@ -70,7 +75,7 @@ above section on hardening SSH
 
 ```bash
 sudo /etc/init.d/fail2ban restart
-```
+```bash
 
 ## IDS (Intrusion Detection System)
 
@@ -103,7 +108,7 @@ Reload psad
 
 ```bash
 sudo psad -R && sudo psad --sig-update && sudo psad -H_
-```
+```bash
 
 ## Rootkit checking tools
 
@@ -115,7 +120,7 @@ sudo chkrootkit
 sudo rkhunter --update
 sudo rkhunter --propupd
 sudo rkhunter --check
-```
+```bash
 
 ## Log analysis
 

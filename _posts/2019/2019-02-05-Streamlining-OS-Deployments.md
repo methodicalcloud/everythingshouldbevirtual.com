@@ -6,6 +6,7 @@ categories:
 tags:
   - Ansible
   - Packer
+excerpt: "How often do you find yourself maintaining OS images or templates? As most know, this is a tedious process that never ends—spinning up a bare VM,..."
 ---
 > UPDATE: **2023-05-11** - I found this post in my backlog, and it was never published or finished, as you can see. This conversation continues to be something that I regularly have. So, I will leave this post unfinished and eventually publish an updated version or an appendix.
 

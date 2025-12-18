@@ -1,7 +1,12 @@
 ---
   title: IPTables Cluster Script
   date: 2014-09-26
+excerpt: "I have been working on some interesting virtualized networking setups (More on this in another post soon) and needed a way to configure IPTables rules..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I have been working on some interesting virtualized networking setups
 (More on this in another post soon) and needed a way to

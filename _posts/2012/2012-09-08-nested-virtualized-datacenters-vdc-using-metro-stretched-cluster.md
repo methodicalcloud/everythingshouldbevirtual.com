@@ -1,7 +1,12 @@
 ---
   title: Nested Virtualized Datacenters (VDC) using metro stretched cluster
   date: 2012-09-08 09:56:51
+excerpt: "I am currently working on building a 2 datacenter scenario all running under VMware workstation 9. This will include a four node HP P4000 VSA..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I am currently working on building a 2 datacenter scenario all running
 under VMware workstation 9. This will include a four node HP P4000 VSA

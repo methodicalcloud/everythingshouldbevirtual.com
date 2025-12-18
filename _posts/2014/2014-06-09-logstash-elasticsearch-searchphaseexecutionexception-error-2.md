@@ -1,7 +1,12 @@
 ---
   title: Logstash Elasticsearch searchphaseexecutionexception error
   date: 2014-06-09
+excerpt: "In the past few days I have come across the following error on two different instances of Logstash."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In the past few days I have come across the following error on two
 different instances of Logstash.

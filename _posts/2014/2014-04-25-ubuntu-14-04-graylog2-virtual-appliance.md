@@ -1,7 +1,12 @@
 ---
   title: Ubuntu 14.04 Graylog2 Virtual Appliance
   date: 2014-04-25
+excerpt: "I have put together a Graylog2 prebuilt virtual appliance to share with the community. This appliance is built on a fresh Ubuntu 14.04 LTS x64 Server..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I have put together a Graylog2 prebuilt virtual appliance to share with
 the community. This appliance is built on a fresh Ubuntu 14.04 LTS x64

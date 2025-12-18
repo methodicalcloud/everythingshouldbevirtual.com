@@ -1,7 +1,12 @@
 ---
   title: PFSense Snort Logstash
   date: 2014-10-27
+excerpt: "I have been working on getting some detailed logging from Snort logs generated through PFSense and thought I would share them. This can also be..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I have been working on getting some detailed logging from Snort logs
 generated through PFSense and thought I would share them. This can also

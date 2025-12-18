@@ -1,7 +1,12 @@
 ---
   title: vSphere 5.5 Storage Profiles Are Now Storage Policies
   date: 2013-10-28 07:00:23
+excerpt: "I had previously used storage profiles in previous versions of vSphere and went digging for them again after getting my new vSphere 5.5 environment..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I had previously used storage profiles in previous versions of vSphere
 and went digging for them again after getting my new vSphere 5.5

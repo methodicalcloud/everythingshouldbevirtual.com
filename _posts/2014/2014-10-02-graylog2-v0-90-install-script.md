@@ -1,7 +1,12 @@
 ---
   title: Graylog2 v0.90 Install Script
   date: 2014-10-02
+excerpt: "In the past I have been updating the auto install scripts for Graylog2 and updating the original post each time. However here on out I will be creating..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In the past I have been updating the auto install scripts for Graylog2
 and updating the original post each time. However here on out I will be

@@ -1,6 +1,11 @@
 ---
   title: "Tech Field Day - #VFD4 - Platform9"
+excerpt: "Last week at Tech Field Day - #VFD4 in Austin, TX I had the pleasure of seeing Platform9 for the first time and I was extremely impressed on what they..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 ![Screen Shot 2015-01-23 at 10.07.23 AM](../../assets/Screen-Shot-2015-01-23-at-10.07.23-AM-300x181.png)
 

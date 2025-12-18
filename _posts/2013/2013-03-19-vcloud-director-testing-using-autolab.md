@@ -1,7 +1,12 @@
 ---
   title: vCloud Director Testing Using Autolab
   date: 2013-03-19 21:04:46
+excerpt: "I will be spending a while testing out Autolab v1.1 to do some vCloud Director testing. I checked out Autolab v1 a few months back and it was awesome...."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I will be spending a while testing out Autolab v1.1 to do some vCloud
 Director testing. I checked out Autolab v1 a few months back and it was

@@ -1,6 +1,11 @@
 ---
   title: Ansible - Generate Rundeck Inventory
+excerpt: "I have been doing some testing with Jenkins and Rundeck along with Ansible lately. I wanted a way to number one not have to manually update..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I have been doing some testing with Jenkins and Rundeck along with
 Ansible lately. I wanted a way to number one not have to manually update

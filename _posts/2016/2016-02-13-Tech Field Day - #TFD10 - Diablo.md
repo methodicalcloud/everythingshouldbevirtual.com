@@ -1,6 +1,11 @@
 ---
   title: "Tech Field Day - #TFD10 - Diablo"
+excerpt: "While attending Tech Field Day 10 a little over a week ago one of the presenters was Diablo Technologies and they spoke about their product Memory1. I..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 While attending Tech Field Day 10 a little over a week ago one of the
 presenters was [Diablo Technologies](http://www.diablo-technologies.com/) and

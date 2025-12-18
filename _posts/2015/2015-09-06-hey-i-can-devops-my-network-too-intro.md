@@ -6,7 +6,12 @@
     - Ansible
   redirect_from:
     - /hey-i-can-devops-my-network-too-intro
+excerpt: "This will be the introduction to a multi-post series on some different methodologies that you too can use everyday either to learn, test or develop..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 This will be the introduction to a multi-post series on some different
 methodologies that you too can use everyday either to learn, test or

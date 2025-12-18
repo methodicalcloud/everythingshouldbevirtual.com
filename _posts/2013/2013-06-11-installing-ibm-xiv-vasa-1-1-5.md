@@ -1,7 +1,14 @@
 ---
   title: Installing IBM XIV Utilities for vCenter 5.1
   date: 2013-06-11 19:54:46
+toc: true
+toc_label: "Contents"
+excerpt: "In a previous post I went through the installation of the IBM XIV VASA version 1.1.1 which was a windows based installation. The VASA provides a lot of..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In a previous [post](https://everythingshouldbevirtual.com/using-ibm-xiv-and-vsphere5-you-need-to-install-the-vasa-and-management-console-for-vcenter "http\://everythingshouldbevirtual.com/using-ibm-xiv-and-vsphere5-you-need-to-install-the-vasa-and-management-console-for-vcenter") I went through the installation of the IBM XIV VASA version
 1.1.1 which was a windows based installation. The VASA provides a lot of good
@@ -58,7 +65,7 @@ you extracted the files run the following:
 
 ```bash
 rpm -ivh *.rpm
-```
+```sql
 
 If you see the following errors running the above command reference the
 failed dependency package to install further up in this post.

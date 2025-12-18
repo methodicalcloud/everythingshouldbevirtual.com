@@ -1,6 +1,11 @@
 ---
   title: Ansible - Elasticsearch Curator Cron
+excerpt: "Just wanted to put this together as I was finally just able to get this working with the newest version of curator. The syntax has changed quite a bit..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Just wanted to put this together as I was finally just able to get this
 working with the newest version of curator. The syntax has changed quite

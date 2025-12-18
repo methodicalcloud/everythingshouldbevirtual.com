@@ -1,7 +1,12 @@
 ---
   title: VMware makes frenemies at OpenStack, but what's in it for IT?
   date: 2012-10-01 11:10:55
+excerpt: "Looks like it is going to get interesting for sure. I really personally hope VMware does actually start contributing to OpenStack. It would be a huge..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Looks like it is going to get interesting for sure. I really personally
 hope VMware does actually start contributing to OpenStack. It would be a

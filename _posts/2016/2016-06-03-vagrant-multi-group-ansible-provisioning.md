@@ -8,7 +8,12 @@
     - Vagrant
   redirect_from:
     - /vagrant-multi-group-ansible-provisioning
+excerpt: "As I continue to develop different scenario testing I continually try to leverage a common Vagrantfile across scenarios while only having to adjust..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 As I continue to develop different scenario testing I continually try to
 leverage a common Vagrantfile across scenarios while only having to

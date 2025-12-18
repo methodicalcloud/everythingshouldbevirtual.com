@@ -77,9 +77,9 @@ social:
 
 # Analytics
 analytics:
-  provider: false # false (default), "google", "google-universal", "google-gtag", "custom"
+  provider: "google-gtag" # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
-    tracking_id: "UA-17857029-3"
+    tracking_id: "UA-17857029-3"  # Note: Consider upgrading to GA4 (G-XXXXXXXXXX) as UA was sunset July 2023
     anonymize_ip: # true, false (default)
 
 # Site Author

@@ -6,7 +6,12 @@
     - Ansible
   redirect_from:
     - /ansible-2-3-1-sshpass-error
+excerpt: "As you may or may not be aware, Ansible 2.3.1.0 was recently released. After installing Ansible 2.3.1.0 in my Python virtual environment I immediately..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 As you may or may not be aware, **Ansible 2.3.1.0** was recently
 released. After installing **Ansible 2.3.1.0** in my Python virtual
