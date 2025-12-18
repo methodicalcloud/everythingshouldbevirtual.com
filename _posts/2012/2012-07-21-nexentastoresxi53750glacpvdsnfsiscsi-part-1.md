@@ -156,8 +156,7 @@ Age of the Port-channel = 02d:04h:59m:33s\
 Logical slot/port = 10/2 Number of ports = 2\
 HotStandBy port = null\
 Port state = Port-channel Ag-Inuse\
-**Protocol = LACP**
-
+### Protocol = LACP
 Ports in the Port-channel:
 
 \--More\--  Index Load Port EC state No of bits\

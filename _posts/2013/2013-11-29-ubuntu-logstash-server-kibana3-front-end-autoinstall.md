@@ -8,6 +8,9 @@ excerpt: "I have been using Graylog2 and VMware Log Insight for some time now an
 {: .notice--warning}
 
 
+> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
+
 I have been using Graylog2 and VMware Log Insight for some time now and
 wanted to try out Logstash finally. So the first thing that I wanted to
 do was create an automated script to do most of the install and
@@ -101,8 +104,7 @@ HAProxy VIP and if your device supports sending via TCP, use it.
 Reference the port list below on setting up some of the devices that are
 pre-configured during the setup.
 
-**Port List**
-
+### Port List
 -   TCP/514 Syslog (Devices supporting TCP)
 -   UDP/514 Syslog (Devices that do not support TCP)
 -   TCP/1514 VMware ESXi
@@ -172,3 +174,11 @@ Interested in a highly available setup? Go
 [here](https://everythingshouldbevirtual.com/highly-available-elk-elasticsearch-logstash-kibana-setup "Highly Available ELK (Elasticsearch, Logstash and Kibana) Setup") and
 checkout the Highly Available ELK (Elasticsearch, Logstash and Kibana)
 setup.
+
+---
+
+### Related Posts
+
+- [2014-10-24-vmware-nsx-firewall-logging-logstash](/vmware-nsx-firewall-logging-logstash/)
+- [2014-06-09-logstash-elasticsearch-searchphaseexecutionexception-error-2](/logstash-elasticsearch-searchphaseexecutionexception-error-2/)
+- [2014-10-09-ip-reputation-lookups-logstash](/ip-reputation-lookups-logstash/)

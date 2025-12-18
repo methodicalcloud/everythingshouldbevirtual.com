@@ -17,3 +17,11 @@ goes on and will be hosted on GitHub.
 {% gist mrlesmithjr/571ff9764a601efdb493 %}
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-11-29-ubuntu-logstash-server-kibana3-front-end-autoinstall](/ubuntu-logstash-server-kibana3-front-end-autoinstall/)
+- [2014-10-24-vmware-nsx-firewall-logging-logstash](/vmware-nsx-firewall-logging-logstash/)
+- [2014-06-09-logstash-elasticsearch-searchphaseexecutionexception-error-2](/logstash-elasticsearch-searchphaseexecutionexception-error-2/)

@@ -10,6 +10,9 @@ excerpt: "I wrote this guide a few days ago and this solution worked great. But 
 {: .notice--warning}
 
 
+> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
+
 I wrote [this](https://everythingshouldbevirtual.com/super-router-pfsense-untangle/ "http\://everythingshouldbevirtual.com/super-router-pfsense-untangle/")
 guide a few days ago and this solution worked great. But what if you
 want to have more control of your threat management and build your own.

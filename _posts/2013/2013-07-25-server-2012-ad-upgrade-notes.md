@@ -33,3 +33,11 @@ through this upgrade process. So stay tuned.
 > decommissioning it.
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)
+- [2015-04-07-ansible-sneak-peak-of-something-coming-soon](/ansible-sneak-peak-of-something-coming-soon/)

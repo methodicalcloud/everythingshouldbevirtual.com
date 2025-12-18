@@ -10,6 +10,9 @@ excerpt: "So it has been a while since I have built a TFTP server and the opport
 {: .notice--warning}
 
 
+> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
+
 So it has been a while since I have built a TFTP server and the
 opportunity came up to do this again to do some ESXi deployments. I
 wanted the ability to do interactive installations as well as fully

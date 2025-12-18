@@ -8,6 +8,9 @@ excerpt: "I am currently working on building a 2 datacenter scenario all running
 {: .notice--warning}
 
 
+> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
+
 I am currently working on building a 2 datacenter scenario all running
 under VMware workstation 9. This will include a four node HP P4000 VSA
 multi-site cluster, four ESXi5 hosts, vCenter, and two PFsense firewalls

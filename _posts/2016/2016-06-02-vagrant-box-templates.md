@@ -207,3 +207,11 @@ So there you have it...Just find the environment that you would like to
 spin up and give it a go.
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2015-09-08-hey-i-can-devops-my-network-too-vagrant-up-part-3](/hey-i-can-devops-my-network-too-vagrant-up-part-3/)
+- [2015-08-27-vagrant-multi-nic-definitions-via-yaml](/vagrant-multi-nic-definitions-via-yaml/)
+- [2015-08-23-learning-vagrant-and-ansible-provisioning](/learning-vagrant-and-ansible-provisioning/)

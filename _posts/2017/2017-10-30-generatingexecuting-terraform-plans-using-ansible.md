@@ -17,6 +17,9 @@ excerpt: "Recently I have been working on a little project of my own based on pr
 {: .notice--warning}
 
 
+> **Version Notice**: This post references Ubuntu 16.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
+
 Recently I have been working on a little project of my own based on
 provisioning a [vSphere](https://www.vmware.com/products/vsphere.html)
 environment using [Ansible](https://www.ansible.com) as the primary
@@ -991,3 +994,11 @@ short while now and it has been incredibly useful. Is it perfect? Of
 course not. I would love to hear your thoughts and etc.
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

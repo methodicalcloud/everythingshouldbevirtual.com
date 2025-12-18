@@ -23,7 +23,7 @@ is directly quoted from their website.
 > non-virtualized servers to a fully operational private cloud in
 > minutes.
 
-**So what does this all mean?**
+### So what does this all mean?
 It means that what they are offering is a managed OpenStack solution.
 This is not a hosted solution but rather they deliver the **core of
 OpenStack, including keystone, nova and glance, as a cloud
@@ -43,7 +43,7 @@ physical infrastructure remains inside the walls of your datacenter.
 Multi-Data centers are supported as well so you can setup availability
 zones.
 
-**How does this work?**
+### How does this work?
 Platform9 provides an installable agent for KVM based hypervisor
 environments or an OVA for vSphere hypervisor environments. Once the
 agent or appliance is deployed the infrastructure begins to be
@@ -63,7 +63,7 @@ your infrastructure as you always have prior to Platform9.
 
 ![Screen Shot 2015-01-23 at 8.33.31 PM](../../assets/Screen-Shot-2015-01-23-at-8.33.31-PM-300x112.png)
 
-**What about OpenStack upgrades?**
+### What about OpenStack upgrades?
 All OpenStack upgrades are handled by Platform9 leaving you without the
 hassle of going through sometimes tedious upgrades. They roll out the
 2nd most recent versions of OpenStack (currently Havana, Juno is coming
@@ -73,7 +73,7 @@ timing is not good for you. During your upgrade window the only thing
 that will be impacted is your Platform9 portal meanwhile all of your
 existing VMs and infrastructure remain running.
 
-**Pricing (at the time of this post)**
+### Pricing (at the time of this post)
 I personally feel their pricing is extremely fair given what you gain
 from this solution. They even have a free tier (for life). Below is a
 screen grab from their website on pricing. And
@@ -83,7 +83,7 @@ each tier.
 
 ![Screen Shot 2015-01-23 at 10.13.09 PM](../../assets/Screen-Shot-2015-01-23-at-10.13.09-PM-300x99.png)
 
-**Ending thoughts**
+### Ending thoughts
 I personally see many use cases for this model and will be checking out
 more about Platform9 and giving them a test drive. In which I will also
 be providing additional write-ups around my own personal experiences. I

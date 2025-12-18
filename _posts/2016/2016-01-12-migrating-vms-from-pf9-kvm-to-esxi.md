@@ -16,6 +16,9 @@ excerpt: "I have been doing some testing over the past few months of Platform9 r
 {: .notice--warning}
 
 
+> **Version Notice**: This post references Ubuntu 14.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
+
 I have been doing some testing over the past few months of Platform9
 running on top of KVM and I have to admit that it has been a very good
 experience. However because my lab is a little resource lacking I wanted

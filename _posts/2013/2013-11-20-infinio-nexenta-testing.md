@@ -36,8 +36,7 @@ tests without SSD, with SSD, with Infinio without SSD and then finally
 Infinio with SSD. I felt this would be a good test because ZFS
 filesystem really utilizes SSD for ZIL when using NFS vs. iSCSI.
 
-**Testing setup**
-
+### Testing setup
 -   (3) HP DL360 G5 - (2) Quad-Core - 32GB Ram - (6) 1GBE NICS
 -   24TB (12TB Usable - Raid-1) Nexentastor NAS (iSCSI/NFS) - Intel Core
     i5 - 32GB Ram - (3) Supermicro SAS Controllers - (2) Intel 520 SSD
@@ -70,8 +69,7 @@ seeing as Infinio is a read cache accelerator I used a IO load that was
 
 So let's get started.
 
-**Installing Infinio**
-
+### Installing Infinio
 Overall the installation is very simple and straight forward which is
 great. However I ran into some snags up front in regards to my current
 configuration of my vSphere design. I will go into this as well in case
@@ -244,8 +242,7 @@ I thought was pretty funny.
 
 ![19-47-50](../../assets/19-47-50-300x262.png)
 
-**Testing Infinio with Nexenta NFS Datastore**
-
+### Testing Infinio with Nexenta NFS Datastore
 So now for the testing. I want to set the stage here as I had a lot of
 other things going on in my environment and also ran different scenarios
 of testing which lead me to these testing results. Being that Infinio is

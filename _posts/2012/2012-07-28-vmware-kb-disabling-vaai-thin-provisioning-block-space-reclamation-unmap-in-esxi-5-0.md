@@ -21,8 +21,7 @@ Path: /VMFS3/EnableBlockDelete
 
 Type: integer
 
-**Int Value: 0**
-
+### Int Value: 0
 Default Int Value: 0
 
 Min Value: 0

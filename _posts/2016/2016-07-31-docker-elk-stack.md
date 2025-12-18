@@ -464,8 +464,7 @@ CMD ["kibana"]
 ```json
 
 {% endraw %}
-**Using docker-compose**
-
+### Using docker-compose
 And finally if we wanted to spin up the whole stack using docker-compose
 we can do that by creating the following **_docker-compose.yml_** file:
 
@@ -516,8 +515,7 @@ Now fire up your browser of choice and head over to
 And there you have it, you now have a containerized ELK Stack ready for
 you to get creative with your GROKing.
 
-**Creating your own Logstash configuration**
-
+### Creating your own Logstash configuration
 If you would like to change the included **_logstash.conf_** with your
 own you could create your own Logstash configurations and place them in
 the config folder and recreate your own **_Dockerfile_** as such for
@@ -586,3 +584,11 @@ Hope you have enjoyed this post and I definitely look forward to any
 comments, thoughts, or opinions.
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

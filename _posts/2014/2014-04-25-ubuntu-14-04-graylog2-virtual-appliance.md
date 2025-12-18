@@ -8,6 +8,9 @@ excerpt: "I have put together a Graylog2 prebuilt virtual appliance to share wit
 {: .notice--warning}
 
 
+> **Version Notice**: This post references Ubuntu 14.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
+
 I have put together a Graylog2 prebuilt virtual appliance to share with
 the community. This appliance is built on a fresh Ubuntu 14.04 LTS x64
 Server and running the latest Graylog2 v0.20.1. I hope you enjoy this
@@ -34,8 +37,7 @@ and as well watch the video [here](https://everythingshouldbevirtual.com/ubuntu-
 
 Enjoy!
 
-**Details**
-
+### Details
 This is a fully functional Graylog2 syslog server ready for use. This
 appliance is built on a fresh Ubuntu 14.04 LTS x64 server. The version
 of Graylog2 is v0.20.1 which is the latest at this time.

@@ -34,3 +34,11 @@ this is what it contained.
 ![elasticsearch_log](../../assets/elasticsearch_log-300x31.png)
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-11-29-ubuntu-logstash-server-kibana3-front-end-autoinstall](/ubuntu-logstash-server-kibana3-front-end-autoinstall/)
+- [2014-10-24-vmware-nsx-firewall-logging-logstash](/vmware-nsx-firewall-logging-logstash/)
+- [2014-10-09-ip-reputation-lookups-logstash](/ip-reputation-lookups-logstash/)

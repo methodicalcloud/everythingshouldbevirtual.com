@@ -78,3 +78,11 @@ And off you go. I will be adding more functionality to this as time goes
 on but for now this is what I was needing.
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)
+- [2015-04-07-ansible-sneak-peak-of-something-coming-soon](/ansible-sneak-peak-of-something-coming-soon/)

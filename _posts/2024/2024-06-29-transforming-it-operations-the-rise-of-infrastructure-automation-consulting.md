@@ -60,3 +60,11 @@ Observability is critical to modern IT operations, enabling organizations to mon
 ## Conclusion
 
 Infrastructure automation consulting offers a significant advantage by optimizing how IT environments are managed. By embracing automated solutions, companies can enhance their IT agility, reduce costs, and improve overall service quality. Whether you want to streamline data center operations, strengthen network security, or ensure consistent system configurations, infrastructure automation is a key to modern IT efficiency.
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [2015-04-07-ansible-sneak-peak-of-something-coming-soon](/ansible-sneak-peak-of-something-coming-soon/)

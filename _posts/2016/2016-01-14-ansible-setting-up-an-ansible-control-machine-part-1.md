@@ -15,6 +15,9 @@ excerpt: "In this post we will be setting up an Ansible Control Machine to execu
 {: .notice--warning}
 
 
+> **Version Notice**: This post references Ansible 1.9. Current version is 2.16+. Module names, syntax, and best practices have evolved.
+{: .notice--info}
+
 In this post we will be setting up an Ansible Control Machine to execute
 our Ansible tasks from. This server will not have writable access to our
 Git repos so no changes can be made and pushed up. For our Ansible
@@ -1230,3 +1233,11 @@ Feel free to leave feedback as I am interested in hearing from others
 and hopefully this has been useful.
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

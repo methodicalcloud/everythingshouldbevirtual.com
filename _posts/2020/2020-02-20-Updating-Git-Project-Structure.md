@@ -672,3 +672,11 @@ Finally, once you are happy with the state of your new updating-structure bran
 This is an excellent exercise to get the new structure in place. However, initially, it can be daunting, as you may be worried about causing issues. But if you follow these steps, you should be just fine! So, there you have it. I'd love to hear from others on how they go about these types of scenarios and your experiences, so feel free to leave feedback.
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

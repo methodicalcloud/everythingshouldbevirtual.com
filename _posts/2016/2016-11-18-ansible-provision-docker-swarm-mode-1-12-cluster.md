@@ -15,6 +15,9 @@ excerpt: "Lately I have been working quite a bit with the latest Docker Swarm Mo
 {: .notice--warning}
 
 
+> **Version Notice**: This post references Ubuntu 16.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
+
 Lately I have been working quite a bit with the latest Docker Swarm Mode
 released in Docker 1.12 and so far it has been pretty awesome. The days
 of spinning up a Docker Swarm cluster with all of the
@@ -179,3 +182,11 @@ Stay tuned for additional posts coming in the future in regards to some
 additional Docker Swarm mode goodness.
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

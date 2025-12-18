@@ -169,3 +169,11 @@ post-up ethtool -G $IFACE rx 4096; for i in rx tx sg tso ufo gso gro lro; do eth
 Hope this helps someone else out as well.
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-11-29-ubuntu-logstash-server-kibana3-front-end-autoinstall](/ubuntu-logstash-server-kibana3-front-end-autoinstall/)
+- [2014-10-24-vmware-nsx-firewall-logging-logstash](/vmware-nsx-firewall-logging-logstash/)
+- [2014-06-09-logstash-elasticsearch-searchphaseexecutionexception-error-2](/logstash-elasticsearch-searchphaseexecutionexception-error-2/)

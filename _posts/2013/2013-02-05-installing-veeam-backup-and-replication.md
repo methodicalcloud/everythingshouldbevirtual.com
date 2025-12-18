@@ -25,8 +25,7 @@ the above pdf.
 
 ## Hardware Requirements
 
-**Veeam Backup & Replication Server**
-
+### Veeam Backup & Replication Server
 - CPU: any x86/x64 processor.
 - Memory: 4 GB RAM.
 - Hard Disk Space: 2 GB for product installation. 10 GB per 100 VM for
@@ -37,8 +36,7 @@ least 10 GB recommended).
 WAN for off-site backup and replication. High latency links are
 supported, but TCP/IP connection must not drop.
 
-**Backup Proxy Server**
-
+### Backup Proxy Server
 - CPU: modern x86/x64 processor (minimum 2 cores). Using faster multi-core
 processors improves data processing performance, and allows for more
 concurrent jobs.
@@ -49,8 +47,7 @@ data processing performance.
 WAN for off-site backup and replication. High latency links are
 supported, but TCP/IP connection must not drop.
 
-**Backup Repository Server**
-
+### Backup Repository Server
 - CPU: any x86/x64 processor.
 - Memory: 2 GB RAM per concurrent job.
 - Network: 1 Gbps LAN for on-site backup and replication, 1 Mbps or faster

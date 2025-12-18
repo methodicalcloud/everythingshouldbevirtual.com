@@ -8,6 +8,9 @@ excerpt: "So after running this blog on a single server running within an ISPCon
 {: .notice--warning}
 
 
+> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
+
 So after running this blog on a single server running within an
 [ISPConfig](http://www.ispconfig.org/ "http\://www.ispconfig.org/") setup
 for quite some time I have finally redesigned the back-end (it has taken

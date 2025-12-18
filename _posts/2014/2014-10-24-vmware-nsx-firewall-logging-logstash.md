@@ -27,3 +27,11 @@ And here is a quick dashboard view for now.
 ![Screen Shot 2014-10-24 at 5.20.52 PM](../../assets/Screen-Shot-2014-10-24-at-5.20.52-PM-300x143.png)
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-11-29-ubuntu-logstash-server-kibana3-front-end-autoinstall](/ubuntu-logstash-server-kibana3-front-end-autoinstall/)
+- [2014-06-09-logstash-elasticsearch-searchphaseexecutionexception-error-2](/logstash-elasticsearch-searchphaseexecutionexception-error-2/)
+- [2014-10-09-ip-reputation-lookups-logstash](/ip-reputation-lookups-logstash/)

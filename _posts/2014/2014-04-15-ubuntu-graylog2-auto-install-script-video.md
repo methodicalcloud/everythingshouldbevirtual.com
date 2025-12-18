@@ -8,6 +8,9 @@ excerpt: "I wanted to throw together a video real quick to demonstrate how easy 
 {: .notice--warning}
 
 
+> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
+
 I wanted to throw together a video real quick to demonstrate how easy
 Graylog2 can be installed using my Ubuntu auto-install script. This
 video will augment the

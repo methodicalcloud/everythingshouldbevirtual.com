@@ -8,6 +8,9 @@ excerpt: "This is just a list of a few tweaks and apps you can use to secure you
 {: .notice--warning}
 
 
+> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
+
 This is just a list of a few tweaks and apps you can use to secure your
 Ubuntu 12.04 LTS system (These also apply to other versions of Ubuntu).
 These are definitely worth implementing on any system that may be

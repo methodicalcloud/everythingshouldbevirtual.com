@@ -40,8 +40,7 @@ individual files for specific variables instead of placing all of them
 in a single group_vars/all file. But of course you may choose to do
 differently.
 
-**UPDATE - 04-17-2016**
-
+### UPDATE - 04-17-2016
 As you work through this setup it has come to my attention that this
 post is extremely out of date. So YMMV as you attempt to install ELK. I
 intend on publishing a more current post on setting up ELK which in most
@@ -450,3 +449,11 @@ to rely on each and everyone of your valuable input in order to make
 this a better solution for all.
 
 As always! Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

@@ -8,6 +8,9 @@ excerpt: "Installing shorewall firewall on Ubuntu 12.04 for a simple single netw
 {: .notice--warning}
 
 
+> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
+
 Installing shorewall firewall on Ubuntu 12.04 for a simple single
 network configuration.
 

@@ -15,6 +15,9 @@ excerpt: "In the last post we defined our nodes to spin up with Vagrant which wi
 {: .notice--warning}
 
 
+> **Version Notice**: This post references Ubuntu 14.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
+
 In the last
 [post](https://everythingshouldbevirtual.com/hey-i-can-devops-my-network-too-define-nodes-part-2)
 we defined our nodes to spin up with Vagrant which will be used from
@@ -913,3 +916,11 @@ all of our nodes. And that concludes this section of the series on
 Vagrant Up.
 
 Next up...[Auto-configured OSPF](https://everythingshouldbevirtual.com/hey-i-can-devops-my-network-too-auto-configured-ospf-part-4)
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

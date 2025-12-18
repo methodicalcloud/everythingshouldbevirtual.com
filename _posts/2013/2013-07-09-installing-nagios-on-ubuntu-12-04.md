@@ -8,6 +8,9 @@ excerpt: "This is just a quick Nagios setup guide for installing on Ubuntu. This
 {: .notice--warning}
 
 
+> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
+
 This is just a quick Nagios setup guide for installing on Ubuntu. This
 will get you up and running quickly. May create a github script at some
 point to auto install.

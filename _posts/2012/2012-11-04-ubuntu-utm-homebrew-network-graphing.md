@@ -8,6 +8,9 @@ excerpt: "In this previous post we setup the initial UTM (Unified Threat Managem
 {: .notice--warning}
 
 
+> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
+
 In [this](https://everythingshouldbevirtual.com/ubuntu-utm-homebrew "http\://everythingshouldbevirtual.com/ubuntu-utm-homebrew") previous post we
 setup the initial UTM (Unified Threat Management). In this quick guide we will
 be setting up network traffic graphing. We want to be able to see the types and

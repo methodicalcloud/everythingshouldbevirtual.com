@@ -8,6 +8,9 @@ excerpt: "In my testing so far I have decided to throw this together as a valid 
 {: .notice--warning}
 
 
+> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
+
 In my testing so far I have decided to throw this together as a valid
 scenario which could be a good solution, but obviously open to
 additional feedback and testing. And I know I am not the first to do

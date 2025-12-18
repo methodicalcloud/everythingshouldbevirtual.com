@@ -13,6 +13,9 @@ excerpt: "I recently rebuilt my lab NAS hosts with Ubuntu 16.04 and used ZFS for
 {: .notice--warning}
 
 
+> **Version Notice**: This post references Ubuntu 16.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
+
 I recently rebuilt my lab NAS hosts with Ubuntu 16.04 and used ZFS for
 the storage pools (once again). In doing it this time around I wanted to
 get a good method of leveraging ZFS snapshots and replicating them for

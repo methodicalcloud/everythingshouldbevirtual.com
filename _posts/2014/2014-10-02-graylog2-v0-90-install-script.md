@@ -8,6 +8,9 @@ excerpt: "In the past I have been updating the auto install scripts for Graylog2
 {: .notice--warning}
 
 
+> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
+
 In the past I have been updating the auto install scripts for Graylog2
 and updating the original post each time. However here on out I will be
 creating new posts for each release in hopes of keeping it much cleaner.

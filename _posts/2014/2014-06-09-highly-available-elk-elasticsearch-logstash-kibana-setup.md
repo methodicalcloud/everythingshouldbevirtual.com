@@ -10,6 +10,9 @@ excerpt: "In this post I will be going over how to setup a complete ELK (Elastic
 {: .notice--warning}
 
 
+> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
+
 In this post I will be going over how to setup a complete ELK
 (Elasticsearch, Logstash and Kibana) stack with clustered elasticsearch
 and all ELK components load balanced using HAProxy. I will be setting up
@@ -21,11 +24,11 @@ and adding the additional node info to the HAProxy configuration files
 to load balance. You can also scale the Elasticsearch Master/Data nodes
 by building out addtional nodes and they will join the cluster.
 
-**Acronyms throughout article**
+### Acronyms throughout article
 ELK - Elasticsearch Logstash Kibana
 ES - Elasticsearch
 
-**Requirements:**
+### Requirements:
 In order for all logstash-elasticsearch clustering to work correctly all
 HAProxy nodes and ELK nodes should be on the same subnet (If not you
 will need to configure unicast mode for Elasticsearch as multicast is
@@ -58,7 +61,7 @@ If you decide to use different node names than the above list then you
 will need to make sure to make changes to the configurations to reflect
 these changes.
 
-**HAProxy Nodes (haproxy-1, haproxy-2):**
+### HAProxy Nodes (haproxy-1, haproxy-2):
 Setup both HAProxy nodes identical all the way down to the ELK stack
 setup section. The below instructions which have been crossed out are no
 longer valid but will remain in the off chance that you would like to
@@ -77,8 +80,7 @@ Now we will need to configure networking on each nodes as follows.
 sudo apt-get install haproxy keepalived
 ```
 
-**HAProxy-1 (Primary)**
-
+### HAProxy-1 (Primary)
 ```bash
 sudo nano /etc/network/interfaces
 ```
@@ -86,8 +88,7 @@ sudo nano /etc/network/interfaces
 Overwrite the contents with the code from below.
 {% gist mrlesmithjr/1a52e824f22ced8e6758 %}
 
-**HAProxy-2 (Failover)**
-
+### HAProxy-2 (Failover)
 ```bash
 sudo nano /etc/network/interfaces
 ```
@@ -274,7 +275,7 @@ onto the next section of setting up your ELK stack. You could also clone
 the first node to create the second node but if you do; make sure to
 make the proper change in keepalived.conf and haproxy.cfg as above.
 
-**ES (Elasticsearch Master/Data Nodes (es-1, es-2):**
+### ES (Elasticsearch Master/Data Nodes (es-1, es-2):
 Now we will be setting up our two nodes to build our Elasticsearch
 cluster and again I have a script to do this. These nodes will only be
 Master/Data nodes. They will not be doing any logstash processing. They
@@ -330,8 +331,7 @@ ES_HEAP_SIZE=2g
 
 Now proceed onto setting up the frontend ELK nodes.
 
-**ELK (Elasticsearch, Logstash and Kibana) Nodes (logstash-1, logstash-2):**
-
+### ELK (Elasticsearch, Logstash and Kibana) Nodes (logstash-1, logstash-2):
 Now we are ready to set up our ELK frontend nodes and again I have a
 script to make this process repeatable and simple. For now we will only
 be setting up two ELK nodes; however you can build out as many as you
@@ -401,7 +401,7 @@ type of setup will bring great results!)
 Reference the port list below on configuring some of the devices that
 are pre-configured during the setup.
 
-**Port List**
+### Port List
 _TCP/514_ Syslog (Devices supporting TCP)
 _UDP/514_ Syslog (Devices that do not support TCP - These are captured
 on the HAProxy nodes and shipped to logstash using redis)
@@ -413,7 +413,7 @@ _TCP/3515_ Windows Eventlog (Use NXLog setup from below in device
 setup)
 _TCP/3525_ Windows IIS Logs (Use NXLog setup from below in device setup)
 
-**Device Setup**
+### Device Setup
 For _Windows_ (IIS,Eventlog and VMware vCenter logging)
 install [nxlog ](http://nxlog.org/ "http\://nxlog.org/")and use the
 following nxlog.conf file below to replace everything in C:\\Program
@@ -547,8 +547,7 @@ down access into the ES nodes forcing access through the nginx proxy and
 HAProxy Load Balancers mitigating access directly to an ES node. This
 will all be in a follow up post very soon.
 
-**Follow up posts**
-
+### Follow up posts
 [Setup all ELK components to work in unicast mode instead of mutlicast discovery mode.](https://everythingshouldbevirtual.com/highly-available-elk-elasticsearch-logstash-kibana-unicast-mode "Highly Available ELK (Elasticsearch, Logstash and Kibana) Unicast Mode")
 
 Here is a quick screenshot of performance from the marvel plugin just
@@ -571,3 +570,11 @@ see how we can help.
 > **If you are looking for a way of deploying this using Ansible head
 > over
 > [here](https://everythingshouldbevirtual.com/ansible-highly-available-elk-stack).**
+
+---
+
+### Related Posts
+
+- [2013-11-29-ubuntu-logstash-server-kibana3-front-end-autoinstall](/ubuntu-logstash-server-kibana3-front-end-autoinstall/)
+- [2014-10-24-vmware-nsx-firewall-logging-logstash](/vmware-nsx-firewall-logging-logstash/)
+- [2014-06-09-logstash-elasticsearch-searchphaseexecutionexception-error-2](/logstash-elasticsearch-searchphaseexecutionexception-error-2/)

@@ -10,6 +10,9 @@ excerpt: "So for the past 4 years or so I have been running Nexenta 3.x for my l
 {: .notice--warning}
 
 
+> **Version Notice**: This post references Ubuntu 14.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
+
 So for the past 4 years or so I have been running Nexenta 3.x for my lab
 NAS; which has been working great, but I was at a point of having to
 rebuild my latest build to get the new 4.x Nexenta. With that I finally
