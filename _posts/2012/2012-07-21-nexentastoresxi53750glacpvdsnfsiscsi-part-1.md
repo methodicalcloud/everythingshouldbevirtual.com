@@ -1,6 +1,8 @@
 ---
   title: Nexentastor/ESXi5/3750G/LACP/VDS/NFS/iSCSI - Part 1
   date: 2012-07-21 09:55:35
+toc: true
+toc_label: "Contents"
 ---
 
 So I have been using

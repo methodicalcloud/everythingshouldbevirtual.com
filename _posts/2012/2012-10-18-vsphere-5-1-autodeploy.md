@@ -1,6 +1,8 @@
 ---
   title: vSphere 5.1 AutoDeploy
   date: 2012-10-18 18:25:36
+toc: true
+toc_label: "Contents"
 ---
 
 In this guide we will be installing, configuring and using the
@@ -157,16 +159,16 @@ the dump collector.
 
 To configure using Host Profiles:
 
-1.  Connect to vCenter Server using the vSphere Client.
-2.  Click Home and select Host Profiles.
-3.  Create or edit a host profile.
-4.  Select Networking Configuration.
-5.  Select Network Coredump Settings.
-6.  Specify the VMkernel network interface to use for outbound traffic,
+1. Connect to vCenter Server using the vSphere Client.
+2. Click Home and select Host Profiles.
+3. Create or edit a host profile.
+4. Select Networking Configuration.
+5. Select Network Coredump Settings.
+6. Specify the VMkernel network interface to use for outbound traffic,
     such as `vmk0`.
-7.  Specify the IP address and UDP port number of the remote network
+7. Specify the IP address and UDP port number of the remote network
     coredump server.
-8.  Save and apply the host profile.
+8. Save and apply the host profile.
 
 Within vCenter create your datacenter and create the HA cluster and give
 it a name. We will be using "HA-DRS" for the cluster name.

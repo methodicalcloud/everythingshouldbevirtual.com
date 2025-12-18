@@ -1,6 +1,8 @@
 ---
-  title: Installing Veeam Backup and Replication
-  date: 2013-02-05 16:48:11
+title: Installing Veeam Backup and Replication
+date: 2013-02-05 16:48:11
+toc: true
+toc_label: "Installation Steps"
 ---
 
 In this post we will be installing the Backup and Replication server
@@ -16,104 +18,115 @@ First off read the minimum requirements and FAQ
 Or just read below for the hardware requirements which were copied from
 the above pdf.
 
+## Hardware Requirements
+
 **Veeam Backup & Replication Server**
-Hardware
-CPU: any x86/x64 processor.
-Memory: 4 GB RAM.
-Hard Disk Space: 2 GB for product installation. 10 GB per 100 VM for
+
+- CPU: any x86/x64 processor.
+- Memory: 4 GB RAM.
+- Hard Disk Space: 2 GB for product installation. 10 GB per 100 VM for
 guest file system catalog folder (persistent data). Sufficient free disk
 space for Instant VM Recovery cache folder (non-persistent data, at
 least 10 GB recommended).
-Network: 1 Gbps LAN for on-site backup and replication, 1 Mbps or faster
+- Network: 1 Gbps LAN for on-site backup and replication, 1 Mbps or faster
 WAN for off-site backup and replication. High latency links are
 supported, but TCP/IP connection must not drop.
 
-**Backup Proxy Server
-**Hardware
-CPU: modern x86/x64 processor (minimum 2 cores). Using faster multi-core
+**Backup Proxy Server**
+
+- CPU: modern x86/x64 processor (minimum 2 cores). Using faster multi-core
 processors improves data processing performance, and allows for more
 concurrent jobs.
-Memory: 2 GB RAM per concurrent job. Using faster memory (DDR3) improves
+- Memory: 2 GB RAM per concurrent job. Using faster memory (DDR3) improves
 data processing performance.
-Hard Disk Space: 300 MB.
-Network: 1 Gbps LAN for on-site backup and replication, 1 Mbps or faster
+- Hard Disk Space: 300 MB.
+- Network: 1 Gbps LAN for on-site backup and replication, 1 Mbps or faster
 WAN for off-site backup and replication. High latency links are
 supported, but TCP/IP connection must not drop.
 
-**Backup Repository Server
-**Hardware
-CPU: any x86/x64 processor.
-Memory: 2 GB RAM per concurrent job.
-Network: 1 Gbps LAN for on-site backup and replication, 1 Mbps or faster
+**Backup Repository Server**
+
+- CPU: any x86/x64 processor.
+- Memory: 2 GB RAM per concurrent job.
+- Network: 1 Gbps LAN for on-site backup and replication, 1 Mbps or faster
 WAN for off-site backup and replication. Unreliable, high latency links
 with packet loss are supported, but TCP/IP connection must not drop
 completely.
 
-In this scenario we will be using a Windows 2008 R2  x64 server to
+## Installation
+
+In this scenario we will be using a Windows 2008 R2 x64 server to
 install on.
 
 Let's get started.
 
-Launch installation
-program![](../../assets/ATAYUdfwOcnRAAAAAElFTkSuQmCC)
+Launch installation program:
 
-![](../../assets/4I3WMEKH8AH8AGdD1iB4YABPoAP4AP4QNs+8P9yeL8dfC8IHgAAAABJRU5ErkJggg==)
+![Veeam Installation Step 1](/assets/veeam-2013/veeam-install-01.png)
 
-![](../../assets/wCw6GpB4NtZvgAAAABJRU5ErkJggg==)
+![Veeam Installation Step 2](/assets/veeam-2013/veeam-install-02.png)
 
-![](../../assets/7rt9YThXnO+AAAAAElFTkSuQmCC)![](../../assets/0Jo3uShUGBAAAAAElFTkSuQmCC)
+![Veeam Installation Step 3](/assets/veeam-2013/veeam-install-03.png)
+
+![Veeam Installation Step 4](/assets/veeam-2013/veeam-install-04.png)
+
+![Veeam Installation Step 5](/assets/veeam-2013/veeam-install-05.png)
 
 Download and browse to your trial license file.
 
-![](../../assets/wPDFcUfQTp9+gAAAABJRU5ErkJggg==)
+![Veeam Installation Step 6](/assets/veeam-2013/veeam-install-06.png)
 
-![](../../assets/o14LsAAAAAElFTkSuQmCC)
+![Veeam Installation Step 7](/assets/veeam-2013/veeam-install-07.png)
 
-![](../../assets/x8Ib1ne2vQhVgAAAABJRU5ErkJggg==)
+![Veeam Installation Step 8](/assets/veeam-2013/veeam-install-08.png)
 
-![](../../assets/+bCffChSB4SAAAAAElFTkSuQmCC)
+![Veeam Installation Step 9](/assets/veeam-2013/veeam-install-09.png)
 
-![](../../assets/wUA5gJzBEAAAAAElFTkSuQmCC)![](../../assets/Hx+VP2Cx2ZaoAAAAAElFTkSuQmCC)
+![Veeam Installation Step 10](/assets/veeam-2013/veeam-install-10.png)
 
-![](../../assets/D7ie8uRgu0gAEYgAEYGAoDo6E0hHYwKGEABmAABmAgzADGvzQsEiChEQzAAAzAwFAY+P89ezKHApjscwAAAABJRU5ErkJggg==)
+![Veeam Installation Step 11](/assets/veeam-2013/veeam-install-11.png)
 
-![](../../assets/0HAzDQBgNIHsmTwcMADMAADBTKAJIvtGPbyADZB5UEDMAADPSbASSP5MngYQAGYAAGCmXgJMnzCMjRPAKSuBJXGIABGICBLhiQp0DqJ979fwZubtZE3jr2AAAAAElFTkSuQmCC)
+![Veeam Installation Step 12](/assets/veeam-2013/veeam-install-12.png)
 
-![](../../assets/6UgYoA5QBysAYZaCFPAENKAOUAcoAZYAysLwy8P8B5HesKcbM99sAAAAASUVORK5CYII=)
+![Veeam Installation Step 13](/assets/veeam-2013/veeam-install-13.png)
+
+![Veeam Installation Step 14](/assets/veeam-2013/veeam-install-14.png)
 
 Now that the installation is complete launch the app.
 
-![](../../assets/w+37YmNoNM3CQAAAABJRU5ErkJggg==)
+![Veeam Installation Step 15](/assets/veeam-2013/veeam-install-15.png)
+
+## Configuring Your First Backup Job
 
 Now we will configure our first backup job to run.
 
-![](../../assets/wfsRDhlx1TlVAAAAABJRU5ErkJggg==)
+![Veeam Installation Step 16](/assets/veeam-2013/veeam-install-16.png)
 
 Click backup job.
 
-![](../../assets/dHy975eqz0j52spx+taOV81VJbfKIACKIACKNCiArIw8oMCKIACKIACLSvAWtWydWgbCqAACqCAOhlRYlUB71gv5XhdK+fr2L33tJ+TZhiAARiAARiAARiAARiAARiAARiAARiAARiAgT4YUBetjZC1UbL+fph2YD6fL+RfHw2iDsCGARiAARiAARiAARiAARiAARiAARiAARiAARiYIgPqZxWn7KvXJ4tn8gfOVwbDFAcDfYZ7GIABGIABGIABGIABGIABGIABGIABGICBPhnA+fqQK7BPQakLPWEABmAABmAABmAABmAABmAABmAABmAABmAABoQBnK84X3E+wwAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMwAAMDMBA6Hzl281QAAVQAAVQAAVQAAVQAAVQAAVQAAVQAAVQAAVQAAX6U0Byvv4D7dw9oi1+w4wAAAAASUVORK5CYII=)
+![Veeam Installation Step 17](/assets/veeam-2013/veeam-install-17.png)
 
-![](../../assets/B8m6umX8rJIbwAAAABJRU5ErkJggg==)
+![Veeam Installation Step 18](/assets/veeam-2013/veeam-install-18.png)
 
-Click on VMware vSphere
+Click on VMware vSphere:
 
-![](../../assets/HwlzDg+QxzDgAAAAAElFTkSuQmCC)
+![Veeam Installation Step 19](/assets/veeam-2013/veeam-install-19.png)
 
 Enter IP or DNS name for host or enter your vCenter info.
 
-![](../../assets/pgEn2Dbdbi8AAAAASUVORK5CYII=)
+![Veeam Installation Step 20](/assets/veeam-2013/veeam-install-20.png)
 
-![](../../assets/rxIUAAAAAElFTkSuQmCC)
+![Veeam Installation Step 21](/assets/veeam-2013/veeam-install-21.png)
 
-![](../../assets/m2P7thBsCMAAAAABJRU5ErkJggg==)
+![Veeam Installation Step 22](/assets/veeam-2013/veeam-install-22.png)
 
-![](../../assets/wOVYFPqluMbigAAAABJRU5ErkJggg==)
+![Veeam Installation Step 23](/assets/veeam-2013/veeam-install-23.png)
 
-![](../../assets/X+K5GT4P91GeQAAAABJRU5ErkJggg==)
+![Veeam Installation Step 24](/assets/veeam-2013/veeam-install-24.png)
 
 Click add to select which virtual machines you would like to backup.
 
-![](../../assets/9bWwS4Q4x3AAAAAElFTkSuQmCC)
+![Veeam Installation Step 25](/assets/veeam-2013/veeam-install-25.png)
 
 When adding objects to backup you can select data center, cluster,
 hosts, folders, resource pools, datastores or individual virtual
@@ -122,24 +135,24 @@ whatever makes sense and makes this selection process the easiest and
 cleanest as well as something that will capture the virtual machines
 even if they move between any of these objects.
 
-![](../../assets/7rVp3DZ8y2LAAAAAElFTkSuQmCC)
+![Veeam Installation Step 26](/assets/veeam-2013/veeam-install-26.png)
 
-![](../../assets/Jq13Q2ubTdYAAAAASUVORK5CYII=)
+![Veeam Installation Step 27](/assets/veeam-2013/veeam-install-27.png)
 
 Select your backup repository you want to backup to. For information on
 adding a Linux NFS backup repository read
-[this](https://everythingshouldbevirtual.com/veeam-backup-and-replication-to-nexenta-nfs "https\://everythingshouldbevirtual.com/veeam-backup-and-replication-to-nexenta-nfs")article.
+[this](https://everythingshouldbevirtual.com/veeam-backup-and-replication-to-nexenta-nfs) article.
 
-![](../../assets/hQhJGz9IAAAAASUVORK5CYII=)
+![Veeam Installation Step 28](/assets/veeam-2013/veeam-install-28.png)
 
 Select Enable application-aware image processing for servers such as
 Exchange or MS SQL and any other application that uses VSS technology.
 
-![](../../assets/A4yX0R0pnztiAAAAAElFTkSuQmCC)
+![Veeam Installation Step 29](/assets/veeam-2013/veeam-install-29.png)
 
-![](../../assets/HykGHmF6g1v2AAAAAElFTkSuQmCC)
+![Veeam Installation Step 30](/assets/veeam-2013/veeam-install-30.png)
 
-![](../../assets/DlHQMYOBIDBPWavBJUgqqDemEGjrRIGes1Fyl5l3eCek0GCOqF5UQH9ZoXvQVf3jGAgSMxQFCvyStBJag6qBdm4EiLlLFec5GSd3knqNdkgKBeWE50UK950Vvw5R0DGDgSAwT1mrwSVIKqg3phBo60SBnrNRcpeZd3gnpNBggqOSGoGMAABjCAAQxgYCgGCCoghwJSt+SavynLu7xjAAMYwEDIAEElqAQVAxjAAAYwgAEMDMUAQQXkUED6Ddpv0BjAAAYwgAEMzIL6fwHiSOSQnYkArgAAAABJRU5ErkJggg==)
+![Veeam Installation Step 31](/assets/veeam-2013/veeam-install-31.png)
 
 That's all there is to it. Now you are ready to start your backups.
 More posts will follow going over file level restores, full vm restores
