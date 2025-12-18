@@ -1,6 +1,13 @@
 ---
   title: Ansible - KeepAliveD
+toc: true
+toc_label: "Contents"
+excerpt: "In this post I am creating a fictitious tenant using a vars file which looks like below."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In this post I am creating a fictitious tenant using a vars file which
 looks like below.
@@ -58,7 +65,7 @@ lb_defs:
   - { lb_def_name: 'web', protocol: 'tcp', listen_port: '80', tenant_vip: '10.10.10.100', lb_group: 'web', server: 'ans-cloud-web03', backend_port: '80' }
   - { lb_def_name: 'db', protocol: 'tcp', listen_port: '3306', tenant_vip: '10.10.10.100', lb_group: 'db', server: 'ans-cloud-db01', backend_port: '3306' }
   - { lb_def_name: 'db', protocol: 'tcp', listen_port: '3306', tenant_vip: '10.10.10.100', lb_group: 'db', server: 'ans-cloud-db02', backend_port: '3306' }
-```
+```json
 
 {% endraw %}
 
@@ -113,7 +120,7 @@ vrrp_instance Quagga {
   notify_master {{ notify_master_script }}
   notify_backup {{ notify_backup_script }}
 }
-```
+```json
 
 {% endraw %}
 And what you end up with is below
@@ -415,3 +422,11 @@ sync_interfaces: false
 {% endraw %}
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

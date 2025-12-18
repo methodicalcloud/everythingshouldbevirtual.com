@@ -10,7 +10,14 @@
     - ELK
   redirect_from:
     - /docker-elk-stack
+toc: true
+toc_label: "Contents"
+excerpt: "In this post we will be going over setting up a quick and easy way to standup ELK Stack using Docker containers for each of our components required...."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In this post we will be going over setting up a quick and easy way to
 standup ELK Stack using Docker containers for each of our components
@@ -40,7 +47,7 @@ reference and more detail.
 
 `Dockerfile`:
 
-```bash
+```dockerfile
 FROM ubuntu:14.04
 
 MAINTAINER Larry Smith Jr. <mrlesmithjr@gmail.com>
@@ -154,14 +161,14 @@ CMD ["elasticsearch"]
         - 'logs'
         - 'config'
         - 'config/scripts'
-```
+```json
 
 {% endraw %}
 [**Logstash**](https://github.com/mrlesmithjr/docker-ansible-logstash)
 
 `Dockerfile`:
 
-```bash
+```dockerfile
 FROM ubuntu:14.04
 
 MAINTAINER Larry Smith Jr. <mrlesmithjr@gmail.com>
@@ -307,7 +314,7 @@ CMD ["logstash", "agent", "-f", "/etc/logstash/conf.d/"]
         - '$UDPServerRun 514'
         - '$ModLoad imtcp'
         - '$InputTCPServerRun 514'
-```
+```json
 
 {% endraw %}
 
@@ -339,13 +346,13 @@ output {
     hosts => ["http://elasticsearch:9200"]
   }
 }
-```
+```json
 
 [**Kibana**](https://github.com/mrlesmithjr/docker-ansible-kibana)
 
 `Dockerfile`:
 
-```bash
+```dockerfile
 FROM ubuntu:14.04
 
 MAINTAINER Larry Smith Jr. <mrlesmithjr@gmail.com>
@@ -454,11 +461,10 @@ CMD ["kibana"]
         dest: "/opt/kibana/config/kibana.yml"
         regexp: "^# elasticsearch.url: \"http://localhost:9200\""
         replace: "elasticsearch.url: \"http://elasticsearch:9200\""
-```
+```json
 
 {% endraw %}
-**Using docker-compose**
-
+### Using docker-compose
 And finally if we wanted to spin up the whole stack using docker-compose
 we can do that by creating the following **_docker-compose.yml_** file:
 
@@ -509,8 +515,7 @@ Now fire up your browser of choice and head over to
 And there you have it, you now have a containerized ELK Stack ready for
 you to get creative with your GROKing.
 
-**Creating your own Logstash configuration**
-
+### Creating your own Logstash configuration
 If you would like to change the included **_logstash.conf_** with your
 own you could create your own Logstash configurations and place them in
 the config folder and recreate your own **_Dockerfile_** as such for
@@ -518,7 +523,7 @@ example:
 
 `Dockerfile`:
 
-```bash
+```dockerfile
 FROM mrlesmithjr/logstash:latest
 
 COPY config/ /etc/logstash/conf.d
@@ -579,3 +584,11 @@ Hope you have enjoyed this post and I definitely look forward to any
 comments, thoughts, or opinions.
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

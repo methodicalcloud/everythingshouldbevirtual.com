@@ -1,7 +1,12 @@
 ---
   title: New Nexenta Server Test - iSCSI - SSD
   date: 2013-03-13 12:23:05
+excerpt: "I just did a quick test using the VMware IO Analyzer using the same tests that I did here. This test was only using iSCSI with SSD for ZIL/SLOG and..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I just did a quick test using the VMware IO Analyzer using the same
 tests that I did [here](https://everythingshouldbevirtual.com/nexenta-performance-testing-no-ssdssd "http\://everythingshouldbevirtual.com/nexenta-performance-testing-no-ssdssd").

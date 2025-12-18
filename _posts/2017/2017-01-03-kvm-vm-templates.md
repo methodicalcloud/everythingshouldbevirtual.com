@@ -6,14 +6,21 @@ tags:
   - KVM
 redirect_from:
   - /kvm-vm-templates
+excerpt: "It has been a minute since I had done any KVM based VMs so I wanted to share some little tidbits on creating your KVM templates. I will be focusing on..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
+
+> **Version Notice**: This post references Ubuntu 16.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
 
 It has been a minute since I had done any KVM based VMs so I wanted to
 share some little tidbits on creating your KVM templates. I will be
 focusing on Debian/Ubuntu here for now so YMMV.
 
-**Update: 01/07/2017 - CentOS added**
-
+### Update: 01/07/2017 - CentOS added
 First, let's install a few pre-req packages:
 
 ```bash
@@ -81,8 +88,7 @@ And there you have it. A new shiny KVM based Ubuntu template ready for
 cloning. Stay tuned as I will be taking this process further with some
 Ansible automation to fully deploy and etc.
 
-**Update: CentOS Info**
-
+### Update: CentOS Info
 Below you will find the script and ks.cfg files to use with CentOS.
 
 {% gist mrlesmithjr/293d8314c7f08cfc6412e8df40e53a91 %}

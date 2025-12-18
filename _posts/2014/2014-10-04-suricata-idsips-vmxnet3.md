@@ -1,7 +1,12 @@
 ---
   title: Suricata IDS/IPS VMXNET3
   date: 2014-10-04
+excerpt: "As part of a bigger post coming soon I have been using Suricata IDS and my Logstash server has been getting hammered and unable to keep up (running a..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 As part of a bigger post coming soon I have been using [Suricata IDS](http://suricata-ids.org/ "http\://suricata-ids.org/")
 and my Logstash server has been getting hammered and unable to keep up (running
@@ -164,3 +169,11 @@ post-up ethtool -G $IFACE rx 4096; for i in rx tx sg tso ufo gso gro lro; do eth
 Hope this helps someone else out as well.
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-11-29-ubuntu-logstash-server-kibana3-front-end-autoinstall](/ubuntu-logstash-server-kibana3-front-end-autoinstall/)
+- [2014-10-24-vmware-nsx-firewall-logging-logstash](/vmware-nsx-firewall-logging-logstash/)
+- [2014-06-09-logstash-elasticsearch-searchphaseexecutionexception-error-2](/logstash-elasticsearch-searchphaseexecutionexception-error-2/)

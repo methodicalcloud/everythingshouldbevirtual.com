@@ -1,7 +1,12 @@
 ---
   title: Collecting vSphere Syslog Data with Graylog2
   date: 2013-07-14 12:36:42
+excerpt: "Are you looking for a good syslog collector for your environment but not wanting to shell out the money for Splunk or VMware vCenter Log Insight? Not..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Are you looking for a good syslog collector for your environment but not
 wanting to shell out the money for [Splunk](http://www.splunk.com/ "http\://www.splunk.com/")

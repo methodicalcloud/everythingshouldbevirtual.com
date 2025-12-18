@@ -1,7 +1,12 @@
 ---
   title: HP Blogs - Block or file based storage for VMware - The HP Blog Hub
   date: 2012-07-24 19:30:32
+excerpt: "Good session comparing file based vs. block protocols for VMware. I use both depending on the type of workloads that I am using. For a set it and..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Good session comparing file based vs. block protocols for VMware. I use
 both depending on the type of workloads that I am using. For a set it

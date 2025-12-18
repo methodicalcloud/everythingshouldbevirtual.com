@@ -8,7 +8,15 @@
     - Docker
   redirect_from:
     - /ansible-provision-docker-swarm-mode-1-12-cluster
+excerpt: "Lately I have been working quite a bit with the latest Docker Swarm Mode released in Docker 1.12 and so far it has been pretty awesome. The days of..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
+
+> **Version Notice**: This post references Ubuntu 16.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
 
 Lately I have been working quite a bit with the latest Docker Swarm Mode
 released in Docker 1.12 and so far it has been pretty awesome. The days
@@ -87,7 +95,7 @@ docker_swarm_primary_manager: '{{ groups[docker_swarm_managers_ansible_group][0]
 docker_swarm_task_history_limit: '5' # Task history retention limit (default 5)
 docker_swarm_workers_ansible_group: 'docker-swarm-workers'
 docker_swarm_port: "2377"
-```
+```json
 
 {% endraw %}
 
@@ -127,7 +135,7 @@ docker_swarm_primary_manager:
   register: "docker_swarm_manager_token"
   when: >
         inventory_hostname == docker_swarm_primary_manager
-```
+```json
 
 {% endraw %}
 
@@ -174,3 +182,11 @@ Stay tuned for additional posts coming in the future in regards to some
 additional Docker Swarm mode goodness.
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

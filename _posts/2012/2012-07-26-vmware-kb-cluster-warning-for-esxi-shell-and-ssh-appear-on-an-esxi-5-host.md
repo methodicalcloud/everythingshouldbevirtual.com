@@ -1,7 +1,12 @@
 ---
   title: "VMware KB: Cluster warning for ESXi Shell and SSH appear on an ESXi 5 host"
   date: 2012-07-26 16:47:43
+excerpt: "When enabling tech mode (ssh) on an ESXi 5 host you will get a yellow alert on your host....Here is the link on how to disable this alert if you decide..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 When enabling tech mode (ssh) on an ESXi 5 host you will get a yellow
 alert on your host....Here is the link on how to disable this alert if

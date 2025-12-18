@@ -7,7 +7,17 @@
     - VMware
   redirect_from:
     - /migrating-vms-from-pf9-kvm-to-esxi
+toc: true
+toc_label: "Contents"
+excerpt: "I have been doing some testing over the past few months of Platform9 running on top of KVM and I have to admit that it has been a very good experience...."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
+
+> **Version Notice**: This post references Ubuntu 14.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
 
 I have been doing some testing over the past few months of Platform9
 running on top of KVM and I have to admit that it has been a very good
@@ -86,7 +96,7 @@ host.
 
 ```bash
 sudo qemu-img convert -f qcow2 gerrit.qcow2 -O vmdk gerrit.tmp.vmdk -o compat6
-```
+```python
 
 The -o compat6 ensures that we do not split into 2GB disk chunks.
 
@@ -115,7 +125,7 @@ I will be using Tier-3 (NAS01) here.
 cd Tier-3\ \(NAS01\)/
 mkdir gerrit
 cd gerrit
-```
+```python
 
 Now we are ready to import our temp VMDK.
 
@@ -199,7 +209,7 @@ ddb.thinProvisioned = "1"
 ddb.toolsVersion = "2147483647"
 ddb.uuid = "60 00 C2 90 d1 69 8c d2-f6 65 3b 98 be 64 04 5e"
 ddb.virtualHWVersion = "6"
-```
+```python
 
 Now we are ready to use our new VMDK for a newly created ESXi VM. So
 follow your normal process of creating a new VM but specify custom and

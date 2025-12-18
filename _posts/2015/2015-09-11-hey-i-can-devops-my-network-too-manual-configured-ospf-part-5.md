@@ -6,7 +6,14 @@
     - Ansible
   redirect_from:
     - /hey-i-can-devops-my-network-too-manual-configured-ospf-part-5
+toc: true
+toc_label: "Contents"
+excerpt: "In the previous post we setup our OSPF routing topology auto-configured using Ansible. Which works really nice when we already know what our variable..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In the previous [post](https://everythingshouldbevirtual.com/hey-i-can-devops-my-network-too-auto-configured-ospf-part-4) we setup our OSPF routing topology auto-configured using Ansible.
 Which works really nice when we already know what our variable definitions are
@@ -918,3 +925,11 @@ OSPF method. More on this later.
 Enjoy!
 
 Up next...Auto-configured OSPF from Manual-configured OSPF...
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

@@ -6,7 +6,15 @@
     - Ansible
   redirect_from:
     - /ansible-2-3-1-sshpass-error
+excerpt: "As you may or may not be aware, Ansible 2.3.1.0 was recently released. After installing Ansible 2.3.1.0 in my Python virtual environment I immediately..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
+
+> **Version Notice**: This post references Ansible 2.3. Current version is 2.16+. Module names, syntax, and best practices have evolved.
+{: .notice--info}
 
 As you may or may not be aware, **Ansible 2.3.1.0** was recently
 released. After installing **Ansible 2.3.1.0** in my Python virtual
@@ -69,8 +77,7 @@ And sure enough, there it is now.
 
 So now let's attempt to run our Ansible playbook once again.
 
-**SUCCESS!!!!**
-
+### SUCCESS!!!!
 If you happen to be a macOS user and use [Homebrew](https://brew.sh/) you might
 want to do the following instead to make cleanup and etc. easier:
 
@@ -91,3 +98,11 @@ testing? Here is a script to help you with that.
 {% gist mrlesmithjr/8beb3ab7989e5ee3ef61082c9162b564 %}
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

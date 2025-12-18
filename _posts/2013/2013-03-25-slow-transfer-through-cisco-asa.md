@@ -1,7 +1,12 @@
 ---
   title: Slow Transfer Through Cisco ASA
   date: 2013-03-25 14:33:29
+excerpt: "I recently ran into this issue in which transferring files through a Cisco ASA Firewall was extremely slow only in one direction. The transfer would..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I recently ran into this issue in which transferring files through a
 Cisco ASA Firewall was extremely slow only in one direction. The

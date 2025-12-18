@@ -1,7 +1,12 @@
 ---
   title: How to install block based tools for platespin workloads manually
   date: 2012-08-22 10:08:43
+excerpt: "Here is how you can control a reboot required for adding a server workload to platespin which uses block based replication. Highly suggest only using..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Here is how you can control a reboot required for adding a server
 workload to platespin which uses block based replication. Highly suggest

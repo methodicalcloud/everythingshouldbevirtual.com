@@ -6,7 +6,14 @@
     - Ansible
   redirect_from:
     - /ansible-using-set_facts-module
+toc: true
+toc_label: "Contents"
+excerpt: "Today I was writing/updating an Ansible role for installing Cacti monitoring and decided to add the ability to choose the back-end webserver being..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Today I was writing/updating an Ansible role for installing Cacti
 monitoring and decided to add the ability to choose the back-end
@@ -126,7 +133,7 @@ take a look at that task's contents.
   when: >
         ansible_os_family == "RedHat" and
         cacti_webserver_type == "nginx"
-```
+```json
 
 {% endraw %}
 And if we take a look at the above we will see that for each different
@@ -170,7 +177,7 @@ be ready for use. For example:
         recurse: yes
         owner: "{{ cacti_web_owner }}"
         group: "{{ cacti_web_group }}"
-```
+```json
 
 {% endraw %}
 And if we reach a task in which requires a notifier to fire off a
@@ -184,7 +191,7 @@ restart of the webserver service:
         state: present
       notify:
         - 'restart {{ cacti_webserver_handler }}'
-```
+```json
 
 {% endraw %}
 So as you can see this makes for a very nice way to handle defining
@@ -230,3 +237,11 @@ So there you have it. A very good use-case of using the set_facts
 Ansible module.
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

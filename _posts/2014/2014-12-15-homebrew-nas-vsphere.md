@@ -1,7 +1,17 @@
 ---
   title: Homebrew NAS for vSphere
   date: 2014-12-15
+toc: true
+toc_label: "Contents"
+excerpt: "So for the past 4 years or so I have been running Nexenta 3.x for my lab NAS; which has been working great, but I was at a point of having to rebuild..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
+
+> **Version Notice**: This post references Ubuntu 14.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
 
 So for the past 4 years or so I have been running Nexenta 3.x for my lab
 NAS; which has been working great, but I was at a point of having to
@@ -166,7 +176,7 @@ echo "net.core.somaxconn=40000" >> /etc/sysctl.conf
 echo "# how long to keep sockets in fin-wait-2" >> /etc/sysctl.conf
 echo "net.ipv4.tcp_fin_timeout=5" >> /etc/sysctl.conf
 sysctl -p
-```
+```bash
 
 #### ZFS
 
@@ -603,7 +613,7 @@ To restart
 
 ```bash
 sudo restart_nfs.sh
-```
+```bash
 
 #### iSCSI
 
@@ -623,7 +633,7 @@ First we will create a block device to use for our iSCSI target device.
 
 ```bash
 sudo zfs create -sp -V 100GB HD-Pool/vmware/iSCSI/datastore_1
-```
+```bash
 
 Now if we list our ZFS datasets we should have the following.
 

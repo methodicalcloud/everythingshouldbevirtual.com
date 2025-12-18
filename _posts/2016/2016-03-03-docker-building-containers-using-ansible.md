@@ -8,7 +8,14 @@
     - Docker
   redirect_from:
     - /docker-building-containers-using-ansible
+toc: true
+toc_label: "Contents"
+excerpt: "Have you thought about building Docker containers using some Ansible role(s) or playbook(s) you may already be using for your regular automated..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Have you thought about building Docker containers using some Ansible
 role(s) or playbook(s) you may already be using for your regular
@@ -63,7 +70,7 @@ playbook.yml
   roles:
     - role: ansible-mysql
   tasks:
-```
+```json
 
 {% endraw %}
 requirements.yml
@@ -75,7 +82,7 @@ requirements.yml
 
 And our Dockerfile to build from (Using Ansible)
 
-```bash
+```dockerfile
 FROM ubuntu:14.04
 
 MAINTAINER Larry Smith Jr. <mrlesmithjr@gmail.com>
@@ -121,7 +128,7 @@ docker build -t mysql-ansible .
 Now if we do a standard Docker install without using Ansible using the
 below Dockerfile
 
-```bash
+```dockerfile
 FROM ubuntu:14.04
 
 MAINTAINER Larry Smith Jr. <mrlesmithjr@gmail.com>
@@ -178,7 +185,7 @@ I am very interested in your thoughts and perspecitves.
 
 Using the following Dockerfile...
 
-```bash
+```dockerfile
 FROM ubuntu:14.04
 
 MAINTAINER Larry Smith Jr. <mrlesmithjr@gmail.com>
@@ -246,3 +253,11 @@ And as you can see from above we indeed saved 132MB installing Ansible
 via apt using their ppa repository.
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

@@ -1,7 +1,12 @@
 ---
   title: Supermicro AOC-USAS2-L8i IT mode
   date: 2013-03-18 21:12:49
+excerpt: "In order to get this SAS controller to work with Nexenta/ZFS you first need to flash the firmware to enable IT mode. This allows the disks to be..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In order to get this SAS controller to work with Nexenta/ZFS you first
 need to flash the firmware to enable IT mode. This allows the disks to

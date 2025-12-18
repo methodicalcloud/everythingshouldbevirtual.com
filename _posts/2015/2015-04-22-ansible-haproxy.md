@@ -1,6 +1,13 @@
 ---
   title: Ansible - HAProxy
+toc: true
+toc_label: "Contents"
+excerpt: "In this previous post I setup KeepAliveD using a fictitious tenant using Ansible. In this post I will be building upon that same configuration and..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In
 [this](https://everythingshouldbevirtual.com/ansible-keepalived "Ansible – KeepAliveD")
@@ -91,7 +98,7 @@ lb_defs:
   - { lb_def_name: 'rabbitmq', protocol: 'tcp', listen_port: '5672', tenant_vip: '{{ app_vip }}', lb_group: 'rabbitmq', server: 'ans-cloud-app01', backend_port: '5672' }
   - { lb_def_name: 'rabbitmq', protocol: 'tcp', listen_port: '5672', tenant_vip: '{{ app_vip }}', lb_group: 'rabbitmq', server: 'ans-cloud-app02', backend_port: '5672' }
   - { lb_def_name: 'rabbitmq', protocol: 'tcp', listen_port: '5672', tenant_vip: '{{ app_vip }}', lb_group: 'rabbitmq', server: 'ans-cloud-app03', backend_port: '5672' }
-```
+```json
 
 {% endraw %}
 Below is the `haproxy.cfg.j2` template that I will use.
@@ -177,7 +184,7 @@ listen {{ tenant_name }}_{{ lb_group_def.name }}-{{ lb_group_def.tenant_vip }}:{
 {% endif %}
 {% endfor %}
 {% endfor %}
-```
+```json
 
 {% endraw %}
 And below is what we end up with as an haproxy.cfg for our setup by
@@ -571,3 +578,11 @@ sync_interfaces: false
 ```
 
 {% endraw %}
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

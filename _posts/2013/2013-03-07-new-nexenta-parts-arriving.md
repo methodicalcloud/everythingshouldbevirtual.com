@@ -1,7 +1,12 @@
 ---
   title: New Nexenta parts arriving
   date: 2013-03-07 11:11:06
+excerpt: "Yesterday the boxes started showing up which contain the parts of what will become my new Nexenta storage. I am still waiting on more parts to arrive..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Yesterday the boxes started showing up which contain the parts of what
 will become my new Nexenta storage. I am still waiting on more parts to

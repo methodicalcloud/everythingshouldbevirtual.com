@@ -1,7 +1,12 @@
 ---
   title: Graylog2 Streams via Email
   date: 2013-08-02 23:11:02
+excerpt: "I was recently asked how to get emails working from streams you have created within the Graylog2 web ui. Seeing as I had done this just recently I..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I was recently asked how to get emails working from streams you have
 created within the Graylog2 web ui. Seeing as I had done this just

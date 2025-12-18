@@ -1,7 +1,15 @@
 ---
   title: Installing Nagios on Ubuntu 12.04
   date: 2013-07-09 19:29:32
+excerpt: "This is just a quick Nagios setup guide for installing on Ubuntu. This will get you up and running quickly. May create a github script at some point to..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
+
+> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
 
 This is just a quick Nagios setup guide for installing on Ubuntu. This
 will get you up and running quickly. May create a github script at some

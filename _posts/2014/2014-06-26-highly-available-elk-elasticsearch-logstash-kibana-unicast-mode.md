@@ -1,7 +1,14 @@
 ---
   title: Highly Available ELK (Elasticsearch, Logstash and Kibana) Unicast Mode
   date: 2014-06-26
+toc: true
+toc_label: "Contents"
+excerpt: "In the previous post Setup\") we setup the complete ELK stack from top to bottom. And everything should be working as needed; however one thing you will..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In the previous [post](https://everythingshouldbevirtual.com/highly-available-elk-elasticsearch-logstash-kibana-setup "Highly Available ELK (Elasticsearch, Logstash and Kibana) Setup")
 we setup the complete ELK stack from top to bottom. And everything should
@@ -19,8 +26,7 @@ required and restart all services.
 
 So to switch over to unicast mode we will need to do the following.
 
-**ES (Elasticsearch Master/Data Nodes (es-1, es-2):**
-
+### ES (Elasticsearch Master/Data Nodes (es-1, es-2):
 On each of your ES Master/Data nodes from a terminal session change the
 following settings. (Remember that if you used different hostnames/IPs
 your settings will be different)
@@ -63,8 +69,7 @@ You should see successful discovery of your cluster and an elected
 master node. So if all went well you will now need to proceed to each of your ELK
 frontend nodes.
 
-**ELK (Elasticsearch, Logstash and Kibana) Nodes (logstash-1, logstash-2):**
-
+### ELK (Elasticsearch, Logstash and Kibana) Nodes (logstash-1, logstash-2):
 On each of your ELK frontend nodes from a terminal session change the
 following settings.
 
@@ -216,3 +221,11 @@ your different nodes outside of the same subnet as well as allow you to
 add additional nodes in different subnets.
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-11-29-ubuntu-logstash-server-kibana3-front-end-autoinstall](/ubuntu-logstash-server-kibana3-front-end-autoinstall/)
+- [2014-10-24-vmware-nsx-firewall-logging-logstash](/vmware-nsx-firewall-logging-logstash/)
+- [2014-06-09-logstash-elasticsearch-searchphaseexecutionexception-error-2](/logstash-elasticsearch-searchphaseexecutionexception-error-2/)

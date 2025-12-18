@@ -1,7 +1,12 @@
 ---
   title: New Nexenta Server Coming Soon
   date: 2013-03-04 12:58:01
+excerpt: "I just ordered all new parts that will be here this week. I will be replacing my current setup with this. Definitely looking forward to lots more..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I just ordered all new parts that will be here this week. I will be
 replacing my current setup with this. Definitely looking forward to lots

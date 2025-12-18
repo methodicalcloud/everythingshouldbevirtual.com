@@ -1,6 +1,7 @@
 ---
 title: "Transforming IT Operations - The Rise of Infrastructure Automation Consulting"
 date: 2024-06-29
+excerpt: "As IT environments grow in complexity and scale, efficiently managing these intricate systems has become a critical challenge for many businesses. This..."
 ---
 As IT environments grow in complexity and scale, efficiently managing these intricate systems has become a critical challenge for many businesses. This is where infrastructure automation consulting plays a pivotal role. While I no longer function directly as an automation engineer, I lead automation engineers on various projects, guiding them to implement cutting-edge solutions that streamline and enhance IT operations. After a hiatus of over three years from blogging, I'm excited to share the transformative impact of infrastructure automation consulting and how it can revolutionize IT infrastructure management based on my recent experiences and advancements in the field.
 
@@ -59,3 +60,11 @@ Observability is critical to modern IT operations, enabling organizations to mon
 ## Conclusion
 
 Infrastructure automation consulting offers a significant advantage by optimizing how IT environments are managed. By embracing automated solutions, companies can enhance their IT agility, reduce costs, and improve overall service quality. Whether you want to streamline data center operations, strengthen network security, or ensure consistent system configurations, infrastructure automation is a key to modern IT efficiency.
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [2015-04-07-ansible-sneak-peak-of-something-coming-soon](/ansible-sneak-peak-of-something-coming-soon/)

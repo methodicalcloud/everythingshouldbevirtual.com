@@ -1,7 +1,12 @@
 ---
   title: vSphere 5.1 Network Designs
   date: 2013-05-17 19:30:42
+excerpt: "I will be adding some vSphere 5.1 Network Design ideas in this post. I will be updating it as I create additional scenarios. These designs are based..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I will be adding some vSphere 5.1 Network Design ideas in this post. I
 will be updating it as I create additional scenarios. These designs are

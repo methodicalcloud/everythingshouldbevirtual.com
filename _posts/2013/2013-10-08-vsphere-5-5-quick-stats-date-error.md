@@ -1,7 +1,12 @@
 ---
   title: vSphere 5.5 Quick Stats Not Up to Date Error
   date: 2013-10-08 10:30:24
+excerpt: "I have seen this error since I upgraded to vSphere 5.5 last week. There is a kb article here on how to fix this. According to this kb article this is a..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I have seen this error since I upgraded to vSphere 5.5 last week. There
 is a kb article
@@ -21,7 +26,7 @@ Open putty and ssh to your vCSA and execute the following.
 cd /etc/vmware-vpx/
 cp vpxd.cfg vpxd.cfg.orig
 vim vpxd.cfg
-```
+```sql
 
 Now scroll down to the line before \</vpxd> and insert the following
 code from the kb article referenced above.

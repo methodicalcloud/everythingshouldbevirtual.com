@@ -1,7 +1,12 @@
 ---
   title: vSphere 5.1 Data Protection Appliance
   date: 2012-09-21 16:19:01
+excerpt: "I just installed and configured the new vSphere 5.1 VDP appliance. Very easy installation and integrates well and works very well. But of course I am..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I just installed and configured the new vSphere 5.1 VDP appliance. Very
 easy installation and integrates well and works very well. But of course

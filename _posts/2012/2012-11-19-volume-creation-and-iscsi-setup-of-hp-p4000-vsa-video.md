@@ -1,7 +1,12 @@
 ---
   title: Volume Creation and iSCSI Setup of HP P4000 VSA -- Video
   date: 2012-11-19 11:02:26
+excerpt: "In this video we will be creating a volume on the P4000 VSA to be used as an iSCSI volume for our ESXi hosts to use as a datastore. In a previous video..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In this video we will be creating a volume on the P4000 VSA to be used
 as an iSCSI volume for our ESXi hosts to use as a datastore. In a

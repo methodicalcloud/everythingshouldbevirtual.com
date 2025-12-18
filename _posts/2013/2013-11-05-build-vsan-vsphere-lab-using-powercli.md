@@ -1,7 +1,12 @@
 ---
   title: Build vSAN vSphere Lab using PowerCLI
   date: 2013-11-05 13:28:32
+excerpt: "Here is my first contribution as far as any PowerCLI scripts go. I am myself just learning finally so I will share with everyone as I am learning...."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Here is my first contribution as far as any PowerCLI scripts go. I am
 myself just learning finally so I will share with everyone as I am

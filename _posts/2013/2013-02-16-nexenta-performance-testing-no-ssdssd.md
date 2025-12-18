@@ -1,7 +1,12 @@
 ---
   title: Nexenta Performance Testing No-SSD/SSD
   date: 2013-02-16 12:03:22
+excerpt: "In this post I will be testing Disk IO without SSD for L2ARC and ZIL/SLOG and then again with SSD for L2ARC and ZIL/SLOG. I will be using the VMware..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In this post I will be testing Disk IO without SSD for L2ARC and
 ZIL/SLOG and then again with SSD for L2ARC and ZIL/SLOG. I will be using

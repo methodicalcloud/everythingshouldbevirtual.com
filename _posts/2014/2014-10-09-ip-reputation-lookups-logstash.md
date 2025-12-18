@@ -1,7 +1,12 @@
 ---
   title: IP Reputation Lookups with Logstash
   date: 2014-10-09
+excerpt: "I had a great question yesterday about how to configure Logstash to integrate IP reputation lookups within Logstash and Kibana without having to copy..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I had a great question yesterday about how to configure Logstash to
 integrate IP reputation lookups within Logstash and Kibana without
@@ -86,3 +91,11 @@ So that is it and you should be able to apply this same method to other
 types of parsing as you see fit.
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-11-29-ubuntu-logstash-server-kibana3-front-end-autoinstall](/ubuntu-logstash-server-kibana3-front-end-autoinstall/)
+- [2014-10-24-vmware-nsx-firewall-logging-logstash](/vmware-nsx-firewall-logging-logstash/)
+- [2014-06-09-logstash-elasticsearch-searchphaseexecutionexception-error-2](/logstash-elasticsearch-searchphaseexecutionexception-error-2/)

@@ -1,7 +1,12 @@
 ---
   title: Using Veeam for office relocations
   date: 2013-07-23 16:59:59
+excerpt: "Here is a great scenario for using Veeam Backup and Replication when relocating a branch office. Say you have a remote office that contains a rather..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Here is a great scenario for using Veeam Backup and Replication when
 relocating a branch office. Say you have a remote office that contains a

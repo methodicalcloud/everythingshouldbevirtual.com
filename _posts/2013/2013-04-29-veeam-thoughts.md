@@ -1,7 +1,12 @@
 ---
   title: Veeam thoughts
   date: 2013-04-29 16:22:35
+excerpt: "I have now been using Veeam Backup and Replication for a few months now and have to say it is a really amazing solution. During this time my thoughts..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I have now been using [Veeam](http://www.veeam.com/cloud-backup-vmware-hyper-v.html?utm_source=everythingshould&utm_medium=banner&utm_campaign=cloudbackup "http\://www.veeam.com/cloud-backup-vmware-hyper-v.html?utm_source=everythingshould&utm_medium=banner&utm_campaign=cloudbackup") Backup and Replication for a few months now and have to say it
 is a really amazing solution. During this time my thoughts along the way have

@@ -1,7 +1,12 @@
 ---
   title: vCenter Infrastructure Navigator (VIN) Error
   date: 2013-11-18 07:00:11
+excerpt: "I was just poking around in my vCenter WebUI and happened to run into something wrong with vCenter Infrastructure Navigator. I was getting an error..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I was just poking around in my vCenter WebUI and happened to run into
 something wrong with vCenter Infrastructure Navigator. I was getting an

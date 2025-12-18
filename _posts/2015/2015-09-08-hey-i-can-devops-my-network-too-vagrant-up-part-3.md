@@ -6,7 +6,17 @@
     - Ansible
   redirect_from:
     - /hey-i-can-devops-my-network-too-vagrant-up-part-3
+toc: true
+toc_label: "Contents"
+excerpt: "In the last post we defined our nodes to spin up with Vagrant which will be used from here on out during our series. In this post we will actually be..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
+
+> **Version Notice**: This post references Ubuntu 14.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
 
 In the last
 [post](https://everythingshouldbevirtual.com/hey-i-can-devops-my-network-too-define-nodes-part-2)
@@ -310,7 +320,7 @@ to be committed.
       delegate_to: localhost
       sudo: false
       when: update_host_vars is defined and update_host_vars
-```
+```json
 
 {% endraw %}
 And with all of this out of the way you may be asking "What is this
@@ -906,3 +916,11 @@ all of our nodes. And that concludes this section of the series on
 Vagrant Up.
 
 Next up...[Auto-configured OSPF](https://everythingshouldbevirtual.com/hey-i-can-devops-my-network-too-auto-configured-ospf-part-4)
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

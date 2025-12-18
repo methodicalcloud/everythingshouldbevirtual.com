@@ -1,7 +1,12 @@
 ---
   title: VMTurbo releases their latest 4.5 version
   date: 2014-01-29 18:46:10
+excerpt: "VMTurbo is a great product in regards to overall health of your virtual environments. Their product assists in identifying where improvements can be..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 [VMTurbo](http://vmturbo.com/ "http\://vmturbo.com/") is a great product
 in regards to overall health of your virtual environments. Their product

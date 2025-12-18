@@ -1,7 +1,12 @@
 ---
   title: NexentaStor 4 Beta
   date: 2012-12-20 16:06:17
+excerpt: "I just downloaded and installed the NexentaStor 4 Beta which is based on illumos. Definitely looking forward to this new release in the near future...."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I just downloaded and installed the NexentaStor 4 Beta which is based on
 [illumos](http://wiki.illumos.org/ "http\://wiki.illumos.org/"). 

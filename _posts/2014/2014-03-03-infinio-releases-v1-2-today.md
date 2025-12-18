@@ -1,7 +1,12 @@
 ---
 title: Infinio releases v1.2 Today
 date: 2014-03-03 11:53:01
+excerpt: "This is some great news for a Monday. Infinio has released their latest version which now fully supports vSphere 5.5. I did some extensive testing on..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 This is some great news for a Monday. Infinio has released their latest
 version which now fully supports vSphere 5.5. I did some extensive

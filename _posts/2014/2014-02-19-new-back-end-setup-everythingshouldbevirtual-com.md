@@ -1,7 +1,15 @@
 ---
   title: New Back-end Setup for EverythingShouldBeVirtual.com
   date: 2014-02-19 21:51:33
+excerpt: "So after running this blog on a single server running within an ISPConfig setup for quite some time I have finally redesigned the back-end (it has..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
+
+> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
 
 So after running this blog on a single server running within an
 [ISPConfig](http://www.ispconfig.org/ "http\://www.ispconfig.org/") setup

@@ -1,7 +1,15 @@
 ---
   title: Veeam Backup and Replication to Nexenta NFS
   date: 2013-02-01 13:24:46
+excerpt: "In my testing so far I have decided to throw this together as a valid scenario which could be a good solution, but obviously open to additional..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
+
+> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
 
 In my testing so far I have decided to throw this together as a valid
 scenario which could be a good solution, but obviously open to

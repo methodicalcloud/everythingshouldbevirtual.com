@@ -1,6 +1,13 @@
 ---
   title: Ansible - Highly Available ELK Stack
+toc: true
+toc_label: "Contents"
+excerpt: "A little over a year ago I provided installation scripts along with this post to help setup a completely redundant ELK Stack. This post has definitely..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 A little over a year ago I provided installation scripts along with
 [this](https://everythingshouldbevirtual.com/highly-available-elk-elasticsearch-logstash-kibana-setup)
@@ -33,8 +40,7 @@ individual files for specific variables instead of placing all of them
 in a single group_vars/all file. But of course you may choose to do
 differently.
 
-**UPDATE - 04-17-2016**
-
+### UPDATE - 04-17-2016
 As you work through this setup it has come to my attention that this
 post is extremely out of date. So YMMV as you attempt to install ELK. I
 intend on publishing a more current post on setting up ELK which in most
@@ -95,7 +101,7 @@ this file from Github it will not contain much.
   sudo: yes
   roles:
     - bootstrap
-```
+```json
 
 {% endraw %}
 `site.yml`:
@@ -120,7 +126,7 @@ this file from Github it will not contain much.
     - { role: sysdig, when: install_sysdig is defined and install_sysdig }
     - { role: timezone, when: change_timezone }
     - { role: zabbix-agent, when: enable_zabbix_monitoring }
-```
+```json
 
 {% endraw %}
 So you should now clone my Github repo by doing the following into a
@@ -376,7 +382,7 @@ with.
     - logstash
     - haproxy
     - elk-haproxy
-```
+```json
 
 {% endraw %}
 So if all nodes have been provisioned and naming matches the Ansible
@@ -443,3 +449,11 @@ to rely on each and everyone of your valuable input in order to make
 this a better solution for all.
 
 As always! Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

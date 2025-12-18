@@ -1,7 +1,12 @@
 ---
   title: Upgrade GPO Templates on Server 2008 R2 with Windows 8/Server 2012
   date: 2012-10-30 22:18:48
+excerpt: "Here is a quick howto on upgrading the GPO templates on a Server 2008 R2 domain controller with the newest ones from a Windows 8 machine. There are a..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Here is a quick howto on upgrading the GPO templates on a Server 2008 R2
 domain controller with the newest ones from a Windows 8 machine. There

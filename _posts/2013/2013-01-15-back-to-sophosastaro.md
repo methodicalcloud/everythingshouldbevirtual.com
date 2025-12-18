@@ -1,7 +1,12 @@
 ---
   title: Back to Sophos/Astaro
   date: 2013-01-15 09:05:15
+excerpt: "Well after a few months of running my own rolled version of a UTM using Ubuntu I have officially gone back to Sophos/Astaro for the time being. There..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Well after a few months of running my own rolled version of a UTM using
 Ubuntu I have officially gone back to Sophos/Astaro for the time being. 

@@ -6,7 +6,14 @@
     - Python
   redirect_from:
     - /python-nmapssh-fun
+toc: true
+toc_label: "Contents"
+excerpt: "I am currently working on some Ansible/Python project(s) _(More to come on that soon)_ and am working on integrating some functionality between some of..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I am currently working on some Ansible/Python project(s) _(More to come
 on that soon)_ and am working on integrating some functionality between
@@ -164,7 +171,7 @@ if __name__ == "__main__":
     read_cli_args()
     args = read_cli_args().parse_args()
     main(args)
-```
+```json
 
 {% endraw %}
 And if I were to run this against a subnet such as (Only scanning hosts
@@ -741,3 +748,11 @@ I would get some additional information in my JSON results..
 So there you have it...Stay tuned for more on this and more...
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

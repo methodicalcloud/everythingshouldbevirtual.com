@@ -1,7 +1,12 @@
 ---
   title: Getting started with Hyper-V 2012
   date: 2013-07-10 10:29:23
+excerpt: "I will be using this post for Hyper-V notes as I go through setting up and using Hyper-V 2012. This may not be informative to all but I am really just..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I will be using this post for Hyper-V notes as I go through setting up
 and using Hyper-V 2012. This may not be informative to all but I am

@@ -1,7 +1,12 @@
 ---
   title: VMware NSX WebUI Sync Issue
   date: 2014-08-14
+excerpt: "So I recently had an issue when trying to create some new tenant networks and had a very strange issue. When creating the Logical Switches within NSX I..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 So I recently had an issue when trying to create some new tenant
 networks and had a very strange issue. When creating the Logical

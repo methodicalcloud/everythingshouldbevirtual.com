@@ -4,7 +4,12 @@ categories:
   - Announcements
 redirect_from:
   - /new-journey-begins
+excerpt: "As many of you know, a little over 3 weeks ago, I began my search for a new career opportunity. Things always happen for a reason and I fully embraced,..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 As many of you know, a little over 3 weeks ago, I began my search for a
 new career opportunity. Things always happen for a reason and I fully

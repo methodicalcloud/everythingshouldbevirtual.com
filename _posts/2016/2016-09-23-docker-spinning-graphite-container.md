@@ -6,7 +6,12 @@
     - Docker
   redirect_from:
     - /docker-spinning-graphite-container
+excerpt: "As I am working through some testing methodologies for Infrastructure/app testing I wanted to throw together a usable Graphite image that I could..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 As I am working through some testing methodologies for
 Infrastructure/app testing I wanted to throw together a usable Graphite image
@@ -88,3 +93,11 @@ Looking for the code to these tools?
 
 -   [ansible-collectd](https://github.com/mrlesmithjr/ansible-collectd)
 -   [docker-ansible-graphite](https://github.com/mrlesmithjr/docker-ansible-graphite)
+
+---
+
+### Related Posts
+
+- [2015-12-29-ansible-debian-based-gotchas-part-1](/ansible-debian-based-gotchas-part-1/)
+- [2015-07-21-ansible-zenoss-5-core-master](/ansible-zenoss-5-core-master/)
+- [2016-11-18-ansible-provision-docker-swarm-mode-1-12-cluster](/ansible-provision-docker-swarm-mode-1-12-cluster/)

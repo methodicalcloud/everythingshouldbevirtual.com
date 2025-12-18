@@ -6,7 +6,12 @@
     - Vagrant
   redirect_from:
     - /vagrant-adding-a-second-hard-drive
+excerpt: "I was just working on some Vagrant lab stuff and had a need to spin up a Vagrant node with more than one hard drive. So I turned to google and did some..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I was just working on some Vagrant lab stuff and had a need to spin up a
 Vagrant node with more than one hard drive. So I turned to google and
@@ -127,3 +132,11 @@ end
 ```
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2015-09-08-hey-i-can-devops-my-network-too-vagrant-up-part-3](/hey-i-can-devops-my-network-too-vagrant-up-part-3/)
+- [2015-08-27-vagrant-multi-nic-definitions-via-yaml](/vagrant-multi-nic-definitions-via-yaml/)
+- [2015-08-23-learning-vagrant-and-ansible-provisioning](/learning-vagrant-and-ansible-provisioning/)

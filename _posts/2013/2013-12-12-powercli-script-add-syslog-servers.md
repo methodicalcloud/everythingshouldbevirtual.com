@@ -1,7 +1,12 @@
 ---
   title: PowerCLI Script to add Syslog Servers
   date: 2013-12-12 14:06:40
+excerpt: "I was asked earlier about this. So I figured I would throw this together real quick. There was a concern about adding syslog server settings to an..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I was asked earlier about this. So I figured I would throw this together
 real quick. There was a concern about adding syslog server settings to

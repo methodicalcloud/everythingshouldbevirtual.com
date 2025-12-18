@@ -9,7 +9,14 @@
     - Vagrant
   redirect_from:
     - /packer-vagrant-ansible-windows-winrmtransport-error
+toc: true
+toc_label: "Contents"
+excerpt: "While doing some Packer builds for Windows Server 2012 R2 to be used with Vagrant in order to do some Ansible learning I stumbled across this issue."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 While doing some Packer builds for Windows Server 2012 R2 to be used
 with Vagrant in order to do some Ansible learning I stumbled across this
@@ -399,3 +406,11 @@ hours to finally get all of the pieces together in order to get this
 working.
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

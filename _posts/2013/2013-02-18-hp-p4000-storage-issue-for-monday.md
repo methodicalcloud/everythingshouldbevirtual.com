@@ -1,7 +1,12 @@
 ---
   title: HP P4000 Storage issue for Monday
   date: 2013-02-18 10:16:10
+excerpt: "Here is what I have woken up to for today. This is the first time I have seen this. I rebooted the node to see if it would revive the missing disks,..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Here is what I have woken up to for today. This is the first time I have
 seen this. I rebooted the node to see if it would revive the missing

@@ -1,7 +1,12 @@
 ---
   title: IPTables Cluster Script
   date: 2014-09-26
+excerpt: "I have been working on some interesting virtualized networking setups (More on this in another post soon) and needed a way to configure IPTables rules..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I have been working on some interesting virtualized networking setups
 (More on this in another post soon) and needed a way to
@@ -73,3 +78,11 @@ And off you go. I will be adding more functionality to this as time goes
 on but for now this is what I was needing.
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)
+- [2015-04-07-ansible-sneak-peak-of-something-coming-soon](/ansible-sneak-peak-of-something-coming-soon/)

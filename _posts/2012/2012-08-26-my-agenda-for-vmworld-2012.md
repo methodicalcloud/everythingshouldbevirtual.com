@@ -1,7 +1,12 @@
 ---
   title: My agenda for VMworld 2012
   date: 2012-08-26 01:04:45
+excerpt: "Here is a copy of my agenda that I will be attending, and providing feedback on. I plan on trying to fit some others in the open slots too, but not..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Here is a copy of my agenda that I will be attending, and providing
 feedback on. I plan on trying to fit some others in the open slots too,

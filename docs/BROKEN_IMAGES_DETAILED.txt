@@ -1,0 +1,112 @@
+POSTS WITH BROKEN IMAGE LINKS - DETAILED LIST
+==============================================
+
+Total Posts Affected: 23
+Total Broken Image References: 250
+
+Posts are listed in order of severity (most broken images first)
+
+
+1. 2012-11-15-how-to-install-vshield-5-1-manager-app-and-endpoint-2.md
+   Location: /Users/larrysmithjr/Projects/MethodicalCloud/website/everythingshouldbevirtual/_posts/2012/
+   Broken Images: 47
+   Status: CRITICAL - Tutorial post heavily image-dependent
+
+2. 2012-09-28-cacti-monitoring-for-windows-servers.md
+   Location: /Users/larrysmithjr/Projects/MethodicalCloud/website/everythingshouldbevirtual/_posts/2012/
+   Broken Images: 39
+   Status: CRITICAL - Tutorial post heavily image-dependent
+
+3. 2012-09-06-hp-p4000-vsa-initial-installation-storvirtual-vsa.md
+   Location: /Users/larrysmithjr/Projects/MethodicalCloud/website/everythingshouldbevirtual/_posts/2012/
+   Broken Images: 36
+   Status: CRITICAL - Installation guide, screenshots essential
+
+4. 2013-02-05-installing-veeam-backup-and-replication.md
+   Location: /Users/larrysmithjr/Projects/MethodicalCloud/website/everythingshouldbevirtual/_posts/2013/
+   Broken Images: 31 (includes corrupted base64 inline images)
+   Status: CRITICAL - Installation guide with corrupted images
+
+5. 2012-10-18-vsphere-5-1-autodeploy.md
+   Location: /Users/larrysmithjr/Projects/MethodicalCloud/website/everythingshouldbevirtual/_posts/2012/
+   Broken Images: 21
+   Status: HIGH - Technical tutorial
+
+6. 2013-02-01-veeam-backup-and-replication-to-nexenta-nfs.md
+   Location: /Users/larrysmithjr/Projects/MethodicalCloud/website/everythingshouldbevirtual/_posts/2013/
+   Broken Images: 14
+   Status: HIGH - Configuration guide
+
+7. 2012-07-21-nexentastoresxi53750glacpvdsnfsiscsi-part-1.md
+   Location: /Users/larrysmithjr/Projects/MethodicalCloud/website/everythingshouldbevirtual/_posts/2012/
+   Broken Images: 13
+   Status: HIGH - Multi-part tutorial (Part 1)
+
+8. 2012-08-19-setup-storage-cluster-with-sdrs-vsphere5.md
+   Location: /Users/larrysmithjr/Projects/MethodicalCloud/website/everythingshouldbevirtual/_posts/2012/
+   Broken Images: 10
+   Status: MODERATE - Configuration guide
+
+9. 2013-03-04-new-nexenta-server-coming-soon.md
+   Location: /Users/larrysmithjr/Projects/MethodicalCloud/website/everythingshouldbevirtual/_posts/2013/
+   Broken Images: 9 (external Newegg product images)
+   Status: LOW - Product announcement, external images
+
+10. 2012-09-17-upgrade-existing-vds-to-5-1-using-web-ui.md
+    Location: /Users/larrysmithjr/Projects/MethodicalCloud/website/everythingshouldbevirtual/_posts/2012/
+    Broken Images: 6
+    Status: MODERATE - Upgrade guide
+
+11. 2012-08-11-support-howto-how-to-export-and-import-platespin-migrateprotectforge-database.md
+    Location: /Users/larrysmithjr/Projects/MethodicalCloud/website/everythingshouldbevirtual/_posts/2012/
+    Broken Images: 5
+    Status: MODERATE - How-to guide
+
+12. 2012-11-04-ubuntu-utm-homebrew-network-graphing.md
+    Location: /Users/larrysmithjr/Projects/MethodicalCloud/website/everythingshouldbevirtual/_posts/2012/
+    Broken Images: 3
+    Status: LOW - Supplementary images
+
+13. 2012-08-01-issue-with-sophosastaro-utm-9-and-xbox-live.md
+    Location: /Users/larrysmithjr/Projects/MethodicalCloud/website/everythingshouldbevirtual/_posts/2012/
+    Broken Images: 3
+    Status: LOW - Configuration screenshots
+
+14. 2012-10-19-ubuntu-utm-homebrew.md
+    Location: /Users/larrysmithjr/Projects/MethodicalCloud/website/everythingshouldbevirtual/_posts/2012/
+    Broken Images: 3
+    Status: LOW - Homebrew post
+
+15-23. Posts with 1-2 broken images:
+    - 2012-08-08-using-ibm-xiv-and-vsphere5-you-need-to-install-the-vasa-and-management-console-for-vcenter.md (2)
+    - 2012-11-28-nexenta-homebrew-raspberry-pi-winnings.md (1)
+    - 2012-07-29-configuring-remote-syslog-for-esxi5-hosts.md (1)
+    - 2012-11-28-ubuntu-utm-homebrew-part-3-mail-proxy-and-spam-checker.md (1)
+    - 2012-08-23-vmware-workstation-9-released.md (1)
+    - 2012-08-21-veeam-installed.md (1)
+    - 2012-08-21-installing-cloudphysics.md (1)
+    - 2012-10-30-windows-8-mapped-drives-via-gpo.md (1)
+    - 2012-10-15-super-router-pfsense-untangle.md (1)
+    Status: MINIMAL - Single images missing
+
+
+RECOMMENDATIONS BY POST:
+
+CRITICAL Priority (Posts 1-4):
+- These are heavily image-dependent tutorial posts
+- Consider archiving if images cannot be recovered
+- OR add prominent disclaimer: "Note: Screenshots from original 2012-2013 post are no longer available"
+- OR attempt Wayback Machine recovery for each post
+
+HIGH Priority (Posts 5-7):
+- Important technical content
+- Worth attempting image recovery
+- If not possible, add disclaimer noting missing screenshots
+
+MODERATE Priority (Posts 8-11):
+- Useful content but less critical
+- Consider adding simple disclaimer
+
+LOW/MINIMAL Priority (Posts 12-23):
+- Single or few missing images
+- Can likely remove broken references without major impact

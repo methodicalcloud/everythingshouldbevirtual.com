@@ -1,7 +1,12 @@
 ---
   title: Nginx Reverse Proxy
   date: 2013-04-22 17:06:32
+excerpt: "I just wanted to throw this together real quick as I had a request this past week to look into this. I was asked to look into deploying a reverse proxy..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I just wanted to throw this together real quick as I had a request this
 past week to look into this. I was asked to look into deploying a

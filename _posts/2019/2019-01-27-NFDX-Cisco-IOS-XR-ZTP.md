@@ -1,6 +1,7 @@
 ---
 title: "NFDX - Cisco IOS XR - ZTP"
 date: "2019-01-27 11:55:00"
+excerpt: "{% include video id=\"311660640\" provider=\"vimeo\" %}"
 ---
 
 {% include video id="311660640" provider="vimeo" %}

@@ -1,6 +1,11 @@
 ---
   title: Ansible - Installing open-vm-tools
+excerpt: "Just sharing this out in case someone else may be looking for a way to install open-vm-tools for Ubuntu or CentOS and wants to ensure that only virtual..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Just sharing this out in case someone else may be looking for a way to
 install open-vm-tools for Ubuntu or CentOS and wants to ensure that only
@@ -27,3 +32,11 @@ There you have it. Now when you run your playbook or roles open-vm-tools
 will be installed on only devices that are VMware virtual machines.
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

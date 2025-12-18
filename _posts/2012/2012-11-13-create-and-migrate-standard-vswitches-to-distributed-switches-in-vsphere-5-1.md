@@ -1,7 +1,12 @@
 ---
   title: Create and Migrate Standard vSwitches to Distributed Switches in vSphere 5.1
   date: 2012-11-13 16:54:16
+excerpt: "In this scenario we will be migrating existing standard vswitches to distributed switches. This scenario also includes iSCSI vmkernel ports which we..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In this scenario we will be migrating existing standard vswitches to
 distributed switches. This scenario also includes iSCSI vmkernel ports

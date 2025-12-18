@@ -7,7 +7,15 @@
     - Docker
   redirect_from:
     - /docker-creating-alpine-image-ansible-installed
+excerpt: "As I am experimenting with Docker images and finding the right combination which works well for me the majority of the time. I have finally put..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
+
+> **Version Notice**: This post references Ubuntu 14.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
 
 As I am experimenting with [Docker](https://www.docker.com) images and finding
 the right combination which works well for me the majority of the time. I have
@@ -24,7 +32,7 @@ for us.
 
 `Dockerfile`
 
-```bash
+```dockerfile
 FROM alpine:3.4
 
 MAINTAINER Larry Smith Jr. <mrlesmithjr@gmail.com>
@@ -108,3 +116,11 @@ images for apps which will leverage this [Alpine](http://alpinelinux.org/) image
 with [Ansible](https://www.ansible.com/).
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

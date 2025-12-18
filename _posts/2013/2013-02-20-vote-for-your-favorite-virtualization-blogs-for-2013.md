@@ -1,7 +1,12 @@
 ---
   title: Vote for your favorite virtualization blogs for 2012
   date: 2013-02-20 13:36:44
+excerpt: "Go here to vote for your favorite virtualization blogs. Even though my site is not on the list of choices there are some great blogs out there to..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Go [here](http://www.surveygizmo.com/s3/1165270/Top-vBlog-2013) to vote
 for your favorite virtualization blogs. Even though my site is not on

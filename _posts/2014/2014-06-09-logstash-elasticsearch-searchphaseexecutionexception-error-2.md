@@ -1,7 +1,12 @@
 ---
   title: Logstash Elasticsearch searchphaseexecutionexception error
   date: 2014-06-09
+excerpt: "In the past few days I have come across the following error on two different instances of Logstash."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In the past few days I have come across the following error on two
 different instances of Logstash.
@@ -29,3 +34,11 @@ this is what it contained.
 ![elasticsearch_log](../../assets/elasticsearch_log-300x31.png)
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-11-29-ubuntu-logstash-server-kibana3-front-end-autoinstall](/ubuntu-logstash-server-kibana3-front-end-autoinstall/)
+- [2014-10-24-vmware-nsx-firewall-logging-logstash](/vmware-nsx-firewall-logging-logstash/)
+- [2014-10-09-ip-reputation-lookups-logstash](/ip-reputation-lookups-logstash/)

@@ -1,7 +1,17 @@
 ---
   title: Ubuntu 12.04 Graylog2 Installation
   date: 2013-03-26 17:20:35
+toc: true
+toc_label: "Contents"
+excerpt: "I recently wanted to check out Graylog2 for gathering syslog messages because I have heard good things about it. Well the issue was that I was not able..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
+
+> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
 
 I recently wanted to check out [Graylog2 ](http://graylog2.org/home "http\://graylog2.org/home")
 for gathering syslog messages because I have heard good things about it.
@@ -137,13 +147,11 @@ sudo ./graylog2/Upgrade_Scripts/upgrade_to_latest_graylog2_20_ubuntu.sh
 After this completes you should be up and running with the latest
 Graylog2 version.
 
-**Graylog2 Virtual Appliance**
-
+### Graylog2 Virtual Appliance
 Graylog2 virtual appliance available running on Ubuntu 14.04LTS. Head
 over [here](https://everythingshouldbevirtual.com/ubuntu-14-04-graylog2-virtual-appliance "Ubuntu 14.04 Graylog2 Virtual Appliance") and get your prebuilt virtual appliance.
 
-**Troubleshooting issues**
-
+### Troubleshooting issues
 If you start getting scrolling java type errors after installing one or
 more critical services are not running. You can either reboot or try the
 following.
@@ -167,12 +175,11 @@ running. (Reference screenshot below command window)
 
 ```bash
 sudo netstat -ltnp
-```
+```sql
 
 ![Screenshot from 2014-02-21 14:50:17](../../assets/Screenshot-from-2014-02-21-145017-300x78.png)
 
-**Logging into the new WebUI after installation.**
-
+### Logging into the new WebUI after installation.
 Open your browser of choice and connect to <http://ip.or.nameofgraylog2server:9000>
 
 Login with username **_admin_** and password is **_password123 (Or password chosen during install script)_**
@@ -261,7 +268,7 @@ console.
 tar zxvf install_graylog2.tar.gz
 chmod +x install_graylog2.sh
 nano install_graylog2.sh
-```
+```bash
 
 Change x.x.x.x to whatever your ip address is of the server you are installing
 on or let the script auto detect your IP for you. The default is auto detect.
@@ -567,7 +574,7 @@ echo "@mrlesmithjr"
 ```bash
 chmod +x install_graylog2.sh
 ./install_graylog2.sh
-```
+```bash
 
 Once the script completes connect to the ip/hostname of your Graylog2
 server with your favorite browser and create your first login account.

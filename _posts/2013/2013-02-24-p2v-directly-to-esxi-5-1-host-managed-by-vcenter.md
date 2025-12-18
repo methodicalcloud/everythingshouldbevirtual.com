@@ -1,7 +1,12 @@
 ---
   title: P2V Directly to ESXi 5.1 Host Managed by vCenter
   date: 2013-02-24 20:03:31
+excerpt: "Recently I had a need to perform a P2V directly to an ESXi 5.1 host and found that I could not do this because it would fail with the error \"The access..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Recently I had a need to perform a P2V directly to an ESXi 5.1 host and
 found that I could not do this because it would fail with the error

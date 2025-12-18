@@ -1,7 +1,17 @@
 ---
 title: Build TFTP Server for ESXi Installs
 date: 2014-04-05 23:00:02
+toc: true
+toc_label: "Contents"
+excerpt: "So it has been a while since I have built a TFTP server and the opportunity came up to do this again to do some ESXi deployments. I wanted the ability..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
+
+> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
 
 So it has been a while since I have built a TFTP server and the
 opportunity came up to do this again to do some ESXi deployments. I

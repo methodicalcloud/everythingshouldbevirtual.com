@@ -1,7 +1,12 @@
 ---
 title: Windows 8 Cygwin SSHD Issue
 date: 2012-11-17 10:17:30
+excerpt: "I use backuppc for backups at home which utilizes ssh and rsync to do the backups. This works very good for a mixed OS environment and keeps it simple..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 I use [backuppc](http://backuppc.sourceforge.net/ "http://backuppc.sourceforge.net/")
 for backups at home which utilizes ssh and rsync to do the backups. This
@@ -23,4 +28,4 @@ Run `gpedit.msc` and make sure the account is assigned the following user
 rights in the screenshot below. And then restart the Cygwin SSHD service
 and you should be good to go.
 
-![](../../images/2012/2019-03-28_08-15-09.png)
+![Windows 8 Cygwin SSHD Issue - Step 1](../../images/2012/2019-03-28_08-15-09.png)

@@ -1,9 +1,14 @@
 ---
   title: Remove Platespin Block Based Drivers
   date: 2012-10-05 11:22:09
+excerpt: "Remove Platespin Block-Based drivers In order to increase a drive size you must first remove the block-based drivers and reboot. Once rebooted you will..."
 ---
 
-**Remove Platespin Block-Based drivers**
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
+
+### Remove Platespin Block-Based drivers
 In order to increase a drive size you must first remove the block-based
 drivers and reboot. Once rebooted you will be able to increase the
 capacity of a disk. After doing so you will have to go to the platespin

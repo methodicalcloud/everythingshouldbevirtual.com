@@ -1,7 +1,12 @@
 ---
   title: How I like to build 'Em - Vsphere5 - What ya think?
   date: 2012-08-23 18:12:51
+excerpt: "Just wanted to throw this together as my current environment goes a little like this. HP C7000, Flex-10 configured with two SUS Groups (Shared Uplink..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Just wanted to throw this together as my current environment goes a
 little like this. HP C7000, Flex-10 configured with two SUS Groups

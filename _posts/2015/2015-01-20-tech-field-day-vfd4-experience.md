@@ -1,6 +1,11 @@
 ---
   title: "Tech Field Day - #VFD4 Experience"
+excerpt: "Last week I had the honor of being a delegate for Tech Field VFD4 (Virtualization Field Day 4) in Austin, TX. This was my first time ever being a..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Last week I had the honor of being a delegate for [Tech Field VFD4](http://techfieldday.com/event/vfd4/ "http\://techfieldday.com/event/vfd4/")
 (Virtualization Field Day 4) in Austin, TX. This was my first time ever being

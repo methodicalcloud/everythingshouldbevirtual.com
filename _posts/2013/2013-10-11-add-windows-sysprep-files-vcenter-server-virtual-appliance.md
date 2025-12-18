@@ -1,7 +1,12 @@
 ---
   title: Add Windows Sysprep Files to vCenter Server Virtual Appliance
   date: 2013-10-11 14:37:49
+excerpt: "In case you are using the vCSA and need to upload sysprep files this should get you going."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In case you are using the vCSA and need to upload sysprep files this
 should get you going.

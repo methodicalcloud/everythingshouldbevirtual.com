@@ -1,6 +1,11 @@
 ---
   title: "Tech Field Day - #VFD4 - Scale Computing"
+excerpt: "Scale Computing was the last and final vendor to do a presentation last week at Tech Field Day - VFD4 (Virtualization Field Day 4) in Austin, TX. I..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Scale Computing was the last and final vendor to do a presentation last
 week at Tech Field Day - VFD4 (Virtualization Field Day 4) in Austin,

@@ -6,6 +6,7 @@ categories:
 tags:
   - Ansible
   - Packer
+excerpt: "How often do you find yourself maintaining OS images or templates? As most know, this is a tedious process that never ends—spinning up a bare VM,..."
 ---
 > UPDATE: **2023-05-11** - I found this post in my backlog, and it was never published or finished, as you can see. This conversation continues to be something that I regularly have. So, I will leave this post unfinished and eventually publish an updated version or an appendix.
 
@@ -36,3 +37,11 @@ Like Packer, [Ansible](https://www.ansible.com/) has been around for 6+ years as
 So, how does Ansible fit into the picture here? First, Ansible can be leveraged to inject the images created by Packer into your environment. What does this mean? Packer can export an image as a template directly into a vSphere environment, but we are working towards something else. We want Packer only to export our image as an **OVA**, have Ansible import it into vSphere, and then convert it to a template. Why not let Packer handle this process if it already supports it? I prefer Packer to do its job of generating the image, and that only.
 
 > NOTE: Packer can be used to export your images directly as a template into vSphere, but some requirements must be met.
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

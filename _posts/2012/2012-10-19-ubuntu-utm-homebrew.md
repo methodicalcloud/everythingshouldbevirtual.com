@@ -1,7 +1,17 @@
 ---
   title: Ubuntu UTM Homebrew - Part 1 - Web Filtering
   date: 2012-10-19 10:06:49
+toc: true
+toc_label: "Contents"
+excerpt: "I wrote this guide a few days ago and this solution worked great. But what if you want to have more control of your threat management and build your..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
+
+> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
+{: .notice--info}
 
 I wrote [this](https://everythingshouldbevirtual.com/super-router-pfsense-untangle/ "http\://everythingshouldbevirtual.com/super-router-pfsense-untangle/")
 guide a few days ago and this solution worked great. But what if you
@@ -14,7 +24,7 @@ first NIC connected to the WAN (RED), and the second NIC is connected to
 the "Crossover" network and configured with IP 192.168.1.1. (Reference
 Picture below)\*\*\*
 
-![](../../assets/09-23-40-222x300.png "09-23-40")
+![09-23-40](../../assets/09-23-40-222x300.png )
 
 So here we go.
 
@@ -180,12 +190,12 @@ Now reboot your new Ubuntu UTM and you should now be utilizing the UTM
 for normal http usage. Try to go to playboy.com or some other adult
 website and you should see the following.
 
-![](../../assets/10-00-51-300x236.png "10-00-51")
+![10-00-51](../../assets/10-00-51-300x236.png )
 
 Go to [this](http://www.eicar.org/download/eicar.com.txt "http\://www.eicar.org/download/eicar.com.txt")
 link and you should see the following.
 
-![](../../assets/10-02-18-300x234.png "10-02-18")
+![10-02-18](../../assets/10-02-18-300x234.png )
 
 Once that is verified that it is working. You are good to go. There are
 many other tweaks and such that you can do with Dansguardian, but I am

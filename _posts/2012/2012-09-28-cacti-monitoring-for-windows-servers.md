@@ -1,7 +1,12 @@
 ---
   title: Cacti Monitoring for Windows Servers
   date: 2012-09-28 20:13:25
+excerpt: "A little over four years ago I spent some time learning cacti and snmp to come up with a good solution to monitor Windows Servers. I had used Cacti..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 A little over four years ago I spent some time learning cacti and snmp
 to come up with a good solution to monitor Windows Servers. I had used
@@ -21,23 +26,23 @@ the screenshots.
 sudo apt-get install cacti
 ```
 
-![](../../assets/2012-09-28_17-00-05-300x166.png "2012-09-28_17-00-05")
+![2012-09-28_17-00-05](../../assets/2012-09-28_17-00-05-300x166.png )
 
-![](../../assets/2012-09-28_17-02-32-300x166.png "2012-09-28_17-02-32")
+![2012-09-28_17-02-32](../../assets/2012-09-28_17-02-32-300x166.png )
 
-![](../../assets/2012-09-28_17-03-16-300x167.png "2012-09-28_17-03-16")
+![2012-09-28_17-03-16](../../assets/2012-09-28_17-03-16-300x167.png )
 
-![](../../assets/2012-09-28_17-04-02-300x167.png "2012-09-28_17-04-02")
+![2012-09-28_17-04-02](../../assets/2012-09-28_17-04-02-300x167.png )
 
-![](../../assets/2012-09-28_17-05-47-300x166.png "2012-09-28_17-05-47")
+![2012-09-28_17-05-47](../../assets/2012-09-28_17-05-47-300x166.png )
 
-![](../../assets/2012-09-28_17-08-15-300x168.png "2012-09-28_17-08-15")
+![2012-09-28_17-08-15](../../assets/2012-09-28_17-08-15-300x168.png )
 
-![](../../assets/2012-09-28_17-08-54-300x167.png "2012-09-28_17-08-54")
+![2012-09-28_17-08-54](../../assets/2012-09-28_17-08-54-300x167.png )
 
-![](../../assets/2012-09-28_17-12-12-300x167.png "2012-09-28_17-12-12")
+![2012-09-28_17-12-12](../../assets/2012-09-28_17-12-12-300x167.png )
 
-![](../../assets/2012-09-28_17-12-44-300x166.png "2012-09-28_17-12-44")
+![2012-09-28_17-12-44](../../assets/2012-09-28_17-12-44-300x166.png )
 
 Now connect to the web ui of cacti and configure
 
@@ -45,21 +50,21 @@ Now connect to the web ui of cacti and configure
 
 <http://192.168.211.128/cacti>
 
-![](../../assets/2012-09-28_17-14-44-300x167.png "2012-09-28_17-14-44")
+![2012-09-28_17-14-44](../../assets/2012-09-28_17-14-44-300x167.png )
 
-![](../../assets/2012-09-28_17-16-23-300x151.png "2012-09-28_17-16-23")
+![2012-09-28_17-16-23](../../assets/2012-09-28_17-16-23-300x151.png )
 
-![](../../assets/2012-09-28_17-16-54-200x300.png "2012-09-28_17-16-54")
+![2012-09-28_17-16-54](../../assets/2012-09-28_17-16-54-200x300.png )
 
 All done. Now you will be redirected back to the login screen.
 
-![](../../assets/2012-09-28_17-19-17-300x185.png "2012-09-28_17-19-17")
+![2012-09-28_17-19-17](../../assets/2012-09-28_17-19-17-300x185.png )
 
 Login using admin/admin and then change password on next screen
 
-![](../../assets/2012-09-28_17-20-18-300x208.png "2012-09-28_17-20-18")
+![2012-09-28_17-20-18](../../assets/2012-09-28_17-20-18-300x208.png )
 
-![](../../assets/2012-09-28_17-21-08-300x127.png "2012-09-28_17-21-08")
+![2012-09-28_17-21-08](../../assets/2012-09-28_17-21-08-300x127.png )
 
 Cacti is now installed.
 
@@ -82,43 +87,43 @@ git clone https://github.com/mrlesmithjr/cacti/
 Copy files from the resource\\snmp_queries\\ folder extracted to the
 cacti server using WinSCP to the /tmp folder.
 
-![](../../assets/2012-09-20_11-12-17-300x141.png "2012-09-20_11-12-17")
+![2012-09-20_11-12-17](../../assets/2012-09-20_11-12-17-300x141.png )
 
-![](../../assets/2012-09-20_11-15-57-300x174.png "2012-09-20_11-15-57")
+![2012-09-20_11-15-57](../../assets/2012-09-20_11-15-57-300x174.png )
 
-![](../../assets/2012-09-20_11-16-13-300x171.png "2012-09-20_11-16-13")
+![2012-09-20_11-16-13](../../assets/2012-09-20_11-16-13-300x171.png )
 
-![](../../assets/2012-09-20_11-16-21-300x177.png "2012-09-20_11-16-21")
+![2012-09-20_11-16-21](../../assets/2012-09-20_11-16-21-300x177.png )
 
 Now on the cacti server cd /tmp
 
-![](../../assets/2012-09-20_11-16-41-300x71.png "2012-09-20_11-16-41")
+![2012-09-20_11-16-41](../../assets/2012-09-20_11-16-41-300x71.png )
 
 ```bash
 sudo cp snmp_informant_standard_*.xml /usr/share/cacti/site/resource/snmp_queries/
 ```
 
-![](../../assets/2012-09-20_11-18-02-300x100.png "2012-09-20_11-18-02")
+![2012-09-20_11-18-02](../../assets/2012-09-20_11-18-02-300x100.png )
 
-![](../../assets/2012-09-20_11-18-10-300x86.png "2012-09-20_11-18-10")
+![2012-09-20_11-18-10](../../assets/2012-09-20_11-18-10-300x86.png )
 
 All done.
 
 Now we have to import the xml template files from the \\template folder
 into the cacti web ui.
 
-![](../../assets/2012-09-28_19-23-35-300x102.png "2012-09-28_19-23-35")
+![2012-09-28_19-23-35](../../assets/2012-09-28_19-23-35-300x102.png )
 
 In the cacti web ui go to Import/Export/Import Templates
 
-![](../../assets/2012-09-28_19-25-12-300x119.png "2012-09-28_19-25-12")
+![2012-09-28_19-25-12](../../assets/2012-09-28_19-25-12-300x119.png )
 
 Now browse to the folder where you extracted the zip file to and select
 the first
 cacti_host_template_windows_host\_-\_snmp_informant.xml and click
 import.
 
-![](../../assets/2012-09-28_19-45-58-300x195.png "2012-09-28_19-45-58")
+![2012-09-28_19-45-58](../../assets/2012-09-28_19-45-58-300x195.png )
 
 The templates are ready to be used now.
 
@@ -127,50 +132,50 @@ monitor. Get SNMP Informant from [here](http://www.snmp-informant.com/downloads.
 Download the 1.6 version. You need to have the Windows SNMP agent enabled and
 configured on your windows machine.
 
-![](../../assets/2012-09-28_16-00-09-300x97.png "2012-09-28_16-00-09")
+![2012-09-28_16-00-09](../../assets/2012-09-28_16-00-09-300x97.png )
 
-![](../../assets/2012-09-28_19-53-52-300x236.png "2012-09-28_19-53-52")
+![2012-09-28_19-53-52](../../assets/2012-09-28_19-53-52-300x236.png )
 
-![](../../assets/2012-09-28_19-54-41-300x222.png "2012-09-28_19-54-41")
+![2012-09-28_19-54-41](../../assets/2012-09-28_19-54-41-300x222.png )
 
-![](../../assets/2012-09-28_19-55-04-300x229.png "2012-09-28_19-55-04")
+![2012-09-28_19-55-04](../../assets/2012-09-28_19-55-04-300x229.png )
 
-![](../../assets/2012-09-28_19-55-27-300x225.png "2012-09-28_19-55-27")
+![2012-09-28_19-55-27](../../assets/2012-09-28_19-55-27-300x225.png )
 
-![](../../assets/2012-09-28_19-55-46-300x229.png "2012-09-28_19-55-46")
+![2012-09-28_19-55-46](../../assets/2012-09-28_19-55-46-300x229.png )
 
-![](../../assets/2012-09-28_19-56-07-300x227.png "2012-09-28_19-56-07")
+![2012-09-28_19-56-07](../../assets/2012-09-28_19-56-07-300x227.png )
 
 Now configure the SNMP Service
 
-![](../../assets/2012-09-28_19-57-25-300x220.png "2012-09-28_19-57-25")
+![2012-09-28_19-57-25](../../assets/2012-09-28_19-57-25-300x220.png )
 
 We are now ready to add our first Windows Server.
 
 Under devices/add
 
-![](../../assets/2012-09-28_19-59-14-300x142.png "2012-09-28_19-59-14")
+![2012-09-28_19-59-14](../../assets/2012-09-28_19-59-14-300x142.png )
 
-![](../../assets/2012-09-28_20-01-48-300x140.png "2012-09-28_20-01-48")
+![2012-09-28_20-01-48](../../assets/2012-09-28_20-01-48-300x140.png )
 
 Now select create graphs for this host and select the statistics you
 want to gather
 
-![](../../assets/2012-09-28_20-03-02-300x160.png "2012-09-28_20-03-02")
+![2012-09-28_20-03-02](../../assets/2012-09-28_20-03-02-300x160.png )
 
 Click create and do not change anything on the next screen. Select
 create again.
 
-![](../../assets/2012-09-28_20-04-46-300x71.png "2012-09-28_20-04-46")
+![2012-09-28_20-04-46](../../assets/2012-09-28_20-04-46-300x71.png )
 
 There are additional drop downs for Disk, memory and network stats. Make
 sure to go through select those as well.
 
 Now you have to add the new device to the graph tree.
 
-![](../../assets/2012-09-28_20-07-30-300x98.png "2012-09-28_20-07-30")
+![2012-09-28_20-07-30](../../assets/2012-09-28_20-07-30-300x98.png )
 
-![](../../assets/2012-09-28_20-08-48-300x63.png "2012-09-28_20-08-48")
+![2012-09-28_20-08-48](../../assets/2012-09-28_20-08-48-300x63.png )
 
 That's it. Now just wait for a few minutes and you should start getting
 some nice looking graphs for your device.

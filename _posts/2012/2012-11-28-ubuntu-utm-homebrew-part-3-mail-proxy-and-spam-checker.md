@@ -1,7 +1,12 @@
 ---
   title: Ubuntu UTM Homebrew - Part 3 - Mail Proxy and Spam Checker
   date: 2012-11-28 08:28:57
+excerpt: "In this guide we will be setting up a mail proxy and spam checker that will run transparently. This will be running on our Ubuntu UTM server that we..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In this guide we will be setting up a mail proxy and spam checker that
 will run transparently.  This will be running on our Ubuntu UTM server

@@ -1,7 +1,12 @@
 ---
   title: Zenoss 4.2.4 CentOS Install
   date: 2013-07-14 11:56:04
+excerpt: "Wanted to throw this together for anyone else who may be looking everywhere on how to do this as well. I will be adding additional information as I..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 Wanted to throw this together for anyone else who may be looking
 everywhere on how to do this as well. I will be adding additional
@@ -50,7 +55,7 @@ the following before running the script again.
 
 ```bash
 yum -y remove MySQL-*
-```
+```sql
 
 The auto install script will run all the way through and finally prompt
 asking if you want to secure the MySQL root account, select (Y/n) and

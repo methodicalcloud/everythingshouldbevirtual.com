@@ -6,7 +6,14 @@
     - Ansible
   redirect_from:
     - /ansible-clean-formatted-playbooks
+toc: true
+toc_label: "Contents"
+excerpt: "While going through and doing some cleanup to various different roles and playbooks in my Ansible collection I wanted to share what I feel is good..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 While going through and doing some cleanup to various different roles
 and playbooks in my Ansible collection I wanted to share what I feel is
@@ -318,3 +325,11 @@ well as encourage others to share their thoughts or even tips and
 tricks.
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

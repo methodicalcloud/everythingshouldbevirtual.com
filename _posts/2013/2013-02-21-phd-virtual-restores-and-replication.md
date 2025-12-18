@@ -1,7 +1,12 @@
 ---
   title: PHD Virtual Restores and Replication
   date: 2013-02-21 16:33:13
+excerpt: "In this article we will be going through the process of using PHD Virtual for doing file level restores, whole vm restores and replications. The..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 In this article we will be going through the process of using PHD
 Virtual for doing file level restores, whole vm restores and
@@ -10,8 +15,7 @@ replications. The initial installation of PHD Virtual can be found
 which we also created our first backup job. We will be using this to do
 our first restore.
 
-**File Level Restores**
-
+### File Level Restores
 Right click on any object and under PHD Virtual Backup select console.
 Now follow the screenshots below to step you through this process. This
 will basically be creating a CIFS share that is browseable and contains
@@ -24,8 +28,7 @@ to find the files that you want to restore. You basically have to copy
 the files/folders out of here to wherever you want to restore them to.
 :( Not ideal, but I guess it works for some.
 
-**Replications**
-
+### Replications
 Right click on any object and under PHD Virtual Backup select console.
 Go to configuration and then replication.
 
@@ -55,8 +58,7 @@ off.
 
 Follow the screenshots below for the walk through of this section.
 
-**Replications - Testing**
-
+### Replications - Testing
 Now that we have our vms replicated you will want to test and verify
 that it works right? Of course.
 
@@ -73,8 +75,7 @@ Now for the real fun!!! :)
 The one thing we have not tested yet is recovering a complete vm from
 backup. So let's do this.
 
-**Full VM Recovery**
-
+### Full VM Recovery
 First thing I want to do is delete the original vm that was backed up in
 our backup scenario. Then I am going to recover it. Remember if using
 vDS you will need to add a network adapter to your recovered vm.
@@ -83,8 +84,7 @@ So here are the screenshots of this scenario.
 
 AND IT WORKED !!! :) :)
 
-**Ending thoughts**
-
+### Ending thoughts
 I feel that PHD Virtual does a really good job at what it is meant for.
 However there are some areas that need some tidying up, but I am sure
 that these will be addressed in future releases. I look forward to doing

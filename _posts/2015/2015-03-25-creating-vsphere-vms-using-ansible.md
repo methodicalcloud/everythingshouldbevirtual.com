@@ -1,6 +1,16 @@
 ---
   title: Creating vSphere VM's using Ansible
+toc: true
+toc_label: "Contents"
+excerpt: "I am putting this out here in case anyone else may be interested in spinning up some VM's using Ansible. I am doing this with Ansible 1.8.4 and..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
+
+> **Version Notice**: This post references Ansible 1.8. Current version is 2.16+. Module names, syntax, and best practices have evolved.
+{: .notice--info}
 
 I am putting this out here in case anyone else may be interested in
 spinning up some VM's using Ansible. I am doing this with Ansible 1.8.4
@@ -117,7 +127,7 @@ Now copy and paste the below and modify to suit your requirements.
         esxi:
           datacenter: "{{ datacenter }}"
           hostname: "{{ esxi_host }}"
-```
+```json
 
 {% endraw %}
 
@@ -351,3 +361,11 @@ Here is a newer updated playbook to create VMs.
 {% endraw %}
 
 Enjoy!
+
+---
+
+### Related Posts
+
+- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
+- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
+- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

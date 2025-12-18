@@ -1,7 +1,14 @@
 ---
   title: Collecting Netflow and Sending to Solarwinds NTA
   date: 2014-02-10 07:00:45
+toc: true
+toc_label: "Contents"
+excerpt: "If you are interested in collecting, viewing and inspecting Netflow data like I am, then you will be interested in this. Netflow gives you deep level..."
 ---
+
+> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
+{: .notice--warning}
+
 
 If you are interested in collecting, viewing and inspecting
 [Netflow](http://en.wikipedia.org/wiki/NetFlow "http\://en.wikipedia.org/wiki/NetFlow")
