@@ -1,5 +1,6 @@
 ---
   title: Ubuntu - VMware Template Cleanup Script
+  date: 2016-04-12 00:00:00
   categories:
     - Virtualization
   tags:
@@ -16,7 +17,7 @@ be used (Ansible Must be installed in guest).
 ```bash
 #!/bin/bash
 
-# Add usernames to add to /etc/sudoers for passwordless sudo
+## Add usernames to add to /etc/sudoers for passwordless sudo
 users=("ubuntu" "admin")
 
 for user in "${users[@]}"
@@ -29,20 +30,20 @@ do
 done
 
 #add VMware package keys
-# wget http://packages.vmware.com/tools/keys/VMWARE-PACKAGING-GPG-DSA-KEY.pub -O - | apt-key add -
-# wget http://packages.vmware.com/tools/keys/VMWARE-PACKAGING-GPG-RSA-KEY.pub -O - | apt-key add -
+## wget http://packages.vmware.com/tools/keys/VMWARE-PACKAGING-GPG-DSA-KEY.pub -O - | apt-key add -
+## wget http://packages.vmware.com/tools/keys/VMWARE-PACKAGING-GPG-RSA-KEY.pub -O - | apt-key add -
 
 #grab Ubuntu Codename
 codename="$(lsb_release -c | awk {'print $2}')"
 
 #add VMware repository to install open-vm-tools-deploypkg
-# echo "deb http://packages.vmware.com/packages/ubuntu $codename main" > /etc/apt/sources.list.d/vmware-tools.list
+## echo "deb http://packages.vmware.com/packages/ubuntu $codename main" > /etc/apt/sources.list.d/vmware-tools.list
 
 #update apt-cache
 apt-get update
 
 #install packages
-# apt-get install -y open-vm-tools
+## apt-get install -y open-vm-tools
 apt-get install -y python-minimal
 
 #Stop services for cleanup

@@ -79,14 +79,14 @@ Below is what my setup looks like (I chose balance-alb for my bonding
 mode)
 
 ```bash
-# This file describes the network interfaces available on your system
-# and how to activate them. For more information, see interfaces(5).
+## This file describes the network interfaces available on your system
+## and how to activate them. For more information, see interfaces(5).
 
-# The loopback network interface
+## The loopback network interface
 auto lo
 iface lo inet loopback
 
-# The primary network interface
+## The primary network interface
 #auto p5p1
 #iface p5p1 inet dhcp
 
@@ -147,7 +147,7 @@ Now let's make some network tweaks to get the best performance we can.
 
 ```bash
 sudo bash
-# Tweak network settings
+## Tweak network settings
 echo "# reuse TIME-WAIT sockets" >> /etc/sysctl.conf
 echo "net.ipv4.tcp_tw_reuse=1" >> /etc/sysctl.conf
 echo "# increase max num of ports" >> /etc/sysctl.conf
@@ -208,12 +208,12 @@ echoing these settings to the respective files in
 
 ```bash
 sudo nano /etc/modprobe.d/zfs.conf
-```
+```text
 
 Add the following
 
 ```bash
-# My tweaks for ZFS Performance
+## My tweaks for ZFS Performance
 options zfs zfs_prefetch_disable=1
 options zfs zfs_txg_timeout=5
 options zfs zfs_vdev_async_write_max_active=1
@@ -224,7 +224,7 @@ options zfs zfs_vdev_sync_write_max_active=1
 options zfs zfs_vdev_sync_write_min_active=1
 options zfs zfs_vdev_sync_read_min_active=1
 options zfs zfs_vdev_sync_read_max_active=1
-```
+```text
 
 Do not close and save this file yet until we do our memory tuning.
 Now let's touch on memory here. ZFS is memory hungry and the more
@@ -240,11 +240,11 @@ see how things perform.
 
 ```bash
 #### Memory tuning - entered in bytes
-# zfs_zrc_max (1/2 or 3/4 of system memory)
+## zfs_zrc_max (1/2 or 3/4 of system memory)
 options zfs zfs_arc_max=8589934592
-# zfs zfs_arc_meta_limit (1/4 of zfs_arc_max)
+## zfs zfs_arc_meta_limit (1/4 of zfs_arc_max)
 options zfs zfs_arc_meta_limit=2147483648
-# zfs_arc_min (1/2 of zfs_arc_meta_limit)
+## zfs_arc_min (1/2 of zfs_arc_meta_limit)
 options zfs zfs_arc_min=1073741824
 ```bash
 
@@ -463,7 +463,7 @@ sudo nano /etc/default/nfs-kernel-server
 At the top change the following from 8
 
 ```bash
-# Number of servers to start up
+## Number of servers to start up
 
 RPCNFSDCOUNT=8
 ```bash
@@ -471,7 +471,7 @@ RPCNFSDCOUNT=8
 To 16
 
 ```bash
-# Number of servers to start up
+## Number of servers to start up
 
 RPCNFSDCOUNT=16
 ```bash
@@ -525,8 +525,8 @@ sudo nano /etc/default/zfs
 And change the following line
 
 ```bash
-# Run `zfs share -a` during system start?
-# nb: The shareiscsi, sharenfs, and sharesmb dataset properties.
+## Run `zfs share -a` during system start?
+## nb: The shareiscsi, sharenfs, and sharesmb dataset properties.
 ZFS_SHARE='no'
 ```bash
 

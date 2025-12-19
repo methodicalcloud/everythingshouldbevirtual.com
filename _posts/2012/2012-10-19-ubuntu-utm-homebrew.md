@@ -46,7 +46,7 @@ netmask 255.255.255.0
 gateway 192.168.1.1
 dns-nameservers 192.168.1.1
 bridge_ports eth0 eth1
-```
+```text
 
 Had to add these lines too. Was getting a consistent timeout pinging
 firewall every couple of seconds.
@@ -63,7 +63,7 @@ pre-up iptables-restore < /etc/iptables.rules post-down iptables-save > /etc/ipt
 
 #EBTables rules
 pre-up ebtables -t broute -A BROUTING -p IPv4 --ip-protocol 6 --ip-destination-port 80 -j redirect --redirect-target ACCEPT
-```
+```text
 
 Now run this command
 
@@ -124,13 +124,13 @@ comment out the line that says UNCONFIGURED by placing a # in front of
 the line.
 
 ```bash
-# the port that DansGuardian listens to.
+## the port that DansGuardian listens to.
 filterport = 8080
 
-# the ip of the proxy (default is the loopback - i.e. this server)
+## the ip of the proxy (default is the loopback - i.e. this server)
 proxyip = 127.0.0.1
 
-# the port DansGuardian connects to proxy on
+## the port DansGuardian connects to proxy on
 proxyport = 8090
 ```bash
 
@@ -138,13 +138,13 @@ Now run
 
 ```bash
 sudo nano /etc/squid3/squid.conf
-```
+```bash
 
 change
 
 ```bash
 acl localnet src 192.168.1.0/24
-```
+```text
 
 (or whatever subnet your LAN is)
 

@@ -178,7 +178,7 @@ LACP mode : passive\
 Optional link name :\
 LINK POLICY ADDRPOLICY LACPACTIVITY LACPTIMER FLAGS\
 aggr1 L3,L4 auto passive short -----
-```
+```text
 
 Now you need to gain access to the real command line.
 
@@ -192,7 +192,7 @@ Unix command(s). Warning: using low-level Unix commands is not
 recommended! Execute? Yes
 
 root@nexentastor2:/volumes# dladm modify-aggr -P L2,L3 aggr1
-```
+```text
 
 Now verify that you have LACP enabled with L2,L3
 

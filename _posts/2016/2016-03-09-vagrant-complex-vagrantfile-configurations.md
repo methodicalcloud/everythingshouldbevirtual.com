@@ -1,5 +1,6 @@
 ---
   title: Vagrant - Complex Vagrantfile Configurations
+  date: 2016-03-09 00:00:00
   categories:
     - Virtualization
   tags:
@@ -14,24 +15,24 @@ to put this out here because some of these configurations have been
 difficult to find so hopefully they will be of some use to others.
 
 ```ruby
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
+## -*- mode: ruby -*-
+## vi: set ft=ruby :
 
-# All Vagrant configuration is done below. The "2" in Vagrant.configure
-# configures the configuration version (we support older styles for
-# backwards compatibility). Please don't change it unless you know what
-# you're doing.
+## All Vagrant configuration is done below. The "2" in Vagrant.configure
+## configures the configuration version (we support older styles for
+## backwards compatibility). Please don't change it unless you know what
+## you're doing.
 
-# ---- Define number of nodes to spin up ----
+## ---- Define number of nodes to spin up ----
 N = 1
 
-# ---- Define any custom memory/cpu requirement ----
-# if custom requirements are desired...ensure to set
-# custom_cpu_mem == "yes" otherwise set to "no"
-# By default if custom requirements are defined and set below
-# any node not defined will be configured as the default...
-# which is 1vCPU/512mb...So if setting custom requirements
-# only define any node which requires more than the defaults.
+## ---- Define any custom memory/cpu requirement ----
+## if custom requirements are desired...ensure to set
+## custom_cpu_mem == "yes" otherwise set to "no"
+## By default if custom requirements are defined and set below
+## any node not defined will be configured as the default...
+## which is 1vCPU/512mb...So if setting custom requirements
+## only define any node which requires more than the defaults.
 nodes = [
   {
     :node => "node0",
@@ -41,7 +42,7 @@ nodes = [
   }
 ]
 
-# ---- Define variables below ----
+## ---- Define variables below ----
 additional_disks = "no"  #Define if additional drives defined should be added (yes | no)
 additional_disks_controller = "SATA Controller"
 additional_disks_num = 1  #Define the number of additional disks to add
@@ -185,7 +186,7 @@ Vagrant.configure(2) do |config|
     config.vm.provision :shell, path: "bootstrap.sh", keep_color: "true"  #runs initial shell script
   end
 end
-```
+```text
 
 As you can tell from the above there is a lot going on. We have the
 ability to add additional disks, network adapters (with random generated
@@ -198,24 +199,24 @@ Below is another Vagrantfile built upon the one above with the additions
 of custom boxes...
 
 ```ruby
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
+## -*- mode: ruby -*-
+## vi: set ft=ruby :
 
-# All Vagrant configuration is done below. The "2" in Vagrant.configure
-# configures the configuration version (we support older styles for
-# backwards compatibility). Please don't change it unless you know what
-# you're doing.
+## All Vagrant configuration is done below. The "2" in Vagrant.configure
+## configures the configuration version (we support older styles for
+## backwards compatibility). Please don't change it unless you know what
+## you're doing.
 
-# ---- Define number of nodes to spin up ----
+## ---- Define number of nodes to spin up ----
 N = 5
 
-# ---- Define any custom memory/cpu requirement ----
-# if custom requirements are desired...ensure to set
-# custom_cpu_mem == "yes" otherwise set to "no"
-# By default if custom requirements are defined and set below
-# any node not defined will be configured as the default...
-# which is 1vCPU/512mb...So if setting custom requirements
-# only define any node which requires more than the defaults.
+## ---- Define any custom memory/cpu requirement ----
+## if custom requirements are desired...ensure to set
+## custom_cpu_mem == "yes" otherwise set to "no"
+## By default if custom requirements are defined and set below
+## any node not defined will be configured as the default...
+## which is 1vCPU/512mb...So if setting custom requirements
+## only define any node which requires more than the defaults.
 nodes = [
   {
     :node => "node0",
@@ -243,7 +244,7 @@ nodes = [
   }
 ]
 
-# ---- Define variables below ----
+## ---- Define variables below ----
 additional_disks = "no"  #Define if additional drives defined should be added (yes | no)
 additional_disks_controller = "SATA Controller"
 additional_disks_num = 1  #Define the number of additional disks to add

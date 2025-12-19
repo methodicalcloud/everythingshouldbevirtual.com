@@ -1,5 +1,6 @@
 ---
   title: Ansible - Setting up an Ansible Control Machine
+  date: 2016-01-14 00:00:00
   categories:
     - Automation
   tags:
@@ -38,7 +39,7 @@ To install python follow the below for your OS.
 sudo apt-get update
 sudo apt-get install python-setuptools python-dev libffi-dev libssl-dev git sshpass tree
 sudo easy_install pip
-```
+```bash
 
 `OSX`:
 You will need to install [Xcode](https://developer.apple.com/xcode/)
@@ -47,7 +48,7 @@ Next you will need to install [Homebrew](http://brew.sh/).
 
 ```bash
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
+```text
 
 Now you can install python.
 
@@ -197,7 +198,7 @@ to comment out or add additional GitHub user(s) repos to pull down.
 ```bash
 cd ansible-clone-git-repos
 vi defaults/main.yml
-```
+```text
 
 You will see the default is the following:
 
@@ -210,20 +211,20 @@ github_users:  #define github user(s) to clone repos from
   - mrlesmithjr
   - dstamen
   - phpipam
-```
+```text
 
 I will just be pulling down my own personal repos so I will comment out
 the other as such:
 
 ```yaml
 github_users:  #define github user(s) to clone repos from
-#  - bunchc
-#  - debops
-#  - lowescott
-#  - Mierdin
+##  - bunchc
+##  - debops
+##  - lowescott
+##  - Mierdin
   - mrlesmithjr
-#  - dstamen
-#  - phpipam
+##  - dstamen
+##  - phpipam
 ```bash
 
 Now save the file.
@@ -950,7 +951,7 @@ So if you look at `roles/ansible-users/defaults/main.yml`
 
 ```yaml
 ---
-# defaults file for ansible-users
+## defaults file for ansible-users
 create_local_users: true  #defines creating local user accounts on hosts
 create_users:  #defines user accounts to setup on hosts....define here or in group_vars/all
   - user: demo_user  #define username
@@ -1008,7 +1009,7 @@ this role.
 
 ```yaml
 ---
-# defaults file for ansible-manage-ssh-keys
+## defaults file for ansible-manage-ssh-keys
 enable_manage_ssh_keys: false  #defines if remote ssh keys should be managed
 manage_ssh_keys:
   - remote_user: demo_user  #define username on remote system to add defined keys to

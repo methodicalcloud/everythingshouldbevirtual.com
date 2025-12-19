@@ -13,7 +13,7 @@ get emails to flowing from Graylog2.
 
 ```bash
 nano /etc/graylog2.conf
-# Email transport
+## Email transport
 transport_email_enabled = true
 transport_email_protocol = smtp
 transport_email_hostname = yoursmtpserver

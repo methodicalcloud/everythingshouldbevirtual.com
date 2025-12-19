@@ -1,5 +1,6 @@
 ---
   title: Ansible - Highly Available ELK Stack
+  date: 2015-07-20 00:00:00
 ---
 
 A little over a year ago I provided installation scripts along with
@@ -251,7 +252,7 @@ esxinaming:  #define your VMware ESXi naming standards if used...this should be 
   - esxi
 hadoop_notifications: '{{ infra_email_notifications }}'
 hadoopnaming: '' #define your Hadoop naming standards if used...this should be set to host pattern...example - hd01.everythingshouldbevirtual.local - define as hd
-#  - hd  #uncomment and remove '' above if setting
+##  - hd  #uncomment and remove '' above if setting
 keepalived_router_id: 51  #defines the router_id to configure for keepalived...ensure not to define an already in use router_id if keepalived exists on the same subnet
 keepalived_vip: 10.0.101.60  #defines the VIP to be assigned to the cluster...this will be the address to access all components of ELK...create a DNS record for this address...ex - logstash.everythingshouldbevirtual.local
 keepalived_vip_hostname: '{{ logstash_server_fqdn }}'  #define the DNS record created for keepalived_vip  #defined in group_vars/all/configs
@@ -266,10 +267,10 @@ logstash_drop_grokparsefailures: false  #set to true if you want to drop all mes
 logstash_enable_alerts: true  #defines if alerts should be enabled...example is email alerts..
 logstash_workers: 4  #define the number of logstash worker processes to spawn
 netscalernaming: '' #define your Citrix Netscaler naming standards if used...this should be set to host pattern...example - nsvpx01.everythingshouldbevirtual.local - define as nsvpx
-#  - nsvpx  #uncomment and remove '' above if setting
+##  - nsvpx  #uncomment and remove '' above if setting
 nsxnaming: '' #define your VMware NSX naming standards if used...this should be set to host pattern...example - nsx-rt01.everythingshouldbevirtual.local - define as nsx-rt
-#  - vShield-edge  #uncomment and remove '' above if setting
-#  - nsx-rt  #uncomment and remove '' above if setting
+##  - vShield-edge  #uncomment and remove '' above if setting
+##  - nsx-rt  #uncomment and remove '' above if setting
 pfsensenaming:  #define your PFSense firewall naming standards if used...this should be set to host pattern...example - pfsense01.everythingshouldbevirtual.local - define as pfsense
   - pfsense
 redis_max_memory: 2048  #define the max amount of memory to use for redis
@@ -385,7 +386,7 @@ ready to run the following and watch everything get built.
 
 ```bash
 ansible-playbook -i hosts elkstack_prod.yml
-```
+```text
 
 There you have it. You should have a functioning ELK Stack deployment at
 the end of the runs.

@@ -431,12 +431,12 @@ source vpxd {
        file("/var/log/vmware/vpx/inventoryservice/ds.log" follow_freq(1) flags(no-parse));
 };
 
-# Remote Syslog Host
+## Remote Syslog Host
 destination remote_syslog {
        tcp("logstash" port (1515));
 };
 #
-# Log vCenter Server vpxd log remotely
+## Log vCenter Server vpxd log remotely
 log {
         source(vpxd);
         destination(remote_syslog);
@@ -454,7 +454,7 @@ default on most.
 
 ```bash
 sudo nano /etc/rsyslog.d/50-default.conf
-```
+```text
 
 Now add the following to the end of this file
 

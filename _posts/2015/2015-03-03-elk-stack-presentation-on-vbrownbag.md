@@ -1,5 +1,6 @@
 ---
   title: "ELK Stack Presentation on #vBrownBag"
+  date: 2015-03-03 00:00:00
 ---
 
 Last week (02-25-2015) I presented on the weekly #vBrownBag about using

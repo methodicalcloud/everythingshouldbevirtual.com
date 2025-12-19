@@ -40,13 +40,13 @@ MaxFrameSize=0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
 Underneath that line you will see what the different values represent.
 
 ```bash
-# 0 is for normal ethernet frames.\\
+## 0 is for normal ethernet frames.\\
 
-# 1 is for upto 4k size frames.\\
+## 1 is for upto 4k size frames.\\
 
-# 2 is for upto 8k size frames.\\
+## 2 is for upto 8k size frames.\\
 
-# 3 is for upto 16k size frames.
+## 3 is for upto 16k size frames.
 ```bash
 
 So based on this information we will need to use 3 so that we can use an

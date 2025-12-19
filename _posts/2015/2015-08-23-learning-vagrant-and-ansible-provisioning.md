@@ -1,5 +1,6 @@
 ---
   title: Learning Vagrant and Ansible Provisioning
+  date: 2015-08-23 00:00:00
   categories:
     - Automation
     - Virtualization

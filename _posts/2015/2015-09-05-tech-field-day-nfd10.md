@@ -1,5 +1,6 @@
 ---
   title: Tech Field Day - NFD10
+  date: 2015-09-05 00:00:00
 ---
 
 I was invited as a delegate to attend Tech Field Day - Network Field Day

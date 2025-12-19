@@ -1,5 +1,6 @@
 ---
   title: Ansible - Discover and Backup PowerDNS
+  date: 2015-10-10 00:00:00
   categories:
     - Automation
   tags:
@@ -381,7 +382,7 @@ all of our records created as a file for each zone.
 |   |   `-- _udp.vagrant.local.yml
 |   `-- vagrant.local
 |       `-- vagrant.local.yml
-```
+```text
 
 And if we take a look at our `vagrant.local/vagrant.local.yml` file for
 example.

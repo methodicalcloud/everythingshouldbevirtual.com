@@ -1,5 +1,6 @@
 ---
   title: "Tech Field Day - #VFD4 - Dell FX Architecture"
+  date: 2015-01-21 00:00:00
 ---
 
 Carol Pflueger, Servers Product Manager, introduces the Dell PowerEdge

@@ -1,5 +1,6 @@
 ---
   title: Vagrant - Adding a second hard drive
+  date: 2016-02-17 00:00:00
   categories:
     - Virtualization
   tags:
@@ -19,13 +20,13 @@ In the example below I have made the relevant configurations required
 **bold** text.
 
 ```ruby
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
+## -*- mode: ruby -*-
+## vi: set ft=ruby :
 
-# All Vagrant configuration is done below. The "2" in Vagrant.configure
-# configures the configuration version (we support older styles for
-# backwards compatibility). Please don't change it unless you know what
-# you're doing.
+## All Vagrant configuration is done below. The "2" in Vagrant.configure
+## configures the configuration version (we support older styles for
+## backwards compatibility). Please don't change it unless you know what
+## you're doing.
 disk = './secondDisk.vdi'
 Vagrant.configure(2) do |config|
   config.vm.define "iscsitarget" do |iscsitarget|
@@ -44,7 +45,7 @@ Vagrant.configure(2) do |config|
   end
   config.vm.provision :shell, path: "provision.sh", keep_color: "true"
 end
-```
+```text
 
 So what we are doing in the above example is:
 Defining the variable disk= to the desired filename for the second hard
@@ -79,7 +80,7 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes
 Disk identifier: 0x00000000
 
 Disk /dev/sdb doesn't contain a valid partition table
-```
+```text
 
 So there you have it and hope this may just help someone else too.
 
@@ -87,16 +88,16 @@ And if you want to add more than two hard-drives to your Vagrant build.
 See example below:
 
 ```ruby
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
+## -*- mode: ruby -*-
+## vi: set ft=ruby :
 
-# All Vagrant configuration is done below. The "2" in Vagrant.configure
-# configures the configuration version (we support older styles for
-# backwards compatibility). Please don't change it unless you know what
-# you're doing.
+## All Vagrant configuration is done below. The "2" in Vagrant.configure
+## configures the configuration version (we support older styles for
+## backwards compatibility). Please don't change it unless you know what
+## you're doing.
 Vagrant.configure(2) do |config|
   config.vm.define "zfs" do |zfs|
-#    zfs.vm.box = "mrlesmithjr/jessie64"
+##    zfs.vm.box = "mrlesmithjr/jessie64"
     zfs.vm.box = "mrlesmithjr/trusty64"
     zfs.vm.hostname = "zfs"
 
@@ -116,7 +117,7 @@ Vagrant.configure(2) do |config|
     zfs.vm.provision :shell, path: "provision.sh", keep_color: "true"
   end
   config.vm.define "client" do |client|
-#    client.vm.box = "mrlesmithjr/jessie64"
+##    client.vm.box = "mrlesmithjr/jessie64"
     client.vm.box = "mrlesmithjr/trusty64"
     client.vm.hostname = "client"
 

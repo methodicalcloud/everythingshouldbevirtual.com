@@ -1,5 +1,6 @@
 ---
   title: Ansible - KeepAliveD
+  date: 2015-04-09 00:00:00
 ---
 
 In this post I am creating a fictitious tenant using a vars file which
@@ -25,11 +26,11 @@ tenant_vips:
   - 10.10.10.103
   - 10.10.10.104
 
-# Applied on router(s) forward rules
+## Applied on router(s) forward rules
 forward_rules_allow_spec:
-#  - { protocol: 'tcp', port: '8080', source: '0.0.0.0/0', destination: '192.168.70.0/24' }
-#  - { protocol: 'tcp', port: '22', source: '0.0.0.0/0', destination: '192.168.71.0/24' }
-#  - { protocol: 'tcp', port: '22', source: '0.0.0.0/0', destination: '192.168.72.0/24' }
+##  - { protocol: 'tcp', port: '8080', source: '0.0.0.0/0', destination: '192.168.70.0/24' }
+##  - { protocol: 'tcp', port: '22', source: '0.0.0.0/0', destination: '192.168.71.0/24' }
+##  - { protocol: 'tcp', port: '22', source: '0.0.0.0/0', destination: '192.168.72.0/24' }
 
 forward_rules_allow_gen:
   - { source: '192.168.70.0/24', destination: '0.0.0.0/0' }
@@ -46,7 +47,7 @@ forward_rules_out_drop:
 
 backend_rules:
 
-# Load Balancer Setup
+## Load Balancer Setup
 
 lb_details:
   - { name: 'web', protocol: 'tcp', listen_port: '80', tenant_vip: '10.10.10.100' }
@@ -87,7 +88,7 @@ keepalived.conf file.
 {% raw %}
 
 ```yaml
-# {{ ansible_managed }}
+## {{ ansible_managed }}
 
 #### Below is for managing the whole stack involved in Quagga HA
 vrrp_script chk_zebra {
@@ -157,17 +158,17 @@ this post and future posts based on this same scenario.
 
 ```yaml
 ---
-# Tenants
+## Tenants
 config_tenants: true
 
-# Firewall
+## Firewall
 enable_firewall: 'true'                   # set to true to enable firewall services
 nat_masquerade: 'false'
 
-# Zabbix Monitoring
+## Zabbix Monitoring
 enable_zabbix_agent: 'true'
 
-# Define configurations for each service
+## Define configurations for each service
 enable_conntrackd: true                 # set to true to enable conntrackd (connection tracking)
 enable_dnsmasq: true                     # set to true to enable service
 enable_haproxy: true                    # set to true to enable service
@@ -176,7 +177,7 @@ enable_quagga: true                     # set to true to enable service
 enable_snmpd: true                       # set to true to enable service
 enable_tftp: true                       # set to true to enable service
 
-# Before setting these to true for config they must be set to true for enable above
+## Before setting these to true for config they must be set to true for enable above
 config_conntrackd: true                  # set to true to config conntrackd (setup connection tracking sync - Works with KeepAliveD)
 config_dnsmasq: true                     # set to true to do custom config
 config_glusterfs: true                   # config glusterfs - sets up GlusterFS mounts, bricks and mounts various mountpoints if configured
@@ -188,14 +189,14 @@ config_quagga: true                     # set to true to do custom config
 config_snmpd: true                       # set to true to do custom config
 config_tftp: true                        # set to true to do custom config
 
-# Before setting these to true for sync they must be set to true for config above
+## Before setting these to true for sync they must be set to true for config above
 sync_dnsmasq: true                       # set to true to sync /var/lib/misc which contains dhcpleases
 sync_haproxy: true                       # set to true to sync between nodes using GlusterFS
 sync_keepalived: true                    # set to true to sync between nodes using GlusterFS
 sync_quagga: true                       # set to true to sync between nodes using GlusterFS
 sync_tftp: true                          # set to true to sync between nodes using GlusterFS
 
-# Define LVM configuration for additional disk added for GlusterFS
+## Define LVM configuration for additional disk added for GlusterFS
 create: true
 create_vgname: 'glusterfs-vg'
 create_lvname: 'glusterfs-lv'
@@ -204,30 +205,30 @@ new_mntp: '/mnt/gluster'
 new_disk: '/dev/sdb'
 filesystem: xfs
 
-# Reconfigure networking on ititial setup
+## Reconfigure networking on ititial setup
 pre_bootstrap_change_ip: true            # changes ip of each node based on host_vars ip setting
 
-# Bootstrap setup
+## Bootstrap setup
 reboot: true                             # reboot after changing hostname to match inventory_hostname - set to false if you do not want to reboot
 root_password: '$1$lDZD3dKn$ZRoapxlZOzivK/sQWqdFg/'             # MD5 hash of your root password
 administrator_password: '$1$WcS2byl4$hU0dn5RtQsCbRWiorXsTL.'    # MD5 hash of your administrator password - if used
 remote_password: '$1$D3pAE14D$HSv0wd9jK9P.bt/vMcOv6.'           # MD5 hash of your remote password - used for Ansible
 
-# Rsyslog setup
+## Rsyslog setup
 syslog_server_1: 'logstash.everythingshouldbevirtual.local'
 syslog_server_port_1: '514'
 syslog_server_2: 'logstash-dev.everythingshouldbevirtual.local'
 syslog_server_port_2: '514'
 
-# Timezone setup
+## Timezone setup
 change_timezone: true
 timezone: 'America/New_York'             # change to your preferred timezone - UTC|EST5EDT|America/New_York
 
-# SNMPD configurations
+## SNMPD configurations
 snmpd_ro_community: 'everythingshouldbevirtual'   # set to your snmp RO (read only) community string
 snmpd_authorized_network: '10.0.101.0/24'         # set to your network in which your snmp monitoring server(s) reside
 
-# sets up networking - used througout various settings for additional services if they can be
+## sets up networking - used througout various settings for additional services if they can be
 pri_bind_interface: 'eth0'          # should be set to your primary interface
 pri_interface_method: 'static'      # set to static or dhcp
 pri_netmask: '255.255.255.0'        # set to the netmask for your primary interface (eth0)
@@ -250,7 +251,7 @@ dns_search: '{{ pri_domain_name}} {{ dnsmasq_domain }}'      # sets your dns sea
 interfaces_lo:
   - { int: lo, method: loopback, ip_address: '{{ quagga_ospf_routerid }}/32' }      # configures the loopback adapter for the OSPF router ID
 
-# Sets up /etc/network/interfaces
+## Sets up /etc/network/interfaces
 interfaces_config:
   - { int: '{{ sec_bind_interface }}', method: '{{ sec_interface_method }}' }
   - { int: '{{ conntrackd_sync_int }}', method: 'static' }
@@ -279,20 +280,20 @@ ospf_redistribute:
   - connected
   - kernel
   - static
-# - isis
-# - rip
+## - isis
+## - rip
 
 ### Enter default route for networks not found in routing table
 default_route: '0.0.0.0/0 {{ pri_gateway }}'      # configures the default route for Quagga...This will typically be set to your default gateway for your pri interface
 
-# Define TFTP settings
+## Define TFTP settings
 tftp_bind_address: "10.0.110.1"                 # set to an interface IP address on your inside network - vlan700 IP address here
 tftpboot_dir: '/var/lib/tftpboot'                 # set to the tftpboot directory
 tftpboot_home: '{{ tftpboot_dir }}'               # this should be the same as tftpboot_dir....used for GlusterFS mount
 tftpboot_mnt: '{{ gfs_dir5 }}-{{ app_name }}'     #
 tftpboot_backup_dir: '/var/lib/tftpboot.backup'
 
-# Define DNSmasq settings
+## Define DNSmasq settings
 no_dhcp_bind_int: '{{ pri_bind_interface }}' # change to interface that you do not want DHCP listening on - should be outside interface (eth0)
 time_server: '10.10.10.1'
 domain_suffix_search: '{{ pri_domain_name }},{{ dnsmasq_domain }}'
@@ -306,23 +307,23 @@ dnsmasq_nameservers:
   - '{{ pri_dns }}'
   - '{{ sec_dns }}'
 
-# Define preseed.cfg defaults (TFTP)
+## Define preseed.cfg defaults (TFTP)
 #domain_name: '{{ pri_domain_name }}'              # your primary domain name or secondary domain name - whichever suits your requirements
 domain_name: '{{ dnsmasq_domain }}'              # comment out above and uncomment this line if you want to use your cloud domain for provisioning vs. primary domain name
 root_pw: '$1$6Rpvg6ad$VUpMRxLIDXbNp3of9RjGE0'     # use echo "password" | mkpasswd -s -5
 bind_address: '{{ tftp_bind_address }}'            # sets to your sec_bind_address - change to pri_bind_address if you are setting TFTP on your primary interface
 
-# Define DNSmasq DHCP ranges
+## Define DNSmasq DHCP ranges
 dhcp_range:
   - { start: '192.168.70.128', end: '192.168.70.224', netmask: '255.255.255.0' }
   - { start: '192.168.71.128', end: '192.168.71.224', netmask: '255.255.255.0' }
   - { start: '192.168.72.128', end: '192.168.72.224', netmask: '255.255.255.0' }
   - { start: '192.168.73.128', end: '192.168.73.224', netmask: '255.255.255.0' }
 
-# Define app name to use for setup of GlusterFS
+## Define app name to use for setup of GlusterFS
 app_name: 'ans-cloud-rt'
 
-# Define names for GlusterFS directories and volumes
+## Define names for GlusterFS directories and volumes
 gfs_dir1: 'loadbalancers'
 gfs_vol1: '{{ app_name }}'
 gfs_dir2: 'routers'
@@ -336,7 +337,7 @@ gfs_vol5: '{{ app_name }}'
 gfs_dir6: 'dnsmasq_misc'
 gfs_vol6: '{{ app_name }}'
 
-# Define folders to create for GlusterFS
+## Define folders to create for GlusterFS
 create_gluster_bricks:
   - { name: '{{ gfs_dir1 }}', owner: root, group: root }
   - { name: '{{ gfs_dir2 }}', owner: root, group: root }
@@ -345,7 +346,7 @@ create_gluster_bricks:
   - { name: '{{ gfs_dir5 }}', owner: root, group: root }
   - { name: '{{ gfs_dir6 }}', owner: root, group: root }
 
-# Define GlusterFS volumes to create
+## Define GlusterFS volumes to create
 create_gluster_volumes:
   - { name: '{{ gfs_dir1 }}-{{ gfs_vol1 }}', brick: '{{ gluster_brick_dir }}/{{ gfs_dir1 }}/{{ gfs_vol1 }}', rebalance: yes, replicas: 2 }
   - { name: '{{ gfs_dir2 }}-{{ gfs_vol2 }}', brick: '{{ gluster_brick_dir }}/{{ gfs_dir2 }}/{{ gfs_vol2 }}', rebalance: yes, replicas: 2 }
@@ -354,7 +355,7 @@ create_gluster_volumes:
   - { name: '{{ gfs_dir5 }}-{{ gfs_vol5 }}', brick: '{{ gluster_brick_dir }}/{{ gfs_dir5 }}/{{ gfs_vol5 }}', rebalance: yes, replicas: 2 }
   - { name: '{{ gfs_dir6 }}-{{ gfs_vol6 }}', brick: '{{ gluster_brick_dir }}/{{ gfs_dir6 }}/{{ gfs_vol6 }}', rebalance: yes, replicas: 2 }
 
-# Define KeepAliveD settings (router_id for nodes is in host_vars)
+## Define KeepAliveD settings (router_id for nodes is in host_vars)
 keepalived_vip: '10.10.10.4'                     # Should be setup on the same network as your pri_interface resides
 keepalived_vip_int: '{{ pri_bind_interface }}'   # Set to primary bind interface
 keepalived_router_id: '23'   # make sure to set these to different values so keepalived does not attempt to join additional vrrp domains on the same subnet
@@ -364,7 +365,7 @@ notify_fault_script: '/opt/scripts/fault.sh'
 scripts_mnt: '{{ gfs_dir3 }}-{{ app_name }}'
 scripts_home: '/opt/scripts'
 
-# Define conntrackd settings for use with KeepAliveD
+## Define conntrackd settings for use with KeepAliveD
 conntrackd_ignore_addresses:
   - '{{ pri_bind_address }}'
   - '{{ conntrackd_sync_ip }}'
@@ -372,20 +373,20 @@ conntrackd_ignore_addresses:
 conntrackd_sync_int: 'eth2'                 # Use a separate interface than used for primary and VLAN interface
 conntrackd_sync_netmask: '255.255.255.0'    # Netmask for sync network
 
-# Define GlusterFS settings
+## Define GlusterFS settings
 glusterfs_client: true        # true|false - should be set to true in most cases
 glusterfs_server: true        # true|false - should be set to true in most cases
 glusterfs_repl_int: '{{ pri_bind_interface }}'
 gluster_brick_dir: '{{ new_mntp }}'
 cluster_hosts: 'ans-cloud-rt01a,ans-cloud-rt01b'      # make sure to change these to match your inventory_hostname values of your hosts in site_hosts and also add them to a site_group
 
-# Define HAProxy settings
+## Define HAProxy settings
 haproxy_backup_dir: '/etc/haproxy.backup'
 haproxy_home: '/etc/haproxy'
 haproxy_mnt: '{{ gfs_dir1 }}-{{ app_name }}'
 
-# Define Quagga settings
-# if the mgmt int is changed you need to update playbooks/glusterfs.yml under updating /etc/hosts to reflect the correct eth device until a variable solution can be found
+## Define Quagga settings
+## if the mgmt int is changed you need to update playbooks/glusterfs.yml under updating /etc/hosts to reflect the correct eth device until a variable solution can be found
 quagga_mgmt_int: '{{ pri_bind_interface }}'           # should be set to your outside interface (eth0)
 quagga_mgmt_method: '{{ pri_interface_method }}'      # static|dhcp
 quagga_mgmt_netmask: '{{ pri_netmask }}'              # primary interface netmask
@@ -406,7 +407,7 @@ quagga_ospf_area: '0'                                 # set to the desired area 
 quagga_mnt: '{{ gfs_dir2 }}-{{ app_name }}'
 net_config_dir: '/etc/network/interfaces.d'
 
-# Interfaces GlusterFS - for replicating network VLAN interfaces *currently not working*
+## Interfaces GlusterFS - for replicating network VLAN interfaces *currently not working*
 interfaces_home: '/etc/network/interfaces.d'
 interfaces_mnt: '{{ gfs_dir4 }}-{{ app_name }}'
 sync_interfaces: false

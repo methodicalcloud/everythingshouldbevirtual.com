@@ -23,13 +23,13 @@ sudo ./setup_chkmysql.sh
 
 ```bash
 #!/bin/bash
-# This is for Ubuntu
+## This is for Ubuntu
 apt-get install xinetd
 
 (
 cat << 'EOF'
-# default: on
-# description: mysqlchk
+## default: on
+## description: mysqlchk
 service mysqlchk
 {
         flags           = REUSE
@@ -40,15 +40,15 @@ service mysqlchk
         server          = /usr/local/bin/mysqlchk.sh
         log_on_failure  += USERID
         disable         = no
-#        only_from       = 0.0.0.0/0
-# recommended to put the IPs that need
-# to connect exclusively (security purposes)
+##        only_from       = 0.0.0.0/0
+## recommended to put the IPs that need
+## to connect exclusively (security purposes)
         per_source      = UNLIMITED
-# Recently added (May 20, 2010)
-# Prevents the system from complaining
-# about having too many connections open from
-# the same IP. More info:
-# http://www.linuxfocus.org/English/November2000/article175.shtml
+## Recently added (May 20, 2010)
+## Prevents the system from complaining
+## about having too many connections open from
+## the same IP. More info:
+## http://www.linuxfocus.org/English/November2000/article175.shtml
 }
 EOF
 ) | tee /etc/xinetd.d/mysqlchk
@@ -62,13 +62,13 @@ echo "mysqlchk 9200/tcp" >> /etc/services
 cat << 'EOF'
 #!/bin/bash
 #
-# This script checks if a mysql server is healthy running on localhost. It will
-# return:
-# "HTTP/1.x 200 OK\r" (if mysql is running smoothly)
-# - OR -
-# "HTTP/1.x 500 Internal Server Error\r" (else)
+## This script checks if a mysql server is healthy running on localhost. It will
+## return:
+## "HTTP/1.x 200 OK\r" (if mysql is running smoothly)
+## - OR -
+## "HTTP/1.x 500 Internal Server Error\r" (else)
 #
-# The purpose of this script is make haproxy capable of monitoring mysql properly
+## The purpose of this script is make haproxy capable of monitoring mysql properly
 #
 
 MYSQL_HOST="127.0.0.1"
@@ -140,7 +140,7 @@ EOF
 
 chmod 777 /usr/local/bin/mysqlchk.sh
 /etc/init.d/xinetd restart
-```
+```text
 
 Now add the following for you haproxy.cfg file on your load balancer.
 

@@ -58,7 +58,7 @@ Playbook:
             msg: Second Task
 
       when: debugging|bool
-```
+```text
 
 Based on the above playbook, I had expected both `First Task` and `Second Task`
 to execute. But what we will see is, that this is not true at all.
@@ -81,7 +81,7 @@ skipping: [localhost]
 
 PLAY RECAP ***************************************************************************************************************************************************
 localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
-```
+```bash
 
 Now if you review the results from above, you notice that the `Second Task`
 was skipped. My initial thought was `WTF`, why did the `Second Task`

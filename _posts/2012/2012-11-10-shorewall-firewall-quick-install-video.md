@@ -45,7 +45,7 @@ sudo nano /etc/shorewall/policy
 net all DROP info
 loc all ACCEPT
 fw all ACCEPT
-# Last Policy rule. Must be last
+## Last Policy rule. Must be last
 all all REJECT info
 
 sudo nano /etc/rules

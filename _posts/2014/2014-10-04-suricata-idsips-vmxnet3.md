@@ -130,13 +130,13 @@ the following to _/etc/network/interfaces_.
 
 ```bash
 sudo nano /etc/network/interfaces
-```
+```text
 
 Now add/change the following appropriate for your corresponding
 interface.
 
 ```bash
-# Connected to TAP or SPAN port for traffic monitoring
+## Connected to TAP or SPAN port for traffic monitoring
 auto eth1
 iface eth1 inet manual
   up ifconfig $IFACE -arp up
@@ -145,7 +145,7 @@ iface eth1 inet manual
   down ifconfig $IFACE down
   post-up for i in rx tx sg tso ufo gso gro lro; do ethtool -K $IFACE $i off; done
   post-up echo 1 > /proc/sys/net/ipv6/conf/$IFACE/disable_ipv6
-```
+```text
 
 And if you want to modify your ring buffer change the following.\\
 

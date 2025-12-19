@@ -1,5 +1,6 @@
 ---
   title: Ansible 2.3.1 - sshpass Error
+  date: 2017-06-05 00:00:00
   categories:
     - Automation
   tags:

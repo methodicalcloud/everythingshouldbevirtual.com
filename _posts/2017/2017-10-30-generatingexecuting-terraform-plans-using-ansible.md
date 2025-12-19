@@ -134,7 +134,7 @@ for [Terraform VM Resources](#terraform-vm-resources).
 
 ```yaml
 ---
-# If defining addl_disk, size is in GB
+## If defining addl_disk, size is in GB
 terraform_vms:
   - group: docker_lbs
     count: 2

@@ -1,5 +1,6 @@
 ---
   title: Ansible - Provision Docker Swarm Mode (1.12)
+  date: 2016-11-18 00:00:00
   categories:
     - Automation
     - Containers
@@ -83,7 +84,7 @@ docker_swarm_networks:
     driver: 'overlay'
     state: 'absent'
 docker_swarm_primary_manager: '{{ groups[docker_swarm_managers_ansible_group][0] }}'
-# docker_swarm_primary_manager: 'node0'
+## docker_swarm_primary_manager: 'node0'
 docker_swarm_task_history_limit: '5' # Task history retention limit (default 5)
 docker_swarm_workers_ansible_group: 'docker-swarm-workers'
 docker_swarm_port: "2377"

@@ -1,5 +1,6 @@
 ---
   title: Graylog2 v0.92.4 Install Script
+  date: 2015-01-21 00:00:00
 ---
 
 This post will only cover a fresh new install of Graylog2.

@@ -1,5 +1,6 @@
 ---
   title: Logstash - VCSA 6.0
+  date: 2015-04-22 00:00:00
 ---
 
 As I have begun upgrading portions of my lab to vSphere 6.x I came

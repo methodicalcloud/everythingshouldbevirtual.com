@@ -19,7 +19,7 @@ The following were the commands that I found as a typical scenario:
 esxcli system settings advanced set -o /Net/FollowHardwareMac -i 1
 sed -i '/\\/system\\/uuid/d' /etc/vmware/esx.conf
 /sbin/auto-backup.sh
-```
+```text
 
 These seemed to be working as desired until I decided to spin up quite a few of
 them, and boom, there it was, all nested ESXi hosts had the same IP address.
@@ -32,7 +32,7 @@ to the above commands):
 ```bash
 sed -i '/\\/net\\/pnic\\/child\\[0000\\]\\/mac/d' /etc/vmware/esx.conf
 sed -i '/\\/net\\/vmkernelnic\\/child\\[0000\\]\\/mac/d' /etc/vmware/esx.conf
-```
+```text
 
 So the whole command set in one would look like:
 

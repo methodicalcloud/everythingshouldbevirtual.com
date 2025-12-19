@@ -1,5 +1,6 @@
 ---
   title: Ansible - RabbitMQ Cluster
+  date: 2015-04-13 00:00:00
 ---
 
 > UPDATE: As of 08/06/2015 the following role can be found

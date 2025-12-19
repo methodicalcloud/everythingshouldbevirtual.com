@@ -1,5 +1,6 @@
 ---
   title: Ansible - Using the set_facts module
+  date: 2016-03-14 00:00:00
   categories:
     - Automation
   tags:
@@ -41,7 +42,7 @@ In the role's main task I added the following:
 
 ```yaml
 ---
-# tasks file for ansible-cacti
+## tasks file for ansible-cacti
 - include: set_facts.yml
 
 - include: debian.yml
@@ -137,7 +138,7 @@ OS type (Debian or RedHat) we are setting the following facts:
     cacti_web_owner:
     cacti_web_root:
     cacti_webserver_handler:
-```
+```text
 
 Doing this allows for us to leverage fewer tasks to accomplish the same
 things. So for example if we are deploying on an Ubuntu or Debian OS and
@@ -146,7 +147,7 @@ following variable in our _defaults/main.yml_:
 
 ```yaml
     cacti_webserver_type: 'nginx'  #defines web server type (apache2|lighttpd|nginx)
-```
+```text
 
 And if we were to apply the role the following variables would be set
 for us to use throughout the Ansible play.
@@ -194,7 +195,7 @@ to do is define the following in our _defaults.yml_:
 
 ```yaml
     cacti_webserver_type: 'lighttpd'  #defines web server type (apache2|lighttpd|nginx)
-```
+```text
 
 And that is the only variable we would need to define in order to change
 our deployment of the Cacti role. Pretty easy right?\

@@ -21,7 +21,7 @@ esxcli system snmp set --enable true
 esxcli network firewall ruleset set --ruleset-id snmp --allowed-all true
 esxcli network firewall ruleset set --ruleset-id snmp --enabled true
 /etc/init.d/snmpd restart
-```
+```text
 
 You can change the firewall rule to only allow a specific subnet or host
 if you would like to.
@@ -31,18 +31,18 @@ esxcli network firewall ruleset set --ruleset-id snmp --allowed-all false
 esxcli network firewall ruleset allowedip add --ruleset-id snmp --ip-address 10.0.101.0/24
 esxcli network firewall ruleset set --ruleset-id snmp --enabled true
 /etc/init.d/snmpd restart
-```
+```text
 
 So you are thinking well that is great but I have more than just a few
 hosts and would like to run this using PowerCLI. So here you go, a bit
 of PowerCLI to set your SNMP up on each of your hosts in vCenter.
 
 ```powershell
-# PowerCLI Script for adding syslogserver to hosts
-# @mrlesmithjr
-# EverythingShouldBeVirtual.com
-# Change the following to match your environment
-# vi_server is your vCenter
+## PowerCLI Script for adding syslogserver to hosts
+## @mrlesmithjr
+## EverythingShouldBeVirtual.com
+## Change the following to match your environment
+## vi_server is your vCenter
 $vi_server = “vcenterservername”
 $vcuser = "vcenterserverusername"
 $vcpass = "vcenterserverpassword"
@@ -51,10 +51,10 @@ $syslocation = "Atlanta"
 
 Connect-VIServer -Server $vi_server -User $vcuser -Password $vcpass
 
-# Setup variable to use in script for all hosts in vCenter
+## Setup variable to use in script for all hosts in vCenter
 $vmhosts = @(Get-VMHost)
 
-# Configure syslog on each host in vCenter
+## Configure syslog on each host in vCenter
 foreach ($vmhost in $vmhosts) {
 Write-Host ‘$vmhost = ‘ $vmhost
 $esxcli = Get-EsxCli -VMHost $vmhost

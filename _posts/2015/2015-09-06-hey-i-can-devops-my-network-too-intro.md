@@ -1,5 +1,6 @@
 ---
   title: Hey, I can DevOPS my Network too! - Intro
+  date: 2015-09-06 00:00:00
   categories:
     - Automation
   tags:

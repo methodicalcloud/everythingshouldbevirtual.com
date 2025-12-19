@@ -1,5 +1,6 @@
 ---
   title: "Tech Field Day - #TFD10 - VMTurbo"
+  date: 2016-02-23 00:00:00
 ---
 
 Once again [VMTurbo](http://vmturbo.com/) presented at Tech Field Day

@@ -1,5 +1,6 @@
 ---
   title: Quick Script to inject SSH Keys for hostnames and ip address
+  date: 2015-06-24 00:00:00
 ---
 
 While playing around with [Rundeck](http://rundeck.org) I wanted to run
@@ -14,25 +15,25 @@ the issue. So here I am sharing a script that I created within Rundeck.
 
 ```bash
 cd /tmp
-# create hosts
+## create hosts
 echo ans-test-1 > hosts
 echo ans-test-2 >> hosts
 echo ans-test-3 >> hosts
 echo ans-test-4 >> hosts
 echo ans-test-5 >> hosts
-# grab IP addresses from hosts
+## grab IP addresses from hosts
 for node in $(cat hosts); do
   nslookup $node | grep 'Address\:' | awk 'NR==2 {print $2}' >> hosts
 done
-# add ssh keys for both hostname and ip for each host
+## add ssh keys for both hostname and ip for each host
 for node in $(cat hosts); do
   ssh-keyscan -H $node >> ~/.ssh/known_hosts
 done
-# Cleanup known_hosts for duplicate entries
+## Cleanup known_hosts for duplicate entries
 sort -u ~/.ssh/known_hosts > ~/.ssh/known_hosts.clean
 mv ~/.ssh/known_hosts ~/.ssh/known_hosts.backup
 cp ~/.ssh/known_hosts.clean ~/.ssh/known_hosts
-# make sure destination exists and is writable for rundeck user... This was erroring out with permission denied for rundeck user.
+## make sure destination exists and is writable for rundeck user... This was erroring out with permission denied for rundeck user.
 sudo mkdir /var/lib/rundeck/.ansible/
 sudo chown -R rundeck:rundeck /var/lib/rundeck/.ansible/
 cd /tmp/ansible

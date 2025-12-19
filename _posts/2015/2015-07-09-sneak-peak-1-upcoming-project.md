@@ -1,5 +1,6 @@
 ---
   title: "Sneak Peak #1 - Upcoming Project"
+  date: 2015-07-09 00:00:00
 ---
 
 I have been working on a new project for the past few weeks and it has

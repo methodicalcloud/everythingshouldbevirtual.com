@@ -1,5 +1,6 @@
 ---
   title: A Journey to modern-day IT relevance
+  date: 2015-09-06 00:00:00
 ---
 
 We keep hearing this term day in and day out it seems. Attending

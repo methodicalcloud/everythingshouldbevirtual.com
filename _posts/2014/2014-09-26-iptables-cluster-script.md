@@ -46,7 +46,7 @@ Now make the script executable
 
 ```bash
 sudo chmod +x /opt/iptables_cluster.sh
-```
+```text
 
 Now you are ready to deploy out your IPTables rule(s) to all of your
 nodes. When you run the script it will prompt for you to enter the rule

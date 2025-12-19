@@ -1,5 +1,6 @@
 ---
   title: Disabling SSLv3 on NSX Edge Devices
+  date: 2015-02-06 00:00:00
 ---
 
 So a few months back after the Poodle attack I had a request to disable

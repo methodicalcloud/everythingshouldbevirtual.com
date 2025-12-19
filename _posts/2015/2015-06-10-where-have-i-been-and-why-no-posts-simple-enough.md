@@ -1,5 +1,6 @@
 ---
   title: Where have I been? And why no posts? Simple enough!
+  date: 2015-06-10 00:00:00
 ---
 
 Well I have been fairly quiet and not putting out much content lately

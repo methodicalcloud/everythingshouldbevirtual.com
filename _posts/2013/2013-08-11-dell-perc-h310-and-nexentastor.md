@@ -58,7 +58,7 @@ your system.
 ```bash
 megarec -listall
 sas2flsh -listall
-```
+```text
 
 The first command "megarec -writesbr 0 sbrempty.bin" wipes the card
 completely so sas2flsh will recognize the card as an LSI controller. But
@@ -68,7 +68,7 @@ other cards do but instead you can list the address by running
 
 ```bash
 sas2flsh -list
-```
+```bash
 
 and write down the SAS address which starts with "500605b". If you
 don't write it down you are hosed. :) J/K! I thought I was too but I
@@ -78,7 +78,7 @@ was able to magically come up with a random address starting with
 ```bash
 megarec -writesbr 0 sbrempty.bin
 megarec -cleanflash 0
-```
+```text
 
 Now reboot using the USB boot drive again and let's flash the
 controller with the IT mode firmware.

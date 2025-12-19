@@ -55,8 +55,8 @@ rm /etc/rcS.d/S99nagios
 Create /etc/init/nagios.conf \*\*Thanks to [raymii.org](http://raymii.org "http\://raymii.org")
 
 ```bash
-# nagios - monitoriong system
-# by https://raymii.org
+## nagios - monitoriong system
+## by https://raymii.org
 
 description     "nagios monitoring system"
 

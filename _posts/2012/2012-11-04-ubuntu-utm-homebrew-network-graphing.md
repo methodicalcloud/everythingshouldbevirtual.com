@@ -30,13 +30,13 @@ sudo nano /usr/local/bin/start_ntop.sh
 sudo ntop -i "br0" -d -L -u ntop --skip-version-check --use-syslog=daemon --set-admin-password={your_admin_password}
 sudo chmod +x /usr/local/bin/start_ntop.sh
 sudo nano /etc/rc.local
-```
+```bash
 
 \*\*Add the following line at the bottom before the line exit 0\*\*
 
 ```bash
 /usr/local/bin/start_ntop.sh &
-```
+```text
 
 Reboot your UTM or simply run
 

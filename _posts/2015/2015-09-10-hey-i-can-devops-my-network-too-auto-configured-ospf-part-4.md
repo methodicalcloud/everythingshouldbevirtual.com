@@ -1,5 +1,6 @@
 ---
   title: Hey, I can DevOPS my Network too! -- Auto-configured OSPF (Part 4)
+  date: 2015-09-10 00:00:00
   categories:
     - Automation
   tags:
@@ -76,7 +77,7 @@ mrlesmithjr.quagga role.
 
 ```yaml
 ---
-# defaults file for ansible-quagga
+## defaults file for ansible-quagga
 config_glusterfs: false
 config_interfaces: false
 config_keepalived: false
@@ -89,53 +90,53 @@ keepalived_scripts:
 keepalived_scripts_home: /opt/scripts
 net_config_dir: /etc/network/interfaces.d
 #quagga_bgp_router_configs:
-#  - name: r1
-#    local_as: 123
-#    router_id: 1.1.1.1
-#    neighbors:
-#      - neighbor: 192.168.12.12
-#        remote_as: 123
-#      - neighbor: 192.168.31.13
-#        remote_as: 123
-#      - neighbor: 192.168.14.14
-#        remote_as: 141
-#      - neighbor: 192.168.15.15
-#        remote_as: 151
-#    network_advertisements:  #networks to advertise and/or define redistribute options
-#      - 1.1.1.0/24
-#      - 192.168.12.0/24
-#      - 192.168.14.0/24
-#      - 192.168.15.0/24
-#    redistribute:
-#      - connected
-#      - isis
-#      - kernel
-#      - rip
-#      - static
-#  - name: r2
-#    local_as: 123
-#    router_id: 2.2.2.2
-#    neighbors:
-#      - neighbor: 192.168.12.11
-#        remote_as: 123
-#      - neighbor: 192.168.23.13
-#        remote_as: 123
-#    network_advertisements:  #networks to advertise and/or define redistribute options
-#      - 2.2.2.0/24
-#      - 192.168.12.0/24
-#      - 192.168.23.0/24
-#    redistribute:
-#      - connected
-#      - isis
-#      - kernel
-#      - rip
-#      - static
+##  - name: r1
+##    local_as: 123
+##    router_id: 1.1.1.1
+##    neighbors:
+##      - neighbor: 192.168.12.12
+##        remote_as: 123
+##      - neighbor: 192.168.31.13
+##        remote_as: 123
+##      - neighbor: 192.168.14.14
+##        remote_as: 141
+##      - neighbor: 192.168.15.15
+##        remote_as: 151
+##    network_advertisements:  #networks to advertise and/or define redistribute options
+##      - 1.1.1.0/24
+##      - 192.168.12.0/24
+##      - 192.168.14.0/24
+##      - 192.168.15.0/24
+##    redistribute:
+##      - connected
+##      - isis
+##      - kernel
+##      - rip
+##      - static
+##  - name: r2
+##    local_as: 123
+##    router_id: 2.2.2.2
+##    neighbors:
+##      - neighbor: 192.168.12.11
+##        remote_as: 123
+##      - neighbor: 192.168.23.13
+##        remote_as: 123
+##    network_advertisements:  #networks to advertise and/or define redistribute options
+##      - 2.2.2.0/24
+##      - 192.168.12.0/24
+##      - 192.168.23.0/24
+##    redistribute:
+##      - connected
+##      - isis
+##      - kernel
+##      - rip
+##      - static
 quagga_bgp_redistribute:
   - connected
   - kernel
-#  - static
-#  - isis
-#  - rip
+##  - static
+##  - isis
+##  - rip
 quagga_config_bgpd: false #defines if quagga bgpd should be configured based on quagga_bgp_router_configs...makes it easy to disable auto routing in order to define your routes manually
 quagga_config_ospfd: false  #defines if quagga ospfd should be configured based on quagga_ospf_ vars...makes it easy to disable auto routing in order to define your routes manually
 quagga_configs:
@@ -147,22 +148,22 @@ quagga_enable_bgpd: false
 quagga_enable_ospfd: false
 quagga_enable_password: quagga #define here or in group_vars/group
 #quagga_interfaces_lo:
-#  - int: lo
-#    method: loopback
-#    ip_address: 192.168.70.240/32
-#  - int: lo
-#    method: loopback
-#    ip_address: 192.168.70.241/32
+##  - int: lo
+##    method: loopback
+##    ip_address: 192.168.70.240/32
+##  - int: lo
+##    method: loopback
+##    ip_address: 192.168.70.241/32
 quagga_ospf_area: 51  #defines the desired area mapping for OSPF routing with upstream OSPF routers...define here or in group_vars/group
 quagga_ospf_area_config:
   - network: '{{ quagga_ospf_routerid }}/24'
     area: '{{ quagga_ospf_area }}'
 quagga_ospf_redistribute:
   - connected
-#  - kernel
-#  - static
-#  - isis
-#  - rip
+##  - kernel
+##  - static
+##  - isis
+##  - rip
 quagga_ospf_routerid: '{{ ansible_default_ipv4.address }}'  #defines the router id IP address for OSPF...define here or in group_vars/group
 quagga_password: quagga #define in group_vars/all/accounts
 quagga_root_dir: /etc/quagga
@@ -246,17 +247,17 @@ quagga_bgp_router_configs:
         remote_as: 141
       - neighbor: 192.168.15.15
         remote_as: 151
-#    network_advertisements:  #networks to advertise and/or define redistribute options
-#      - 1.1.1.0/24
-#      - 192.168.12.0/24
-#      - 192.168.14.0/24
-#      - 192.168.15.0/24
+##    network_advertisements:  #networks to advertise and/or define redistribute options
+##      - 1.1.1.0/24
+##      - 192.168.12.0/24
+##      - 192.168.14.0/24
+##      - 192.168.15.0/24
     redistribute:
       - connected
-#      - isis
+##      - isis
       - kernel
-#      - rip
-#      - static
+##      - rip
+##      - static
   - name: r2
     local_as: 123
     router_id: 2.2.2.2
@@ -265,16 +266,16 @@ quagga_bgp_router_configs:
         remote_as: 123
       - neighbor: 192.168.23.13
         remote_as: 123
-#    network_advertisements:  #networks to advertise and/or define redistribute options
-#      - 2.2.2.0/24
-#      - 192.168.12.0/24
-#      - 192.168.23.0/24
+##    network_advertisements:  #networks to advertise and/or define redistribute options
+##      - 2.2.2.0/24
+##      - 192.168.12.0/24
+##      - 192.168.23.0/24
     redistribute:
       - connected
-#      - isis
+##      - isis
       - kernel
-#      - rip
-#      - static
+##      - rip
+##      - static
   - name: r3
     local_as: 123
     router_id: 3.3.3.3
@@ -283,38 +284,38 @@ quagga_bgp_router_configs:
         remote_as: 123
       - neighbor: 192.168.31.11
         remote_as: 123
-#    network_advertisements:  #networks to advertise and/or define redistribute options
-#      - 3.3.3.0/24
-#      - 192.168.23.0/24
-#      - 192.168.31.0/24
+##    network_advertisements:  #networks to advertise and/or define redistribute options
+##      - 3.3.3.0/24
+##      - 192.168.23.0/24
+##      - 192.168.31.0/24
     redistribute:
       - connected
-#      - isis
+##      - isis
       - kernel
-#      - rip
-#      - static
+##      - rip
+##      - static
   - name: r4
     local_as: 141
     router_id: 4.4.4.4
     neighbors:
       - neighbor: 192.168.14.11
         remote_as: 123
-#    network_advertisements:  #networks to advertise and/or define redistribute options
-#      - 4.4.4.0/24
-#      - 192.168.14.0/24
-#      - 192.168.41.0/24
+##    network_advertisements:  #networks to advertise and/or define redistribute options
+##      - 4.4.4.0/24
+##      - 192.168.14.0/24
+##      - 192.168.41.0/24
     redistribute:
       - connected
-#      - isis
+##      - isis
       - kernel
-#      - rip
-#      - static
+##      - rip
+##      - static
 #quagga_bgp_redistribute:
-#  - connected
-#  - kernel
-#  - static
-#  - isis
-#  - rip
+##  - connected
+##  - kernel
+##  - static
+##  - isis
+##  - rip
 quagga_config_bgpd: false #defines if quagga bgpd should be configured based on quagga_bgp_router_configs...makes it easy to disable auto routing in order to define your routes manually
 quagga_config_ospfd: false  #defines if quagga ospfd should be configured based on quagga_ospf_ vars...makes it easy to disable auto routing in order to define your routes manually
 quagga_enable_bgpd: false
@@ -385,7 +386,7 @@ hosts file. But first let's look at it.
 ```bash
 cat hosts
 ....
-# Generated by Vagrant
+## Generated by Vagrant
 
 r1 ansible_ssh_host=127.0.0.1 ansible_ssh_port=2222 ansible_ssh_private_key_file=/Users/larrysmith/projects/vagrant-ansible-routing-template/.vagrant/machines/r1/virtualbox/private_key
 r2 ansible_ssh_host=127.0.0.1 ansible_ssh_port=2200 ansible_ssh_private_key_file=/Users/larrysmith/projects/vagrant-ansible-routing-template/.vagrant/machines/r2/virtualbox/private_key
@@ -425,7 +426,7 @@ r[1:5]
 Now your hosts file should look like the following.
 
 ```bash
-# Generated by Vagrant
+## Generated by Vagrant
 
 r1 ansible_ssh_host=127.0.0.1 ansible_ssh_port=2222 ansible_ssh_private_key_file=/Users/larrysmith/projects/vagrant-ansible-routing-template/.vagrant/machines/r1/virtualbox/private_key
 r2 ansible_ssh_host=127.0.0.1 ansible_ssh_port=2200 ansible_ssh_private_key_file=/Users/larrysmith/projects/vagrant-ansible-routing-template/.vagrant/machines/r2/virtualbox/private_key
@@ -1389,10 +1390,10 @@ variable quagga_ospf_redistribute which looks like the following.
 ```yaml
 quagga_ospf_redistribute:
   - connected
-#  - kernel
-#  - static
-#  - isis
-#  - rip
+##  - kernel
+##  - static
+##  - isis
+##  - rip
 ```bash
 
 The above is what configured our OSPF setup to inject connected

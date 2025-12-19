@@ -7,7 +7,7 @@ This article is a continuation of Part 1 that we did a while back.  I
 would highly suggest checking out that article as well prior to going
 through this article.  You can read Part 1 [here](https://everythingshouldbevirtual.com/nexentastoresxi53750glacpvdsnfsiscsi-part-1/).
 
-# MPIO Round Robin Policy
+## MPIO Round Robin Policy
 
 The default round robin policy for each iSCSI LUN presented is set to
 1000 IOPS, which means that for every 1000 IOPS the round robin policy
@@ -26,7 +26,7 @@ esxcli storage nmp device list | grep naa | grep NEXENTA
    Device Display Name: NEXENTA iSCSI Disk (naa.600144f03eb7cd000000501319fa0001)
    Device Display Name: NEXENTA iSCSI Disk (naa.600144f03eb7cd000000500b500a0002)
    Device Display Name: NEXENTA iSCSI Disk (naa.600144f03eb7cd0000005058b14b0001)
-```
+```text
 
 As you can see we have 5 Nexenta devices that we need to modify the
 policy for here.  The device names that we need to change are within
@@ -40,7 +40,7 @@ esxcli storage nmp psp roundrobin deviceconfig get -d naa.600144f03eb7cd00000050
    IOOperation Limit: 1000
    Limit Type: Default
    Use Active Unoptimized Paths: false
-```
+```text
 
 Now to change the IOPS policy execute the following for each device
 name.  Also make sure that for each datastore or LUN using the vSphere
@@ -48,7 +48,7 @@ client that Round-Robin is selected for the Load Balancing policy.
 
 ```bash
 esxcli storage nmp psp roundrobin deviceconfig set -d naa.600144f03eb7cd0000004ffd9d940001 --iops 1 --type iops
-```
+```text
 
 Now do this same thing for each additional device you listed from above
 by replacing the naa.\_\_\_\_ device name.  Also remember to do this on
@@ -58,7 +58,7 @@ Once you are done we need to make sure that all of the devices have been
 changed.  Run the following command to verify quickly.
 
 ```bash
-# esxcli storage nmp device list | grep policy
+## esxcli storage nmp device list | grep policy
    Path Selection Policy Device Config: {policy=iops,iops=1,bytes=10485760,useANO=0;lastPathIndex=0: NumIOsPending=0,numBytesPending=0}
    Path Selection Policy Device Config: {policy=rr,iops=1000,bytes=10485760,useANO=0;lastPathIndex=0: NumIOsPending=0,numBytesPending=0}
    Path Selection Policy Device Config: {policy=iops,iops=1,bytes=10485760,useANO=0;lastPathIndex=0: NumIOsPending=0,numBytesPending=0}

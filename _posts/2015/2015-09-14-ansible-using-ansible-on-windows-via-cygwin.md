@@ -1,5 +1,6 @@
 ---
   title: Ansible - Using Ansible on Windows via Cygwin
+  date: 2015-09-14 00:00:00
   categories:
     - Automation
   tags:
@@ -7,7 +8,7 @@
   redirect_from:
     - /ansible-using-ansible-on-windows-via-cygwin
 ---
-# Background
+## Background
 
 As I continue down the Ansible journey to automate all things it is
 apparent that Windows is a second class citizen in some regards. I had a
@@ -28,7 +29,7 @@ dependencies to install Ansible):
 
 ```bash
 setup-x86_64.exe -q --packages=binutils,curl,cygwin32-gcc-g++,gcc-g++,git,gmp,libffi-devel,libgmp-devel,make,nano,openssh,openssl-devel,python-crypto,python-paramiko,python2,python2-devel,python2-openssl,python2-pip,python2-setuptools
-```
+```text
 
 Once the Cygwin installer completes open the Cygwin desktop shortcut to
 open up the Cygwin BASH prompt.
@@ -56,7 +57,7 @@ Now simply run the following:
 
 ```bash
 pip2 install ansible
-```
+```bash
 
 And boom, you now have Ansible easily available for Windows usage. Now continue
 onto [testing](#testing).
@@ -157,7 +158,7 @@ nano .bashrc
 Paste the following at the bottom of the file and save.
 
 ```bash
-# Ansible settings
+## Ansible settings
 ANSIBLE=/opt/ansible
 export PATH=$PATH:$ANSIBLE/bin
 export PYTHONPATH=$ANSIBLE/lib
@@ -299,7 +300,7 @@ nano ansible.cfg
 ....
 [ssh_connection]
 ssh_args = -o ControlMaster=no
-```
+```text
 
 Now when running the playbook again success.
 

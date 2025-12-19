@@ -92,10 +92,10 @@ sudo nano /etc/psad/psad.conf
 > NOTE: Reference [this](http://www.cipherdyne.org/psad/docs/config.html "http\://www.cipherdyne.org/psad/docs/config.html") link for more settings that
 > can be changed within the psad.conf file\_)
 
-change the following line `_IPT_SYSLOG_FILE`          
+change the following line `_IPT_SYSLOG_FILE`
 
 ```bash
-/var/log/messages;_ to _IPT_SYSLOG_FILE            
+/var/log/messages;_ to _IPT_SYSLOG_FILE
 /var/log/syslog;_
 ```bash
 

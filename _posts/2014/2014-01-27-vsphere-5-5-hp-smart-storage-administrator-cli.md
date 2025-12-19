@@ -41,7 +41,7 @@ Smart Array P400i in Slot 0 (Embedded)    (sn: PH8AMQ2553     )
 Create individual Raid-0 disks using the unassigned drives.
 
 => ctrl slot=0 create type=ld drives=1I:1:3 raid=0 ss=64 size=max aa=disable"
-```
+```text
 
 List all controllers and disks once again
 
@@ -78,7 +78,7 @@ phyiscal drives that are unassigned.
 => ctrl slot=0 create type=ld drives=1I:1:4 raid=0 ss=64 size=max aa=disable"
 => ctrl slot=0 create type=ld drives=2I:1:5 raid=0 ss=64 size=max aa=disable"
 => ctrl slot=0 create type=ld drives=2I:1:6 raid=0 ss=64 size=max aa=disable"
-```
+```text
 
 List all controllers and disks once again.
 
@@ -117,7 +117,7 @@ Smart Array P400i in Slot 0 (Embedded)    (sn: PH8AMQ2553     )
       logicaldrive 5 (136.7 GB, RAID 0, OK)
 
       physicaldrive 2I:1:6 (port 2I:box 1:bay 6, SAS, 146 GB, OK)
-```
+```text
 
 Unfortunately I am using an HP P400i controller so a reboot is still
 required. :(
@@ -161,7 +161,7 @@ the following commands to do so.
 ```bash
 esxcli storage nmp satp rule add --satp VMW_SATP_LOCAL --device mpx.vmhba1:C0:T1:L0 --option=enable_ssd
 esxcli storage core claiming reclaim -d mpx.vmhba1:C0:T1:L0
-```
+```text
 
 Now rescan your devices on your array controller and you will see that
 the device is now listed as an SSD device.

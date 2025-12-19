@@ -26,13 +26,13 @@ mutate {
     add_field => [ "senderbase_lookup", "http://www.senderbase.org/lookup/?search_string=%{src_ip}" ]
     add_field => [ "spamhaus_lookup", "http://www.spamhaus.org/query/bl?ip=%{src_ip}" ]
 }
-```
+```text
 
 A complete Apache parsing setup that I use including this looks like
 this.
 
 ```json
-# Setting up Apache web server parsing
+## Setting up Apache web server parsing
 filter {
         if [type] =~ "apache" {
                 grok {

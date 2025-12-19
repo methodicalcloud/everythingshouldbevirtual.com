@@ -95,7 +95,7 @@ def main():
     print json.dumps(esxi_hosts, indent=4)
 
 
-# Capture ESXi host physical nics
+## Capture ESXi host physical nics
 def capture_host_pnics(host):
     host_pnics = []
     for pnic in host.config.network.pnic:
@@ -107,7 +107,7 @@ def capture_host_pnics(host):
     return host_pnics
 
 
-# Capture ESXi host virtual nics
+## Capture ESXi host virtual nics
 def capture_host_vnics(host):
     host_vnics = []
     for vnic in host.config.network.vnic:
@@ -121,7 +121,7 @@ def capture_host_vnics(host):
     return host_vnics
 
 
-# Capture ESXi host virtual switches
+## Capture ESXi host virtual switches
 def capture_host_vswitches(host):
     host_vswitches = []
     for vswitch in host.config.network.vswitch:
@@ -160,7 +160,7 @@ def capture_host_portgroups(host):
 
 if __name__ == "__main__":
     main()
-```
+```text
 
 The above currently will capture the initial pnics, vnics, vSwitches, and
 portgroups for each ESXi host and return them in JSON. See where this might be

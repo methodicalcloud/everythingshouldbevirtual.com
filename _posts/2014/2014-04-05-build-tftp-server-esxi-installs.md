@@ -91,7 +91,7 @@ LABEL BootLocal
         Boot to local hard disk
         ENDTEXT
 
-# Menus
+## Menus
 
 #FreeDOS
 LABEL FreeDOS
@@ -99,7 +99,7 @@ LABEL FreeDOS
         KERNEL memdisk bigraw
         APPEND initrd=Images/FreeDOS/fdboot.img
 
-# ESXi
+## ESXi
 LABEL ESXi Interactive Installs
         MENU LABEL ESXi Interactive Installs
         KERNEL vesamenu.c32
@@ -110,7 +110,7 @@ LABEL ESXi Scripted Installs
         KERNEL vesamenu.c32
         APPEND pxelinux.cfg/pxe.conf pxelinux.cfg/conf/ESXi_Scripted.menu
 
-# SystemRescueCD
+## SystemRescueCD
 LABEL SRCD
         MENU LABEL SystemRescueCD
         KERNEL Images/SystemRescueCD/rescue64
@@ -325,33 +325,33 @@ but this should get your started.)
 
 ```bash
 sudo nano /var/lib/tftpboot/KS/ESX_KS.CFG
-```
+```text
 
 Now copy and paste the following contents into your ESX_KS.CFG file.
 
 ```bash
-# Sample scripted installation file
-# Accept the VMware End User License Agreement
+## Sample scripted installation file
+## Accept the VMware End User License Agreement
 vmaccepteula
-# Set the root password for the DCUI and ESXi Shell
+## Set the root password for the DCUI and ESXi Shell
 rootpw vmware1
-# Install on the first local disk available on machine
+## Install on the first local disk available on machine
 install --firstdisk --overwritevmfs
-# Set the network to DHCP on the first network adapater, use the specified hostname and do not create a portgroup for the VMs
+## Set the network to DHCP on the first network adapater, use the specified hostname and do not create a portgroup for the VMs
 network --bootproto=dhcp --device=vmnic0 --addvmportgroup=0
-# reboots the host after the scripted installation is completed
+## reboots the host after the scripted installation is completed
 reboot
 
 %firstboot --interpreter=busybox
-# Enable SSH and the ESXi Shell
+## Enable SSH and the ESXi Shell
 vim-cmd hostsvc/enable_ssh
 vim-cmd hostsvc/start_ssh
 vim-cmd hostsvc/enable_esx_shell
 vim-cmd hostsvc/start_esx_shell
-# Enable SNMP and configure SNMP
+## Enable SNMP and configure SNMP
 esxcli system snmp set --communities YOUR_STRING
 esxcli system snmp set --enable true
-```
+```text
 
 Now if you want to get a bit more creative with your deployments and
 install some VIBS during the automated install you can do something like
@@ -359,51 +359,51 @@ below for your ESX_KS.CFG file. This is actually installing Dell VIBS,
 Pernixdata FVP VIBS and installing to an SD Card.
 
 ```bash
-# Sample scripted installation file
-# Accept the VMware End User License Agreement
+## Sample scripted installation file
+## Accept the VMware End User License Agreement
 vmaccepteula
-# Set the root password for the DCUI and ESXi Shell
+## Set the root password for the DCUI and ESXi Shell
 rootpw password1
-# Install on the first local disk available on machine
+## Install on the first local disk available on machine
 install --firstdisk=usb --overwritevmfs --novmfsondisk
-# Set the network to DHCP on the first network adapater, use the specified hostname and do not create a portgroup for the VMs
-# network --bootproto=dhcp --device=vmnic0 --addvmportgroup=0
+## Set the network to DHCP on the first network adapater, use the specified hostname and do not create a portgroup for the VMs
+## network --bootproto=dhcp --device=vmnic0 --addvmportgroup=0
 network --bootproto=static --device=vmnic0 --ip=10.0.106.11 --gateway=10.0.106.1 --nameserver=10.0.101.111,10.0.101.112 --netmask=255.255.255.0 --hostname=esxi01.everythingshouldbevirtual.local --addvmportgroup=0
-# reboots the host after the scripted installation is completed
+## reboots the host after the scripted installation is completed
 reboot
 
 %firstboot --interpreter=busybox
-# Enable SSH and the ESXi Shell
+## Enable SSH and the ESXi Shell
 vim-cmd hostsvc/enable_ssh
 vim-cmd hostsvc/start_ssh
 vim-cmd hostsvc/enable_esx_shell
 vim-cmd hostsvc/start_esx_shell
-# Suppress Shell Warning in Host
+## Suppress Shell Warning in Host
 esxcli system settings advanced set -o /UserVars/SuppressShellWarning -i 1
 esxcli system settings advanced set -o /UserVars/ESXiShellTimeOut -i 1
-# Enable SNMP and configure SNMP
+## Enable SNMP and configure SNMP
 esxcli system snmp set --communities COMMUNITYSTRING
 esxcli system snmp set --enable true
-# Enter Maintenance Mode
+## Enter Maintenance Mode
 vim-cmd hostsvc/maintenance_mode_enter
-# Install Dell OMSA and iSM Modules
+## Install Dell OMSA and iSM Modules
 esxcli software vib install -v http://tftpbuilddepot.everythingshouldbevirtual.local/ESXi_VIBS/Dell/cross_oem-dell-openmanage-esxi_7.3.0.2.ESXi550-0000.vib
 esxcli software vib install -v http://tftpbuilddepot.everythingshouldbevirtual.local/ESXi_VIBS/Dell/cross_oem-dell-iSM-esxi_1.0.ESXi550-0000.vib
 
-# Configure Firewall to allow SNMP
+## Configure Firewall to allow SNMP
 esxcli network firewall ruleset set --ruleset-id snmp --allowed-all false
 esxcli network firewall ruleset allowedip add --ruleset-id snmp --ip-address 10.0.101.0/24
 esxcli network firewall ruleset set --ruleset-id snmp --enabled true
 /etc/init.d/snmpd restart
-# Install PernixData FVP
+## Install PernixData FVP
 esxcli software vib install -v http://tftpbuilddepot.everythingshouldbevirtual.local/ESXi_VIBS/PernixData/PernixData_bootbank_pernixcore-vSphere5.5.0_1.5.0.2-25498.vib
-# Backup PernixData FVP Configuration
+## Backup PernixData FVP Configuration
 /sbin/auto-backup.sh
-# Exit Maintenance Mode
+## Exit Maintenance Mode
 vim-cmd hostsvc/maintenance_mode_exit
-# Add vmnic3 to vSwitch0
+## Add vmnic3 to vSwitch0
 esxcli network vswitch standard uplink add --uplink-name vmnic3 --vswitch-name vSwitch0
-# Reboot host one last time
+## Reboot host one last time
 reboot
 ```
 
