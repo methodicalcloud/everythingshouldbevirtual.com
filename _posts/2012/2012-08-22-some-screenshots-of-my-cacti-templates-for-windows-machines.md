@@ -1,12 +1,7 @@
 ---
   title: Some screenshots of my cacti templates for Windows Machines
   date: 2012-08-22 16:53:57
-excerpt: "Here are a few screenshots of the cacti templates I created several years ago and keep them updated as cacti versions change. Below is the link where..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 Here are a few screenshots of the cacti templates I created several
 years ago and keep them updated as cacti versions change. Below is the

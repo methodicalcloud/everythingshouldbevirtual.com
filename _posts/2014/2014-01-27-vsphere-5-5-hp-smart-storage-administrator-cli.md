@@ -1,12 +1,7 @@
 ---
   title: vSphere 5.5 - HP Smart Storage Administrator CLI - Emulate SSD
   date: 2014-01-27 16:33:35
-excerpt: "So I was sitting around over the weekend and decided I wanted to mess around with vSAN in a non nested environment for a bit and started going over..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 So I was sitting around over the weekend and decided I wanted to mess
 around with vSAN in a non nested environment for a bit and started going
@@ -20,11 +15,11 @@ Launch the HP Smart Storage Administrator CLI
 
 ```bash
 ./opt/hp/hpssacli/bin/hpssacli
-```
+```sql
 
 List all controllers and disks configurations
 
-```raw
+```sql
 => ctrl all show config
 
 Smart Array P400i in Slot 0 (Embedded)    (sn: PH8AMQ2553     )
@@ -50,7 +45,7 @@ Create individual Raid-0 disks using the unassigned drives.
 
 List all controllers and disks once again
 
-```raw
+```console
 => ctrl all show config
 
 Smart Array P400i in Slot 0 (Embedded)    (sn: PH8AMQ2553     )
@@ -73,13 +68,13 @@ Smart Array P400i in Slot 0 (Embedded)    (sn: PH8AMQ2553     )
       physicaldrive 1I:1:4 (port 1I:box 1:bay 4, SAS, 146 GB, OK)
       physicaldrive 2I:1:5 (port 2I:box 1:bay 5, SAS, 146 GB, OK)
       physicaldrive 2I:1:6 (port 2I:box 1:bay 6, SAS, 146 GB, OK)
-```
+```sql
 
 You should now see array B which is the Raid-0 logical drive we just
 created. We will now create additional Raid-0 logical drives with our remaining
 phyiscal drives that are unassigned.
 
-```raw
+```console
 => ctrl slot=0 create type=ld drives=1I:1:4 raid=0 ss=64 size=max aa=disable"
 => ctrl slot=0 create type=ld drives=2I:1:5 raid=0 ss=64 size=max aa=disable"
 => ctrl slot=0 create type=ld drives=2I:1:6 raid=0 ss=64 size=max aa=disable"
@@ -87,7 +82,7 @@ phyiscal drives that are unassigned.
 
 List all controllers and disks once again.
 
-```raw
+```console
 => ctrl all show config
 
 Smart Array P400i in Slot 0 (Embedded)    (sn: PH8AMQ2553     )
@@ -157,7 +152,7 @@ make sure we identify the correct device.
     mpx.vmhba1:C0:T3:L0
        Display Name: Local VMware Disk (mpx.vmhba1:C0:T3:L0)
        Devfs Path: /vmfs/devices/disks/mpx.vmhba1:C0:T3:L0
-```
+```sql
 
 We are going to use mpx.vmhba1:C0:T1:L0 as the logicaldrive to emulate
 as an SSD. In order to emulate an SSD we need to create a SATP rule. Run

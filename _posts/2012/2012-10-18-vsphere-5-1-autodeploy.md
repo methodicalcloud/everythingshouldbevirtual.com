@@ -3,12 +3,7 @@
   date: 2012-10-18 18:25:36
 toc: true
 toc_label: "Contents"
-excerpt: "In this guide we will be installing, configuring and using the AutoDeploy feature of vSphere 5.1. This is a great feature to use when you need to..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 In this guide we will be installing, configuring and using the
 AutoDeploy feature of vSphere 5.1. This is a great feature to use when
@@ -60,22 +55,22 @@ This is the free TFTP Server from Solarwinds.
 
 Now launch VIclient and click home and click Auto Deploy
 
-![15-54-28](../../assets/15-54-28-300x169.png )
+![](../../assets/15-54-28-300x169.png "15-54-28")
 
-![15-54-44](../../assets/15-54-44-300x139.png )
+![](../../assets/15-54-44-300x139.png "15-54-44")
 
 You will now need to open IE and add \*://127.0.0.1 to the trusted sites
 zone to allow us to download the boot zip.
 
-![15-56-46](../../assets/15-56-46-284x300.png )
+![](../../assets/15-56-46-284x300.png "15-56-46")
 
 Now click Download TFTP Boot Zip and save it into c:\\TFTP-Root. This
 folder was created by installing the TFTP Server from above. Now extract
 the contents of the file in the root of this folder.
 
-![15-58-37](../../assets/15-58-37-300x115.png )
+![](../../assets/15-58-37-300x115.png "15-58-37")
 
-![15-59-15](../../assets/15-59-15-300x135.png )
+![](../../assets/15-59-15-300x135.png "15-59-15")
 
 Now we need to configure the DHCP options for TFTP Boot to work. I am
 using MS DHCP on the Domain Controller in this lab so we will be
@@ -85,31 +80,31 @@ running the TFTP Server and for option #67 enter the following
 "undionly.kpxe.vmw-hardwired", without quotes. This information is
 located on your AutoDeploy screen from within the VIclient.
 
-![16-08-33](../../assets/16-08-33-300x101.png )
+![](../../assets/16-08-33-300x101.png "16-08-33")
 
 Download **VMware-ESXi-5.1.0-799733-depot.zip** from VMware's website.
 
 Create a folder c:\\Depot and move the file downloaded above to here.
 
-![16-20-13](../../assets/16-20-13-300x117.png )
+![](../../assets/16-20-13-300x117.png "16-20-13")
 
 Now launch PowerCLI and enter _connect-viserver_ .
 
-![16-20-30](../../assets/16-20-30-300x122.png )
+![](../../assets/16-20-30-300x122.png "16-20-30")
 
-![16-21-03](../../assets/16-21-03-300x151.png )
+![](../../assets/16-21-03-300x151.png "16-21-03")
 
 Now we are going to add the depot package from above.
 
 Run this command in the PowerCLI window _Add-EsxSoftwareDepot
 c:\\Depot\\VMware-ESXi-5.1.0-799733-depot.zip_
 
-![16-24-55](../../assets/16-24-55-300x160.png )
+![](../../assets/16-24-55-300x160.png "16-24-55")
 
 Now run _Get-EsxImageProfile_ to list the image profiles. (Still within
 PowerCLI)
 
-![16-26-44](../../assets/16-26-44-300x151.png )
+![](../../assets/16-26-44-300x151.png "16-26-44")
 
 We will use the standard Profile which includes vmware tools in the
 image.
@@ -121,13 +116,13 @@ Platform"_
 This is going to create an image pattern to recognize Hosts that run in
 VMware Workstation, which is what my lab is using.
 
-![16-30-25](../../assets/16-30-25-300x157.png )
+![](../../assets/16-30-25-300x157.png "16-30-25")
 
 Once this process completes run the following command _Add-DeployRule
 \-DeployRule FirstTimeBoot_ (We will use this initial deploy rule to
 create our host profile)
 
-![16-34-28](../../assets/16-34-28-300x148.png )
+![](../../assets/16-34-28-300x148.png "16-34-28")
 
 You are now ready to boot your ESXi Hosts via TFTP.
 
@@ -143,21 +138,21 @@ cluster.
 
 From the home screen in vCenter go to Host Profiles.
 
-![18-06-55](../../assets/18-06-55-300x134.png )
+![](../../assets/18-06-55-300x134.png "18-06-55")
 
 Click Create Profile and Select Create Profile from existing host.
 
-![18-09-10](../../assets/18-09-10-300x222.png )
+![](../../assets/18-09-10-300x222.png "18-09-10")
 
 Now select the host you want to create the profile from.
 
-![18-10-39](../../assets/18-10-39-300x224.png )
+![](../../assets/18-10-39-300x224.png "18-10-39")
 
 Enter the name for the profile. We are using "ESXiLAB" in this guide.
 
-![18-13-08](../../assets/18-13-08-300x222.png )
+![](../../assets/18-13-08-300x222.png "18-13-08")
 
-![18-13-35](../../assets/18-13-35-300x223.png )
+![](../../assets/18-13-35-300x223.png "18-13-35")
 
 We also need to configure the host profile to send their core dumps to
 the dump collector.
@@ -185,11 +180,11 @@ Now go back to the Host Profile screen (Home, Host Profiles)
 
 Select the "ESXiLAB" profile and click Attach Host/Cluster
 
-![18-21-22](../../assets/18-21-22-300x189.png )
+![](../../assets/18-21-22-300x189.png "18-21-22")
 
 Now select the "HA-DRS" cluster and click attach.
 
-![18-22-15](../../assets/18-22-15-300x189.png )
+![](../../assets/18-22-15-300x189.png "18-22-15")
 
 Click OK and we are done with the Host Profile.
 
@@ -198,7 +193,7 @@ to get applied to the hosts as they are added to the cluster.
 
 _Add-EsxSoftwareDepot <http://192.168.201.5:80/vSphere-HA-depot>_
 
-![19-54-50](../../assets/19-54-50-300x151.png )
+![](../../assets/19-54-50-300x151.png "19-54-50")
 
 _New-EsxImageProfile -CloneProfile ESXi-5.1.0-799733-standard
 \-name "ESXiHA"_

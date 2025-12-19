@@ -1,12 +1,7 @@
 ---
   title: Zenoss 4.2.4 CentOS Install
   date: 2013-07-14 11:56:04
-excerpt: "Wanted to throw this together for anyone else who may be looking everywhere on how to do this as well. I will be adding additional information as I..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 Wanted to throw this together for anyone else who may be looking
 everywhere on how to do this as well. I will be adding additional
@@ -23,21 +18,21 @@ following.
 
 ```bash
 yum update
-```
+```bash
 
 Install VMware Tools
 
 ```bash
 yum -y install http://packages.vmware.com/tools/esx/5.1/repos/vmware-tools-repo-RHEL6-9.0.0-2.x86_64.rpm
 yum -y install vmware-tools-esx-nox
-```
+```bash
 
 Uninstall MySQL-Libs otherwise the auto script will fail and tell you to
 remove them anyways so go ahead and do it.
 
 ```bash
 yum -y remove mysql-libs
-```
+```bash
 
 Download Zenoss Auto-Install Script to install Zenoss
 
@@ -46,7 +41,7 @@ wget --no-check-certificate https://github.com/zenoss/core-autodeploy/tarball/4.
 tar xvf auto.tar.gz
 cd zenoss-core-autodeploy-*
 ./core-autodeploy.sh
-```
+```bash
 
 During the auto install script it failed to resolve
 <http://rpmforge.sw.be/redhat/el6/en/x86_64/rpmforge/RPMS/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm>
@@ -89,7 +84,7 @@ Install the following packages first.
 
 ```bash
 yum -y install perl-CPAN make gcc openssl-devel perl-YAML libxml2-devel libuuid-devel glibc.i686 zlib.i686 ncurses-libs.i686 libstdc++.i686 libxml2.i686
-```
+```bash
 
 Download vSphere CLI from
 [here](https://my.vmware.com/group/vmware/details?downloadGroup=VSP510-VCLI-51U1&productId=327 "https\://my.vmware.com/group/vmware/details?downloadGroup=VSP510-VCLI-51U1&productId=327")
@@ -103,17 +98,17 @@ fail and tell you to enter that information.
 ```bash
 export http_proxy=
 export ftp_proxy=
-```
+```bash
 
 Extract the archive after transferring to your Zenoss server.
 
 ```bash
 tar xzvf VMware-vSphere-CLI-5.1.0-1060453.x86_64.gz
-```
+```bash
 
 Now run the install script.
 
-```raw
+```bash
 cd vmware-vsphere-cli-distrib
 ./vmware-install.pl
 Creating a new vSphere CLI installer database using the tar4 format.

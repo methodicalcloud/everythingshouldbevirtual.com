@@ -1,12 +1,7 @@
 ---
   title: SSO Server Unavailable Using Web UI
   date: 2013-03-24 10:43:55
-excerpt: "I just ran into this issue. Tried to login to vSphere 5.1 web ui and received the \"SSO Server Unavailable\". I tried restarting the vCenter Single Sign..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 I just ran into this issue. Tried to login to vSphere 5.1 web ui and
 received the "SSO Server Unavailable". I tried restarting the vCenter
@@ -35,12 +30,12 @@ webclient.properties file. The location of this file depends on the
 operating system on which the vSphere Web Client is installed.
 Operating System File path
 
--   Windows 2003
-    -   %ALLUSERPROFILE%Application Data\\VMware\\vSphere Web Client
--   Windows 2008
-    -   %ALLUSERPROFILE%\\VMware\\vSphere Web Client
--   vCenter Server Appliance
-    -   /var/lib/vmware/vsphere-client
+- Windows 2003
+  - %ALLUSERPROFILE%Application Data\\VMware\\vSphere Web Client
+- Windows 2008
+  - %ALLUSERPROFILE%\\VMware\\vSphere Web Client
+- vCenter Server Appliance
+  - /var/lib/vmware/vsphere-client
 
 Edit the file to include the line sso.enabled = false.
 Restart the vSphere Web Client service.

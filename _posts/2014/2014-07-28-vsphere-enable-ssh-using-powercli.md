@@ -1,12 +1,7 @@
 ---
   title: vSphere - Enable SSH using PowerCLI
   date: 2014-07-28
-excerpt: "In case you have the need to enable SSH, set SSH service to start on boot and also set the firewall rule to allow ALL IPs you can use the following..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 In case you have the need to enable SSH, set SSH service to start on
 boot and also set the firewall rule to allow ALL IPs you can use the

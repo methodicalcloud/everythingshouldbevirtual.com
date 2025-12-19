@@ -6,14 +6,7 @@
     - Ansible
   redirect_from:
     - /ansible-clean-formatted-playbooks
-toc: true
-toc_label: "Contents"
-excerpt: "While going through and doing some cleanup to various different roles and playbooks in my Ansible collection I wanted to share what I feel is good..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 While going through and doing some cleanup to various different roles
 and playbooks in my Ansible collection I wanted to share what I feel is
@@ -96,7 +89,7 @@ from this as well.
         - config_ntp
     - role: ansible-powerdns
       when: install_dns is defined and install_dns
-```
+```yaml
 
 As you can see from above the when conditions are being derived from
 either the defaults in the roles themselves or from group_vars and/or
@@ -187,7 +180,7 @@ of our plays in our playbook.
     - role: ansible-powerdns
       install_dns: true
       when: install_dns is defined and install_dns
-```
+```yaml
 
 As you can see from the highlighted lines dictate what our vars should
 be set to for that specific play against its respective role.
@@ -277,7 +270,7 @@ applied against all roles.
         - config_ntp
     - role: ansible-powerdns
       when: install_dns is defined and install_dns
-```
+```yaml
 
 As you can see from above we have defined all of our vars outside of the
 roles and within the actual play details.
@@ -316,7 +309,7 @@ One may assume that handlers can/or only look like the example below.
 
 What is being shown above is that we can add a when condition to a
 handler as well. This short play would reconfigure Apache2 because we
-have **reconfigure_apache2: true **but the handler defined to notify
+have **reconfigure_apache2: true**but the handler defined to notify
 the restart of apache2 will not occur because we have the variable
 **are_you_sure: false**.
 
@@ -325,11 +318,3 @@ well as encourage others to share their thoughts or even tips and
 tricks.
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

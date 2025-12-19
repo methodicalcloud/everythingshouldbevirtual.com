@@ -1,12 +1,7 @@
 ---
   title: Ubuntu UTM Homebrew - Part 3 - Mail Proxy and Spam Checker
   date: 2012-11-28 08:28:57
-excerpt: "In this guide we will be setting up a mail proxy and spam checker that will run transparently. This will be running on our Ubuntu UTM server that we..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 In this guide we will be setting up a mail proxy and spam checker that
 will run transparently.  This will be running on our Ubuntu UTM server
@@ -26,13 +21,13 @@ Install the packages we need for this all to work
 
 ```bash
 sudo apt-get install exim4 sa-exim spamassassin
-```
+```bash
 
 Now we need to configure exim to use Google as a smarthost
 
 ```bash
 sudo dpkg-reconfigure exim4-config
-```
+```bash
 
 Choose "Mail sent by smarthost...
 Set system mail name to whatever fits for you
@@ -41,7 +36,7 @@ enter
 
 ```bash
 smtp.gmail.com::587
-```
+```bash
 
 (two colons)
 Now we need to configure exim with the username/password to use for
@@ -49,7 +44,7 @@ relaying to work through google
 
 ```bash
 sudo nano /etc/exim4/passwd.client
-```
+```bash
 
 add these lines to the end of the file
 
@@ -57,7 +52,7 @@ add these lines to the end of the file
 smtp.gmail.com:youremail@gmail.com:PaSsWoRd
 gmail-smtp.l.google.com:youremail@gmail.com:PaSsWoRd
 *.google.com:youremail@gmail.com:PaSsWoRd
-```
+```bash
 
 Now we need to configure the iptables rules for the redirect to work as
 traffic passes through our bridged utm server and flows through p3scan. 
@@ -67,7 +62,7 @@ This will be accomplished by adding the following rules.
 sudo iptables -t nat -A PREROUTING -i br0 -p tcp -m tcp --dport 25 -j REDIRECT --to-port 8110
 sudo iptables -t nat -A PREROUTING -i br0 -p tcp -m tcp --dport 110 -j REDIRECT --to-port 8110
 sudo iptables -t nat -A PREROUTING -i br0 -p tcp -m tcp --dport 143 -j REDIRECT --to-port 8110
-```
+```bash
 
 Now we should have a working mail proxy and spam checker as email flows
 start passing through the UTM.  This will only work with smtp (tcp/25),

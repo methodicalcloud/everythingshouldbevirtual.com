@@ -1,12 +1,7 @@
 ---
   title: vCloud Suite Upgrade Promo Terms and Conditions
   date: 2012-09-04 19:45:10
-excerpt: "Here is the link for the upgrade Promo for vCloud Suite. $1 to just upgrade to vCloud Suite Standard. Wow! :) The promotion is good from September 10,..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 Here is the link for the upgrade Promo for vCloud Suite. $1 to just
 upgrade to vCloud Suite Standard. Wow! :) The promotion is good from

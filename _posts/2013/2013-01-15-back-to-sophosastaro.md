@@ -1,23 +1,18 @@
 ---
   title: Back to Sophos/Astaro
   date: 2013-01-15 09:05:15
-excerpt: "Well after a few months of running my own rolled version of a UTM using Ubuntu I have officially gone back to Sophos/Astaro for the time being. There..."
 ---
 
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
-
 Well after a few months of running my own rolled version of a UTM using
-Ubuntu I have officially gone back to Sophos/Astaro for the time being. 
+Ubuntu I have officially gone back to Sophos/Astaro for the time being.
 There are several reasons for this with the main reason being that I
 absolutely love the interface and reporting of Sophos/Astaro. I am also
 doing some testing on HTTPS web filtering after a few mishaps of some
-google images searches showing inappropriate images for small children. 
+google images searches showing inappropriate images for small children.
 I know I can do this with my own rolled UTM, but I am sure it will be
 much harder. This same issue also applies to corporate web filtering
 because once logged into google your google images searches and normal
-searches are all secure which bypasses traditional HTTP web filtering. 
+searches are all secure which bypasses traditional HTTP web filtering.
 There are many complications with implementing HTTPS web filtering
 though because your firewall will act as a man in the middle which will
 break all HTTPS communications. To implement this you will have to
@@ -32,7 +27,7 @@ because the HTTPS web filter is obviously intercepting that traffic as
 well. So exceptions would need to be made for those two services based
 on destination addresses. As you can figure from this is that it would
 take a lot of effort to keep up with these as they can potentially
-change a lot. So I will be doing some additional testing with that. 
+change a lot. So I will be doing some additional testing with that.
 One way is to also implement the Proxy Server Agent on the Sophos/Astaro
 and have dropbox use the proxy, but that doesn't work for Google
 Drive. More testing to be done on that. Again the biggest downfall for

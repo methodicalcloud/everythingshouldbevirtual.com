@@ -7,14 +7,7 @@
     - Python
   redirect_from:
     - /python-manage-powerdns-zonesrecords
-toc: true
-toc_label: "Contents"
-excerpt: "While working on another PowerDNS project I have started working on a Python script to manage Zones/Records. Being that there is not a ton of info out..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 While working on another PowerDNS project I have started working on a
 Python script to manage Zones/Records. Being that there is not a ton of
@@ -541,7 +534,7 @@ class PDNSControl(object):
 
 if __name__ == '__main__':
     PDNSControl()
-```json
+```jinja2
 
 {% endraw %}
 
@@ -550,7 +543,7 @@ if __name__ == '__main__':
 To get an idea of some of the cli parameters that you can use do a quick
 show help...
 
-```raw
+```sql
 ./pdns.py --help
 
 usage: pdns.py [-h] [--apikey APIKEY] [--apihost APIHOST] [--apiport APIPORT]
@@ -589,7 +582,7 @@ optional arguments:
   --zone ZONE           DNS zone
   --zoneType {MASTER,NATIVE,SLAVE}
                         DNS Zone Type
-```
+```sql
 
 Create a new Master Zone with info below:
 
@@ -663,7 +656,7 @@ Results...
         "id": "128.28.172.in-addr.arpa."
     }
 ]
-```
+```sql
 
 Now let's create our new master zone...
 
@@ -719,7 +712,7 @@ Results of the above ...
     "serial": 2016062901,
     "id": "dev.vagrant.local."
 }
-```
+```sql
 
 Now let's create the slave zones on our PowerDNS slaves with the info
 below:
@@ -920,7 +913,7 @@ Results...
         "id": "dev.vagrant.local."
     }
 ]
-```
+```sql
 
 Now that our zones are setup we are ready to create a few records. So
 let's create some records using the following info:
@@ -933,7 +926,7 @@ let's create some records using the following info:
     -   name: development.dev.vagrant.local
         -   recordType: CNAME
         -   content: test01.dev.vagrant.local
-```
+```sql
 
 So let's create our A record.
 
@@ -996,7 +989,7 @@ Results...
     "serial": 2016062902,
     "id": "dev.vagrant.local."
 }
-```
+```sql
 
 And now we can create our CNAME record...
 
@@ -1074,11 +1067,3 @@ be following up another post soon on how to leverage my Ansible role
 mentioned above to do these same tasks at a larger scale.
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

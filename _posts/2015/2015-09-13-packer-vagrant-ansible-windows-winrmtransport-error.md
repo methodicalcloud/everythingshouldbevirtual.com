@@ -9,14 +9,7 @@
     - Vagrant
   redirect_from:
     - /packer-vagrant-ansible-windows-winrmtransport-error
-toc: true
-toc_label: "Contents"
-excerpt: "While doing some Packer builds for Windows Server 2012 R2 to be used with Vagrant in order to do some Ansible learning I stumbled across this issue."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 While doing some Packer builds for Windows Server 2012 R2 to be used
 with Vagrant in order to do some Ansible learning I stumbled across this
@@ -38,7 +31,7 @@ PLAY RECAP ********************************************************************
            to retry, use: --limit @/Users/larrysmith/playbook.retry
 
 vagrant-windows-2012-r2    : ok=0    changed=0    unreachable=1    failed=0
-```
+```sql
 
 After beating my head against the wall and just before giving up I came
 across this [post](https://github.com/ansible/ansible/issues/10294#issuecomment-93494025).
@@ -51,7 +44,7 @@ create a file (fix-ssl.py) which will temporarily solve the issue.
 ```bash
 mkdir callback_plugins
 nano callback_plugins/fix-ssl.py
-```
+```python
 
 And paste the following within this file and save.
 
@@ -66,7 +59,7 @@ class CallbackModule(object):
 
 Now attempt to run your Ansible playbook once again and BOOM!
 
-```raw
+```console
 ansible-playbook -i hosts playbook.yml
 
 PLAY [windows] ****************************************************************
@@ -121,7 +114,7 @@ vagrant-windows-2012-r2 ansible_ssh_host=127.0.0.1
 
 [windows]
 vagrant-windows-2012-r2
-```
+```yaml
 
 And here is my group_vars/windows.yml
 
@@ -131,7 +124,7 @@ ansible_ssh_user: vagrant
 ansible_ssh_pass: vagrant
 ansible_ssh_port: 55986
 ansible_connection: winrm
-```
+```yaml
 
 And the simple Ansible playbook (playbook.yml) that I am running.
 
@@ -143,7 +136,7 @@ And the simple Ansible playbook (playbook.yml) that I am running.
       raw: ipconfig
       register: ipconfig
     - debug: var=ipconfig
-```
+```powershell
 
 In case you are interested here is the Vagrantfile that I am
 provisioning from.
@@ -197,7 +190,7 @@ Vagrant.configure("2") do |config|
     end
     config.vm.provision "shell", path: "scripts/ConfigureRemotingForAnsible.ps1"
 end
-```
+```powershell
 
 And the powershell provision script to configure WinRM in order to run
 Ansible which can also be found
@@ -406,11 +399,3 @@ hours to finally get all of the pieces together in order to get this
 working.
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

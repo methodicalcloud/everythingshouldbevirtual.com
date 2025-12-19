@@ -1,12 +1,7 @@
 ---
   title: Win the Ultimate Mobile Virtualization Lab
   date: 2013-05-29 12:18:55
-excerpt: "Want to win an Ultimate Mobile Virtualization lab? Well Veeam is giving one away each month through August 2013. Go here to enter to win."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 Want to win an Ultimate Mobile Virtualization lab? Well Veeam is giving
 one away each month through August 2013. Go

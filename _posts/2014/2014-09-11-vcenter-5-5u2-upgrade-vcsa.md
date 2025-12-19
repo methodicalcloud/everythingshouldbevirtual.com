@@ -1,12 +1,7 @@
 ---
   title: vCenter 5.5U2 Upgrade on VCSA
   date: 2014-09-11
-excerpt: "So I decided to upgrade my vCenter 5.5U1 VCSA to the latest vCenter 5.5U2 release yesterday and it has been a complete disaster at this point. vCenter..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 So I decided to upgrade my vCenter 5.5U1 VCSA to the latest vCenter
 5.5U2 release yesterday and it has been a complete disaster at this

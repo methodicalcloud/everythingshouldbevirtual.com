@@ -1,15 +1,7 @@
 ---
   title: New Back-end Setup for EverythingShouldBeVirtual.com
   date: 2014-02-19 21:51:33
-excerpt: "So after running this blog on a single server running within an ISPConfig setup for quite some time I have finally redesigned the back-end (it has..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
-
-> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
-{: .notice--info}
 
 So after running this blog on a single server running within an
 [ISPConfig](http://www.ispconfig.org/ "http\://www.ispconfig.org/") setup
@@ -22,13 +14,13 @@ will be many things I will still be stumbling across as I get more
 traffic. I do appreciate those who have let me know when something is
 not working correctly which I have corrected along the way.
 
--   For the edge I am still using a
+- For the edge I am still using a
     [PFSense](http://pfsense.org/ "http\://pfsense.org/") dedicated server
     as my firewall.
--   For load balancing I am using a pair of [Citrix VPX Express Netscaler's](https://www.citrix.com/downloads/netscaler-adc/virtual-appliances/netscaler-vpx-express.html "https\://www.citrix.com/downloads/netscaler-adc/virtual-appliances/netscaler-vpx-express.html")
+- For load balancing I am using a pair of [Citrix VPX Express Netscaler's](https://www.citrix.com/downloads/netscaler-adc/virtual-appliances/netscaler-vpx-express.html "https\://www.citrix.com/downloads/netscaler-adc/virtual-appliances/netscaler-vpx-express.html")
     HA clustered. I am using LeastConnection policy and CookieInsert for
     persistence.
--   For my web server's I am using a pair of Apache Web Servers running
+- For my web server's I am using a pair of Apache Web Servers running
     on Ubuntu 12.04 x64. All /var/www content is being synced between
     them by using a
     [Unison](http://www.cis.upenn.edu/~bcpierce/unison/ "http\://www.cis.upenn.edu/~bcpierce/unison/")
@@ -41,7 +33,7 @@ not working correctly which I have corrected along the way.
     and then setup
     [batcache](http://wordpress.org/plugins/batcache/installation/ "http\://wordpress.org/plugins/batcache/installation/")
     drop-in.
--   For my MySQL DB Server's I am running a pair of MySQL Server's
+- For my MySQL DB Server's I am running a pair of MySQL Server's
     running on Ubuntu 12.04 x64. These are setup in an Active/Active
     Master-Master mode. Make sure to setup the following in your my.cnf
     when doing this or you will get duplicate entries in your DB and it

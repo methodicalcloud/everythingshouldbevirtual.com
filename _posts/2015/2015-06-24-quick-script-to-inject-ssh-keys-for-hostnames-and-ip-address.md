@@ -1,11 +1,6 @@
 ---
   title: Quick Script to inject SSH Keys for hostnames and ip address
-excerpt: "While playing around with Rundeck I wanted to run some quick Ansible playbooks. I have not found a good way to integrate Ansible other than running..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 While playing around with [Rundeck](http://rundeck.org) I wanted to run
 some quick [Ansible](http://ansible.com) playbooks. I have not found a
@@ -47,11 +42,3 @@ ansible-playbook -i hosts ansible-test.yml --user rundeck
 Hope this helps someone.
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

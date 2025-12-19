@@ -1,12 +1,7 @@
 ---
   title: "VMware: VMware vSphere Blog: vSphere HA isolation response... which to use when?"
   date: 2012-07-31 13:15:14
-excerpt: "Good info on the different isolation modes and recommendations on which one to use based on your infrastructure. vSphere4 the default policy in an HA..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 Good info on the different isolation modes and recommendations on which
 one to use based on your infrastructure. vSphere4 the default policy in

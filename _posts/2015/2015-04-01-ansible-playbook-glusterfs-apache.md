@@ -1,13 +1,6 @@
 ---
   title: Ansible Playbook - GlusterFS - Apache
-toc: true
-toc_label: "Contents"
-excerpt: "I wanted to share some of these playbooks for reference to others who may be attempting to do something similar. Overall I am setting up some Ubuntu..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 I wanted to share some of these playbooks for reference to others who
 may be attempting to do something similar. Overall I am setting up some
@@ -113,7 +106,7 @@ glusterfs_client=true
 
 #glusterfs_client=true|false
 #glusterfs_server=true|false
-```
+```jinja2
 
 Below is my site.yml file which includes some of the roles that I am
 installing. I can post more about the roles or put up on github for
@@ -166,7 +159,7 @@ reference.
   roles:
 #    - enable-firewall
      - glusterfs
-```
+```jinja2
 
 Below is the playbook for the configuration of lvm.
 
@@ -229,7 +222,7 @@ Below is the playbook for the configuration of lvm.
 - name: config_lvm | config | resizing filesystem
   command: resize2fs /dev/{{ resize_vgname }}/{{ resize_lvname }}
   when: resize and config_lvm
-```json
+```jinja2
 
 {% endraw %}
 
@@ -263,7 +256,7 @@ Below is the playbook for the initial GlusterFS setup.
 - name: debian | config | enabling glusterfs-server
   service: name=glusterfs-server enabled=yes
   when: glusterfs_server
-```json
+```jinja2
 
 {% endraw %}
 
@@ -326,11 +319,3 @@ configurations on the web servers and GlusterFS servers.
 ```
 
 {% endraw %}
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

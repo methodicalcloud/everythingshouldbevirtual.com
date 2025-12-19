@@ -1,12 +1,7 @@
 ---
   title: Happy Monday Morning 11-25-2013
   date: 2013-11-25 12:19:36
-excerpt: "So I woke up to all sorts of fun today. Several VMs were reporting to be down in my lab so when trying to connect to vCenter I was getting an error..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 So I woke up to all sorts of fun today. Several VMs were reporting to be
 down in my lab so when trying to connect to vCenter I was getting an

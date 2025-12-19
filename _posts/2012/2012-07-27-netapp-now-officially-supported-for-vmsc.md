@@ -1,12 +1,7 @@
 ---
   title: NetApp now officially supported for vMSC
   date: 2012-07-27 09:52:24
-excerpt: "Good info on NetApp being officially supported on iSCSI and NFS for vMSC. Worth looking into. Also look into HP P4000 storage as an iSCSI solution for..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 Good info on NetApp being officially supported on iSCSI and NFS for
 vMSC. Worth looking into. Also look into HP P4000 storage as an iSCSI

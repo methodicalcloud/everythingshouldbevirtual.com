@@ -1,22 +1,14 @@
 ---
   title: Shorewall firewall quick install video
   date: 2012-11-10 19:28:17
-excerpt: "Installing shorewall firewall on Ubuntu 12.04 for a simple single network configuration."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
-
-> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
-{: .notice--info}
 
 Installing shorewall firewall on Ubuntu 12.04 for a simple single
 network configuration.
 
 ```bash
 sudo nano /etc/network/interfaces
-```
+```bash
 
 assumption is that eth0 is your internet facing interface using dhcp\
 add the following
@@ -28,13 +20,13 @@ netmask 255.255.255.0
 
 sudo apt-get install shorewall
 sudo nano /etc/default/shorewall
-```
+```bash
 
 change _startup=0_ to _startup=1_
 
 ```bash
 sudo nano /etc/shorewall/shorewall.conf
-```
+```bash
 
 change _STARTUP_ENABLED=No_ to _STARTUP_ENABLED=Yes_
 
@@ -57,7 +49,7 @@ fw all ACCEPT
 all all REJECT info
 
 sudo nano /etc/rules
-```
+```bash
 
 \*\* There are no firewall rules in this as the default rule for the
 local network is to accept all outgoing traffic.\*\*

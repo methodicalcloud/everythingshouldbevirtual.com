@@ -1,14 +1,7 @@
 ---
   title: Infinio Install - Nexenta Testing
   date: 2013-11-20 07:00:20
-toc: true
-toc_label: "Contents"
-excerpt: "Recently I had the opportunity to speak with Infinio at VMWorld and then again at the Atlanta VMUG about their new product which at the time was Pre-GA..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 Recently I had the opportunity to speak with [Infinio](http://www.infinio.com/ "http\://www.infinio.com/") at VMWorld and then again at the Atlanta VMUG about
 their new product which at the time was Pre-GA but it was a very interesting
@@ -36,12 +29,13 @@ tests without SSD, with SSD, with Infinio without SSD and then finally
 Infinio with SSD. I felt this would be a good test because ZFS
 filesystem really utilizes SSD for ZIL when using NFS vs. iSCSI.
 
-### Testing setup
--   (3) HP DL360 G5 - (2) Quad-Core - 32GB Ram - (6) 1GBE NICS
--   24TB (12TB Usable - Raid-1) Nexentastor NAS (iSCSI/NFS) - Intel Core
+**Testing setup**
+
+- (3) HP DL360 G5 - (2) Quad-Core - 32GB Ram - (6) 1GBE NICS
+- 24TB (12TB Usable - Raid-1) Nexentastor NAS (iSCSI/NFS) - Intel Core
     i5 - 32GB Ram - (3) Supermicro SAS Controllers - (2) Intel 520 SSD
--   vSphere 5.5 (Not officially supported at the time of writing this)
--   VMware IO Analyzer (IOMeter) configured with a 100GB vmdk for
+- vSphere 5.5 (Not officially supported at the time of writing this)
+- VMware IO Analyzer (IOMeter) configured with a 100GB vmdk for
     testing to make sure that all IO was from disk and not from cache
     only. Also making sure to only put the 100GB vmdk on the NFS
     datastore that I was going to test and keeping the IO Analyzer OS
@@ -69,7 +63,8 @@ seeing as Infinio is a read cache accelerator I used a IO load that was
 
 So let's get started.
 
-### Installing Infinio
+**Installing Infinio**
+
 Overall the installation is very simple and straight forward which is
 great. However I ran into some snags up front in regards to my current
 configuration of my vSphere design. I will go into this as well in case
@@ -83,24 +78,24 @@ scope with it. The below is copied directly from Infinio.
 datastore will receive an "accelerator VM". Additionally, a single
 management VM will be installed any desired host._**
 
--   **_Each accelerator VM requires 12 GB of local storage, 2 vCPUs,
+- **_Each accelerator VM requires 12 GB of local storage, 2 vCPUs,
     and at least 6 GB of available memory (4 GB for the VM plus a 2 GB
     buffer to prevent extreme memory contention)._**
--   **_The management VM requires 30 GB of storage on any datastore, 2
+- **_The management VM requires 30 GB of storage on any datastore, 2
     vCPUs, and 4 GB of memory._**
 
 **_Networking Requirements_**
 
--   **_Distributed vSwitches - are not fully supported at the moment. It
+- **_Distributed vSwitches - are not fully supported at the moment. It
     is okay to use dvSwitches for VM traffic; however, the software
     requires that all other traffic (VMKernel ports for vMotion, storage
     traffic, and management) goes through standard vSwitches._**
--   **_VMkernel Port for NFS Traffic - should be separate from the
+- **_VMkernel Port for NFS Traffic - should be separate from the
     VMkernel port used for management traffic. Additionally, it should
     be on a separate subnet and/or VLAN from other VMkernel ports,
     ensuring there's only one path for NFS traffic to travel. Lastly,
     the IP address for this port should be static._**
--   **_Virtualized vCenter - if vCenter is run as a VM and
+- **_Virtualized vCenter - if vCenter is run as a VM and
     vSphere 4.1 is being used, the datastore vCenter resides upon cannot
     be accelerated. Additionally, any other datastore that uses the same
     VMkernel port as the vCenter datastore cannot be accelerated either.
@@ -242,7 +237,8 @@ I thought was pretty funny.
 
 ![19-47-50](../../assets/19-47-50-300x262.png)
 
-### Testing Infinio with Nexenta NFS Datastore
+**Testing Infinio with Nexenta NFS Datastore**
+
 So now for the testing. I want to set the stage here as I had a lot of
 other things going on in my environment and also ran different scenarios
 of testing which lead me to these testing results. Being that Infinio is
@@ -268,10 +264,10 @@ YMMV.
 I tried to break out the graph in the 1 hour increments which show where
 change was made during the test. Those increments go as follows.
 
--   Hour 1 - Nexenta with SSD for ZIL/L2ARC and Infinio acceleration
--   Hour 2 - Nexenta with Infinio acceleration (SSD for ZIL/L2ARC removed)
--   Hour 3 - Nexenta with SSD for ZIL/L2ARC (Infinio acceleration disabled)
--   Hour 4 - Nexenta only (SSD for ZIL/L2ARC Removed and Infinio
+- Hour 1 - Nexenta with SSD for ZIL/L2ARC and Infinio acceleration
+- Hour 2 - Nexenta with Infinio acceleration (SSD for ZIL/L2ARC removed)
+- Hour 3 - Nexenta with SSD for ZIL/L2ARC (Infinio acceleration disabled)
+- Hour 4 - Nexenta only (SSD for ZIL/L2ARC Removed and Infinio
     acceleration disabled
 
 ![20-06-57](../../assets/20-06-57-300x36.png)

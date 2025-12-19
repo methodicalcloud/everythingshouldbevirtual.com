@@ -1,12 +1,7 @@
 ---
   title: vSphere 5.5 - Using vCenter Server Appliance
   date: 2013-10-21 10:10:19
-excerpt: "I have been wanting to give the vCSA (vCenter Server Appliance) a go in my main lab for quite some time but never got around to it. Well I finally..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 I have been wanting to give the vCSA (vCenter Server Appliance) a go in
 my main lab for quite some time but never got around to it. Well I
@@ -55,9 +50,9 @@ instance running by using the vCSA.
 
 New features of the vCSA 5.5 compared to the 5.1 vCSA.
 
--   5 Hosts (5.1) / 500 Hosts (5.5)
+- 5 Hosts (5.1) / 500 Hosts (5.5)
 
--   50 VMs (5.1) / 5000 VMs (5.5)
+- 50 VMs (5.1) / 5000 VMs (5.5)
 
 The new web ui is now HTML 5 which is much faster and cleaner than the
 previous version. There is also a web plugin for VUM (vSphere Update

@@ -1,15 +1,7 @@
 ---
   title: How to Secure Ubuntu 12.04
   date: 2012-11-18 14:54:55
-excerpt: "This is just a list of a few tweaks and apps you can use to secure your Ubuntu 12.04 LTS system (These also apply to other versions of Ubuntu). These..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
-
-> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
-{: .notice--info}
 
 This is just a list of a few tweaks and apps you can use to secure your
 Ubuntu 12.04 LTS system (These also apply to other versions of Ubuntu).
@@ -25,7 +17,7 @@ accessible from the internet.
 ```bash
 sudo nano /etc/fstab
 tmpfs /dev/shm tmpfs defaults,noexec,nosuid 0 0
-```
+```bash
 
 > NOTE: This will mount /dev/shm as read/write, but no execute and no permission
 > to change the UID of a running program.
@@ -41,7 +33,7 @@ We can do this by the following.
 sudo nano /etc/ssh/sshd_config
 Port # <change to another port other than 22>
 PermitRootLogin no
-```
+```bash
 
 Restart sshd
 
@@ -63,13 +55,13 @@ Install DenyHosts and Fail2Ban
 ```bash
 sudo apt-get install denyhosts fail2ban
 sudo nano /etc/denyhosts.conf
-```
+```bash
 
 modify the mail settings as needed
 
 ```bash
 sudo nano /etc/fail2ban/jail.conf
-```
+```bash
 
 Enable or disable the services you want to use by changing `enabled = true` or
 `enabled=false`
@@ -87,7 +79,7 @@ Detection
 
 ```bash
 sudo apt-get install psad
-```
+```sql
 
 Create IPTables rules so PSAD will scan the logs
 
@@ -95,7 +87,7 @@ Create IPTables rules so PSAD will scan the logs
 sudo iptables -A INPUT -j LOG
 sudo iptables -A FORWARD -j LOG_
 sudo nano /etc/psad/psad.conf
-```
+```bash
 
 > NOTE: Reference [this](http://www.cipherdyne.org/psad/docs/config.html "http\://www.cipherdyne.org/psad/docs/config.html") link for more settings that
 > can be changed within the psad.conf file\_)
@@ -105,7 +97,7 @@ change the following line `_IPT_SYSLOG_FILE`          
 ```bash
 /var/log/messages;_ to _IPT_SYSLOG_FILE            
 /var/log/syslog;_
-```
+```bash
 
 Reload psad
 
@@ -131,7 +123,7 @@ We are going to use logwatch for this
 
 ```bash
 sudo apt-get install logwatch libdate-manip-perl
-```
+```bash
 
 Follow the steps [here](https://help.ubuntu.com/community/Logwatch "https\://help.ubuntu.com/community/Logwatch") to finish the installation of
 logwatch

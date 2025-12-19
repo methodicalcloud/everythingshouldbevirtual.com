@@ -6,17 +6,7 @@
     - Ansible
   redirect_from:
     - /hey-i-can-devops-my-network-too-vagrant-up-part-3
-toc: true
-toc_label: "Contents"
-excerpt: "In the last post we defined our nodes to spin up with Vagrant which will be used from here on out during our series. In this post we will actually be..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
-
-> **Version Notice**: This post references Ubuntu 14.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
-{: .notice--info}
 
 In the last
 [post](https://everythingshouldbevirtual.com/hey-i-can-devops-my-network-too-define-nodes-part-2)
@@ -134,7 +124,7 @@ and three internal-only interfaces (eth2, eth3 and eth4).
       network_name: 5-5-5
       method: static
       type: private_network
-```
+```sql
 
 Now the next section is where we will be looping through the defined
 interfaces from above and doing some checks to decide on the type of
@@ -191,7 +181,7 @@ node.vm.provider "virtualbox" do |v|
   v.memory = nodes["mem"]
   v.cpus = nodes["cpus"]
 end
-```
+```yaml
 
 And we will be gathering these from our nodes.yml file as seen below
 (**bold**). And again feel free to adjust these as you see fit for this
@@ -204,7 +194,7 @@ to GitHub to ensure that you have your code changes saved.
   box: ubuntu/trusty64
   mem: 512
   cpus: 1
-```
+```jinja2
 
 Now this is where our initial Ansible provisioning comes into play.
 Vagrant natively has
@@ -221,7 +211,7 @@ is what will run this Ansible provisioning.
 config.vm.provision :ansible do |ansible|
   ansible.playbook = "bootstrap.yml"
 end
-```
+```jinja2
 
 And the included bootstrap.yml playbook consists of the following. As
 you can see there is a lot going on here. But ultimately what is going
@@ -320,7 +310,7 @@ to be committed.
       delegate_to: localhost
       sudo: false
       when: update_host_vars is defined and update_host_vars
-```json
+```jinja2
 
 {% endraw %}
 And with all of this out of the way you may be asking "What is this
@@ -332,7 +322,7 @@ cloned your code from GitHub to.
 
 ```bash
 cd vagrant-ansible-routing-template
-```
+```bash
 
 List the directory to ensure that the Vagrantfile exists.
 
@@ -341,7 +331,7 @@ ls
 ...
 README.md       ansible.cfg     bootstrap_ansible.sh    host_vars       hosts.example       playbook.yml
 Vagrantfile        bootstrap.yml       group_vars      hosts           nodes.yml       site.yml
-```
+```bash
 
 And now we are ready to Vagrant Up. Vagrant up will with one line bring
 up all of our nodes defined in nodes.yml and do the initial Ansible
@@ -350,11 +340,11 @@ So with that being said let's do it.
 
 ```bash
 vagrant up
-```
+```bash
 
 And you should now see the following.
 
-```raw
+```bash
 Bringing machine 'r1' up with 'virtualbox' provider...
 Bringing machine 'r2' up with 'virtualbox' provider...
 Bringing machine 'r3' up with 'virtualbox' provider...
@@ -452,7 +442,7 @@ ok: [r1 -> localhost]
 PLAY RECAP ********************************************************************
 r1                         : ok=11   changed=4    unreachable=0    failed=0
 ....
-```
+```bash
 
 You will see the above scroll by as each of our five nodes are
 provisioned. So sit back and watch as they are spun up.
@@ -478,7 +468,7 @@ r5                        running (virtualbox)
     This environment represents multiple VMs. The VMs are all listed
     above with their current state. For more information about a specific
     VM, run `vagrant status NAME`.
-```
+```bash
 
 As you can see all of our nodes are up and running. However for instance if for
 some reason during the vagrant up an error occurred and stalled the provisioning.
@@ -486,7 +476,7 @@ We could continue our deployment by doing the following again.
 
 ```bash
 vagrant up
-```
+```bash
 
 Vagrant would then validate that each node is up and if any are found to
 not be it would then provision the missing node(s).
@@ -496,7 +486,7 @@ would want to ensure that Vagrant has performed the Ansible
 provisioning. We can validate that Ansible provisioning has taken place
 by running the following.
 
-```raw
+```bash
 vagrant provision
 ....
 
@@ -543,7 +533,7 @@ ok: [r1 -> localhost]
 PLAY RECAP ********************************************************************
 r1                         : ok=11   changed=1    unreachable=0    failed=0
 ....
-```
+```bash
 
 Now that we have validated that all nodes are up and each one has been
 bootstrapped using Ansible we can look at a few more things.
@@ -555,14 +545,14 @@ files to see what is within this file.
 ```bash
 cat host_vars/r1
 ....
-```
+```yaml
 
 ```yaml
 ---
 ansible_ssh_port: 22
 ansible_ssh_host: 192.168.250.101
 ansible_ssh_private_key_file: .vagrant/machines/r1/virtualbox/private_key
-```
+```bash
 
 If you were to list the host_vars folder you will see all five nodes
 have a file associated.
@@ -571,7 +561,7 @@ have a file associated.
 ls host_vars/
 ....
 r1  r2  r3  r4  r5
-```
+```bash
 
 Also while we are here let's check if our code has changed.
 
@@ -587,7 +577,7 @@ Untracked files:
     host_vars/r5
 
 nothing added to commit but untracked files present (use "git add" to track)
-```
+```bash
 
 As you can see there is our new router5 (r5) host_vars file and our
 hidden .vagrant folder has been created which are not being tracked
@@ -643,7 +633,7 @@ Changes to be committed:
     new file:   .vagrant/machines/r5/virtualbox/synced_folders
     new file:   .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory
     new file:   host_vars/r5
-```
+```bash
 
 As you can see now we now show several new files which need to be
 committed. I will show you a shortcut (Not everyone agrees with this
@@ -691,7 +681,7 @@ git commit -am "Added newly untracked files for project"
  create mode 100644 .vagrant/machines/r5/virtualbox/synced_folders
  create mode 100644 .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory
  create mode 100644 host_vars/r5
-```
+```bash
 
 Now let's push our changes up to our remote GitHub repo.
 
@@ -705,7 +695,7 @@ Writing objects: 100% (47/47), 9.69 KiB | 0 bytes/s, done.
 Total 47 (delta 2), reused 0 (delta 0)
 To https://github.com/everythingshouldbevirtual/vagrant-ansible-routing-template.git
    a06b879..2ca4703  dev -> dev
-```
+```bash
 
 Now that all of our code changes have been committed to our dev branch
 we are slowly learning why version controlling is important (I Hope). We
@@ -720,14 +710,14 @@ run the following to ssh to our node.
 
 ```bash
 vagrant ssh
-```
+```bash
 
 But because we are in a multi-node environment we will get the following
 error.
 
 ```bash
 This command requires a specific VM name to target in a multi-VM environment.
-```
+```bash
 
 What this is telling us is that we must specify a specific node to ssh
 to, ie. r1, r2, ..., r5. So let's connect to router1 (r1).
@@ -758,7 +748,7 @@ Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.13.0-63-generic x86_64)
 
 Last login: Tue Sep  8 14:55:23 2015 from 192.168.250.1
 vagrant@r1:~$
-```
+```bash
 
 We are now connected to router1 (r1) and you can see all of our
 interfaces which we defined in our nodes.yml file are configured. We
@@ -771,7 +761,7 @@ cd /vagrant
 ls
 ....
 ansible.cfg  bootstrap_ansible.sh  bootstrap.yml  group_vars  hosts  hosts.example  host_vars  nodes.yml  playbook.yml  README.md  site.yml  Vagrantfile
-```
+```bash
 
 See there...We show the same files/folders as within our HostOS. We can
 now manipulate these files/folders either within our node(s) or within
@@ -804,7 +794,7 @@ r5 ansible_ssh_host=127.0.0.1 ansible_ssh_port=2203 ansible_ssh_private_key_file
 So let's now run our Ansible bootstrap playbook from within router1
 (r1)
 
-```raw
+```console
 ansible-playbook -i hosts bootstrap.yml
 ....
 PLAY [all] ********************************************************************
@@ -916,11 +906,3 @@ all of our nodes. And that concludes this section of the series on
 Vagrant Up.
 
 Next up...[Auto-configured OSPF](https://everythingshouldbevirtual.com/hey-i-can-devops-my-network-too-auto-configured-ospf-part-4)
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

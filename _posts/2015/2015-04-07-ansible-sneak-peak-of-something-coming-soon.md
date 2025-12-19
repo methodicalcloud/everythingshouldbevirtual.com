@@ -1,13 +1,6 @@
 ---
   title: Ansible - Sneak Peak of something coming soon :)
-toc: true
-toc_label: "Contents"
-excerpt: "So I started working on some theoretical ideas about 6-9 months ago around using Quagga in a highly scalable HA scenario and put it down for a bit. Now..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 So I started working on some theoretical ideas about 6-9 months ago
 around using Quagga in a highly scalable HA scenario and put it down for
@@ -240,11 +233,3 @@ sync_interfaces: false
 {% endraw %}
 
 EnjoY!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

@@ -6,12 +6,7 @@
     - Ansible
   redirect_from:
     - /ansible-parsing-csv-list-hosts-ip-hostnames-mac
-excerpt: "Recently I had a need to take an already populated spreadsheet which contained a list of hostnames, generic names, IP addresses and MAC addresses and..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 Recently I had a need to take an already populated spreadsheet which
 contained a list of hostnames, generic names, IP addresses and MAC
@@ -46,7 +41,7 @@ and then execute the script as below:
 
 ```bash
 ./hostipmacgen.py
-```
+```jinja2
 
 After running the above script we now have a random inventory generated
 for 1000 hosts in a CSV file and ready for us to parse this to YAML in
@@ -72,11 +67,3 @@ exported as a CSV file and easily becoming available for consumption by
 Ansible!
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

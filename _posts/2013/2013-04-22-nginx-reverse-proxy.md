@@ -1,12 +1,7 @@
 ---
   title: Nginx Reverse Proxy
   date: 2013-04-22 17:06:32
-excerpt: "I just wanted to throw this together real quick as I had a request this past week to look into this. I was asked to look into deploying a reverse proxy..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 I just wanted to throw this together real quick as I had a request this
 past week to look into this. I was asked to look into deploying a
@@ -22,7 +17,7 @@ First thing you will need to do is install nginx.
 
 ```bash
 sudo apt-get install nginx
-```
+```sql
 
 Now you will need to create a conf file which will contain the info of
 the backend servers you want to configfure for the reverse proxy. I am
@@ -64,7 +59,7 @@ Now restart nginx for the config you created above to take affect.
 
 ```bash
 sudo /etc/init.d/nginx restart
-```
+```sql
 
 Now you will need to create a NAT/Port Forward rule on your firewall to
 pass all tcp port 80 to your nginx reverse proxy which in this case is 8080.

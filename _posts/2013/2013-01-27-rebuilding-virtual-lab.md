@@ -1,12 +1,7 @@
 ---
   title: Rebuilding Virtual Lab
   date: 2013-01-27 09:30:16
-excerpt: "I am right now rebuilding my virtual lab to start doing some new testing. Took some time off to get a clear head and fresh start to the new year. So..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 I am right now rebuilding my virtual lab to start doing some new
 testing. Took some time off to get a clear head and fresh start to the

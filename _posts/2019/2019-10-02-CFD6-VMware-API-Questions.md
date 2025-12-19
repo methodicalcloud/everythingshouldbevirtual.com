@@ -5,7 +5,6 @@ categories:
   - Automation
 tags:
   - VMware
-excerpt: "While, attending Cloud Field Day 6 in Silicon Valley as a delegate for Tech Field Day, Dell and VMware gave us their pitch on VMware Cloud Foundation."
 ---
 
 ## CFD6 VMware API Questions
@@ -22,7 +21,8 @@ there, there are some things that do not make sense. One of the things that I
 find extremely annoying from VMware is their API functionality in most cases.
 And generally the annoying part for me is the documentation around API usage.
 
-### IT IS GETTING BETTER
+**IT IS GETTING BETTER**
+
 With this all being said, I'd like to walk through what was in my head while
 hearing these presentations. In the previous session to the one below, we heard
 all about VXRail, etc. Very cool stuff for sure. However, as the session for

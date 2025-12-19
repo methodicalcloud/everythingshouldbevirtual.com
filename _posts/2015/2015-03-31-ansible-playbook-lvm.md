@@ -1,11 +1,6 @@
 ---
   title: Ansible Playbook - LVM
-excerpt: "In spending the past few weeks learning a ton about Ansible (after creating 30+ playbooks and roles - Some very complex :) more goodness coming soon..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 In spending the past few weeks learning a ton about Ansible (after
 creating 30+ playbooks and roles - Some very complex :)  more goodness
@@ -96,11 +91,3 @@ tweak some of the variables to fit your requirements.
 {% endraw %}
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

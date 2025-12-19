@@ -3,7 +3,6 @@ title: "Searching for the Source(s) of Truth in Holistic Automation"
 date: 2024-07-01
 categories: [Automation, IT Management, DevOps]
 tags: [Source of Truth, CMDB, ServiceNow, Nautobot, NetBox, Opsmill Infrahub]
-excerpt: "The Source of Truth (SoT) concept has become a cornerstone for achieving holistic automation in the ever-evolving IT and network management landscape...."
 ---
 The Source of Truth (SoT) concept has become a cornerstone for achieving holistic automation in the ever-evolving IT and network management landscape. As organizations strive to streamline operations, ensure compliance, and enhance security, the quest for an accurate, reliable, and comprehensive SoT becomes paramount. This blog post delves into identifying and establishing a robust SoT and its implications for holistic automation. And you may be shocked to know: It'll likely not be a Single Source of Truth (SSoT).
 

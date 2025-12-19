@@ -1,17 +1,7 @@
 ---
 title: Build TFTP Server for ESXi Installs
 date: 2014-04-05 23:00:02
-toc: true
-toc_label: "Contents"
-excerpt: "So it has been a while since I have built a TFTP server and the opportunity came up to do this again to do some ESXi deployments. I wanted the ability..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
-
-> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
-{: .notice--info}
 
 So it has been a while since I have built a TFTP server and the
 opportunity came up to do this again to do some ESXi deployments. I
@@ -30,13 +20,13 @@ out to your hosts during deployment.
 
 ```bash
 sudo apt-get -y install apache2
-```
+```bash
 
 Install the TFTP Server
 
 ```bash
 sudo apt-get install tftpd-hpa
-```
+```bash
 
 The TFTP Service should now be running and listening on UDP/69\
 In order for the tftpd-hpa service to start on bootup you will need to
@@ -44,7 +34,7 @@ add the following to your _/etc/rc.local_ file.
 
 ```bash
 sudo nano /etc/rc.local
-```
+```bash
 
 Now past the following code at the end of rc.local before the last line
 which is _exit 0_.
@@ -52,38 +42,38 @@ which is _exit 0_.
 ```bash
 sleep 30
 service tftpd-hpa restart
-```
+```bash
 
 Install SYSLINUX (This will provide us with the bootstraps for PXE, ISO
 and etc.)
 
 ```bash
 sudo apt-get -y install syslinux
-```
+```bash
 
 Copy the PXELINUX Bootstrap to the TFTP server root folder
 
 ```bash
 sudo cp /usr/lib/syslinux/pxelinux.0 /var/lib/tftpboot
-```
+```sql
 
 Create the pxelinux.cfg folder.
 
 ```bash
 sudo mkdir /var/lib/tftpboot/pxelinux.cfg
-```
+```sql
 
 Create default pxe configuration file.
 
 ```bash
 sudo touch /var/lib/tftpboot/pxelinux.cfg/default
-```
+```bash
 
 Now we need to put some information into our default pxe config file.
 
 ```bash
 sudo nano /var/lib/tftpboot/pxelinux.cfg/default
-```
+```sql
 
 You can copy and paste from below to get you started or create your own.
 
@@ -125,14 +115,14 @@ LABEL SRCD
         MENU LABEL SystemRescueCD
         KERNEL Images/SystemRescueCD/rescue64
         APPEND initrd=Images/SystemRescueCD/initram.igz netboot=tftp://tftpbuilddepot/Images/SystemRescueCD/sysrcd.dat
-```
+```sql
 
 Now let's create our pxe.conf file which includes backgrounds and menu
 box options.
 
 ```bash
 sudo nano /var/lib/tftpboot/pxelinux.cfg/pxe.conf
-```
+```bash
 
 Below is a sample pxe.conf file that you can use so you can just copy
 and paste the following into your pxe.conf file. (Replace background.jpg
@@ -149,14 +139,14 @@ menu rows 14
 MENU TABMSGROW 24
 MENU MARGIN 10
 menu color border               30;44      #ffffffff #00000000 std
-```
+```sql
 
 Now let's create the kickstart configuration folder (This is where we
 will be storing our various ESXi kickstart script files).
 
 ```bash
 sudo mkdir /var/lib/tftpboot/KS
-```
+```sql
 
 Now we need to create a symlink for apache to point to our kickstart
 configuration folder (This will allow our deployments to point to
@@ -164,7 +154,7 @@ configuration folder (This will allow our deployments to point to
 
 ```bash
 sudo ln -s /var/lib/tftpboot/KS/ /var/www/KS
-```
+```sql
 
 Create each folder for the ESXi versions that you will be copying from
 the ESXi media to serve out.
@@ -175,7 +165,7 @@ sudo mkdir /var/lib/tftpboot/Images/ESXi5.1U1
 sudo mkdir /var/lib/tftpboot/Images/ESXi5.1U2
 sudo mkdir /var/lib/tftpboot/Images/ESXi5.5
 sudo mkdir /var/lib/tftpboot/Images/ESXi5.5U1
-```
+```sql
 
 Mount the ESXi ISO to your TFTP server and copy the media to the
 appropriate folder or create the appropriate folder if it does not
@@ -185,7 +175,7 @@ your TFTP server is a VM and we are copying the ESXi5.5 installer).
 ```bash
 sudo mount /dev/cdrom /mnt
 sudo cp -r /mnt/* /var/lib/tftpboot/Images/ESXi5.5
-```
+```bash
 
 Now we need to modify the boot.cfg within each ESXi installer version to
 remove some unnecessary context. This is required because we are not
@@ -193,7 +183,7 @@ booting from the ISO image(s).
 
 ```bash
 sudo sed -e "s#/##g" -e "3s#^#prefix=/`basename $PWD`/\n#" -i.bak boot.cfg
-```
+```sql
 
 Now let's create our menus for our ESXi Interactive and ESXi Scripted
 installs. (These are the menus that we referenced in our default pxe
@@ -202,7 +192,7 @@ Let's create our Interactive (Requires user intervention) menu first.
 
 ```bash
 sudo nano /var/lib/tftpboot/pxelinux.cfg/conf/ESXi_Interactive.menu
-```
+```bash
 
 Now paste the following contents into this menu file. (You will need to
 tailor to your specific needs in regards to the versions of ESXi to
@@ -261,14 +251,14 @@ LABEL Dell Branded ESXi 5.5U1 Installer
         TEXT HELP
         Install ESXi5.5U1
         ENDTEXT
-```
+```sql
 
 Now we are ready to create our Scripted (No user intervention required)
 menu.
 
 ```bash
 sudo nano /var/lib/tftpboot/pxelinux.cfg/conf/ESXi_Scripted.menu
-```
+```bash
 
 Now paste the following contents into this menu file. (You will need to
 tailor to your specific needs in regards to the versions of ESXi to
@@ -327,7 +317,7 @@ LABEL Dell Branded ESXi 5.5U1 Installer
         TEXT HELP
         Install ESXi5.5U1
         ENDTEXT
-```
+```bash
 
 Now the last thing to finish is our actual kickstart script
 configuration file. (You will want to tailor this to your specific needs

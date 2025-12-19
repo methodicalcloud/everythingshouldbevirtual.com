@@ -7,14 +7,7 @@
     - PowerDNS
   redirect_from:
     - /ansible-discover-and-backup-powerdns-zonesrecords
-toc: true
-toc_label: "Contents"
-excerpt: "While working on a solution that requires PowerDNS, I have come to a point in which I would like to include backup and recovery options for this..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 While working on a solution that requires
 [PowerDNS](https://www.powerdns.com/), I have come to a point in which I
@@ -72,7 +65,7 @@ created on the server.
       with_items:
         - "pdns_zones_query_names:"
         - "---"
-```json
+```jinja2
 
 {% endraw %}
 The above will create a folder pdns_zone_backups with two files
@@ -288,7 +281,7 @@ Examples are below.
     "serial": 2015101001
   }
 ]
-```
+```jinja2
 
 From the above above information after running through Ansible we end up
 with a usable list to use as a variable for our next Ansible playbook.
@@ -316,7 +309,7 @@ pdns_zones_query_names:
   - 1.168.192.in-addr.arpa
   - 70.168.192.in-addr.arpa
   - 200.168.192.in-addr.arpa
-```
+```jinja2
 
 Now we are ready to use the above variable list for our next Ansible
 playbook which will connect back to the PowerDNS API, query all records
@@ -343,7 +336,7 @@ for each zone and back them up. Our next playbook looks like below.
     - name: pulling records for zones
       shell: "curl -H 'X-API-Key: {{ pdns_api_key }}' http://{{ pdns_api_web_url }}:{{ pdns_webserver_port }}/servers/localhost/zones/{{ item }} | jq . > {{ zones_dir }}/{{ item }}/{{ item }}.yml"
       with_items: pdns_zones_query_names
-```json
+```jinja2
 
 {% endraw %}
 And once the above runs we will now have a folder structure that looks
@@ -475,11 +468,3 @@ Looking for an Ansible playbook to install PowerDNS? Go
 Up next will be how we can restore our zones/records from these backups.
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

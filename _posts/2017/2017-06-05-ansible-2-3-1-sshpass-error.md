@@ -6,15 +6,7 @@
     - Ansible
   redirect_from:
     - /ansible-2-3-1-sshpass-error
-excerpt: "As you may or may not be aware, Ansible 2.3.1.0 was recently released. After installing Ansible 2.3.1.0 in my Python virtual environment I immediately..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
-
-> **Version Notice**: This post references Ansible 2.3. Current version is 2.16+. Module names, syntax, and best practices have evolved.
-{: .notice--info}
 
 As you may or may not be aware, **Ansible 2.3.1.0** was recently
 released. After installing **Ansible 2.3.1.0** in my Python virtual
@@ -38,7 +30,7 @@ PLAY RECAP *********************************************************************
 ms-7693.etsbv.internal     : ok=0    changed=0    unreachable=0    failed=1
 nas01.etsbv.internal       : ok=0    changed=0    unreachable=0    failed=1
 nas02.etsbv.internal       : ok=0    changed=0    unreachable=0    failed=1
-```
+```bash
 
 So how do we fix this? Actually quite easy. However, we need to build
 **sshpass** and install it from source.
@@ -53,11 +45,11 @@ cd sshpass-1.06
 ./configure
 make
 sudo make install
-```
+```bash
 
 Now let's validate that **sshpass** is indeed installed now.
 
-```raw
+```bash
 sshpass
 Usage: sshpass [-f|-d|-p|-e] [-hV] command parameters
    -f filename   Take password to use from file
@@ -71,19 +63,20 @@ Usage: sshpass [-f|-d|-p|-e] [-hV] command parameters
    -h            Show help (this screen)
    -V            Print version information
 At most one of -f, -d, -p or -e should be used
-```
+```bash
 
 And sure enough, there it is now.
 
 So now let's attempt to run our Ansible playbook once again.
 
-### SUCCESS!!!!
+**SUCCESS!!!!**
+
 If you happen to be a macOS user and use [Homebrew](https://brew.sh/) you might
 want to do the following instead to make cleanup and etc. easier:
 
 ```bash
 brew create https://sourceforge.net/projects/sshpass/files/sshpass/1.06/sshpass-1.06.tar.gz --force
-```
+```bash
 
 Now if you were using a **Linux** host such as **Ubuntu**, this would
 have been as easy as:
@@ -98,11 +91,3 @@ testing? Here is a script to help you with that.
 {% gist mrlesmithjr/8beb3ab7989e5ee3ef61082c9162b564 %}
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

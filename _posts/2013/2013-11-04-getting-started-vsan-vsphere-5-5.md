@@ -1,12 +1,7 @@
 ---
   title: Getting Started with vSAN in vSphere 5.5
   date: 2013-11-04 07:00:13
-excerpt: "As you may or may not know VMware announced the new vSAN with vSphere 5.5. vSAN is currently in public beta but it is very easy to get started testing..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 As you may or may not know VMware announced the new vSAN with vSphere
 5.5. vSAN is currently in public beta but it is very easy to get started

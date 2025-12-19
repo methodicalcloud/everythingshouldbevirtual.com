@@ -1,12 +1,7 @@
 ---
   title: Upgrading Ubuntu Nagios 3.5 to 4.x
   date: 2013-12-09 12:44:05
-excerpt: "In this previous post we installed Nagios 3.5.0 from source. Now that the current version of Nagios is 4.0.2 I wanted to walk through upgrading the..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 In [this](https://everythingshouldbevirtual.com/installing-nagios-on-ubuntu-12-04 "http\://everythingshouldbevirtual.com/installing-nagios-on-ubuntu-12-04")
 previous post we installed Nagios 3.5.0 from source. Now that the
@@ -32,7 +27,7 @@ make install-webconf
 cp -R contrib/eventhandlers/ /usr/local/nagios/libexec/
 chown -R nagios:nagios /usr/local/nagios/libexec/eventhandlers
 /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
-```
+```bash
 
 If all ran successfully you should see the following.
 
@@ -47,7 +42,7 @@ cd /opt/nagios-plugins-1.5
 ./configure --with-nagios-user=nagios --with-nagios-group=nagios
 make
 make install
-```
+```sql
 
 The new init script installed does not work on Ubuntu so we will remove
 it and create a new one to run under /etc/init
@@ -55,7 +50,7 @@ it and create a new one to run under /etc/init
 ```bash
 rm /etc/init.d/nagios
 rm /etc/rcS.d/S99nagios
-```
+```sql
 
 Create /etc/init/nagios.conf \*\*Thanks to [raymii.org](http://raymii.org "http\://raymii.org")
 
@@ -80,7 +75,7 @@ console log
 script
         exec bin/nagios etc/nagios.cfg
 end script
-```
+```bash
 
 Now you will need to reload the init config to enable nagios
 

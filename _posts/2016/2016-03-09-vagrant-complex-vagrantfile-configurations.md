@@ -6,14 +6,7 @@
     - Vagrant
   redirect_from:
     - /vagrant-complex-vagrantfile-configurations
-toc: true
-toc_label: "Contents"
-excerpt: "I will be using this a reference for adding various Vagrant configurations for setting up testing environments. I really just wanted to put this out..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 I will be using this a reference for adding various Vagrant
 configurations for setting up testing environments. I really just wanted
@@ -410,11 +403,3 @@ end
 ```
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2015-09-08-hey-i-can-devops-my-network-too-vagrant-up-part-3](/hey-i-can-devops-my-network-too-vagrant-up-part-3/)
-- [2015-08-27-vagrant-multi-nic-definitions-via-yaml](/vagrant-multi-nic-definitions-via-yaml/)
-- [2015-08-23-learning-vagrant-and-ansible-provisioning](/learning-vagrant-and-ansible-provisioning/)

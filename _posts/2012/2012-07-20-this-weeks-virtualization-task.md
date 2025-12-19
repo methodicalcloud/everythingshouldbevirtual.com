@@ -1,12 +1,7 @@
 ---
   title: This weeks virtualization task
   date: 2012-07-20 15:23:32
-excerpt: "Currently working on designing a stretched cluster that will include vMSC (vSphere Metro Storage Cluster). We are currently designing around OTV..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 Currently working on designing a stretched cluster that will include
 vMSC (vSphere Metro Storage Cluster). We are currently designing around

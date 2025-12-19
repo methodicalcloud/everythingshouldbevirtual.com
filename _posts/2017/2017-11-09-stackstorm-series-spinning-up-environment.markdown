@@ -10,8 +10,8 @@ tags:
 This post is the next in the StackStorm Series. You can find the previous posts
 in the series below:
 
--   [StackStorm Series - Intro](https://everythingshouldbevirtual.com/series/stackstorm-series-intro/)
--   [StackStorm Series - Getting Started](https://everythingshouldbevirtual.com/series/stackstorm-series-getting-started/)
+- [StackStorm Series - Intro](https://everythingshouldbevirtual.com/series/stackstorm-series-intro/)
+- [StackStorm Series - Getting Started](https://everythingshouldbevirtual.com/series/stackstorm-series-getting-started/)
 
 In this post we will be spinning up the test environment for us to begin our
 StackStorm learning.
@@ -36,7 +36,7 @@ The whole provisioning takes about ~10 minutes to complete.
 
 If you decide to watch then you should see everything spinning up as below:
 
-```raw
+```console
 Bringing machine 'node0' up with 'virtualbox' provider...
 Bringing machine 'node1' up with 'virtualbox' provider...
 ==> node0: Importing base box 'mrlesmithjr/xenial64'...
@@ -53,7 +53,7 @@ Bringing machine 'node1' up with 'virtualbox' provider...
 
 And then you will see Ansible doing it's thing as well:
 
-```raw
+```console
     node1: Running ansible-playbook...
 
 PLAY [all] *********************************************************************
@@ -82,7 +82,7 @@ skipping: [node1] => (item=[])
 And once the environment is provisioned you should see the end of the Ansible
 provisioning:
 
-```raw
+```console
 RUNNING HANDLER [ansible-nginx : restart nginx] ********************************
 changed: [node0]
 

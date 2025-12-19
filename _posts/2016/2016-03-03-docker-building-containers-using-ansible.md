@@ -8,14 +8,7 @@
     - Docker
   redirect_from:
     - /docker-building-containers-using-ansible
-toc: true
-toc_label: "Contents"
-excerpt: "Have you thought about building Docker containers using some Ansible role(s) or playbook(s) you may already be using for your regular automated..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 Have you thought about building Docker containers using some Ansible
 role(s) or playbook(s) you may already be using for your regular
@@ -53,7 +46,7 @@ vagrant@node-1:/vagrant/containers/mysql-ansible$ tree
 
 
 1 directory, 3 files
-```
+```jinja2
 
 And below are the contents of the files which will be copied.
 
@@ -70,7 +63,7 @@ playbook.yml
   roles:
     - role: ansible-mysql
   tasks:
-```json
+```jinja2
 
 {% endraw %}
 requirements.yml
@@ -78,11 +71,11 @@ requirements.yml
 ```yaml
 ---
 - src: https://github.com/mrlesmithjr/ansible-mysql.git
-```
+```bash
 
 And our Dockerfile to build from (Using Ansible)
 
-```dockerfile
+```bash
 FROM ubuntu:14.04
 
 MAINTAINER Larry Smith Jr. <mrlesmithjr@gmail.com>
@@ -117,18 +110,18 @@ EXPOSE 3306
 
 #Process start-up
 CMD ["/usr/bin/mysqld_safe"]
-```
+```bash
 
 Now we can build our container..
 
 ```bash
 docker build -t mysql-ansible .
-```
+```bash
 
 Now if we do a standard Docker install without using Ansible using the
 below Dockerfile
 
-```dockerfile
+```bash
 FROM ubuntu:14.04
 
 MAINTAINER Larry Smith Jr. <mrlesmithjr@gmail.com>
@@ -151,13 +144,13 @@ EXPOSE 3306
 
 #Process start-up
 CMD ["/usr/bin/mysqld_safe"]
-```
+```bash
 
 And now build without Ansible.
 
 ```bash
 docker build -t mysql .
-```
+```bash
 
 And if we do a quick look at our Docker images to compare the
 differences in the image sizes...
@@ -168,7 +161,7 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
 mysql               latest              26c155e1472e        4 seconds ago       339.4 MB
 mysql-ansible       latest              549207bd1f0e        14 minutes ago      636 MB
 ubuntu              14.04               07c86167cdc4        3 hours ago         188 MB
-```
+```sql
 
 As you can see there is quite a bit of bloat using Ansible but it may or
 may not be worth it. So YMMV.
@@ -185,7 +178,7 @@ I am very interested in your thoughts and perspecitves.
 
 Using the following Dockerfile...
 
-```dockerfile
+```bash
 FROM ubuntu:14.04
 
 MAINTAINER Larry Smith Jr. <mrlesmithjr@gmail.com>
@@ -230,7 +223,7 @@ EXPOSE 3306
 
 #Process start-up
 CMD ["/usr/bin/mysqld_safe"]
-```
+```bash
 
 And now building...
 
@@ -253,11 +246,3 @@ And as you can see from above we indeed saved 132MB installing Ansible
 via apt using their ppa repository.
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

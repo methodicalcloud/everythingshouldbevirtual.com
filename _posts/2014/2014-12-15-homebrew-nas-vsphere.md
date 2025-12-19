@@ -1,17 +1,7 @@
 ---
   title: Homebrew NAS for vSphere
   date: 2014-12-15
-toc: true
-toc_label: "Contents"
-excerpt: "So for the past 4 years or so I have been running Nexenta 3.x for my lab NAS; which has been working great, but I was at a point of having to rebuild..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
-
-> **Version Notice**: This post references Ubuntu 14.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
-{: .notice--info}
 
 So for the past 4 years or so I have been running Nexenta 3.x for my lab
 NAS; which has been working great, but I was at a point of having to
@@ -69,21 +59,21 @@ First you need to install the actual ifenslave package.
 ```bash
 sudo apt-get install ifenslave-2.6
 sudo modprobe bonding
-```
+```bash
 
 And for vlan tagging support.
 
 ```bash
 sudo apt-get install vlan
 sudo modprobe 8021q
-```
+```bash
 
 Now all you need to do is modify your /etc/network/interfaces to look
 like below (Change to suit your requirements)
 
 ```bash
 sudo nano /etc/network/interfaces
-```
+```bash
 
 Below is what my setup looks like (I chose balance-alb for my bonding
 mode)
@@ -151,7 +141,7 @@ address 10.0.130.50
 netmask 255.255.255.0
 broadcast 10.0.130.255
 vlan-raw-device bond0
-```
+```bash
 
 Now let's make some network tweaks to get the best performance we can.
 
@@ -185,7 +175,7 @@ keep time in sync as well.
 
 ```bash
 sudo apt-get install ntp
-```
+```sql
 
 We now need to build our ZFS storage pool and create some datasets.
 So let's assume that you have 2-2TB drives you want to use for your ZFS
@@ -204,7 +194,7 @@ sudo apt-get install python-software-properties
 sudo apt-add-repository ppa:zfs-native/stable
 sudo apt-get update
 sudo apt-get install ubuntu-zfs
-```
+```bash
 
 So now before we go too much further let's get some initial tweaks out
 of the way that specifically deal with SATA drives and memory.
@@ -256,7 +246,7 @@ options zfs zfs_arc_max=8589934592
 options zfs zfs_arc_meta_limit=2147483648
 # zfs_arc_min (1/2 of zfs_arc_meta_limit)
 options zfs zfs_arc_min=1073741824
-```
+```bash
 
 Now save and close this file and go ahead and reboot your server.
 
@@ -268,13 +258,13 @@ sudo bash
 echo 1073741824 > /sys/module/zfs/parameters/zfs_arc_min
 echo 8589934592 > /sys/module/zfs/parameters/zfs_arc_max
 echo 2147483648 > /sys/module/zfs/parameters/zfs_arc_meta_limit
-```
+```bash
 
 To see what the arcstats are currently set to run the following.
 
 ```bash
 cat /proc/spl/kstat/zfs/arcstats
-```
+```bash
 
 Example output of mine.
 
@@ -367,7 +357,7 @@ arc_prune                       4    0
 arc_meta_used                   4    46250480
 arc_meta_limit                  4    2147483648
 arc_meta_max                    4    46255392
-```
+```sql
 
 Now that your server is back online let's go ahead and create our ZPOOL.
 
@@ -376,7 +366,7 @@ pool as the following.
 
 ```bash
 sudo zpool create -o ashift=12 HD-Pool mirror sda sdb
-```
+```bash
 
 Before we go further we really want to get away from using sda, sdb and
 etc. for our ZPOOL and use either disk-id or WWN naming as our sd naming
@@ -387,7 +377,7 @@ the following.
 ```bash
 sudo zpool export HD-POOL
 sudo zpool import -d /dev/disk/by-id HD-POOL
-```
+```sql
 
 Now we are ready to create our ZFS Datasets. I like organization in
 doing this so I will be creating the following datasets (vmware and
@@ -396,13 +386,13 @@ veeam) along with datasets for NFS and iSCSI for the vmware dataset.
 ```bash
 sudo zfs create -p HD-Pool/vmware/NFS
 sudo zfs create HD-Pool/vmware/iSCSI
-```
+```bash
 
 To validate that our datasets have been created
 
 ```bash
 sudo zfs list
-```
+```bash
 
 ![Screen Shot 2014-12-15 at 10.03.56 AM](../../assets/Screen-Shot-2014-12-15-at-10.03.56-AM-300x77.png)
 
@@ -424,7 +414,7 @@ zfs set sync=disabled HD-Pool/vmware/NFS
 zfs set atime=off HD-Pool/vmware/NFS
 zfs set recordsize=16K HD-Pool/vmware/NFS
 zfs set compression=lz4 HD-Pool
-```
+```sql
 
 This is where organization for your datasets makes life much easier
 because we can set different options based on our needs/requirements.
@@ -436,14 +426,14 @@ preparation of setting different options or quotas.
 sudo zfs create HD-Pool/vmware/NFS/tier_1
 sudo zfs create HD-Pool/vmware/NFS/tier_2
 sudo zfs create HD-Pool/vmware/NFS/tier_3
-```
+```bash
 
 And if we do another zfs list to show our datasets we will see something
 similar to below.
 
 ```bash
 sudo zfs list
-```
+```bash
 
 ![Screen Shot 2014-12-15 at 10.16.37 AM](../../assets/Screen-Shot-2014-12-15-at-10.16.37-AM-300x90.png)
 
@@ -460,7 +450,7 @@ and exporting our NFS mounts using ZFS. So let's install our NFS Server.
 
 ```bash
 sudo apt-get install nfs-kernel-server
-```
+```bash
 
 And before we go any further let's increase our number of NFS servers
 from the default of 8 to 16. This will spawn additional NFSD processes
@@ -468,7 +458,7 @@ to increase performance for more than just a few vSphere hosts.
 
 ```bash
 sudo nano /etc/default/nfs-kernel-server
-```
+```bash
 
 At the top change the following from 8
 
@@ -476,7 +466,7 @@ At the top change the following from 8
 # Number of servers to start up
 
 RPCNFSDCOUNT=8
-```
+```bash
 
 To 16
 
@@ -484,7 +474,7 @@ To 16
 # Number of servers to start up
 
 RPCNFSDCOUNT=16
-```
+```bash
 
 Save and exit.
 
@@ -496,19 +486,19 @@ case we are exporting /mnt on localhost with read-only permissions.
 
 ```bash
 sudo nano /etc/exports
-```
+```bash
 
 And paste the following
 
 ```bash
   /mnt   localhost (ro)
-```
+```bash
 
 Now save, exit and start the NFS server.
 
 ```bash
 sudo service nfs-kernel-server start
-```
+```bash
 
 You will see the following error message but it can be safely ignored.
 
@@ -518,7 +508,7 @@ Now to validate that NFS is exporting run the following.
 
 ```bash
 sudo showmount -e
-```
+```bash
 
 You should see the following.
 
@@ -530,7 +520,7 @@ exported upon boot-up is make the following change to /etc/default/zfs
 
 ```bash
 sudo nano /etc/default/zfs
-```
+```bash
 
 And change the following line
 
@@ -538,13 +528,13 @@ And change the following line
 # Run `zfs share -a` during system start?
 # nb: The shareiscsi, sharenfs, and sharesmb dataset properties.
 ZFS_SHARE='no'
-```
+```bash
 
 To
 
 ```bash
 ZFS_SHARE='yes'
-```
+```bash
 
 Now that is out of the way let's go ahead and export some of our ZFS
 datasets. First I want to limit the access to these exports to specific subnets
@@ -555,13 +545,13 @@ sharing for our datasets. In my case these subnets are 10.0.127.0/24 and 10.0.12
 sudo zfs set sharenfs='rw=@10.0.127.0/24,rw=@10.0.128.0/24,no_root_squash,no_all_squash' HD-Pool/vmware/NFS/tier_1
 sudo zfs set sharenfs='rw=@10.0.127.0/24,rw=@10.0.128.0/24,no_root_squash,no_all_squash' HD-Pool/vmware/NFS/tier_2
 sudo zfs set sharenfs='rw=@10.0.127.0/24,rw=@10.0.128.0/24,no_root_squash,no_all_squash' HD-Pool/vmware/NFS/tier_3
-```
+```bash
 
 Now let's validate that our datasets are exports to the NFS server.
 
 ```bash
 showmount -e
-```
+```bash
 
 And you should see the following.
 
@@ -577,14 +567,14 @@ service you will need to run the following as well.
 
 ```bash
 sudo zfs share -a
-```
+```sql
 
 Or you can create shell scripts for restarting or reloading the NFS
 server.
 
 ```bash
 nano reload_nfs.sh
-```
+```bash
 
 ```bash
 #!/bin/bash
@@ -599,7 +589,7 @@ service nfs-kernel-server restart
 zfs share -a
 
 chmod +x restart_nfs.sh
-```
+```bash
 
 Now to run them execute the following:
 
@@ -607,7 +597,7 @@ To reload
 
 ```bash
 sudo reload_nfs.sh
-```
+```bash
 
 To restart
 
@@ -626,7 +616,7 @@ primitives for vSphere, which is what I want.
 ```bash
 sudo apt-get install lio-utils
 sudo apt-get install --no-install-recommends targetcli python-urwid
-```
+```sql
 
 First we will create a block device to use for our iSCSI target device.
 (The -s tells it to create a sparse volume "thin")
@@ -644,7 +634,7 @@ been created.
 
 ```bash
 sudo fdisk -l
-```
+```bash
 
 This created a new block device at /dev/zd0 that we can use for our
 iSCSI target setup.
@@ -655,7 +645,7 @@ Now we will setup iSCSI so we can present storage to our vSphere hosts.
 
 ```bash
 sudo targetcli
-```
+```bash
 
 We are now within the configuration utility to start creating our iSCSI
 targets and volumes.
@@ -666,7 +656,7 @@ If you type
 
 ```bash
 ls
-```
+```bash
 
 you will get a listing of each type of configuration we can setup.
 
@@ -676,7 +666,7 @@ Let's first setup our new ZVOL as an iblock.
 
 ```bash
 backstores/iblock create name=hd-pool_vmware_datastore_1 dev=/dev/zd0
-```
+```sql
 
 ![Screen Shot 2014-12-14 at 2.15.53 PM](../../assets/Screen-Shot-2014-12-14-at-2.15.53-PM-300x34.png)
 
@@ -686,7 +676,7 @@ Now let's create our iSCSI Target (TPG)
 
 ```bash
 iscsi/ create
-```
+```sql
 
 ![Screen Shot 2014-12-14 at 2.28.37 PM](../../assets/Screen-Shot-2014-12-14-at-2.28.37-PM-300x36.png)
 
@@ -695,7 +685,7 @@ assigned (One on VLAN129 and the other on VLAN130)
 
 ```bash
 iscsi/ create
-```
+```bash
 
 ![Screen Shot 2014-12-14 at 2.43.33 PM](../../assets/Screen-Shot-2014-12-14-at-2.43.33-PM-300x120.png)
 
@@ -705,7 +695,7 @@ to our TPGS
 ```bash
 iscsi/iqn.2003-01.org.linux-iscsi.nas01.x8664:sn.65e50d149946/tpgt1/luns create /backstores/iblock/hd-pool_vmware_datastore_1
 iscsi/iqn.2003-01.org.linux-iscsi.nas01.x8664:sn.8091c98a173d/tpgt1/luns create /backstores/iblock/hd-pool_vmware_datastore_1
-```
+```bash
 
 ![Screen Shot 2014-12-14 at 3.01.52 PM](../../assets/Screen-Shot-2014-12-14-at-3.01.52-PM-300x122.png)
 
@@ -715,7 +705,7 @@ that we created above.
 ```bash
 iscsi/iqn.2003-01.org.linux-iscsi.nas01.x8664:sn.65e50d149946/tpgt1/portals create 10.0.129.50
 iscsi/iqn.2003-01.org.linux-iscsi.nas01.x8664:sn.8091c98a173d/tpgt1/portals create 10.0.130.50
-```
+```bash
 
 ![Screen Shot 2014-12-14 at 3.40.25 PM](../../assets/Screen-Shot-2014-12-14-at-3.40.25-PM-300x138.png)
 
@@ -726,7 +716,7 @@ way. You may want to do differently but for this setup it is fine.
 ```bash
 iscsi/iqn.2003-01.org.linux-iscsi.nas01.x8664:sn.65e50d149946/tpgt1 set attribute authentication=0
 iscsi/iqn.2003-01.org.linux-iscsi.nas01.x8664:sn.8091c98a173d/tpgt1 set attribute authentication=0
-```
+```bash
 
 And now we will assign each of our vSphere hosts iSCSI initiator names
 to our ACLs for each TPG so our hosts will see our new iSCSI lun.
@@ -734,7 +724,7 @@ to our ACLs for each TPG so our hosts will see our new iSCSI lun.
 ```bash
 iscsi/iqn.2003-01.org.linux-iscsi.nas01.x8664:sn.65e50d149946/tpgt1/acls create wwn=iqn.1998-01.com.vmware:esxi01-7685c3a8
 iscsi/iqn.2003-01.org.linux-iscsi.nas01.x8664:sn.8091c98a173d/tpgt1/acls create wwn=iqn.1998-01.com.vmware:esxi01-7685c3a8
-```
+```sql
 
 Now after adding all of your hosts to the ACLs for each TPG your setup
 should look similar to below.
@@ -765,7 +755,7 @@ password.
 
 ```bash
 sudo adduser veeam
-```
+```bash
 
 ![Screen Shot 2014-12-15 at 1.03.19 PM](../../assets/Screen-Shot-2014-12-15-at-1.03.19-PM-300x207.png)
 
@@ -773,7 +763,7 @@ Now let's install samba (ZOL utilizes the native  Linux samba package).
 
 ```bash
 sudo apt-get install samba
-```
+```sql
 
 Once that is complete I want to share out my veeam_backups dataset.
 
@@ -783,21 +773,21 @@ nbmand=on (Non Blocking Mandatory Locks) for CIFS clients.
 
 ```bash
 sudo zfs create -o casesensitivity=mixed -o nbmand=on HD-Pool/veeam/veeam_backups
-```
+```bash
 
 So now we have created the dataset for Windows sharing we need to
 actually share it out.
 
 ```bash
 sudo zfs set sharesmb=on HD-Pool/veeam/veeam_backups
-```
+```sql
 
 Now create your veeam samba user/password. Match to the same password
 that you created for the actual UNIX account.
 
 ```bash
 sudo smbpasswd -a veeam
-```
+```bash
 
 Now if you browse to the NAS name you should see the share and when you
 double click on it; enter username/password created from above. You have
@@ -820,7 +810,7 @@ You will want to modify this based on your needs for owner/group.
 ```bash
 sudo chown root:veeam /HD-Pool/veeam/veeam_backups
 sudo chmod 0775 /HD-Pool/veeam/veeam_backups
-```
+```bash
 
 I really don't like the above but for now it works just fine as I only
 have one user connecting.
@@ -846,7 +836,7 @@ sudo iptables -A INPUT -i vlan101 -p tcp --dport 111 -j DROP
 sudo iptables -A INPUT -i vlan101 -p udp --dport 111 -j DROP
 sudo iptables -A INPUT -i vlan101 -p tcp --dport 2049 -j DROP
 sudo iptables -A INPUT -i vlan101 -p udp --dport 2049 -j DROP
-```
+```bash
 
 ![Screen Shot 2014-12-15 at 3.07.33 PM](../../assets/Screen-Shot-2014-12-15-at-3.07.33-PM-300x106.png)
 
@@ -862,7 +852,7 @@ Now to make these IPTables rules stick across reboots we will install iptables-p
 
 ```bash
 sudo apt-get install iptables-persistent
-```
+```bash
 
 Say "yes"
 

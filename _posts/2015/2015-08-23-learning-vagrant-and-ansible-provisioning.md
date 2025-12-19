@@ -8,14 +8,7 @@
     - Vagrant
   redirect_from:
     - /learning-vagrant-and-ansible-provisioning
-toc: true
-toc_label: "Contents"
-excerpt: "After attending Tech Field Day (#NFD10) there was a great deal of discussion around using Vagrant and Ansible for building out environments and..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 After attending Tech Field Day (#NFD10) there was a great deal of
 discussion around using Vagrant and Ansible for building out
@@ -48,7 +41,7 @@ consume this and provide feedback.
 ```bash
 git clone https://github.com/mrlesmithjr/vagrant-ansible-template.git
 cd vagrant-ansible-template.git
-```
+```yaml
 
 Now edit the nodes.yml file to define the nodes to spin up for testing.
 The include nodes.yml is as below.
@@ -65,7 +58,7 @@ The include nodes.yml is as below.
   mem: 512
   cpus: 1
   priv_ip: 192.168.250.102
-```
+```yaml
 
 An example of defining a much different scenario may look like below.
 
@@ -96,7 +89,7 @@ An example of defining a much different scenario may look like below.
   mem: 1024
   cpus: 1
   priv_ip: 192.168.250.105
-```
+```bash
 
 Now that you have modified and saved out your new nodes.yml file you are
 ready to spin it all up.
@@ -104,7 +97,7 @@ And this whole environment is as easy as running **_ONE_** command.
 
 ```bash
 vagrant up
-```
+```yaml
 
 Sit back and watch your nodes deploy now.
 
@@ -129,14 +122,14 @@ An example of a host_vars file created will look like below.
 ansible_ssh_port: 22
 ansible_ssh_host: 192.168.250.101
 ansible_ssh_private_key_file: .vagrant/machines/app-1/virtualbox/private_key
-```
+```bash
 
 To validate the status of our multi-node environment you run the
 following.
 
 ```bash
 vagrant status
-```
+```yaml
 
 And you would see something similar to below.
 
@@ -148,7 +141,7 @@ app-2                     running (virtualbox)
 web-1                     running (virtualbox)
 web-2                     running (virtualbox)
 db-1                      running (virtualbox)
-```
+```yaml
 
 An example site.yml playbook using Ansible Galaxy roles is included from
 the GitHub Repo as well.
@@ -163,7 +156,7 @@ the GitHub Repo as well.
   roles:
     - mrlesmithjr.bootstrap
     - mrlesmithjr.base
-```
+```bash
 
 Now if you wanted to run the included site.yml playbook which leverages
 Ansible Galaxy roles from one of our newly provisioned Vagrant nodes we
@@ -172,7 +165,7 @@ Connect to one of the newly provisioned nodes. (app-1 in this example)
 
 ```bash
 vagrant ssh app-1
-```
+```sql
 
 Now there is a synced folder between our HostOS and our Vagrant nodes
 (/vagrant). This allows us to either modify or create new Ansible
@@ -182,7 +175,7 @@ So to now run our example site.yml we will do the following.
 ```bash
 cd /vagrant
 ansible-playbook -i hosts site.yml
-```
+```bash
 
 And again sit back and watch these roles be applied to each node we just
 spun up.
@@ -207,11 +200,3 @@ vagrant destroy
 Enjoy!
 
 [#nfd10 Tweets](https://twitter.com/hashtag/nfd10)
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

@@ -1,11 +1,6 @@
 ---
   title: "Tech Field Day - #TFD10 - VMTurbo"
-excerpt: "Once again VMTurbo presented at Tech Field Day and this time it was at #TFD10 in Austin, TX. VMTurbo is known for their unique way of managing your..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 Once again [VMTurbo](http://vmturbo.com/) presented at Tech Field Day
 and this time it was at #TFD10 in Austin, TX. VMTurbo is known for
@@ -78,11 +73,3 @@ VMTurbo.
 > Gestalt IT nor the Vendor have provided any type of compensation to
 > write-up any portion of this article. The information contained within
 > this article are solely my views and take aways._
-
----
-
-### Related Posts
-
-- [2015-12-29-ansible-debian-based-gotchas-part-1](/ansible-debian-based-gotchas-part-1/)
-- [2015-07-21-ansible-zenoss-5-core-master](/ansible-zenoss-5-core-master/)
-- [2016-11-18-ansible-provision-docker-swarm-mode-1-12-cluster](/ansible-provision-docker-swarm-mode-1-12-cluster/)

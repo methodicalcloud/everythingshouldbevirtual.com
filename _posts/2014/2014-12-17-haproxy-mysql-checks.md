@@ -1,12 +1,7 @@
 ---
   title: HAProxy and MySQL Checks
   date: 2014-12-17
-excerpt: "I wanted to throw this out in case anyone else has a need for such a setup to use L7 for node up/down when load balancing MySQL with HAProxy. All you..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 I wanted to throw this out in case anyone else has a need for such a
 setup to use L7 for node up/down when load balancing MySQL with
@@ -15,18 +10,18 @@ into _setup_chkmysql.sh_
 
 ```bash
 nano setup_chkmysql.sh
-```
+```bash
 
 Copy contents from below, save and exit.
 
 ```bash
 chmod +x setup_chkmysql.sh
 sudo ./setup_chkmysql.sh
-```
+```bash
 
 `haproxy-mysqlchk`:
 
-```raw
+```bash
 #!/bin/bash
 # This is for Ubuntu
 apt-get install xinetd

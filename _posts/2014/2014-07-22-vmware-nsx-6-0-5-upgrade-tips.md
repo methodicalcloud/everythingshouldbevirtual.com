@@ -1,12 +1,7 @@
 ---
   title: VMware NSX 6.0.5 Upgrade Tips
   date: 2014-07-22
-excerpt: "So I performed my first NSX upgrade today which overall was not too bad but it did take quite a long time. I ran into a few gotchas along the way and..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 So I performed my first NSX upgrade today which overall was not too bad
 but it did take quite a long time. I ran into a few gotchas along the

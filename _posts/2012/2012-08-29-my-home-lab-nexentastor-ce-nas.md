@@ -1,12 +1,7 @@
 ---
   title: My Home Lab NexentaStor CE NAS
   date: 2012-08-29 03:12:53
-excerpt: "Just wanted to post some of these pics real quick. I took them over a year ago I think. Just wanted to show it. It has 12TB of usable storage. One..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 Just wanted to post some of these pics real quick. I took them over a
 year ago I think. Just wanted to show it. It has 12TB of usable storage.

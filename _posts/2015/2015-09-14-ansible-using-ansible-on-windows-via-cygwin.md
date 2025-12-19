@@ -6,14 +6,7 @@
     - Ansible
   redirect_from:
     - /ansible-using-ansible-on-windows-via-cygwin
-toc: true
-toc_label: "Contents"
-excerpt: "As I continue down the Ansible journey to automate all things it is apparent that Windows is a second class citizen in some regards. I had a need to..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 # Background
 
 As I continue down the Ansible journey to automate all things it is
@@ -105,14 +98,14 @@ Download the following packages to install.
 ```bash
 curl -O https://pypi.python.org/packages/source/P/PyYAML/PyYAML-3.10.tar.gz
 curl -O https://pypi.python.org/packages/source/J/Jinja2/Jinja2-2.8.tar.gz
-```
+```bash
 
 Now extract the packages downloaded above.
 
 ```bash
 tar -zxvf Jinja2-2.8.tar.gz
 tar -zxvf PyYAML-3.10.tar.gz
-```
+```bash
 
 Now install the packages downloaded above.
 
@@ -130,20 +123,20 @@ python setup.py install
 easy_install-2.7 pip
 CFLAGS="-g -O2 -D_BSD_SOURCE" pip install -U pycrypto
 pip install ansible
-```
+```bash
 
 Now let's pull down the Ansible code from GitHub.
 
 ```bash
 git clone <https://github.com/ansible/ansible> /opt/ansible
-```
+```bash
 
 Change to the latest stable branch of Ansible.
 
 ```bash
 cd /opt/ansible
 git checkout stable-1.9
-```
+```sql
 
 Now we need to update some of the Ansible modules
 
@@ -151,7 +144,7 @@ Now we need to update some of the Ansible modules
 cd /opt/ansible
 git submodule update --init lib/ansible/modules/core
 git submodule update --init lib/ansible/modules/extras
-```
+```sql
 
 We now need to update our BASH profile to include the path to our
 Ansible folder.
@@ -159,7 +152,7 @@ Ansible folder.
 ```bash
 cd ~
 nano .bashrc
-```
+```bash
 
 Paste the following at the bottom of the file and save.
 
@@ -169,13 +162,13 @@ ANSIBLE=/opt/ansible
 export PATH=$PATH:$ANSIBLE/bin
 export PYTHONPATH=$ANSIBLE/lib
 export ANSIBLE_LIBRARY=$ANSIBLE/library
-```
+```bash
 
 Now exit Cygwin
 
 ```bash
 exit
-```
+```bash
 
 Installing Ansible **_(Easy way)_**
 
@@ -190,7 +183,7 @@ And launch our Cygwin desktop shortcut once again to open up our Cygwin
 BASH prompt. You should be able to launch ansible at this point to validate that
 our profile is correct in seeing the path to Ansible.
 
-```raw
+```bash
 ansible
 ....
 Usage: ansible  [options]
@@ -258,7 +251,7 @@ Options:
   -v, --verbose         verbose mode (-vvv for more, -vvvv to enable
                         connection debugging)
   --version             show program's version number and exit
-```
+```bash
 
 BOOM!
 
@@ -267,18 +260,18 @@ Now let's do a test download of some Ansible Galaxy roles.
 ```bash
 ansible-galaxy install mrlesmithjr.base
 ansible-galaxy install mrlesmithjr.bootstrap
-```
+```bash
 
 Now generate your SSH keys in order to execute ssh-passwordless logins.
 
 ```bash
 ssh-keygen
-```
+```bash
 
 One more thing that I ran into was when running an ansible-playbook was
 the following error.
 
-```raw
+```bash
 ansible-playbook -i hosts gather_interfaces.yml
 ....
 PLAY [all] ********************************************************************
@@ -296,7 +289,7 @@ PLAY RECAP ********************************************************************
            to retry, use: --limit @/home/larry.smith/gather_interfaces.retry
 
 elk-pre-processor-1    : ok=0    changed=0    unreachable=1    failed=0
-```
+```bash
 
 This error above is from using Cygwin and can easily be solved by
 creating an ansible.cfg file in your playbook folder with the following.
@@ -333,11 +326,3 @@ So there you have it! Now happy Ansibling! :) And report back on any of
 your findings.
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

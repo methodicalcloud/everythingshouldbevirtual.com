@@ -1,12 +1,7 @@
 ---
   title: Exciting news about HP Storvirtual VSA for SMB
   date: 2013-11-14 10:02:42
-excerpt: "Here is some very exciting news in regards to the HP Storvirtual VSA. A no cost option is available as a package when purchasing HP Proliant Gen8..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 Here is some very exciting news in regards to the HP Storvirtual VSA.  A
 no cost option is available as a package when purchasing HP Proliant

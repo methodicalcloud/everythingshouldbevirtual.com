@@ -1,12 +1,7 @@
 ---
    title: NexentaStor 4.0.1 GA Released today
    date: 2014-04-07
-excerpt: "NexentaStor 4.x has finally made it to GA as of today. I will be evaluating if it makes sense to make the move yet or not prior to upgrading my actual..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 NexentaStor 4.x has finally made it to GA as of today. I will be
 evaluating if it makes sense to make the move yet or not prior to

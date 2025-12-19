@@ -1,7 +1,6 @@
 ---
 title: CFD6 - Hashicorp
 date: 2019-10-13 20:28:00
-excerpt: "Recently while attending Cloud Field Day 6, one of the companies presenting just so happened to be Hashicorp. Now Hashicorp is one of my personal..."
 ---
 
 Recently while attending Cloud Field Day 6, one of the companies presenting just so happened to be Hashicorp. Now Hashicorp is one of my
