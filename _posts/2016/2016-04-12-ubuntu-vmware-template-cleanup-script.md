@@ -6,12 +6,7 @@
     - VMware
   redirect_from:
     - /ubuntu-vmware-template-cleanup-script
-excerpt: "Just sharing these scripts in case anyone ever needs/wants a quick way to prep an Ubuntu VM template with/without guest customizations. One script is..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 Just sharing these scripts in case anyone ever needs/wants a quick way
 to prep an Ubuntu VM template with/without guest customizations. One
@@ -91,7 +86,7 @@ apt-get clean
 #cleanup shell history
 history -w
 history -c
-```json
+```jinja2
 
 {% raw %}
 
@@ -176,11 +171,3 @@ history -c
 {% endraw %}
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

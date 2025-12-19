@@ -6,14 +6,7 @@
     - Vagrant
   redirect_from:
     - /vagrant-multi-nic-definitions-via-yaml
-toc: true
-toc_label: "Contents"
-excerpt: "I am currently working on a little routing project to use as a learning tool for others to easily consume by using Vagrant and Ansible (Inspired by..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 I am currently working on a little routing project to use as a learning
 tool for others to easily consume by using Vagrant and Ansible (Inspired
@@ -83,7 +76,7 @@ via Vagrant when spinning up.
       desc: utopia
     - ip: 4.4.4.10
       desc: 'Network to Advertise'
-```
+```yaml
 
 As you can see above the _priv_ip_1_ is the same on each node which
 creates a HostOnly interface, however; the _priv_ips_ definition is
@@ -131,7 +124,7 @@ Vagrant.configure(2) do |config|
 #    config.cache.scope = :box
 #  end
 end
-```
+```sql
 
 The highlighted section above is the magic behind what I needed to do.
 Hopefully this will help others out as well if searching for such.
@@ -177,7 +170,7 @@ Hopefully this will help others out as well if searching for such.
       network_name:
       method: dhcp
       type: private_network
-```
+```ruby
 
 `Vagrantfile`
 
@@ -238,11 +231,3 @@ end
 ```
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

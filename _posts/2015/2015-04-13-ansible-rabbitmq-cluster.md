@@ -1,13 +1,6 @@
 ---
   title: Ansible - RabbitMQ Cluster
-toc: true
-toc_label: "Contents"
-excerpt: "In this post I will be setting up a clustered RabbitMQ environment for logstash message queuing. Again I will be keeping this short and sweet. This..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 > UPDATE: As of 08/06/2015 the following role can be found
 > [here](https://galaxy.ansible.com/list#/roles/4594) on Ansible Galaxy.
@@ -39,7 +32,7 @@ rabbitmq_config:
     routing_key: logstash
     tags: 'ha-mode=all,ha-sync-mode=automatic'
 rabbitmq_master: ans-test-1
-```
+```yaml
 
 Within our roles tree for rabbitmq it looks like below ![Screen Shot 2015-04-13 at 9.32.12 AM](../../assets/Screen-Shot-2015-04-13-at-9.32.12-AM-300x164.png)
 
@@ -52,7 +45,7 @@ screenshot above.
 ---
 - name: restart rabbitmq-server
   service: name=rabbitmq-server state=restarted
-```
+```jinja2
 
 `tasks/main.yml`:
 
@@ -70,7 +63,7 @@ screenshot above.
 
 - include: rabbitmq_ha_config.yml
   when: config_rabbitmq_ha and enable_rabbitmq_clustering
-```
+```jinja2
 
 `tasks/debian.yml`:
 
@@ -93,7 +86,7 @@ screenshot above.
 
 - name: debian | ensuring that the RabbitMQ service is running
   service: name=rabbitmq-server state=started enabled=yes
-```
+```jinja2
 
 `tasks/rabbitmq_clustering.yml`:
 {% raw %}
@@ -149,7 +142,7 @@ screenshot above.
 - name: rabbitmq_clustering | marking as clustered
   file: path=/etc/rabbitmq/clustered state=touch
   when: cluster_master.changed or cluster_joined.changed
-```json
+```jinja2
 
 {% endraw %}
 
@@ -187,7 +180,7 @@ screenshot above.
   command: rabbitmqadmin declare binding source={{ item.exchange_name }} destination_type="queue" destination={{ item.queue_name }} routing_key={{ item.routing_key }}
   run_once: true
   with_items: rabbitmq_config
-```json
+```jinja2
 
 {% endraw %}
 
@@ -208,11 +201,3 @@ And there you have it. You now have a highly available RabbitMQ cluster
 all setup by Ansible.
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

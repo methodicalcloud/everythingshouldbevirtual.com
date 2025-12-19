@@ -1,12 +1,7 @@
 ---
   title: Voting is live for the top 50 Virtualization Blogs for 2014
   date: 2014-02-22 22:37:02
-excerpt: "The annual voting for the top 50 virtualization blogs for 2014 is now open. Every year Eric Siebert takes a lot of time and puts this together over at..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 The annual voting for the top 50 virtualization blogs for 2014 is now
 open. Every year Eric Siebert takes a lot of time and puts this together

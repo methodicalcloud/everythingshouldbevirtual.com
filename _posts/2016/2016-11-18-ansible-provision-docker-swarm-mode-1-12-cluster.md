@@ -8,15 +8,7 @@
     - Docker
   redirect_from:
     - /ansible-provision-docker-swarm-mode-1-12-cluster
-excerpt: "Lately I have been working quite a bit with the latest Docker Swarm Mode released in Docker 1.12 and so far it has been pretty awesome. The days of..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
-
-> **Version Notice**: This post references Ubuntu 16.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
-{: .notice--info}
 
 Lately I have been working quite a bit with the latest Docker Swarm Mode
 released in Docker 1.12 and so far it has been pretty awesome. The days
@@ -44,14 +36,14 @@ and some examples within that repo as well. So what I WILL cover in this
 post is the process along with examples of how to use Ansible to
 provision a Docker Swarm Mode cluster.
 
--   Assumptions:
-    -   You have already provisioned your nodes in which will comprise
+- Assumptions:
+  - You have already provisioned your nodes in which will comprise
         your Docker Swarm Mode cluster
-        -   OS Installed (_Ubuntu 16.04_ in my case) as well as Docker
+    - OS Installed (_Ubuntu 16.04_ in my case) as well as Docker
             Engine installed...Checkout my
             [Ansible](https://www.ansible.com/) role for this as well
             [here](https://github.com/mrlesmithjr/ansible-docker)
-    -   Identified the interface which will be used for all Docker Swarm
+  - Identified the interface which will be used for all Docker Swarm
         Mode communications and such (_enp0s8_ in my case)
 
 So the first thing we will ensure is correct is our Ansible inventory
@@ -70,7 +62,7 @@ node[0:2]
 
 [docker-swarm-workers]
 node[3:6]
-```
+```jinja2
 
 Now we need to define some Ansible variables which are required to
 successfully provision our cluster:
@@ -95,7 +87,7 @@ docker_swarm_primary_manager: '{{ groups[docker_swarm_managers_ansible_group][0]
 docker_swarm_task_history_limit: '5' # Task history retention limit (default 5)
 docker_swarm_workers_ansible_group: 'docker-swarm-workers'
 docker_swarm_port: "2377"
-```json
+```jinja2
 
 {% endraw %}
 
@@ -135,7 +127,7 @@ docker_swarm_primary_manager:
   register: "docker_swarm_manager_token"
   when: >
         inventory_hostname == docker_swarm_primary_manager
-```json
+```jinja2
 
 {% endraw %}
 
@@ -182,11 +174,3 @@ Stay tuned for additional posts coming in the future in regards to some
 additional Docker Swarm mode goodness.
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

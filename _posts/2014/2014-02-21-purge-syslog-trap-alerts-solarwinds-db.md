@@ -1,12 +1,7 @@
 ---
   title: Purge Syslog and Trap alerts from Solarwinds DB
   date: 2014-02-21 22:28:57
-excerpt: "I was getting overloaded on the number of syslog messages in my Solarwinds DB and needed to purge them. So I wanted to share with other's what MS SQL..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 I was getting overloaded on the number of syslog messages in my
 Solarwinds DB and needed to purge them. So I wanted to share with
@@ -18,7 +13,7 @@ your requirements.
 Delete FROM [SolarWindsOrion].[dbo].[SysLog] Where datetime <= '2/15/2014'
 Delete from [SolarWindsOrion].[dbo].[Traps] Where datetime <= '2/15/2014'
 Delete from [SolarWindsOrion].[dbo].[TrapVarbinds] where TrapID not in (select TrapID from [SolarWindsOrion].[dbo].[Traps])
-```
+```sql
 
 If you would like to use a query to delete everything older than for
 example 30 days you can execute the following query. Of course you can
@@ -28,7 +23,7 @@ modify to meet your requirements again.
 Delete FROM [SolarWindsOrion].[dbo].[SysLog] Where datetime < GETDATE() - 30
 Delete from [SolarWindsOrion].[dbo].[Traps] Where datetime < GETDATE() - 30
 Delete from [SolarWindsOrion].[dbo].[TrapVarbinds] where TrapID not in (select TrapID from [SolarWindsOrion].[dbo].[Traps])
-```
+```sql
 
 If you want to delete all existing Syslog and Trap messages you can run
 the following.

@@ -1,16 +1,6 @@
 ---
   title: Creating vSphere VM's using Ansible
-toc: true
-toc_label: "Contents"
-excerpt: "I am putting this out here in case anyone else may be interested in spinning up some VM's using Ansible. I am doing this with Ansible 1.8.4 and..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
-
-> **Version Notice**: This post references Ansible 1.8. Current version is 2.16+. Module names, syntax, and best practices have evolved.
-{: .notice--info}
 
 I am putting this out here in case anyone else may be interested in
 spinning up some VM's using Ansible. I am doing this with Ansible 1.8.4
@@ -33,7 +23,7 @@ create_vms_hosts.
 
 ```bash
 nano create_vms_hosts
-```
+```sql
 
 Now copy and paste the following or create your own
 
@@ -44,7 +34,7 @@ ans-web[01:05] disk='10' datastore='SSD-Pool_ELKStack_dev (NAS01)' network='vSS-
 [db-vms]
 
 ans-db[01:03] disk='20' datastore='SSD-Pool_ELKStack_dev (NAS01)' network='vSS-OpenStack_Default' memory='1024' cpucount='2' osid='rhel6_64Guest'
-```
+```bash
 
 What we are specifying here is the group names (web-vms and db-vms) to
 specify different variables for each group of servers to build. I will
@@ -69,7 +59,7 @@ VMs for us. In this case I will be calling it create_vms.yml
 
 ```bash
 nano create_vms.yml
-```
+```jinja2
 
 Now copy and paste the below and modify to suit your requirements.
 
@@ -127,7 +117,7 @@ Now copy and paste the below and modify to suit your requirements.
         esxi:
           datacenter: "{{ datacenter }}"
           hostname: "{{ esxi_host }}"
-```json
+```jinja2
 
 {% endraw %}
 
@@ -142,13 +132,13 @@ this playbook and that is installing the python module for vSphere.
 
 ```bash
 sudo pip install pysphere
-```
+```jinja2
 
 Once this is installed you are now ready to run your playbook.
 
 ```bash
 ansible-playbook -i create_vms_hosts create_vms.yml
-```
+```jinja2
 
 ![Screen Shot 2015-03-25 at 4.36.53 PM](../../assets/Screen-Shot-2015-03-25-at-4.36.53-PM-300x59.png)
 
@@ -361,11 +351,3 @@ Here is a newer updated playbook to create VMs.
 {% endraw %}
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

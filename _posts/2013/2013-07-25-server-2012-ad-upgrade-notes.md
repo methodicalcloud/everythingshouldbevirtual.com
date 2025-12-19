@@ -1,12 +1,7 @@
 ---
   title: Server 2012 AD Upgrade Notes
   date: 2013-07-25 19:34:55
-excerpt: "So I am in the process of going through an Active Directory 2008 R2 upgrade to Server 2012 which has been going very smooth so far. So far I have..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 So I am in the process of going through an Active Directory 2008 R2
 upgrade to Server 2012 which has been going very smooth so far. So far I
@@ -33,11 +28,3 @@ through this upgrade process. So stay tuned.
 > decommissioning it.
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)
-- [2015-04-07-ansible-sneak-peak-of-something-coming-soon](/ansible-sneak-peak-of-something-coming-soon/)

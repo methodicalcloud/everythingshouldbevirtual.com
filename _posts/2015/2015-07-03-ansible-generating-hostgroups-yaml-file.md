@@ -1,13 +1,6 @@
 ---
   title: Ansible - Generating Host/Groups YAML file
-toc: true
-toc_label: "Contents"
-excerpt: "As I have been working on a nice little project of mine (More on that in the near future) I came across the need to take my hosts inventory INI file..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 As I have been working on a nice little project of mine (More on that in
 the near future) I came across the need to take my hosts inventory INI
@@ -105,7 +98,7 @@ cmdb
 [vmcreate-Windows]
 
 [vmdelete]
-```
+```jinja2
 
 > Create a playbook called **_create_host_groups_inventory.yml_**
 > with the below:
@@ -171,7 +164,7 @@ cmdb
         mode: 0775
       delegate_to: localhost
       run_once: true
-```json
+```jinja2
 
 {% endraw %}
 Create a template called `db_inventory_list.yml.j2` with below:
@@ -184,14 +177,14 @@ Create a template called `db_inventory_list.yml.j2` with below:
 {% for group in group_names %}
       - {{ group }}
 {% endfor %}
-```json
+```jinja2
 
 {% endraw %}
 Now execute the following:
 
 ```bash
 ansible-playbook -i hosts create_host_groups_inventory.yml
-```
+```yaml
 
 Once it is complete cat the db_inventory.yml and you will see the
 following.
@@ -372,11 +365,3 @@ There you have it. A nicely formatted yaml inventory list to consume as
 your needs require.
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

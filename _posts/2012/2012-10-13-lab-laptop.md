@@ -1,12 +1,7 @@
 ---
   title: Lab Laptop
   date: 2012-10-13 11:31:42
-excerpt: "I now have my HP EliteBook 8570w laptop. This laptop is going to be my mobile lab for demo's and training. It is an Intel I7 with 32GB of Ram. Going to..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 I now have my HP EliteBook 8570w laptop. This laptop is going to be my
 mobile lab for demo's and training. It is an Intel I7 with 32GB of Ram.

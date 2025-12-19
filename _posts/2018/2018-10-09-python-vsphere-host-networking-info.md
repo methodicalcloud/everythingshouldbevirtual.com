@@ -6,9 +6,6 @@ categories:
 tags:
   - Python
   - vSphere
-toc: true
-toc_label: "Contents"
-excerpt: "Oh I love Terraform so so much. But why does vSphere feel like a second class citizen? Is it because my use case is a real snowflake? Maybe, maybe not!..."
 ---
 
 Oh I love [Terraform](https://terraform.io) so so much. But why does vSphere
@@ -330,11 +327,3 @@ So there we have it. Will I use this? Who knows! But as I mentioned, I was not
 able to find anything in regards to this so I figured I would put it out here.
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

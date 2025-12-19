@@ -1,12 +1,7 @@
 ---
   title: iSCSI Design Considerations and Deployment Guide
   date: 2013-09-13 21:17:32
-excerpt: "Here is a link to the latest updated VMware iSCSI Design Considerations and Deployment Guide. I highly recommend reading through this when implementing..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 Here is a link to the latest updated VMware iSCSI Design Considerations
 and Deployment Guide. I highly recommend reading through this when

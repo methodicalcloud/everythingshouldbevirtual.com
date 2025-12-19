@@ -1,12 +1,7 @@
 ---
   title: Suricata IDS/IPS VMXNET3
   date: 2014-10-04
-excerpt: "As part of a bigger post coming soon I have been using Suricata IDS and my Logstash server has been getting hammered and unable to keep up (running a..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 As part of a bigger post coming soon I have been using [Suricata IDS](http://suricata-ids.org/ "http\://suricata-ids.org/")
 and my Logstash server has been getting hammered and unable to keep up (running
@@ -36,7 +31,7 @@ being generated)
 10/03/2014-20:45:32.215418  [**] [1:2200074:1] SURICATA TCPv4 invalid checksum [**] [Classification: (null)] [Priority: 3] {TCP} x.x.x.x:49202 -> y.y.y.y:443
 10/03/2014-20:45:32.215471  [**] [1:2200074:1] SURICATA TCPv4 invalid checksum [**] [Classification: (null)] [Priority: 3] {TCP} x.x.x.x:49202 -> y.y.y.y:443
 10/03/2014-20:45:32.216030  [**] [1:2200074:1] SURICATA TCPv4 invalid checksum [**] [Classification: (null)] [Priority: 3] {TCP} x.x.x.x:49202 -> y.y.y.y:443
-```
+```bash
 
 So basically this has been doing this non-stop for about 2-3 days now
 and being that I am sending the Suricata logs through a Redis cache
@@ -57,7 +52,7 @@ If on a Ubuntu system you can install this using apt.
 
 ```bash
 sudo apt-get install ethtool
-```
+```bash
 
 Now to validate if checksum offloading is turned on for the adapter that
 you have Suricata setup to listen on do the following. (Change eth0 to
@@ -65,7 +60,7 @@ whichever adapter is in your setup)
 
 ```bash
 sudo ethtool -k eth0
-```
+```bash
 
 And you should see output similar to below.
 
@@ -83,7 +78,7 @@ rx-vlan-offload: on
 tx-vlan-offload: on
 ntuple-filters: off
 receive-hashing: off
-```
+```bash
 
 All of the settings in bold above represent what settings are on when
 checksum offloading is turned on. So all you need to do to turn off
@@ -91,7 +86,7 @@ checksum offloading is run the following.
 
 ```bash
 sudo ethtool --offload eth0 rx off tx off
-```
+```bash
 
 Now if you validate your settings you should the following
 
@@ -109,7 +104,7 @@ rx-vlan-offload: on
 tx-vlan-offload: on
 ntuple-filters: off
 receive-hashing: off
-```
+```bash
 
 And now if you take a look at your /var/log/suricata/fast.log it should
 be much cleaner. And should only be seeing invalid checksums for valid
@@ -128,7 +123,7 @@ packets instead of the majority.
 10/03/2014-21:57:57.409695  [**] [1:2210044:1] SURICATA STREAM Packet with invalid timestamp [**] [Classification: (null)] [Priority: 3] {TCP} x.x.x.x:29270 -> y.y.y.y:80
 10/03/2014-21:57:57.409808  [**] [1:2210044:1] SURICATA STREAM Packet with invalid timestamp [**] [Classification: (null)] [Priority: 3] {TCP} x.x.x.x:29270 -> y.y.y.y:80
 10/03/2014-21:57:57.409843  [**] [1:2210044:1] SURICATA STREAM Packet with invalid timestamp [**] [Classification: (null)] [Priority: 3] {TCP} x.x.x.x:29270 -> y.y.y.y:80
-```
+```bash
 
 Now if you would like these settings to apply after a reboot you can add
 the following to _/etc/network/interfaces_.
@@ -158,7 +153,7 @@ From:
 
 ```bash
 post-up for i in rx tx sg tso ufo gso gro lro; do ethtool -K $IFACE $i off; done
-```
+```yaml
 
 To:
 
@@ -169,11 +164,3 @@ post-up ethtool -G $IFACE rx 4096; for i in rx tx sg tso ufo gso gro lro; do eth
 Hope this helps someone else out as well.
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-11-29-ubuntu-logstash-server-kibana3-front-end-autoinstall](/ubuntu-logstash-server-kibana3-front-end-autoinstall/)
-- [2014-10-24-vmware-nsx-firewall-logging-logstash](/vmware-nsx-firewall-logging-logstash/)
-- [2014-06-09-logstash-elasticsearch-searchphaseexecutionexception-error-2](/logstash-elasticsearch-searchphaseexecutionexception-error-2/)

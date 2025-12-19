@@ -1,12 +1,7 @@
 ---
   title: Setting up vSphere Syslog Colletor
   date: 2012-09-02 15:56:18
-excerpt: "Here is a quick step by step to installing the syslog collector for vSphere. This utility is part of the vCenter server installation media. I will be..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 Here is a quick step by step to installing the syslog collector for
 vSphere. This utility is part of the vCenter server installation media.

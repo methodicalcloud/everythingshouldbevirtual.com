@@ -8,17 +8,7 @@ tags:
   - Terraform
 redirect_from:
   - /generatingexecuting-terraform-plans-using-ansible
-toc: true
-toc_label: "Contents"
-excerpt: "Recently I have been working on a little project of my own based on provisioning a vSphere environment using Ansible as the primary automation tool. My..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
-
-> **Version Notice**: This post references Ubuntu 16.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
-{: .notice--info}
 
 Recently I have been working on a little project of my own based on
 provisioning a [vSphere](https://www.vmware.com/products/vsphere.html)
@@ -129,7 +119,7 @@ pdns_api_vip: "{{ vsphere_lb_vips[0] }}"
 pdns_webserver_port: 8081
 
 vsphere_pri_domain_name: lab.etsbv.internal
-```json
+```jinja2
 
 {% endraw %}
 
@@ -172,7 +162,7 @@ terraform_vms:
     memory_mb: 4096
     naming: docker-wrk
     vcpu: 1
-```
+```jinja2
 
 Now let's break down the `terraform_vms` variable a bit to understand
 what is going on here and what is being defined.
@@ -204,7 +194,7 @@ Variables](#leveraging-existing-group_vars-to-define-terraform-variables):
 
 {% raw %}
 
-```raw
+```jinja2
 variable "dns_servers" {
   default = [
 {% for dns_server in vsphere_dns_servers %}
@@ -275,7 +265,7 @@ variable "vsphere_server" {
 }
 variable "vsphere_username" {}
 variable "vsphere_vcenter_license_key" {}
-```json
+```jinja2
 
 {% endraw %}
 
@@ -286,7 +276,7 @@ variables and Jinja2 template it would look similar to below:
 
 {% raw %}
 
-```raw
+```jinja2
 variable "dns_servers" {
   default = [
     "10.0.102.40",
@@ -367,7 +357,7 @@ variable "vsphere_server" {
 }
 variable "vsphere_username" {}
 variable "vsphere_vcenter_license_key" {}
-```json
+```jinja2
 
 {% endraw %}
 
@@ -390,25 +380,25 @@ For example, the Jinja2 template below could be used to generate our
 
 {% raw %}
 
-```raw
+```jinja2
 pdns_api_key = "{{ pdns_webserver_password }}"
 vsphere_host_license_key = ""
 vsphere_password = "{{ vsphere_vcsa_sso_user_info['password'] }}"
 vsphere_username = "{{ vsphere_vcsa_sso_user_info['username'] }}"
 vsphere_vcenter_license_key = ""
-```json
+```jinja2
 
 {% endraw %}
 
 Which would produce the following `terraform.tfvars`:
 
-```raw
+```jinja2
 pdns_api_key = "changeme"
 vsphere_host_license_key = ""
 vsphere_password = "VMw@re1!"
 vsphere_username = "Administrator@vsphere.local"
 vsphere_vcenter_license_key = ""
-```bash
+```jinja2
 
 ## Terraform Data Sources
 
@@ -419,7 +409,7 @@ what our `data_sources.tf` might look like.
 
 {% raw %}
 
-```raw
+```jinja2
 data "vsphere_datacenter" "dc" {
   name = "${var.vsphere_datacenter}"
 }
@@ -441,7 +431,7 @@ data "vsphere_network" "net" {
   name = "${var.vsphere_networks[count.index]}"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
-```json
+```jinja2
 
 {% endraw %}
 
@@ -455,7 +445,7 @@ would look something like:
 
 {% raw %}
 
-```raw
+```jinja2
 provider "vsphere" {
   user           = "${var.vsphere_username}"
   password       = "${var.vsphere_password}"
@@ -464,7 +454,7 @@ provider "vsphere" {
   # if you have a self-signed cert
   allow_unverified_ssl = true
 }
-```json
+```jinja2
 
 {% endraw %}
 
@@ -479,7 +469,7 @@ template that will define our inventory resources.
 
 {% raw %}
 
-```raw
+```jinja2
 resource "vsphere_folder" "terraform_deployed" {
   path = "Terraform Deployed"
   type = "vm"
@@ -520,7 +510,7 @@ resource "vsphere_folder" "{{ folder['group'] }}" {
 }
 {%   endif %}
 {% endfor %}
-```json
+```jinja2
 
 {% endraw %}
 
@@ -532,7 +522,7 @@ below:
 
 {% raw %}
 
-```raw
+```jinja2
 resource "vsphere_folder" "terraform_deployed" {
   path = "Terraform Deployed"
   type = "vm"
@@ -564,7 +554,7 @@ resource "vsphere_folder" "docker_swarm_workers" {
   type = "vm"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
-```json
+```jinja2
 
 {% endraw %}
 
@@ -581,7 +571,7 @@ Jinja2 template might look like:
 
 {% raw %}
 
-```raw
+```jinja2
 {% for vms in terraform_vms %}
 resource "vsphere_virtual_machine" "{{ vms['group'] }}" {
   count = "${length(var.vms_{{ vms['group'] }})}"
@@ -612,7 +602,7 @@ resource "vsphere_virtual_machine" "{{ vms['group'] }}" {
   vcpu = {{ vms['vcpu'] }}
 }
 {% endfor %}
-```json
+```jinja2
 
 {% endraw %}
 
@@ -621,7 +611,7 @@ And if we were to run this through Ansible to generate our
 
 {% raw %}
 
-```raw
+```jinja2
 resource "vsphere_virtual_machine" "docker_lbs" {
   count = "${length(var.vms_docker_lbs)}"
   name = "${var.vms_docker_lbs[count.index]}"
@@ -700,7 +690,7 @@ resource "vsphere_virtual_machine" "docker_swarm_workers" {
   }
   vcpu = 1
 }
-```json
+```jinja2
 
 {% endraw %}
 
@@ -869,7 +859,7 @@ configuration files and then also plan and deploy.
         - terraform_apply
         - terraform_destroy
         - terraform_inventory
-```json
+```jinja2
 
 {% endraw %}
 
@@ -910,7 +900,7 @@ you will see how we are accomplishing this.
     - terraform_apply
     - terraform_destroy
     - terraform_inventory
-```json
+```jinja2
 
 {% endraw %}
 
@@ -944,7 +934,7 @@ And the `terraform.inv.j2` Jinja2 template might look something like:
 {{ value['primary']['attributes']['name'] }} ansible_host={{ value['primary']['attributes']['network_interface.0.ipv4_address'] }} mac_address={{ value['primary']['attributes']['network_interface.0.mac_address'] }} uuid={{ value['primary']['attributes']['uuid'] }}
 {%   endif %}
 {% endfor %}
-```json
+```jinja2
 
 {% endraw %}
 And once we generate our inventory with Ansible it might look a little
@@ -994,11 +984,3 @@ short while now and it has been incredibly useful. Is it perfect? Of
 course not. I would love to hear your thoughts and etc.
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

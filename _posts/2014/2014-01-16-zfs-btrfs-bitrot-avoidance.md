@@ -1,12 +1,7 @@
 ---
 title: ZFS and BTRFS Bitrot Avoidance?
 date: 2014-01-16 16:39:05
-excerpt: "Have you ever heard of bitrot? Well if not you should head over to here and have a read. I was sent this article by a colleague and I thought it was a..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 Have you ever heard of bitrot? Well if not you should head over to
 [here](http://en.wikipedia.org/wiki/Bit_rot "http\://en.wikipedia.org/wiki/Bit_rot")

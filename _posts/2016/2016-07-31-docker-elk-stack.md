@@ -10,14 +10,7 @@
     - ELK
   redirect_from:
     - /docker-elk-stack
-toc: true
-toc_label: "Contents"
-excerpt: "In this post we will be going over setting up a quick and easy way to standup ELK Stack using Docker containers for each of our components required...."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 In this post we will be going over setting up a quick and easy way to
 standup ELK Stack using Docker containers for each of our components
@@ -47,7 +40,7 @@ reference and more detail.
 
 `Dockerfile`:
 
-```dockerfile
+```bash
 FROM ubuntu:14.04
 
 MAINTAINER Larry Smith Jr. <mrlesmithjr@gmail.com>
@@ -96,7 +89,7 @@ EXPOSE 9200 9300
 
 # Container start-up
 CMD ["elasticsearch"]
-```
+```jinja2
 
 `playbook.yml`:
 
@@ -161,14 +154,14 @@ CMD ["elasticsearch"]
         - 'logs'
         - 'config'
         - 'config/scripts'
-```json
+```jinja2
 
 {% endraw %}
 [**Logstash**](https://github.com/mrlesmithjr/docker-ansible-logstash)
 
 `Dockerfile`:
 
-```dockerfile
+```bash
 FROM ubuntu:14.04
 
 MAINTAINER Larry Smith Jr. <mrlesmithjr@gmail.com>
@@ -225,7 +218,7 @@ EXPOSE 514 514/udp 5044 10514 10514/udp
 
 # Container start-up
 CMD ["logstash", "agent", "-f", "/etc/logstash/conf.d/"]
-```
+```jinja2
 
 `playbook.yml`:
 {% raw %}
@@ -314,7 +307,7 @@ CMD ["logstash", "agent", "-f", "/etc/logstash/conf.d/"]
         - '$UDPServerRun 514'
         - '$ModLoad imtcp'
         - '$InputTCPServerRun 514'
-```json
+```jinja2
 
 {% endraw %}
 
@@ -346,13 +339,13 @@ output {
     hosts => ["http://elasticsearch:9200"]
   }
 }
-```json
+```jinja2
 
 [**Kibana**](https://github.com/mrlesmithjr/docker-ansible-kibana)
 
 `Dockerfile`:
 
-```dockerfile
+```bash
 FROM ubuntu:14.04
 
 MAINTAINER Larry Smith Jr. <mrlesmithjr@gmail.com>
@@ -394,7 +387,7 @@ EXPOSE 5601
 
 # Container start-up
 CMD ["kibana"]
-```
+```jinja2
 
 `playbook.yml`:
 {% raw %}
@@ -461,10 +454,11 @@ CMD ["kibana"]
         dest: "/opt/kibana/config/kibana.yml"
         regexp: "^# elasticsearch.url: \"http://localhost:9200\""
         replace: "elasticsearch.url: \"http://elasticsearch:9200\""
-```json
+```jinja2
 
 {% endraw %}
-### Using docker-compose
+**Using docker-compose**
+
 And finally if we wanted to spin up the whole stack using docker-compose
 we can do that by creating the following **_docker-compose.yml_** file:
 
@@ -501,13 +495,13 @@ services:
       - "10514:10514"
       - "10514:10514/udp"
     restart: always
-```
+```dockerfile
 
 And then spin it all up:
 
 ```bash
 docker-compose up -d
-```
+```sql
 
 Now fire up your browser of choice and head over to
 <http://127.0.0.1:5601>.
@@ -515,7 +509,8 @@ Now fire up your browser of choice and head over to
 And there you have it, you now have a containerized ELK Stack ready for
 you to get creative with your GROKing.
 
-### Creating your own Logstash configuration
+**Creating your own Logstash configuration**
+
 If you would like to change the included **_logstash.conf_** with your
 own you could create your own Logstash configurations and place them in
 the config folder and recreate your own **_Dockerfile_** as such for
@@ -523,13 +518,13 @@ example:
 
 `Dockerfile`:
 
-```dockerfile
+```bash
 FROM mrlesmithjr/logstash:latest
 
 COPY config/ /etc/logstash/conf.d
 
 EXPOSE 3515 10514 10514/udp
-```
+```bash
 
 `config/logstash.conf`:
 
@@ -561,13 +556,13 @@ output {
     hosts =>; ["http://elasticsearch:9200"]
   }
 }
-```
+```bash
 
 Now you are ready to build your new Docker container for Logstash:
 
 ```bash
 docker build -t mycustom/logstash .
-```
+```bash
 
 And when that completes spin it up:
 
@@ -584,11 +579,3 @@ Hope you have enjoyed this post and I definitely look forward to any
 comments, thoughts, or opinions.
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

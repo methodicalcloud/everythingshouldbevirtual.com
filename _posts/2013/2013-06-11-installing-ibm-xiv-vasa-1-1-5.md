@@ -1,14 +1,7 @@
 ---
   title: Installing IBM XIV Utilities for vCenter 5.1
   date: 2013-06-11 19:54:46
-toc: true
-toc_label: "Contents"
-excerpt: "In a previous post I went through the installation of the IBM XIV VASA version 1.1.1 which was a windows based installation. The VASA provides a lot of..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 In a previous [post](https://everythingshouldbevirtual.com/using-ibm-xiv-and-vsphere5-you-need-to-install-the-vasa-and-management-console-for-vcenter "http\://everythingshouldbevirtual.com/using-ibm-xiv-and-vsphere5-you-need-to-install-the-vasa-and-management-console-for-vcenter") I went through the installation of the IBM XIV VASA version
 1.1.1 which was a windows based installation. The VASA provides a lot of good
@@ -41,7 +34,7 @@ SSH session to the server.
 
 ```bash
 yum install -y libxslt
-```
+```bash
 
 The above will install the failed dependency needed to install all of
 the RPM packages.
@@ -54,7 +47,7 @@ over to your CentOS server and extract it.
 
 ```bash
 tar zxvf IBM_Storage_Provider_for_VMware_VASA_1.1.5.tar.gz
-```
+```bash
 
 Once extracted you will see the following files.
 
@@ -120,7 +113,7 @@ To list all usernames added for storage credentials.
 
 ```bash
 ibmvp_storage_credentials list
-```
+```sql
 
 Now you need to create a username and password to access the IBM VASA
 server we are setting up. This is the account you will use when adding

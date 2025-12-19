@@ -1,12 +1,7 @@
 ---
   title: Installing PHD Virtual Backup and Replication
   date: 2013-02-09 16:34:18
-excerpt: "In this post we will be installing PHD Virtual Backup and Replication. This solution is deployed as a virtual appliance. This means it is a very quick..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 In this post we will be installing PHD Virtual Backup and Replication.
 This solution is deployed as a virtual appliance. This means it is a

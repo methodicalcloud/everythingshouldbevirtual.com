@@ -1,12 +1,7 @@
 ---
   title: "VMware KB: Disabling VAAI Thin Provisioning Block Space Reclamation UNMAP in ESXi 5.0"
   date: 2012-07-28 23:32:25
-excerpt: "Here is the VMware KB article on how to disable the VAAI SCSI UNMAP feature in ESXi5. The latest update patch disables this. You can check to see if it..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 Here is the VMware KB article on how to disable the VAAI SCSI UNMAP
 feature in ESXi5. The latest update patch disables this. You can check
@@ -21,7 +16,8 @@ Path: /VMFS3/EnableBlockDelete
 
 Type: integer
 
-### Int Value: 0
+**Int Value: 0**
+
 Default Int Value: 0
 
 Min Value: 0

@@ -1,12 +1,7 @@
 ---
   title: vCenter SSO AD Gotcha
   date: 2013-08-01 19:01:23
-excerpt: "So this past week I have been upgrading my home lab domain from AD 2008 R2 to AD 2012 and so far it has gone without a hitch (read here on this). Well..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 So this past week I have been upgrading my home lab domain from AD 2008
 R2 to AD 2012 and so far it has gone without a hitch (read

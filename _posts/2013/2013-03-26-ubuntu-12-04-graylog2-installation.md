@@ -1,19 +1,9 @@
 ---
   title: Ubuntu 12.04 Graylog2 Installation
   date: 2013-03-26 17:20:35
-toc: true
-toc_label: "Contents"
-excerpt: "I recently wanted to check out Graylog2 for gathering syslog messages because I have heard good things about it. Well the issue was that I was not able..."
 ---
 
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
-
-> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
-{: .notice--info}
-
-I recently wanted to check out [Graylog2 ](http://graylog2.org/home "http\://graylog2.org/home")
+I recently wanted to check out [Graylog2](http://graylog2.org/home "http\://graylog2.org/home")
 for gathering syslog messages because I have heard good things about it.
 Well the issue was that I was not able to find any good articles on how
 to accomplish this. I did find some installation scripts that looked
@@ -81,7 +71,7 @@ sudo apt-get -y install git
 cd ~
 git clone <https://github.com/mrlesmithjr/graylog2/>
 chmod +x ./graylog2/install_graylog2_ubuntu.sh
-```
+```bash
 
 ~~To change your ip address of the server you are installing on you will
 need to edit the script or let the script auto detect your IP for
@@ -90,7 +80,7 @@ skip editing the file and continue on. Edit the file~~
 
 ```bash
 nano ./graylog2/install_graylog2_ubuntu.sh
-```
+```bash
 
     ![00-05-02](../../assets/00-05-02-300x61.png)
 
@@ -101,7 +91,7 @@ the script.~~**\
 ```bash
 cd ~
 sudo ./graylog2/install_graylog2_ubuntu.sh
-```
+```bash
 
 ~~The following is for the Preview and rc.1 version ONLY (Use method
 above if you want to use the stable current version) - _As of 02/02/2014
@@ -119,7 +109,7 @@ cd ~
 git clone https://github.com/mrlesmithjr/graylog2/
 chmod +x ./graylog2/install_graylog2_20_ubuntu.sh
 sudo ./graylog2/install_graylog2_20_ubuntu.sh
-```
+```bash
 
 _CentOS Install:_
 
@@ -129,7 +119,7 @@ cd ~
 git clone https://github.com/mrlesmithjr/graylog2/
 chmod +x ./graylog2/install_graylog2_20_centos.sh
 sudo ./graylog2/install_graylog2_20_centos.sh
-```
+```bash
 
 If you are running v0.20.1+ on Ubuntu and used the auto install script
 method from above you can upgrade to the latest Graylog2 versions by
@@ -142,16 +132,18 @@ git pull https://github.com/mrlesmithjr/graylog2
 chmod +x Upgrade_Scripts/upgrade_to_latest_graylog2_20_ubuntu.sh
 cd ~
 sudo ./graylog2/Upgrade_Scripts/upgrade_to_latest_graylog2_20_ubuntu.sh
-```
+```bash
 
 After this completes you should be up and running with the latest
 Graylog2 version.
 
-### Graylog2 Virtual Appliance
+**Graylog2 Virtual Appliance**
+
 Graylog2 virtual appliance available running on Ubuntu 14.04LTS. Head
 over [here](https://everythingshouldbevirtual.com/ubuntu-14-04-graylog2-virtual-appliance "Ubuntu 14.04 Graylog2 Virtual Appliance") and get your prebuilt virtual appliance.
 
-### Troubleshooting issues
+**Troubleshooting issues**
+
 If you start getting scrolling java type errors after installing one or
 more critical services are not running. You can either reboot or try the
 following.
@@ -161,14 +153,14 @@ sudo service graylog2-web-interface stop
 sudo service mongodb status
 sudo service elasticsearch status
 sudo service graylog2 status
-```
+```bash
 
 If any of the above do not return as running and a PID then you will
 need to start the service not running by running the following.
 
 ```bash
 sudo service servicename start
-```
+```bash
 
 You can also run the following and the ports should show the services
 running. (Reference screenshot below command window)
@@ -179,7 +171,8 @@ sudo netstat -ltnp
 
 ![Screenshot from 2014-02-21 14:50:17](../../assets/Screenshot-from-2014-02-21-145017-300x78.png)
 
-### Logging into the new WebUI after installation.
+**Logging into the new WebUI after installation.**
+
 Open your browser of choice and connect to <http://ip.or.nameofgraylog2server:9000>
 
 Login with username **_admin_** and password is **_password123 (Or password chosen during install script)_**
@@ -225,7 +218,7 @@ mv graylog2 graylog2.old
 git clone https://github.com/mrlesmithjr/graylog2
 chmod +x ./graylog2/uninstall_graylog2_preview_ubuntu.sh
 sudo ./graylog2/uninstall_graylog2_preview_ubuntu.sh
-```
+```bash
 
 Now you can go back and start over if you would like to.
 
@@ -244,7 +237,7 @@ mv graylog2 graylog2.old
 git clone https://github.com/mrlesmithjr/graylog2/
 chmod +x ./graylog2/upgrade_to_graylog2_20_ubuntu.sh
 sudo ./graylog2/upgrade_to_graylog2_20_ubuntu.sh
-```
+```bash
 
  **Debian Installer**
 
@@ -256,7 +249,7 @@ following instead.
 chmod +x ./graylog2/install_graylog2_debian.sh
 cd ~
 sudo ./graylog2/install_graylog2_debian.sh
-```
+```bash
 
 **Method 2  **\*\*Note this may be outdated\*\*\*\*\*\*
 
@@ -281,7 +274,7 @@ starts.
 
 ```bash
 ./install_graylog2.sh
-```
+```bash
 
 **Method 3  **\*\*Note this may be outdated\*\*\*\*\*\*
 
@@ -295,7 +288,7 @@ wget --user-agent "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:11.0) Gecko/201001
 tar zxvf install_graylog2.tar.gz
 chmod +x install_graylog2.sh
 nano install_graylog2.sh
-```
+```sql
 
 Change x.x.x.x to whatever your ip address is of the server you are
 installing on or let the script auto detect your IP for you. The default
@@ -307,7 +300,7 @@ is to auto detect.
 
 Or you can create your own install script as below.
 
-```raw
+```bash
 cd ~
 #! /bin/bash
 #Provided by @mrlesmithjr
@@ -569,12 +562,12 @@ echo "You Entered $SERVERNAME During Install"
 echo "Browse to http://$SERVERNAME If Different"
 echo "EveryThingShouldBeVirtual.com"
 echo "@mrlesmithjr"
-```
+```bash
 
 ```bash
 chmod +x install_graylog2.sh
 ./install_graylog2.sh
-```bash
+```sql
 
 Once the script completes connect to the ip/hostname of your Graylog2
 server with your favorite browser and create your first login account.
@@ -643,20 +636,20 @@ the udp/10514 port directly. The following code added to
 
 ```bash
 -Djava.net.preferIPv4Stack=true
-```
+```bash
 
 Add the code above to the section under echo "Starting  graylog2-server
 ..." It should look like the below.
 
 ```bash
 $NOHUP $JAVA_CMD -Djava.net.preferIPv4Stack=true -jar $GRAYLOG2_SERVER_HOME/graylog2-server.jar > /var/log/graylog2.log 2>&1 &
-```
+```bash
 
 Restart graylog2-server service to take affect.
 
 ```bash
 sudo /etc/init.d/graylog2-server restart
-```
+```bash
 
 Using Graylog2 (version 0.11.0) I am seeing high CPU usage all the time.
 Apparently this is a known thing and will be fixed in a future release
@@ -667,7 +660,7 @@ make this change.
 ```bash
 sudo sed -i -e 's|processor_wait_strategy = sleeping|processor_wait_strategy = blocking|' /etc/graylog2.conf
 sudo /etc/init.d/graylog2-server restart
-```
+```bash
 
 To set the TTL (Time To Live) for Graylog2 messages within Elasticsearch
 to keep from filling up all of the disk space. Run the following.
@@ -675,7 +668,7 @@ to keep from filling up all of the disk space. Run the following.
 ```bash
 curl -XPUT 'http://localhost:9200/graylog2/'
 curl -XPUT "http://localhost:9200/graylog2/message/_mapping" -d'{"message": {"_ttl" : { "enabled" : true, "default" : "30d" }}}'
-```
+```bash
 
 The first line builds the index and the second line sets the TTL to 30
 days.\

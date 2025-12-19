@@ -1,13 +1,6 @@
 ---
   title: Ansible - Highly Available ELK Stack
-toc: true
-toc_label: "Contents"
-excerpt: "A little over a year ago I provided installation scripts along with this post to help setup a completely redundant ELK Stack. This post has definitely..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 A little over a year ago I provided installation scripts along with
 [this](https://everythingshouldbevirtual.com/highly-available-elk-elasticsearch-logstash-kibana-setup)
@@ -40,7 +33,8 @@ individual files for specific variables instead of placing all of them
 in a single group_vars/all file. But of course you may choose to do
 differently.
 
-### UPDATE - 04-17-2016
+**UPDATE - 04-17-2016**
+
 As you work through this setup it has come to my attention that this
 post is extremely out of date. So YMMV as you attempt to install ELK. I
 intend on publishing a more current post on setting up ELK which in most
@@ -75,7 +69,7 @@ total 44
 -rw-rw-r-- 1 administrator administrator 2127 Jul 20 17:31 servers
 -rw-rw-r-- 1 administrator administrator  233 Jul 20 17:31 time
 -rw-rw-r-- 1 administrator administrator  457 Jul 20 17:31 vcenter
-```
+```jinja2
 
 As I provision nodes in my environment I use a bootstrap playbook and
 then a site playbook which will perform many tasks that should be
@@ -101,7 +95,7 @@ this file from Github it will not contain much.
   sudo: yes
   roles:
     - bootstrap
-```json
+```jinja2
 
 {% endraw %}
 `site.yml`:
@@ -126,7 +120,7 @@ this file from Github it will not contain much.
     - { role: sysdig, when: install_sysdig is defined and install_sysdig }
     - { role: timezone, when: change_timezone }
     - { role: zabbix-agent, when: enable_zabbix_monitoring }
-```json
+```jinja2
 
 {% endraw %}
 So you should now clone my Github repo by doing the following into a
@@ -134,7 +128,7 @@ folder of your choosing.
 
 ```bash
 git clone https://github.com/mrlesmithjr/Ansible.git
-```
+```sql
 
 So with all of the above out of the way let's go ahead and get started.
 
@@ -212,7 +206,7 @@ elk-p-pre-processor-[1:2]
 
 [elk-p-processor-nodes]
 elk-p-processor-[1:4]
-```
+```sql
 
 Now either create or modify the following group_vars/group names to fit
 your requirements. (Only groups with specific settings pertaining to ELK
@@ -231,7 +225,7 @@ syslog_servers:
   - name: 'logstash-dev.{{ pri_domain_name }}'
     port: 514
     proto: udp
-```
+```jinja2
 
 `group_vars/elk-p-nodes`:
 
@@ -285,7 +279,7 @@ rundeck_logstash_host: '{{ logstash_server_fqdn }}'
 rundeck_logstash_port: 9700
 use_rabbitmq: false  #defines if rabbitmq should be used on elk-broker nodes...either use rabbitmq or redis... **recommend redis
 use_redis: true  #defines if redis should be used on elk-broker nodes...either use redis or rabbitmq... **recommend redis
-```
+```jinja2
 
 `elk-p-pre-processor-nodes`
 
@@ -294,7 +288,7 @@ syslog_servers:
   - name: localhost
     port: 10514
     proto: tcp
-```
+```sql
 
 `elk-p-processor-nodes`
 
@@ -309,7 +303,7 @@ only defines KeepAliveD setting specific to each node. Examples below.
 ---
 keepalived_router_pri: 101
 keepalived_vrrp_state: MASTER
-```
+```jinja2
 
 `elk-p-haproxy-2`
 
@@ -317,7 +311,7 @@ keepalived_vrrp_state: MASTER
 ---
 keepalived_router_pri: 100
 keepalived_vrrp_state: BACKUP
-```
+```jinja2
 
 Now we should be ready to run our elkstack playbook and watch the
 building begin. Below is what the playbook looks like which is included
@@ -382,7 +376,7 @@ with.
     - logstash
     - haproxy
     - elk-haproxy
-```json
+```jinja2
 
 {% endraw %}
 So if all nodes have been provisioned and naming matches the Ansible
@@ -449,11 +443,3 @@ to rely on each and everyone of your valuable input in order to make
 this a better solution for all.
 
 As always! Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

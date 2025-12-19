@@ -1,7 +1,6 @@
 ---
 title: CFD7 - VMware TKG
 date: 05-05-2020 01:00:00
-excerpt: "Recently I had the pleasure to attend #CFD7 in which VMware presented VMware Tanzu Kubernetes Grid. Our friend, Kendrick Coleman did a great job..."
 ---
 
 Recently I had the pleasure to attend [#CFD7](https://techfieldday.com/event/cfd7/)

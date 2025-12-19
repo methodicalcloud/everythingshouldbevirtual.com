@@ -1,14 +1,7 @@
 ---
   title: Highly Available ELK (Elasticsearch, Logstash and Kibana) Unicast Mode
   date: 2014-06-26
-toc: true
-toc_label: "Contents"
-excerpt: "In the previous post Setup\") we setup the complete ELK stack from top to bottom. And everything should be working as needed; however one thing you will..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 In the previous [post](https://everythingshouldbevirtual.com/highly-available-elk-elasticsearch-logstash-kibana-setup "Highly Available ELK (Elasticsearch, Logstash and Kibana) Setup")
 we setup the complete ELK stack from top to bottom. And everything should
@@ -26,7 +19,8 @@ required and restart all services.
 
 So to switch over to unicast mode we will need to do the following.
 
-### ES (Elasticsearch Master/Data Nodes (es-1, es-2):
+**ES (Elasticsearch Master/Data Nodes (es-1, es-2):**
+
 On each of your ES Master/Data nodes from a terminal session change the
 following settings. (Remember that if you used different hostnames/IPs
 your settings will be different)
@@ -50,26 +44,27 @@ following.
 ##### Uncomment below instead of using multicast and update with your actual ES Master/Data nodenames #####
 discovery.zen.ping.unicast.hosts: ["es-1", "es-2"]
 discovery.zen.ping.multicast.enabled: false
-```
+```bash
 
 Now you will need to restart the elasticsearch service
 
 ```bash
 sudo service elasticsearch restart
-```
+```bash
 
 And if all went well your cluster should be back up and running. You can
 verify and look for any issues by checking the elasticsearch log.
 
 ```bash
 tail /var/log/elasticsearch/logstash-cluster.log
-```
+```bash
 
 You should see successful discovery of your cluster and an elected
 master node. So if all went well you will now need to proceed to each of your ELK
 frontend nodes.
 
-### ELK (Elasticsearch, Logstash and Kibana) Nodes (logstash-1, logstash-2):
+**ELK (Elasticsearch, Logstash and Kibana) Nodes (logstash-1, logstash-2):**
+
 On each of your ELK frontend nodes from a terminal session change the
 following settings.
 
@@ -92,13 +87,13 @@ following.
 ##### Uncomment below instead of using multicast and update with your actual ES Master/Data nodenames #####
 discovery.zen.ping.unicast.hosts: ["es-1", "es-2"]
 discovery.zen.ping.multicast.enabled: false
-```
+```bash
 
 Now you will need to restart the elasticsearch service
 
 ```bash
 sudo service elasticsearch restart
-```
+```bash
 
 Now you will need to modify your logstash.conf file to join the ES
 _"logstash-cluster"_ cluster in unicast mode.\
@@ -106,7 +101,7 @@ In order to this you will do the following.
 
 ```bash
 sudo nano /etc/logstash/logstash.conf
-```
+```bash
 
 You will see the following at the very bottom of the config file.
 
@@ -123,7 +118,7 @@ output {
                 template => "/opt/logstash/lib/logstash/outputs/elasticsearch/elasticsearch-template.json"
         }
 }
-```
+```bash
 
 ```json
 #### Unicast discovery mode ####
@@ -141,7 +136,7 @@ output {
 #                template => "/opt/logstash/lib/logstash/outputs/elasticsearch/elasticsearch-template.json"
 #        }
 #}
-```
+```bash
 
 Now change these lines to look like the following.
 
@@ -174,14 +169,14 @@ output {
                 template => "/opt/logstash/lib/logstash/outputs/elasticsearch/elasticsearch-template.json"
         }
 }
-```
+```bash
 
 Once you have changed these settings you need to restart the logstash
 service.
 
 ```bash
 sudo service logstash restart
-```
+```bash
 
 You should now have all ELK components communicating via unicast instead
 of multicast now. If you have any issues with communications from your
@@ -191,7 +186,7 @@ the previous post these settings should already be there.
 
 ```bash
 sudo nano /etc/haproxy/haproxy.cfg
-```
+```bash
 
 You should see the following in this configuration file.
 
@@ -206,7 +201,7 @@ listen elasticsearch-TCP-9300 10.0.101.60:9300
         balance roundrobin
         server es-1 es-1:9300 check
         server es-2 es-2:9300 check
-```
+```bash
 
 If this section is missing you will need to add it and reload your
 haproxy config.
@@ -221,11 +216,3 @@ your different nodes outside of the same subnet as well as allow you to
 add additional nodes in different subnets.
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-11-29-ubuntu-logstash-server-kibana3-front-end-autoinstall](/ubuntu-logstash-server-kibana3-front-end-autoinstall/)
-- [2014-10-24-vmware-nsx-firewall-logging-logstash](/vmware-nsx-firewall-logging-logstash/)
-- [2014-06-09-logstash-elasticsearch-searchphaseexecutionexception-error-2](/logstash-elasticsearch-searchphaseexecutionexception-error-2/)

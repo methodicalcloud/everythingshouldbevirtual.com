@@ -1,12 +1,7 @@
 ---
   title: HP BL490 PSOD ESXi5.x
   date: 2013-04-09 16:53:39
-excerpt: "I have recently had several different HP BL490 G6 and G7 servers having PSOD (purple screen of death) running ESXi 5.1. I was able to capture a..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 I have recently had several different HP BL490 G6 and G7 servers having
 PSOD (purple screen of death) running ESXi 5.1. I was able to capture a

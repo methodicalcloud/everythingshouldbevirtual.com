@@ -1,12 +1,7 @@
 ---
   title: Issue with Sophos/Astaro UTM 9 and XBOX Live
   date: 2012-08-01 21:50:42
-excerpt: "I just upgraded to the new version of Astaro yesterday. Now called Sophos UTM 9. Love the new interface and etc. However there is an issue with XBOX..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 I just upgraded to the new version of Astaro yesterday. Now called
 Sophos UTM 9. Love the new interface and etc. However there is an issue
@@ -23,15 +18,15 @@ exception list as the screenshot below.
 
 DHCP Static Mapping
 
-![Astaro-Sophos-9_Static_Mapping_DHCP_XBOX360](../../assets/Astaro-Sophos-9_Static_Mapping_DHCP_XBOX360-300x107.png )
+![](../../assets/Astaro-Sophos-9_Static_Mapping_DHCP_XBOX360-300x107.png "Astaro-Sophos-9_Static_Mapping_DHCP_XBOX360")
 
 IPS Exception
 
-![Astaro-Sophos-9_IPS_exception_XBOX360](../../assets/Astaro-Sophos-9_IPS_exception_XBOX360-300x98.png )
+![](../../assets/Astaro-Sophos-9_IPS_exception_XBOX360-300x98.png "Astaro-Sophos-9_IPS_exception_XBOX360")
 
 IPS Exception Rules
 
-![Astaro-Sophos-9_IPS_exception_edit_XBOX360](../../assets/Astaro-Sophos-9_IPS_exception_edit_XBOX360-300x181.png )
+![](../../assets/Astaro-Sophos-9_IPS_exception_edit_XBOX360-300x181.png "Astaro-Sophos-9_IPS_exception_edit_XBOX360")
 
 Hopefully this will help someone out there. And hopefully this will be
 resolved soon with a new Snort/IPS Rule.

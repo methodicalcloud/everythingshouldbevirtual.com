@@ -1,11 +1,6 @@
 ---
   title: Disabling SSLv3 on NSX Edge Devices
-excerpt: "So a few months back after the Poodle attack I had a request to disable SSLv3 on the NSX Edge Gateways so I started looking around and didn't find..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 So a few months back after the Poodle attack I had a request to disable
 SSLv3 on the NSX Edge Gateways so I started looking around and didn't
@@ -22,9 +17,9 @@ And the extracted portion pertaining to doing this is below.
 > **Disable SSLv3 Support on NSX Edge Load Balancer SSL Offload
 > Services**:
 >
-> 1.  In the Load Balancer section of the NSX Edge configuration, create
+> 1. In the Load Balancer section of the NSX Edge configuration, create
 >     an Application Profile.
-> 2.  Restrict the ciphers to a trusted list.
+> 2. Restrict the ciphers to a trusted list.
 >
 > For more information on setting the cipher line, see See the following
 > [openssl.org](http://www.openssl.org/docs/apps/ciphers.html) page.

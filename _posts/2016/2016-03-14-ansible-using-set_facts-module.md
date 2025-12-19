@@ -6,14 +6,7 @@
     - Ansible
   redirect_from:
     - /ansible-using-set_facts-module
-toc: true
-toc_label: "Contents"
-excerpt: "Today I was writing/updating an Ansible role for installing Cacti monitoring and decided to add the ability to choose the back-end webserver being..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 Today I was writing/updating an Ansible role for installing Cacti
 monitoring and decided to add the ability to choose the back-end
@@ -31,10 +24,10 @@ case you ever find yourself in this same situation.
 So what did I need the variables to define? I needed a way to set
 variables for the following:
 
--   web_group - which would define based on webserver type and OS type what the webserver groupname was.
--   web_owner - which would define based on webserver type and OS type what the webserver username was.
--   web_root - which would define based on webserver type and OS type what the webserver default root directory was.
--   webserver_handler - which would define based on webserver type and OS type what the servicename was in order to restart after configuration changes were made.
+- web_group - which would define based on webserver type and OS type what the webserver groupname was.
+- web_owner - which would define based on webserver type and OS type what the webserver username was.
+- web_root - which would define based on webserver type and OS type what the webserver default root directory was.
+- webserver_handler - which would define based on webserver type and OS type what the servicename was in order to restart after configuration changes were made.
 
 So as you can see this could get a little out of control when the
 end-user needs to define all of these different settings and such. So I
@@ -65,7 +58,7 @@ In the role's main task I added the following:
 
 - include: templates.yml
   when: cacti_import_templates
-```
+```jinja2
 
 If you notice the very first include is to execute a task called
 _set_facts.yml_ and this is where the magic comes into play. So let's
@@ -133,7 +126,7 @@ take a look at that task's contents.
   when: >
         ansible_os_family == "RedHat" and
         cacti_webserver_type == "nginx"
-```json
+```jinja2
 
 {% endraw %}
 And if we take a look at the above we will see that for each different
@@ -163,7 +156,7 @@ for us to use throughout the Ansible play.
     cacti_web_owner: "www-data"
     cacti_web_root: "/usr/share/nginx/html"
     cacti_webserver_handler: "nginx"
-```
+```jinja2
 
 And when we reach a task that requires one of these variables it would
 be ready for use. For example:
@@ -177,7 +170,7 @@ be ready for use. For example:
         recurse: yes
         owner: "{{ cacti_web_owner }}"
         group: "{{ cacti_web_group }}"
-```json
+```jinja2
 
 {% endraw %}
 And if we reach a task in which requires a notifier to fire off a
@@ -191,7 +184,7 @@ restart of the webserver service:
         state: present
       notify:
         - 'restart {{ cacti_webserver_handler }}'
-```json
+```jinja2
 
 {% endraw %}
 So as you can see this makes for a very nice way to handle defining
@@ -237,11 +230,3 @@ So there you have it. A very good use-case of using the set_facts
 Ansible module.
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

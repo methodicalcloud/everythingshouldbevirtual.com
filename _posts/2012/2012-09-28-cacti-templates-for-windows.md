@@ -1,12 +1,7 @@
 ---
   title: Cacti Templates for Windows
   date: 2012-09-28 16:12:22
-excerpt: "Here are all of the different versions of my cacti templates. Grab the latest one."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 Here are all of the different versions of my cacti templates. Grab the
 latest one.

@@ -6,14 +6,7 @@
     - Ansible
   redirect_from:
     - /hey-i-can-devops-my-network-too-manual-configured-ospf-part-5
-toc: true
-toc_label: "Contents"
-excerpt: "In the previous post we setup our OSPF routing topology auto-configured using Ansible. Which works really nice when we already know what our variable..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 In the previous [post](https://everythingshouldbevirtual.com/hey-i-can-devops-my-network-too-auto-configured-ospf-part-4) we setup our OSPF routing topology auto-configured using Ansible.
 Which works really nice when we already know what our variable definitions are
@@ -54,7 +47,7 @@ default via 10.0.2.2 dev eth0
 192.168.41.0/24 via 192.168.250.104 dev eth1  proto zebra  metric 20
 192.168.51.0/24 via 192.168.250.105 dev eth1  proto zebra  metric 20
 192.168.250.0/24 dev eth1  proto kernel  scope link  src 192.168.250.101
-```
+```bash
 
 As you can see from the output above all of our routing is still
 configured and now we want to get back to a base OSPF configuration
@@ -66,19 +59,19 @@ this variable from true to false. So let's do that now.
 
 ```bash
 nano group_vars/quagga-routers
-```
+```yaml
 
 Current:
 
 ```yaml
 quagga_config_ospfd: true  #defines if quagga ospfd should be configured based on quagga_ospf_ vars...makes it easy to disable auto routing in order to define your routes manually
-```
+```yaml
 
 New:
 
 ```yaml
 quagga_config_ospfd: false  #defines if quagga ospfd should be configured based on quagga_ospf_ vars...makes it easy to disable auto routing in order to define your routes manually
-```
+```bash
 
 And to do a quick check to also validate that our OSPF configuration is
 in place we can view _/etc/quagga/ospfd.conf_
@@ -113,14 +106,14 @@ router ospf
 !
 line vty
 !
-```
+```bash
 
 Now let's run our Ansible playbook we ran previously but this time with
 the above variable changed to false and see what happens.
 
 ```bash
 ansible-playbook -i hosts playbook.yml
-```
+```bash
 
 After the playbook finishes you will see that our ospf configuration has
 changed and restarted the quagga service to reflect the changes. So what
@@ -151,7 +144,7 @@ debug ospf packet all
 !
 line vty
 !
-```
+```bash
 
 And a quick route check again.
 
@@ -166,7 +159,7 @@ default via 10.0.2.2 dev eth0
 192.168.15.0/24 dev eth4  proto kernel  scope link  src 192.168.15.11
 192.168.31.0/24 dev eth5  proto kernel  scope link  src 192.168.31.11
 192.168.250.0/24 dev eth1  proto kernel  scope link  src 192.168.250.101
-```
+```bash
 
 And to validate that our OSPF daemon is still running and ready for
 configuration let's telnet to the daemon again and do some checks in
@@ -189,7 +182,7 @@ Password:
 r1> en
 Password:
 r1#
-```
+```bash
 
 Now run the following to validate we are in a base configuration state.
 
@@ -233,7 +226,7 @@ end
 sh ip ospf
 ....
  OSPF Routing Process not enabled
-```
+```bash
 
 As you can see from above we are in a base configuration with the OSPF
 daemon running and ready for our manual configurations.
@@ -252,7 +245,7 @@ is _/Users/larrysmith/projects/vagrant-ansible-routing-template_
 
 ```bash
 cd /Users/larrysmith/projects/vagrant-ansible-routing-template
-```
+```bash
 
 Let's connect to router2 (r2).
 
@@ -292,7 +285,7 @@ Password:
 r2> en
 Password:
 r2#
-```
+```bash
 
 Looking at our diagram let's configure router1 (r1) as follows.
 
@@ -302,7 +295,7 @@ router ospf
 ospf router-id 192.168.250.101
 log-adjacency-changes
 network 192.168.250.101/24 area 1
-```
+```bash
 
 Now validate our running configuration to ensure our configuration from
 above is indeed in place.
@@ -348,7 +341,7 @@ router ospf
 line vty
 !
 end
-```
+```bash
 
 Let's show our OSPF neighbors and see what that looks like.
 
@@ -359,7 +352,7 @@ r1# sh ip ospf neighbor
 
     Neighbor ID Pri State           Dead Time Address         Interface            RXmtL RqstL DBsmL
 r1#
-```
+```bash
 
 As you can see from above there are currently not any OSPF neighbors at
 this point. Why is that?
@@ -373,7 +366,7 @@ router ospf
 ospf router-id 192.168.250.102
 log-adjacency-changes
 network 192.168.250.102/24 area 1
-```
+```bash
 
 Now validate our running configuration on router2 (r2).
 
@@ -767,7 +760,7 @@ router ospf
  log-adjacency-changes
  network 192.168.250.101/24 area 0.0.0.1
 !
-```
+```bash
 
 Now let's configure our networks (subnets)
 
@@ -785,7 +778,7 @@ router ospf
  network 192.168.14.0/24 area 0.0.0.1
  network 192.168.250.101/24 area 0.0.0.1
 !
-```
+```bash
 
 Now jump over to router2 (r2) and run the ping tests again that we did
 previously.
@@ -818,7 +811,7 @@ PING 192.168.14.11 (192.168.14.11) 56(84) bytes of data.
 4 packets transmitted, 4 received, 0% packet loss, time 3000ms
 rtt min/avg/max/mdev = 0.312/0.339/0.394/0.037 ms
 vagrant@r2:~$
-```
+```bash
 
 Success!!!!!
 Now look at your routing table once again on router2 (r2).
@@ -836,7 +829,7 @@ default via 10.0.2.2 dev eth0
 192.168.23.0/24 dev eth2  proto kernel  scope link  src 192.168.23.12
 192.168.250.0/24 dev eth1  proto kernel  scope link  src 192.168.250.102
 vagrant@r2:~$
-```
+```bash
 
 What is the other way to look at our routes on router2 (r2)? I know, I
 am getting a little less forthcoming with all of the details now right?
@@ -871,7 +864,7 @@ N    192.168.250.0/24      [10] area: 0.0.0.1
 ============ OSPF external routing table ===========
 
 r2#
-```
+```bash
 
 So now I have shown you two different ways on how we can redistribute
 our routes from each router into our OSPF topology here. There are of
@@ -889,14 +882,14 @@ any one of the routers.
 ```bash
 cd /vagrant
 ansible-playbook -i hosts playbook.yml
-```
+```bash
 
 Also make sure to save your router configurations as you make changes to
 write those configurations out to disk.
 
 ```bash
 wr mem
-```
+```bash
 
 And...validate and decide if you want to save your configuration
 changes that were made during this post to GIT. I will let you decide :)
@@ -925,11 +918,3 @@ OSPF method. More on this later.
 Enjoy!
 
 Up next...Auto-configured OSPF from Manual-configured OSPF...
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

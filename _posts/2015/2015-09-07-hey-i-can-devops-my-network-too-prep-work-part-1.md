@@ -6,14 +6,7 @@
     - Ansible
   redirect_from:
     - /hey-i-can-devops-my-network-too-prep-work-part-1
-toc: true
-toc_label: "Contents"
-excerpt: "In the previous post we went over the intro on what we will be setting up by going through each of these posts. In this post we will be setting up our..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 In the previous
 [post](https://everythingshouldbevirtual.com/hey-i-can-devops-my-network-too-intro)
@@ -74,7 +67,7 @@ mkdir projects
 cd projects
 git clone https://github.com/everythingshouldbevirtual/vagrant-ansible-routing-template.git
 cd vagrant-ansible-routing-template
-```
+```bash
 
 Now to show the status of our git repository.
 
@@ -83,7 +76,7 @@ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.
 nothing to commit, working directory clean
-```
+```sql
 
 Now as you can see above we have our Master branch. We do not want to
 make changes or develop against Master but rather we will create a dev
@@ -96,7 +89,7 @@ So in order to create a dev branch do the following.
 ```bash
 git checkout -b dev
 Switched to a new branch 'dev'
-```
+```bash
 
 If you would like to see which branches you have available locally run
 the following.
@@ -105,7 +98,7 @@ the following.
 git branch
 * dev
   master
-```
+```bash
 
 As you can the branch name with the asterisk is the one we have
 currently checked out for manipulating.
@@ -122,7 +115,7 @@ Password for 'https://everythingshouldbevirtual@github.com':
 Total 0 (delta 0), reused 0 (delta 0)
 To https://github.com/everythingshouldbevirtual/vagrant-ansible-routing-template.git
  * [new branch]      dev -> dev
-```
+```sql
 
 And now if you were to go back to your browser and look at the repo we
 just forked and click on the drop-down for Branch you will see our new
@@ -149,14 +142,14 @@ git remote -v
 ....
 origin  https://github.com/everythingshouldbevirtual/vagrant-ansible-routing-template.git (fetch)
 origin  https://github.com/everythingshouldbevirtual/vagrant-ansible-routing-template.git (push)
-```
+```bash
 
 As you can see I only have my forked repo configured for fetch/push. Now if I
 would like to add the original repo as an upstream source I would do the following.
 
 ```bash
 git remote add upstream https://github.com/mrlesmithjr/vagrant-ansible-routing-template.git
-```
+```bash
 
 And now if I view my remote locations again.
 
@@ -167,7 +160,7 @@ origin  https://github.com/everythingshouldbevirtual/vagrant-ansible-routing-tem
 origin  https://github.com/everythingshouldbevirtual/vagrant-ansible-routing-template.git (push)
 upstream    https://github.com/mrlesmithjr/vagrant-ansible-routing-template.git (fetch)
 upstream    https://github.com/mrlesmithjr/vagrant-ansible-routing-template.git (push)
-```
+```bash
 
 Now if I would like to check for any upstream changes I would do the
 following.
@@ -181,7 +174,7 @@ remote: Total 7 (delta 4), reused 6 (delta 3), pack-reused 0
 Unpacking objects: 100% (7/7), done.
 From https://github.com/mrlesmithjr/vagrant-ansible-routing-template
  * [new branch]      master     -> upstream/master
-```
+```bash
 
 As you can see I have detected upstream changes since I first forked my
 repo. So let's now merge those changes to my dev branch locally.\
@@ -192,13 +185,13 @@ git checkout dev
 ....
 Already on 'dev'
 Your branch is up-to-date with 'origin/dev'.
-```
+```bash
 
 Now let's merge our upstream/master with our local dev branch.
 
 ```bash
 git merge upstream/master
-```
+```bash
 
 Your local editor will open which will look like the following.
 
@@ -211,7 +204,7 @@ Merge remote-tracking branch 'upstream/master' into dev
 #
 # Lines starting with '#' will be ignored, and an empty message aborts
 # the commit.
-```
+```bash
 
 Save the file and you will see the following.
 
@@ -220,7 +213,7 @@ Merge made by the 'recursive' strategy.
  README.md                 | 141 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------
  group_vars/quagga-routers |   6 +++---
  2 files changed, 120 insertions(+), 27 deletions(-)
-```
+```bash
 
 And to validate that our merge was successful.
 
@@ -231,7 +224,7 @@ On branch dev
 Your branch is ahead of 'origin/dev' by 3 commits.
   (use "git push" to publish your local commits)
 nothing to commit, working directory clean
-```
+```bash
 
 And as you can see, our local dev branch is ahead of our remote dev
 branch so we must push those changes.
@@ -250,11 +243,3 @@ To https://github.com/everythingshouldbevirtual/vagrant-ansible-routing-template
 
 So there you have it. All synced up.
 Up Next....[Modifying our nodes configuration file to provision our nodes with Vagrant](https://everythingshouldbevirtual.com/hey-i-can-devops-my-network-too-define-nodes-part-2).
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

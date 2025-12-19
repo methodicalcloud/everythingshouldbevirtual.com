@@ -1,11 +1,6 @@
 ---
   title: Ansible - Generate Rundeck Inventory
-excerpt: "I have been doing some testing with Jenkins and Rundeck along with Ansible lately. I wanted a way to number one not have to manually update..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 I have been doing some testing with Jenkins and Rundeck along with
 Ansible lately. I wanted a way to number one not have to manually update
@@ -19,7 +14,7 @@ rundeck_generate_resources_xml: true  #will rebuild resources.xml and prepare fo
 rundeck_resources_xml_file: resources.xml
 rundeck_resources_xml_location: /var/lib/rundeck/var
 rundeck_server: ci-pipeline
-```
+```jinja2
 
 `generate_rundeck_resources.yml`:
 
@@ -79,11 +74,3 @@ rundeck_server: ci-pipeline
 
 {% endraw %}
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

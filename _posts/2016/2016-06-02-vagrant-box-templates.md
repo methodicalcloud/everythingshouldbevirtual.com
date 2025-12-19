@@ -6,14 +6,7 @@
     - Vagrant
   redirect_from:
     - /vagrant-box-templates
-toc: true
-toc_label: "Contents"
-excerpt: "Over the past few months I have been putting together some Vagrant box templates based on different Linux distros all using Packer. My goal is to have..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 Over the past few months I have been putting together some Vagrant box
 templates based on different Linux distros all using Packer. My goal is
@@ -24,21 +17,21 @@ to be extremely useful.
 
 List of current Vagrant box templates
 
--   Alpine Linux
--   CentOS-6
--   CentOS-7
--   Debian Jessie (server)
--   Debian Jessie (desktop)
--   Debian Wheezy
--   Fedora 22
--   Fedora 23
--   LinuxMint 17 (cinnamon)
--   OpenSuse 42.1
--   Ubuntu Precise
--   Ubuntu Trusty
--   Ubuntu Vivid
--   Ubuntu Wily
--   Ubuntu Xenial
+- Alpine Linux
+- CentOS-6
+- CentOS-7
+- Debian Jessie (server)
+- Debian Jessie (desktop)
+- Debian Wheezy
+- Fedora 22
+- Fedora 23
+- LinuxMint 17 (cinnamon)
+- OpenSuse 42.1
+- Ubuntu Precise
+- Ubuntu Trusty
+- Ubuntu Vivid
+- Ubuntu Wily
+- Ubuntu Xenial
 
 You can check out the actual Vagrant boxes on Hashicorp's Atlas site
 [here](https://atlas.hashicorp.com/mrlesmithjr).
@@ -53,7 +46,7 @@ start leveraging you can do so by doing the following...
 
 ```bash
 git clone https://github.com/mrlesmithjr/vagrant-box-templates.git
-```
+```jinja2
 
 Now you are ready to begin spinning these environments up the way they
 are or you can tweak the Vagrantfile to fit your testing scenario(s).
@@ -207,11 +200,3 @@ So there you have it...Just find the environment that you would like to
 spin up and give it a go.
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2015-09-08-hey-i-can-devops-my-network-too-vagrant-up-part-3](/hey-i-can-devops-my-network-too-vagrant-up-part-3/)
-- [2015-08-27-vagrant-multi-nic-definitions-via-yaml](/vagrant-multi-nic-definitions-via-yaml/)
-- [2015-08-23-learning-vagrant-and-ansible-provisioning](/learning-vagrant-and-ansible-provisioning/)

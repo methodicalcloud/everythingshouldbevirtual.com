@@ -6,14 +6,7 @@
     - Ansible
   redirect_from:
     - /hey-i-can-devops-my-network-too-auto-configured-ospf-part-4
-toc: true
-toc_label: "Contents"
-excerpt: "In the last post we spun up (Vagrant Up) our environment. So at this point we are ready to start exploring and seeing how easy it is to bring up OSPF..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 In the last
 [post](https://everythingshouldbevirtual.com/hey-i-can-devops-my-network-too-vagrant-up-part-3)
@@ -25,7 +18,7 @@ So if you are not already connected to router1 (r1) over ssh let's do so now.
 
 ```bash
 vagrant ssh r1
-```
+```bash
 
 Now change to the vagrant synced folder that we went over earlier in
 this series. It is here where we will be manipulating and running our
@@ -33,7 +26,7 @@ Ansible tasks from.
 
 ```bash
 cd /vagrant
-```
+```jinja2
 
 In this post we will be running the following Ansible playbook.
 playbook.yml
@@ -51,7 +44,7 @@ playbook.yml
       apt: name={{ item }} state=present
       with_items:
         - traceroute
-```
+```bash
 
 All that this playbook does is install the _mrlesmithjr.quagga_ role and
 installs traceroute. The _mrlesmithjr.quagga_ role was installed from
@@ -65,7 +58,7 @@ total 12
 drwxr-xr-x 9 root root 4096 Sep  8 15:29 mrlesmithjr.base
 drwxr-xr-x 8 root root 4096 Sep  8 15:29 mrlesmithjr.bootstrap
 drwxr-xr-x 8 root root 4096 Sep  8 15:29 mrlesmithjr.quagga
-```
+```jinja2
 
 And being that this role is what we will be focusing on throughout this
 series as Quagga is what we will be using for all of our routing
@@ -79,7 +72,7 @@ mrlesmithjr.quagga role.
 ```bash
     cat /etc/ansible/roles/mrlesmithjr.quagga/defaults/main.yml
     ....
-```
+```jinja2
 
 ```yaml
 ---
@@ -198,7 +191,7 @@ sysctl_network_settings:
     value: 40000
   - name: net.ipv4.tcp_fin_timeout
     value: 5
-```
+```sql
 
 One thing to note in the above is that like most other configuration
 files or scripts the '#' at the beginning of lines represents a
@@ -235,7 +228,7 @@ in this post).
 cd /vagrant
 cat group_vars/quagga-routers
 ....
-```
+```jinja2
 
 ```yaml
 ---
@@ -329,7 +322,7 @@ quagga_enable_ospfd: false
 quagga_enable_password: quagga
 quagga_ospf_routerid: '{{ ansible_eth1.ipv4.address }}'
 quagga_password: quagga
-```
+```bash
 
 As you can see not all of the same variables are included here, and that
 is because we will not need to make adjustments to those default
@@ -364,7 +357,7 @@ PLAY [quagga-routers] *********************************************************
 skipping: no hosts matched
 
 PLAY RECAP ********************************************************************
-```
+```jinja2
 
 Hey that was quick, but wait....nothing actually happened. Why is that?
 Well the answer is in the message which states that no hosts matched. So
@@ -384,7 +377,7 @@ quagga-routers is defined.
       apt: name={{ item }} state=present
       with_items:
         - traceroute
-```
+```bash
 
 So how do we solve this? Quite simply and all that we need to do is modify our
 hosts file. But first let's look at it.
@@ -399,7 +392,7 @@ r2 ansible_ssh_host=127.0.0.1 ansible_ssh_port=2200 ansible_ssh_private_key_file
 r3 ansible_ssh_host=127.0.0.1 ansible_ssh_port=2201 ansible_ssh_private_key_file=/Users/larrysmith/projects/vagrant-ansible-routing-template/.vagrant/machines/r3/virtualbox/private_key
 r4 ansible_ssh_host=127.0.0.1 ansible_ssh_port=2202 ansible_ssh_private_key_file=/Users/larrysmith/projects/vagrant-ansible-routing-template/.vagrant/machines/r4/virtualbox/private_key
 r5 ansible_ssh_host=127.0.0.1 ansible_ssh_port=2203 ansible_ssh_private_key_file=/Users/larrysmith/projects/vagrant-ansible-routing-template/.vagrant/machines/r5/virtualbox/private_key
-```
+```bash
 
 From the above we see that all of our nodes are defined but our group
 quagga-routers is missing. We will now define this group and you will
@@ -418,7 +411,7 @@ r2
 r3
 r4
 r5
-```
+```bash
 
 And now save the file. There is also a shortcut way of defining the
 nodes which are part of a group and we could simply do the following
@@ -427,7 +420,7 @@ instead of adding each node individually.
 ```bash
 [quagga-routers]
 r[1:5]
-```
+```bash
 
 Now your hosts file should look like the following.
 
@@ -442,12 +435,12 @@ r5 ansible_ssh_host=127.0.0.1 ansible_ssh_port=2203 ansible_ssh_private_key_file
 
 [quagga-routers]
 r[1:5]
-```
+```bash
 
 With this now being added we are now ready to run our playbook once
 again.
 
-```raw
+```bash
 ansible-playbook -i hosts playbook.yml
 ....
 PLAY [quagga-routers] *********************************************************
@@ -742,7 +735,7 @@ r2                         : ok=15   changed=4    unreachable=0    failed=0
 r3                         : ok=15   changed=4    unreachable=0    failed=0
 r4                         : ok=15   changed=4    unreachable=0    failed=0
 r5                         : ok=15   changed=4    unreachable=0    failed=0
-```
+```bash
 
 Now we are getting somewhere. But notice that the majority of our tasks
 were skipped. This is because our variables are defined as false for the
@@ -756,7 +749,7 @@ ls -l /etc/quagga
 total 8
 -rw-r--r-- 1 root root 990 Mar 21  2014 daemons
 -rw-r--r-- 1 root root 945 Mar 21  2014 debian.conf
-```
+```yaml
 
 So before we go any further let's look at our interfaces and routes.
 This is just to show a before and after view as we start to configure
@@ -824,7 +817,7 @@ default via 10.0.2.2 dev eth0
 192.168.15.0/24 dev eth4  proto kernel  scope link  src 192.168.15.11
 192.168.31.0/24 dev eth5  proto kernel  scope link  src 192.168.31.11
 192.168.250.0/24 dev eth1  proto kernel  scope link  src 192.168.250.101
-```
+```yaml
 
 So now let's actually configure Quagga by adjusting our Ansible
 variable but not for any routing but rather just the quagga daemon.
@@ -832,7 +825,7 @@ variable but not for any routing but rather just the quagga daemon.
 ```bash
 cd /vagrant
 nano group_vars/quagga-routers
-```
+```yaml
 
 At the very top of the file we are going to change config_quagga: false
 to config_quagga: true
@@ -841,20 +834,20 @@ Before:
 ```yaml
 ---
 config_quagga: false
-```
+```yaml
 
 After:
 
 ```yaml
 ---
 config_quagga: true
-```
+```bash
 
 Now save the file.
 
 Now let's run our playbook once again.
 
-```raw
+```bash
 cd /vagrant
 ansible-playbook -i hosts playbook.yml
 ....
@@ -1157,7 +1150,7 @@ r2                         : ok=19   changed=6    unreachable=0    failed=0
 r3                         : ok=19   changed=6    unreachable=0    failed=0
 r4                         : ok=19   changed=6    unreachable=0    failed=0
 r5                         : ok=19   changed=6    unreachable=0    failed=0
-```
+```bash
 
 As you now notice is that there were changes applied this time. But
 again no routing configurations made. However our quagga daemon is now
@@ -1177,7 +1170,7 @@ Copyright 1996-2005 Kunihiro Ishiguro, et al.
 User Access Verification
 
 Password:
-```
+```bash
 
 Our password is defined in our defaults and `group_vars/quagga-routers`
 as the following.
@@ -1185,7 +1178,7 @@ as the following.
 ```yaml
 quagga_enable_password: quagga
 quagga_password: quagga
-```
+```bash
 
 So if we enter quagga at our password prompt we will be logged in.
 
@@ -1202,7 +1195,7 @@ User Access Verification
 
 Password:
 r1>
-```
+```bash
 
 Now just like a Cisco router do the following to enter enable mode.
 Remember our enable password is quagga as well.
@@ -1216,7 +1209,7 @@ Password:
 r1> en
 Password:
 r1#
-```
+```bash
 
 Now do a quick show run to view the configuration.
 
@@ -1265,7 +1258,7 @@ ipv6 forwarding
 line vty
 !
 end
-```
+```bash
 
 Now type exit to exit the daemon so we may proceed. But again before
 proceeding let's look at our routes to ensure that they are the same as
@@ -1284,7 +1277,7 @@ default via 10.0.2.2 dev eth0
 192.168.15.0/24 dev eth4  proto kernel  scope link  src 192.168.15.11
 192.168.31.0/24 dev eth5  proto kernel  scope link  src 192.168.31.11
 192.168.250.0/24 dev eth1  proto kernel  scope link  src 192.168.250.101
-```
+```bash
 
 Let's attempt to ping some of other router interfaces by looking at our
 diagram below to identify some of those interfaces. Feel free to do some
@@ -1318,7 +1311,7 @@ PING 192.168.12.12 (192.168.12.12) 56(84) bytes of data.
 --- 192.168.12.12 ping statistics ---
 4 packets transmitted, 4 received, 0% packet loss, time 2999ms
 rtt min/avg/max/mdev = 0.288/0.376/0.502/0.089 ms
-```
+```bash
 
 Can you figure out why the last ping was successful?
 
@@ -1330,7 +1323,7 @@ configuration and setup all OSPF routing automatically for us.
 ```bash
 nano group_vars/quagga-routers
 ....
-```
+```bash
 
 Now change the following two variables from false to true.
 
@@ -1340,7 +1333,7 @@ quagga_enable_ospfd: false
 ....
 quagga_config_ospfd: true  #defines if quagga ospfd should be configured based on quagga_ospf_ vars...makes it easy to disable auto routing in order to define your routes manually
 quagga_enable_ospfd: true
-```
+```bash
 
 Now save the file and run the playbook again.
 
@@ -1348,19 +1341,19 @@ Now save the file and run the playbook again.
 cd /vagrant
 ansible-playbook -i hosts playbook.yml
 ....
-```
+```bash
 
 And if you were to scroll up and look at what happened you will notice
 the following.
 
-```raw
+```yaml
 TASK: [mrlesmithjr.quagga | config_quagga | configuring ospf] *****************
 changed: [r1]
 changed: [r5]
 changed: [r2]
 changed: [r3]
 changed: [r4]
-```
+```bash
 
 That is where all the magic happened. So let's take a look and see what
 was changed.
@@ -1386,7 +1379,7 @@ default via 10.0.2.2 dev eth0
 192.168.41.0/24 via 192.168.250.104 dev eth1  proto zebra  metric 20
 192.168.51.0/24 via 192.168.250.105 dev eth1  proto zebra  metric 20
 192.168.250.0/24 dev eth1  proto kernel  scope link  src 192.168.250.101
-```
+```bash
 
 We now have routes to all of the interfaces on our other routers for
 connected interfaces. In our
@@ -1400,7 +1393,7 @@ quagga_ospf_redistribute:
 #  - static
 #  - isis
 #  - rip
-```
+```bash
 
 The above is what configured our OSPF setup to inject connected
 interfaces into our routing topology. Maybe you don't want this so you
@@ -1433,7 +1426,7 @@ Password:
 r1> en
 Password:
 r1#
-```
+```bash
 
 To show our OSPF configuration.
 
@@ -1479,14 +1472,14 @@ router ospf
 line vty
 !
 end
-```
+```bash
 
 One thing to note above is that our OSPF area is defined as 51 in this
 setup.
 
 ```bash
 network 192.168.250.101/24 area 0.0.0.51
-```
+```bash
 
 We can adjust this OSPF area ID to anything that is required or desired
 by simply adding the following variable to our `group_vars/quagga-routers` file
@@ -1495,7 +1488,7 @@ changing this applies to all of our routers and adjusts on the fly for us.
 
 ```yaml
 quagga_ospf_area: 51
-```
+```bash
 
 Let's look at our OSPF neighbors.
 
@@ -1507,7 +1500,7 @@ sh ip ospf neighbor
 192.168.250.103   1 2-Way/DROther     32.167s 192.168.250.103 eth1:192.168.250.101     0     0     0
 192.168.250.104   1 Full/Backup       32.208s 192.168.250.104 eth1:192.168.250.101     0     0     0
 192.168.250.105   1 Full/DR           32.153s 192.168.250.105 eth1:192.168.250.101     0     0     0
-```
+```bash
 
 Now let's look at a few more OSPF stats.
 
@@ -1594,7 +1587,7 @@ N E2 192.168.41.0/24       [10/20] tag: 0
                            via 192.168.250.104, eth1
 N E2 192.168.51.0/24       [10/20] tag: 0
                            via 192.168.250.105, eth1
-```
+```bash
 
 Now to validate that our routes are indeed working we will run the same
 ping tests we did previously. So type exit to exit our OSPF daemon.
@@ -1633,7 +1626,7 @@ PING 192.168.12.12 (192.168.12.12) 56(84) bytes of data.
 --- 192.168.12.12 ping statistics ---
 4 packets transmitted, 4 received, 0% packet loss, time 2998ms
 rtt min/avg/max/mdev = 0.240/0.350/0.455/0.086 ms
-```
+```bash
 
 As you can see all of our interfaces are now responding. Feel free to
 validate the additional interfaces by referencing our diagram further up
@@ -1668,7 +1661,7 @@ git commit -am "updated variables for OSPF auto-config"
 ....
 [dev 6074ef1] updated variables for OSPF auto-config
  2 files changed, 6 insertions(+), 3 deletions(-)
-```
+```bash
 
 Now push your changes to your forked repo...Again..Remember we are
 working on the dev branch.
@@ -1688,11 +1681,3 @@ To https://github.com/everythingshouldbevirtual/vagrant-ansible-routing-template
 Up next...OSPF manual-configuration..
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

@@ -6,14 +6,7 @@
     - Ansible
   redirect_from:
     - /hey-i-can-devops-my-network-too-define-nodes-part-2
-toc: true
-toc_label: "Contents"
-excerpt: "In the previous post we prepped our environment in order to get everything ready to begin building out our environment. Which means we are now ready to..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 In the [previous post](https://everythingshouldbevirtual.com/hey-i-can-devops-my-network-too-prep-work-part-1)
 we prepped our environment in order to get everything ready to begin
@@ -124,7 +117,7 @@ Below is the original _nodes.yml_
       network_name: 4-4-4
       method: static
       type: private_network
-```
+```yaml
 
 So let's first add router5 (r5) to our _nodes.yml_ file.
 
@@ -153,7 +146,7 @@ the end of the file.
       network_name: 5-5-5
       method: static
       type: private_network
-```
+```yaml
 
 If you also notice, router1 (r1) is missing the interface to connect to
 the newly added router5 (r5) as well. So we will need to go ahead and
@@ -191,7 +184,7 @@ add that interface to router1 (r1) which is shown below in bold.
       network_name: 1-1-1
       method: static
       type: private_network
-```
+```yaml
 
 So now the whole _nodes.yml_ file should look like below.
 
@@ -317,7 +310,7 @@ So now the whole _nodes.yml_ file should look like below.
       network_name: 5-5-5
       method: static
       type: private_network
-```
+```sql
 
 At this point you are probably wondering what all of these settings are
 for in _nodes.yml_, correct? So let's go over what they are for.
@@ -362,14 +355,14 @@ Changes not staged for commit:
     modified:   nodes.yml
 
 no changes added to commit (use "git add" and/or "git commit -a")
-```
+```bash
 
 The above shows us that nodes.yml has been modified and we should commit
 the changes.
 
 ```bash
 git commit -a
-```
+```bash
 
 Now type in a description of whatever you want...I am using "updated
 nodes.yml in preparation of Vagrant deployment" and save the file.
@@ -377,7 +370,7 @@ nodes.yml in preparation of Vagrant deployment" and save the file.
 ```bash
 [dev a06b879] updated nodes.yml in preparation of Vagrant deployment
  1 file changed, 26 insertions(+)
-```
+```bash
 
 Now let's push our changes to GitHub into our dev branch.
 
@@ -392,7 +385,7 @@ Total 3 (delta 2), reused 0 (delta 0)
 To https://github.com/everythingshouldbevirtual/vagrant-ansible-routing-template.git
    caf5002..a06b879  dev -> dev
 Branch dev set up to track remote branch dev from origin.
-```
+```ruby
 
 The other important file here at this time is our _Vagrantfile_. This is
 the file that Vagrant will use to spin up the nodes that we have defined
@@ -461,11 +454,3 @@ So this concludes our node definitions which we will be using here on
 out for this series.
 
 Up next...[Vagrant UP](https://everythingshouldbevirtual.com/hey-i-can-devops-my-network-too-vagrant-up-part-3)...
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

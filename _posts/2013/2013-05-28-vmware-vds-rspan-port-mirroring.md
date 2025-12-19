@@ -1,12 +1,7 @@
 ---
   title: VMware vDS RSPAN Port Mirroring
   date: 2013-05-28 19:43:45
-excerpt: "I wanted to throw this together real quick on how to setup RSPAN VLAN Port Mirroring using a Cisco switch and vDS (vSphere Distributed Switch)..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 I wanted to throw this together real quick on how to setup RSPAN VLAN
 Port Mirroring using a Cisco switch and vDS (vSphere Distributed Switch)

@@ -1,12 +1,7 @@
 ---
   title: Configuring remote syslog for ESXi5 hosts
   date: 2012-07-29 10:22:30
-excerpt: "Just wanted to share this real quick for anyone who may want to setup remote syslogging on your ESXi5 hosts. I like to configure this so I can keep up..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 Just wanted to share this real quick for anyone who may want to setup
 remote syslogging on your ESXi5 hosts. I like to configure this so I can
@@ -17,4 +12,4 @@ server that is also running as a cacti monitoring server. The screenshot
 below shows the location of where to configure remote syslogging and
 remember you need to do this for each one of your ESXi hosts.
 
-![ESXi5 - Remote Syslog setup](../../assets/ESXi5-Remote-Syslog-setup-300x186.png )
+![](../../assets/ESXi5-Remote-Syslog-setup-300x186.png "ESXi5 - Remote Syslog setup")

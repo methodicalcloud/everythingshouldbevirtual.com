@@ -1,9 +1,6 @@
 ---
 title: Updating Git Project Structure
 date: 2020-02-20 18:00:00
-toc: true
-toc_label: "Contents"
-excerpt: "Creating and maintaining a consistent project structure is crucial for efficient collaboration and automation. In this post, I'll share how I've been..."
 ---
 
 ## Introduction
@@ -16,15 +13,15 @@ Lately, I have been working on putting together a Cookiecutter template to use w
 
 - **Ansible Role Structure**
 - **Continuous Integration (CI)**
-    - GitHub Actions
-    - GitLab CI/CD
-    - Travis
+  - GitHub Actions
+  - GitLab CI/CD
+  - Travis
 - **Molecule Testing**
 - **Documentation**
-    - Code of Conduct
-    - Contributing Guidelines
-    - License
-    - Readme
+  - Code of Conduct
+  - Contributing Guidelines
+  - License
+  - Readme
 
 ## Benefits of a Consistent Structure
 
@@ -62,7 +59,7 @@ remote: Compressing objects: 100% (15/15), done.
 remote: Total 141 (delta 8), reused 13 (delta 5), pack-reused 121
 Receiving objects: 100% (141/141), 35.10 KiB | 1.67 MiB/s, done.
 Resolving deltas: 100% (50/50), done.
-```
+```bash
 
 Let's check real quick to see what our original structure looked like:
 
@@ -84,13 +81,13 @@ drwxr-xr-x   3 larrysmithjr  staff    96 Feb 20 21:25 meta
 drwxr-xr-x   6 larrysmithjr  staff   192 Feb 20 21:25 tasks
 drwxr-xr-x  17 larrysmithjr  staff   544 Feb 20 21:25 tests
 drwxr-xr-x   3 larrysmithjr  staff    96 Feb 20 21:25 vars
-```
+```sql
 
 Next, I will launch `cookiecutter` and use my [cookiecutter-ansible-role](https://github.com/mrlesmithjr/cookiecutter-ansible-role "https://github.com/mrlesmithjr/cookiecutter-ansible-role") template to create a new project called `ansible-control-machine`.
 
 ```bash
 cookiecutter https://github.com/mrlesmithjr/cookiecutter-ansible-role.git
-```
+```bash
 
 Following the prompts, I will fill in the details.
 
@@ -115,7 +112,7 @@ Select default_ci_badges:
 1 - Y
 2 - N
 Choose from 1, 2 [1]:
-```
+```bash
 
 Now I should have a new directory called `ansible-control-machine`. So, let's see what the new structure looks like:
 
@@ -147,7 +144,7 @@ drwxr-xr-x   5 larrysmithjr  staff   160 Feb 20 21:31 molecule
 drwxr-xr-x   3 larrysmithjr  staff    96 Feb 20 21:31 tasks
 drwxr-xr-x   3 larrysmithjr  staff    96 Feb 20 21:31 templates
 drwxr-xr-x   3 larrysmithjr  staff    96 Feb 20 21:31 vars
-```
+```bash
 
 As you can see, there is much more in the new structure than in the original.
 
@@ -157,7 +154,7 @@ Let's change into the `ansible-control-machine` directory:
 
 ```bash
 cd ansible-control-machine
-```
+```bash
 
 Now let's do a quick `git status`:
 
@@ -165,7 +162,7 @@ Now let's do a quick `git status`:
 git status
 ...
 fatal: not a git repository (or any of the parent directories): .git
-```
+```bash
 
 Oh no! Where is my repo info? The answer is there has yet to be any in the new structure. Let's see how we can get that back into our new structure.
 
@@ -215,7 +212,7 @@ cp -Rv ../ansible-control-machine.orig/.git .
 ../ansible-control-machine.orig/.git/refs/remotes/origin/HEAD -> ./.git/refs/remotes/origin/HEAD
 ../ansible-control-machine.orig/.git/index -> ./.git/index
 ../ansible-control-machine.orig/.git/packed-refs -> ./.git/packed-refs
-```
+```bash
 
 Once the copy is complete, we can do another `git status` to see how things look now:
 
@@ -293,7 +290,7 @@ Untracked files:
  templates/.gitkeep
 
 no changes added to commit (use "git add" and/or "git commit -a")
-```
+```sql
 
 Well, that looks better but scary. Of course not! Now, all we need to do is decide what we want to keep and what we want to get rid of. But before we do that, let's create a new branch so we are not messing with `master`. By doing this, we are ensuring that we don't mess anything up in `master` in case we do something wrong.
 
@@ -303,7 +300,7 @@ So, let's create a new branch called `updating-structure`:
 git checkout -b updating-structure
 ...
 Switched to a new branch 'updating-structure'
-```
+```bash
 
 Now that we are in our `updating-structure` branch, we can start by checking out anything marked as deleted that we want to keep.
 
@@ -343,7 +340,7 @@ git status | grep deleted
  deleted:    tests/Dockerfile.ubuntu-xenial
  deleted:    tests/inventory
  deleted:    tests/test.yml
-```
+```bash
 
 Because this is for an Ansible role, I want to keep anything in `tasks` from the above. So I'll `checkout` those to keep them.
 
@@ -351,7 +348,7 @@ Because this is for an Ansible role, I want to keep anything in `tasks` from t
 git checkout tasks
 ...
 Updated 4 paths from the index
-```
+```bash
 
 Let's check our `deleted` files once more to make sure we are good:
 
@@ -388,13 +385,13 @@ git status | grep deleted
  deleted:    tests/Dockerfile.ubuntu-xenial
  deleted:    tests/inventory
  deleted:    tests/test.yml
-```
+```bash
 
 It looks good. So, now I will get rid of the `Vagrant` and `tests` directories because I know these are for testing, and I'll be replacing them with the new Molecule tests.
 
 ```bash
 git add Vagrant/ tests/
-```
+```bash
 
 And another quick `git status` shows:
 
@@ -465,7 +462,7 @@ Untracked files:
  requirements.txt
  requirements.yml
  templates/.gitkeep
-```
+```bash
 
 I'm happy with this, so I'll now commit those changes:
 
@@ -502,7 +499,7 @@ git commit -m "Deleted old tests, etc. not needed"
  delete mode 100644 tests/Dockerfile.ubuntu-xenial
  delete mode 100644 tests/inventory
  delete mode 100644 tests/test.yml
-```
+```bash
 
 Now, I can start reviewing the changes made to the files marked as `modified`. So, I'll first check to see which files were modified:
 
@@ -513,7 +510,7 @@ git status | grep modified
  modified:   README.md
  modified:   defaults/main.yml
  modified:   meta/main.yml
-```
+```bash
 
 As we can see, only four files have been modified. So, I'll take my time and go through each of those files with whatever editor I choose to see what to keep and what to discard. I personally use VSCode for this, as it makes it really easy to discard or keep any modifications.
 
@@ -553,7 +550,7 @@ Untracked files:
  requirements.txt
  requirements.yml
  templates/.gitkeep
-```
+```bash
 
 ```bash
 git commit -m "Updated files, etc. after new structure"
@@ -561,7 +558,7 @@ git commit -m "Updated files, etc. after new structure"
  3 files changed, 58 insertions(+), 173 deletions(-)
  rewrite .travis.yml (93%)
  rewrite README.md (87%)
-```
+```bash
 
 The final step is to go ahead and add the remaining `untracked files`. As these would be new files that are part of my new desired structure, I'll also want those to be committed.
 
@@ -569,7 +566,7 @@ We can add all `untracked files` by:
 
 ```bash
 git add .
-```
+```bash
 
 ```bash
 git status
@@ -599,7 +596,7 @@ Changes to be committed:
  new file:   requirements.txt
  new file:   requirements.yml
  new file:   templates/.gitkeep
-```
+```bash
 
 Now, we can commit these as well:
 
@@ -630,7 +627,7 @@ git commit -m "New files, etc. from new structure"
  create mode 100644 requirements.txt
  create mode 100644 requirements.yml
  create mode 100644 templates/.gitkeep
-```
+```bash
 
 Now, I am updating my project with a new desired structure without losing anything other than what I intended. So, you can now push those changes up to the `updating-structure` branch.
 
@@ -641,7 +638,7 @@ git remote -v
 ...
 origin git@github.com:mrlesmithjr/ansible-control-machine.git (fetch)
 origin git@github.com:mrlesmithjr/ansible-control-machine.git (push)
-```
+```bash
 
 Awesome! So we are good to go and can now push them up.
 
@@ -672,11 +669,3 @@ Finally, once you are happy with the state of your new updating-structure bran
 This is an excellent exercise to get the new structure in place. However, initially, it can be daunting, as you may be worried about causing issues. But if you follow these steps, you should be just fine! So, there you have it. I'd love to hear from others on how they go about these types of scenarios and your experiences, so feel free to leave feedback.
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

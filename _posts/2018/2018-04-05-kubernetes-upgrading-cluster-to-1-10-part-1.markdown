@@ -55,7 +55,7 @@ Etcd                 3.1.11    3.1.11
 
 You can now apply the upgrade by executing the following command:
 
-	kubeadm upgrade apply v1.9.6
+ kubeadm upgrade apply v1.9.6
 
 Note: Before you can perform this upgrade, you have to update kubeadm to v1.9.6.
 
@@ -77,7 +77,7 @@ Etcd                 3.1.11    3.1.11
 
 You can now apply the upgrade by executing the following command:
 
-	kubeadm upgrade apply v1.10.0
+ kubeadm upgrade apply v1.10.0
 
 Note: Before you can perform this upgrade, you have to update kubeadm to v1.10.0.
 
@@ -109,7 +109,7 @@ kubeadm upgrade apply v1.9.6
 
 And immediately we are presented with the following:
 
-```raw
+```console
 [preflight] Running pre-flight checks.
 [upgrade] Making sure the cluster is healthy:
 [upgrade/config] Making sure the configuration is correct:
@@ -120,7 +120,7 @@ And immediately we are presented with the following:
 [upgrade/versions] kubeadm version: v1.9.3
 [upgrade/version] FATAL: The --version argument is invalid due to these errors:
 
-	- Specified version to upgrade to "v1.9.6" is higher than the kubeadm version "v1.9.3". Upgrade kubeadm first using the tool you used to install kubeadm
+ - Specified version to upgrade to "v1.9.6" is higher than the kubeadm version "v1.9.3". Upgrade kubeadm first using the tool you used to install kubeadm
 
 Can be bypassed if you pass the --force flag
 ```
@@ -134,7 +134,7 @@ sudo apt-get install kubeadm
 
 Now we are ready to try again to upgrade:
 
-```raw
+```console
 sudo kubeadm upgrade apply v1.9.6
 [preflight] Running pre-flight checks.
 [upgrade] Making sure the cluster is healthy:
@@ -154,7 +154,7 @@ kubectl -n kube-system edit cm kubeadm-config
 
 And once again we try the upgrade again:
 
-```raw
+```console
 sudo kubeadm upgrade apply v1.9.6
 [preflight] Running pre-flight checks.
 [upgrade] Making sure the cluster is healthy:
@@ -192,13 +192,13 @@ sudo kubeadm upgrade apply v1.9.6
 And once again another failure! So I attempt the upgrade once again and here we
 are!
 
-```raw
+```console
 sudo kubeadm upgrade apply v1.9.6
 [preflight] Running pre-flight checks.
 [upgrade] Making sure the cluster is healthy:
 [upgrade/health] FATAL: [preflight] Some fatal errors occurred:
-	[ERROR APIServerHealth]: the API Server is unhealthy; /healthz didn't return "ok"
-	[ERROR MasterNodesReady]: couldn't list masters in cluster: Get https://192.168.100.1:6443/api/v1/nodes?labelSelector=node-role.kubernetes.io%2Fmaster%3D: http2: server sent GOAWAY and closed the connection; LastStreamID=1, ErrCode=NO_ERROR, debug=""
+ [ERROR APIServerHealth]: the API Server is unhealthy; /healthz didn't return "ok"
+ [ERROR MasterNodesReady]: couldn't list masters in cluster: Get https://192.168.100.1:6443/api/v1/nodes?labelSelector=node-role.kubernetes.io%2Fmaster%3D: http2: server sent GOAWAY and closed the connection; LastStreamID=1, ErrCode=NO_ERROR, debug=""
 [preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`
 ```
 

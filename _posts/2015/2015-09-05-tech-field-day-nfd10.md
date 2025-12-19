@@ -1,11 +1,6 @@
 ---
   title: Tech Field Day - NFD10
-excerpt: "I was invited as a delegate to attend Tech Field Day - Network Field Day 10 (NFD10) in Silicon Valley the week of August 18th. This was my first time..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 I was invited as a delegate to attend Tech Field Day - Network Field Day
 10 (NFD10) in Silicon Valley the week of August 18th. This was my first

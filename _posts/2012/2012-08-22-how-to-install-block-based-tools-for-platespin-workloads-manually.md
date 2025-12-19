@@ -1,19 +1,14 @@
 ---
   title: How to install block based tools for platespin workloads manually
   date: 2012-08-22 10:08:43
-excerpt: "Here is how you can control a reboot required for adding a server workload to platespin which uses block based replication. Highly suggest only using..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 Here is how you can control a reboot required for adding a server
 workload to platespin which uses block based replication. Highly suggest
 only using block based for DB servers or other servers that have a lot
 of data, but maybe only a bit of changed data. All other workloads (Web,
 App) should be file based. Below are the contents of KB article
-**[7010094](http://www.novell.com/support/kb/doc.php?id=7010094) **which
+**[7010094](http://www.novell.com/support/kb/doc.php?id=7010094)**which
 was not working at the time I am posting this, but I have the contents.
 Why would you want to do this? Well if you have a lot of workloads then
 when you schedule downtime for a production DB server but have to

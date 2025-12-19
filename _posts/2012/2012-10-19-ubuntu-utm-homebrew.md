@@ -1,17 +1,7 @@
 ---
   title: Ubuntu UTM Homebrew - Part 1 - Web Filtering
   date: 2012-10-19 10:06:49
-toc: true
-toc_label: "Contents"
-excerpt: "I wrote this guide a few days ago and this solution worked great. But what if you want to have more control of your threat management and build your..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
-
-> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
-{: .notice--info}
 
 I wrote [this](https://everythingshouldbevirtual.com/super-router-pfsense-untangle/ "http\://everythingshouldbevirtual.com/super-router-pfsense-untangle/")
 guide a few days ago and this solution worked great. But what if you
@@ -24,7 +14,7 @@ first NIC connected to the WAN (RED), and the second NIC is connected to
 the "Crossover" network and configured with IP 192.168.1.1. (Reference
 Picture below)\*\*\*
 
-![09-23-40](../../assets/09-23-40-222x300.png )
+![](../../assets/09-23-40-222x300.png "09-23-40")
 
 So here we go.
 
@@ -79,26 +69,26 @@ Now run this command
 
 ```bash
 sudo iptables -t nat -A PREROUTING -i br0 -p tcp --dport 80 -j REDIRECT --to-port 8080
-```
+```bash
 
 Run this command to save the IPTables rules.
 
 ```bash
 sudo iptables-save > /etc/iptables.rules
-```
+```bash
 
 Now edit /etc/sysctl.conf
 
 ```bash
 sudo nano /etc/sysctl.conf
-```
+```bash
 
 and uncomment the following
 
 ```bash
 net.ipv4.ip_forward=1
 net.ipv6.conf.all.forwarding=1
-```
+```bash
 
 Now reboot your server and you should be able to communicate out to the
 internet now.
@@ -114,19 +104,19 @@ Now run
 
 ```bash
 sudo apt-get update && sudo apt-get upgrade
-```
+```bash
 
 Once that finishes run
 
 ```bash
 sudo apt-get install squid3 ebtables bridge-utils dansguardian havp clamav clamav-freshclam
-```
+```bash
 
 Now we need to make squid, dansguardian and havp all work together.
 
 ```bash
 sudo nano /etc/dansguardian/dansguardian.conf
-```
+```bash
 
 and make the following changes
 
@@ -142,7 +132,7 @@ proxyip = 127.0.0.1
 
 # the port DansGuardian connects to proxy on
 proxyport = 8090
-```
+```bash
 
 Now run
 
@@ -162,19 +152,19 @@ and change
 
 ```bash
 http_port 3128
-```
+```bash
 
 to
 
 ```bash
 http_port 3128 transparent
-```
+```bash
 
 Now run
 
 ```bash
 sudo nano /etc/havp/havp.config
-```
+```bash
 
 and add the following
 
@@ -184,18 +174,18 @@ PARENTPORT 3128
 PORT 8090
 ENABLECLAMLIB true
 CLAMDBDIR /var/lib/clamav
-```
+```sql
 
 Now reboot your new Ubuntu UTM and you should now be utilizing the UTM
 for normal http usage. Try to go to playboy.com or some other adult
 website and you should see the following.
 
-![10-00-51](../../assets/10-00-51-300x236.png )
+![](../../assets/10-00-51-300x236.png "10-00-51")
 
 Go to [this](http://www.eicar.org/download/eicar.com.txt "http\://www.eicar.org/download/eicar.com.txt")
 link and you should see the following.
 
-![10-02-18](../../assets/10-02-18-300x234.png )
+![](../../assets/10-02-18-300x234.png "10-02-18")
 
 Once that is verified that it is working. You are good to go. There are
 many other tweaks and such that you can do with Dansguardian, but I am
@@ -216,7 +206,7 @@ restart squid.
 acl Apple url_regex ^https?://([A-Za-z0-9.-]*\.)?apple\.com/
 
 cache deny Apple
-```
+```bash
 
 While you are in squid.conf you might want to go ahead and add the
 following as well.
@@ -236,7 +226,7 @@ cache deny Microsoft
 cache deny YouTube
 cache deny GoogleVideo
 cache deny OVI
-```
+```sql
 
 \*\*Update\*\*
 
@@ -245,37 +235,37 @@ request do the following. I am using Sarg to squid reporting.
 
 ```bash
 sudo nano /etc/dansguardian/dansguardian.conf
-```
+```bash
 
 change line
 
 ```bash
 forwardedfor = on
-```
+```bash
 
 (make sure it is on)
 
 ```bash
 sudo nano /etc/squid3/squid.conf
-```
+```bash
 
 change line
 
 ```bash
 forwarded_for on
-```
+```bash
 
 (make sure it is set to on)
 
 ```bash
 sudo nano /etc/havp/havp.config
-```
+```bash
 
 change line
 
 ```bash
 FORWARDED_IP true
-```
+```bash
 
 (default is false)
 
@@ -283,7 +273,7 @@ change line
 
 ```bash
 X_FORWARDED_FOR true
-```
+```bash
 
 (default is false)
 

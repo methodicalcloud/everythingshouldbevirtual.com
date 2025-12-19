@@ -1,12 +1,7 @@
 ---
   title: Cisco ASA Logstash Parsing
   date: 2014-12-11
-excerpt: "I recently had an opportunity to get around to creating some Cisco ASA parsing for logstash to detect some abnormal activity on the network. So now..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 I recently had an opportunity to get around to creating some Cisco ASA
 parsing for logstash to detect some abnormal activity on the network. So
@@ -33,11 +28,3 @@ Below is the dashboard code:
 {% gist mrlesmithjr/a143d71deca65c9b64e7 %}
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-11-29-ubuntu-logstash-server-kibana3-front-end-autoinstall](/ubuntu-logstash-server-kibana3-front-end-autoinstall/)
-- [2014-10-24-vmware-nsx-firewall-logging-logstash](/vmware-nsx-firewall-logging-logstash/)
-- [2014-06-09-logstash-elasticsearch-searchphaseexecutionexception-error-2](/logstash-elasticsearch-searchphaseexecutionexception-error-2/)

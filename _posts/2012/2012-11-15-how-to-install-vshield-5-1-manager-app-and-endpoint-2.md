@@ -1,14 +1,7 @@
 ---
   title: How to install vShield 5.1 Manager, App and Endpoint
   date: 2012-11-15 17:24:27
-toc: true
-toc_label: "Contents"
-excerpt: "In this guide we will be installing the vShield Manager appliance and the installing vShield App and vShield Endpoint (Now called vShield Networking..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 In this guide we will be installing the vShield Manager appliance and
 the installing vShield App and vShield Endpoint (Now called vShield
@@ -25,22 +18,22 @@ Manager required per vCenter instance.
 Taken from the quick start guide here are the hardware requirements for
 the vShield components.
 
--   **_Memory_**
-    -   **_vShield Manager: 8GB allocated, 3GB reserved_**
-    -   **_vShield App: 1GB allocated, 1 GB reserved_**
-    -   **_vShield Edge compact: 256 MB, large: 1 GB, x-large: 8 GB_**
-    -   **_vShield Data Security: 512 MB_**
--   **_Disk Space_**
-    -   **_vShield Manager: 60 GB_**
-    -   **_vShield App: 5 GB per vShield App per ESX host_**
-    -   **_vShield Edge compact and large: 320 MB, lx-Large: 4.4 GB
+- **_Memory_**
+  - **_vShield Manager: 8GB allocated, 3GB reserved_**
+  - **_vShield App: 1GB allocated, 1 GB reserved_**
+  - **_vShield Edge compact: 256 MB, large: 1 GB, x-large: 8 GB_**
+  - **_vShield Data Security: 512 MB_**
+- **_Disk Space_**
+  - **_vShield Manager: 60 GB_**
+  - **_vShield App: 5 GB per vShield App per ESX host_**
+  - **_vShield Edge compact and large: 320 MB, lx-Large: 4.4 GB
         (with 4 GB swap file)_**
-    -   **_vShield Data Security: 6GB per ESX host_**
--   **_vCPU_**
-    -   **_vShield Manager: 2_**
-    -   **_vShield App: 2_**
-    -   **_vShield Edge compact: 1, large and x-Large: 2_**
-    -   **_vShield Data Security: 1_**
+  - **_vShield Data Security: 6GB per ESX host_**
+- **_vCPU_**
+  - **_vShield Manager: 2_**
+  - **_vShield App: 2_**
+  - **_vShield Edge compact: 1, large and x-Large: 2_**
+  - **_vShield Data Security: 1_**
 
 So let's deploy the appliance now.
 
@@ -88,12 +81,12 @@ Now at the manager prompt type **_setup_**.
 
 Now you will need to enter the following information
 
--   **_IP Address_**
--   **_Subnet Mask_**
--   **_Default gateway_**
--   **_Primary DNS IP_**
--   **_Secondary DNS IP_**
--   **_DNS domain search list_**
+- **_IP Address_**
+- **_Subnet Mask_**
+- **_Default gateway_**
+- **_Primary DNS IP_**
+- **_Secondary DNS IP_**
+- **_DNS domain search list_**
 
 And then save the new configuration and reboot the appliance.
 

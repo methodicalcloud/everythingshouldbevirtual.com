@@ -1,12 +1,7 @@
 ---
   title: HP BL490G7 ESXi 5.1U1 - No adapters found During Install
   date: 2013-05-13 15:17:59
-excerpt: "So I was rebuilding some HP BL490G7 blades last week with VMware ESXi 5.1U1 and during the install it stopped with the message that there were not any..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 So I was rebuilding some HP BL490G7 blades last week with VMware ESXi
 5.1U1 and during the install it stopped with the message that there were

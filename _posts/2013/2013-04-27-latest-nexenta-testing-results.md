@@ -1,12 +1,7 @@
 ---
   title: Latest Nexenta Testing Results
   date: 2013-04-27 08:27:31
-excerpt: "So I have been running my new Nexentastor CE storage for a little more than a month now and wanted to run another IO test real quick as a sanity check...."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 So I have been running my new Nexentastor CE storage for a little more
 than a month now and wanted to run another IO test real quick as a

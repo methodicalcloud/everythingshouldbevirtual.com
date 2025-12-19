@@ -1,12 +1,7 @@
 ---
   title: vSphere DRS Invocation Error
   date: 2013-09-27 12:49:23
-excerpt: "I just came across this for the first time in one of my vSphere 5.1 HA-DRS clusters. One of my clusters had an error saying \"DRS invocation not completed.\""
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 I just came across this for the first time in one of my vSphere 5.1
 HA-DRS clusters. One of my clusters had an error saying "DRS invocation

@@ -1,12 +1,7 @@
 ---
 title: Get your VSAN, Get your VSAN now!
 date: 2014-03-13 09:30:28
-excerpt: "Yes, you heard it correct. VMware Virtual SAN (VSAN) is now GA as of 03/11/2014. VMware released VMware ESXi 5.5 U1 and vCenter Server 5.5 U1 which..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 Yes, you heard it correct. VMware Virtual SAN (VSAN) is now GA as of
 03/11/2014. VMware released VMware ESXi 5.5 U1 and vCenter Server 5.5 U1

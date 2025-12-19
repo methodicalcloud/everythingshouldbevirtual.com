@@ -1,11 +1,6 @@
 ---
   title: "Tech Field Day - #VFD4 - Dell FX Architecture"
-excerpt: "Carol Pflueger, Servers Product Manager, introduces the Dell PowerEdge FX architecture"
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 Carol Pflueger, Servers Product Manager, introduces the Dell PowerEdge
 FX architecture

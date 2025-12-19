@@ -1,11 +1,6 @@
 ---
   title: Logstash - VCSA 6.0
-excerpt: "As I have begun upgrading portions of my lab to vSphere 6.x I came across the difference in parsing syslog messages from the new VCSA which was..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 As I have begun upgrading portions of my lab to vSphere 6.x I came
 across the difference in parsing syslog messages from the new VCSA which
@@ -88,11 +83,3 @@ If it does not then you can select restart from the Actions drop-down
 and restart the syslog server and all should be good.
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-11-29-ubuntu-logstash-server-kibana3-front-end-autoinstall](/ubuntu-logstash-server-kibana3-front-end-autoinstall/)
-- [2014-10-24-vmware-nsx-firewall-logging-logstash](/vmware-nsx-firewall-logging-logstash/)
-- [2014-06-09-logstash-elasticsearch-searchphaseexecutionexception-error-2](/logstash-elasticsearch-searchphaseexecutionexception-error-2/)

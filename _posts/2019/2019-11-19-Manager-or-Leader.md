@@ -1,10 +1,10 @@
 ---
 title: Manager or Leader
 date: 2019-11-19 12:45:00
-excerpt: "Are you a manager or leader?"
 ---
 
-### Are you a manager or leader?
+**Are you a manager or leader?**
+
 Say what?
 
 This subject has been on my mind for many, many years. Some may argue that these roles are the same, but they are not. You cannot have one without the other, but they should not be viewed as the same. Some of the information I am about to share is purely from my perspective and may need to be received better by some. This is not my intent; it is all about sparking conversation and making people think.
@@ -26,7 +26,7 @@ Throughout my career, I have been approached many times over the past ten years 
 
 "No way in hell, not for me."
 
-So, in most cases, it was agreed that I would function in a mentor/advisory role. I have spent many years mentoring others to be empowered and have a voice. I have worked equally in this capacity with my immediate team(s) and management team(s). I am notorious for having chat sessions with others while in meetings, guiding them in what they might want to say or do based on the context of the discussion. I had an answer about whether I was providing others with guidance. So, why would I not be the one to speak up and give the answer and be the leader? The answer is simple: empower those around you to make their voices heard. This builds confidence in others and empowers them. It also means that I am learning from others because they may interpret something differently in their message delivery. I feel successful when I see others succeed. 
+So, in most cases, it was agreed that I would function in a mentor/advisory role. I have spent many years mentoring others to be empowered and have a voice. I have worked equally in this capacity with my immediate team(s) and management team(s). I am notorious for having chat sessions with others while in meetings, guiding them in what they might want to say or do based on the context of the discussion. I had an answer about whether I was providing others with guidance. So, why would I not be the one to speak up and give the answer and be the leader? The answer is simple: empower those around you to make their voices heard. This builds confidence in others and empowers them. It also means that I am learning from others because they may interpret something differently in their message delivery. I feel successful when I see others succeed.
 
 This could be interpreted as the role of a manager. I disagree, and now I will digress.
 
@@ -58,11 +58,3 @@ I also put this tweet out a week or so ago. And I truly meant it! And I also rec
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)

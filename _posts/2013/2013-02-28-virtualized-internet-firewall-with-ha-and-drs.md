@@ -1,12 +1,7 @@
 ---
   title: Virtualized Internet Firewall With HA and DRS
   date: 2013-02-28 11:54:05
-excerpt: "I wanted to throw this together real quick and explain how to accomplish running a virtualized firewall (PFSense, Astaro, etc.). The goal to accomplish..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 I wanted to throw this together real quick and explain how to accomplish
 running a virtualized firewall (PFSense, Astaro, etc.). The goal to

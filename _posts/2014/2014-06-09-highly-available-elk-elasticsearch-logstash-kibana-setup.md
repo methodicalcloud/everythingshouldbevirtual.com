@@ -1,17 +1,7 @@
 ---
   title: Highly Available ELK (Elasticsearch, Logstash and Kibana) Setup
   date: 2014-06-09
-toc: true
-toc_label: "Contents"
-excerpt: "In this post I will be going over how to setup a complete ELK (Elasticsearch, Logstash and Kibana) stack with clustered elasticsearch and all ELK..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
-
-> **Version Notice**: This post references Ubuntu 12.04 which has reached end-of-life. Package names and commands may differ on Ubuntu 22.04/24.04 LTS.
-{: .notice--info}
 
 In this post I will be going over how to setup a complete ELK
 (Elasticsearch, Logstash and Kibana) stack with clustered elasticsearch
@@ -24,11 +14,11 @@ and adding the additional node info to the HAProxy configuration files
 to load balance. You can also scale the Elasticsearch Master/Data nodes
 by building out addtional nodes and they will join the cluster.
 
-### Acronyms throughout article
+**Acronyms throughout article**
 ELK - Elasticsearch Logstash Kibana
 ES - Elasticsearch
 
-### Requirements:
+**Requirements:**
 In order for all logstash-elasticsearch clustering to work correctly all
 HAProxy nodes and ELK nodes should be on the same subnet (If not you
 will need to configure unicast mode for Elasticsearch as multicast is
@@ -42,26 +32,26 @@ Master/Data nodes. _(2vCPU and 4GB of memory will work)_
 
 IP Addresses required to set all of this up. (Change to fit your
 environment.)
-DNS A Record: **_logstash_ **(with the LB VIP address) (If you use
+DNS A Record: **_logstash_**(with the LB VIP address) (If you use
 something other than this name update in each location that logstash is
 configured for. I will be providing a script to do this in the near
 future.)
 
--   LB VIP 10.0.101.60
--   haproxy-1 10.0.101.61
--   haproxy-2 10.0.101.62
--   logstash-1 10.0.101.185
--   logstash-1 172.16.0.1 (Cluster Heartbeat)
--   logstash-2 10.0.101.180
--   logstash-2 172.16.0.2 (Cluster Heartbeat)
--   es-1 10.0.101.131
--   es-2 10.0.101.179
+- LB VIP 10.0.101.60
+- haproxy-1 10.0.101.61
+- haproxy-2 10.0.101.62
+- logstash-1 10.0.101.185
+- logstash-1 172.16.0.1 (Cluster Heartbeat)
+- logstash-2 10.0.101.180
+- logstash-2 172.16.0.2 (Cluster Heartbeat)
+- es-1 10.0.101.131
+- es-2 10.0.101.179
 
 If you decide to use different node names than the above list then you
 will need to make sure to make changes to the configurations to reflect
 these changes.
 
-### HAProxy Nodes (haproxy-1, haproxy-2):
+**HAProxy Nodes (haproxy-1, haproxy-2):**
 Setup both HAProxy nodes identical all the way down to the ELK stack
 setup section. The below instructions which have been crossed out are no
 longer valid but will remain in the off chance that you would like to
@@ -71,27 +61,29 @@ First thing we need to do is install all of the packages needed.
 
 ```bash
 sudo apt-get install haproxy heartbeat watchdog
-```
+```bash
 
 Now we will need to configure networking on each nodes as follows.
 (Again modify to fit your environment.)
 
 ```bash
 sudo apt-get install haproxy keepalived
-```
+```jinja2
 
-### HAProxy-1 (Primary)
+**HAProxy-1 (Primary)**
+
 ```bash
 sudo nano /etc/network/interfaces
-```
+```jinja2
 
 Overwrite the contents with the code from below.
 {% gist mrlesmithjr/1a52e824f22ced8e6758 %}
 
-### HAProxy-2 (Failover)
+**HAProxy-2 (Failover)**
+
 ```bash
 sudo nano /etc/network/interfaces
-```
+```jinja2
 
 Overwrite the contents with the code from below.
 {% gist mrlesmithjr/c8d756fb927af7f0927d %}
@@ -102,7 +94,7 @@ following. This will allow all of our VIP's to come up.
 
 ```bash
 echo "net.ipv4.ip_nonlocal_bind=1" >> /etc/sysctl.conf
-```
+```jinja2
 
 Verify that the above setting has been set by running the following on
 each node. You should get back the
@@ -121,14 +113,14 @@ node.
 
 ```bash
 sudo nano /etc/ha.d/ha.cf
-```
+```jinja2
 
 Copy the following into ha.cf file.
 {% gist mrlesmithjr/1e9a5072b668fb5ea839 %}
 
 ```bash
 sudo nano /etc/ha.d/authkeys
-```
+```jinja2
 
 Copy the following into authkeys (change password to something else).
 
@@ -137,33 +129,33 @@ auth 3
 1 crc
 2 sha1 password
 3 md5 password
-```
+```bash
 
 Now change the permissions of the authkeys as follows.
 
 ```bash
 sudo chmod 600 /etc/ha.d/authkeys
-```
+```sql
 
 Now we will create the haresources file to complete the heartbeat
 service setup.
 
 ```bash
 sudo nano /etc/ha.d/haresources
-```
+```jinja2
 
 Copy the following into haresources.
 
 ```bash
 haproxy-1 IPaddr::10.0.101.60/24/eth0 logstash
-```
+```sql
 
 Now we need to configure the keepalived cluster service. All that we
 need to do is create _/etc/keepalived/keepalived.conf_
 
 ```bash
 sudo nano /etc/keepalived/keepalived.conf
-```
+```jinja2
 
 And copy the contents from below and save the file. Make sure to modify
 the IP addresses to match your environment.
@@ -173,14 +165,14 @@ Now you need to start the _keepalived_ service
 
 ```bash
 sudo service keepalived start
-```
+```bash
 
 You can check and make sure that all of your VIP's came up by running
 the following. A normal ifconfig will not show them.
 
 ```bash
 sudo ip a | grep -e inet.*eth0
-```
+```jinja2
 
 You should see something similar to below.
 
@@ -191,7 +183,7 @@ our setup for frontend load balancer cluster.
 
 ```bash
 sudo nano /etc/haproxy/haproxy.cfg
-```
+```jinja2
 
 Replace all contents in haproxy.cfg with the following code.
 {% gist mrlesmithjr/5ee958df9c9ad941ac2d %}
@@ -200,25 +192,25 @@ Now we need to set HAProxy to enabled so it will start.
 
 ```bash
 sudo nano /etc/default/haproxy
-```
+```bash
 
 Change
 
 ```bash
 ENABLED=0
-```
+```bash
 
 to
 
 ```bash
 ENABLED=1
-```
+```bash
 
 Now we should be able to start HAProxy up.
 
 ```bash
 sudo service haproxy start
-```
+```bash
 
 If you see errors similar to below these can be ignored.
 
@@ -230,7 +222,7 @@ If you see errors similar to below these can be ignored.
 [WARNING] 153/132650 (4054) : config : 'option httplog' not usable with proxy 'logstash-redis' (needs 'mode http'). Falling back to 'option tcplog'.
 [WARNING] 153/132650 (4054) : config : 'option httplog' not usable with proxy 'elasticsearch' (needs 'mode http'). Falling back to 'option tcplog'.
 [ OK ]
-```
+```bash
 
 Now one last thing to do based on the fact that HAProxy cannot load
 balance UDP ports and not all network devices have the option to send
@@ -250,7 +242,7 @@ so by running.
 
 ```bash
 sudo service logstash restart
-```
+```bash
 
 So let's setup our logstash instance and configure rsyslog forwarding.
 To do so run the following commands in a terminal session on each of
@@ -262,7 +254,7 @@ cd ~
 git clone https://github.com/mrlesmithjr/Logstash_Kibana3
 chmod +x ./Logstash_Kibana3/Cluster_Setup/Logstash-HAProxy-Node.sh
 sudo ./Logstash_Kibana3/Cluster_Setup/Logstash-HAProxy-Node.sh
-```
+```sql
 
 If you copied the haresources file exactly from above then Logstash
 will only be running on the active cluster node and will start on the
@@ -275,7 +267,7 @@ onto the next section of setting up your ELK stack. You could also clone
 the first node to create the second node but if you do; make sure to
 make the proper change in keepalived.conf and haproxy.cfg as above.
 
-### ES (Elasticsearch Master/Data Nodes (es-1, es-2):
+**ES (Elasticsearch Master/Data Nodes (es-1, es-2):**
 Now we will be setting up our two nodes to build our Elasticsearch
 cluster and again I have a script to do this. These nodes will only be
 Master/Data nodes. They will not be doing any logstash processing. They
@@ -305,7 +297,7 @@ cd ~
 git clone https://github.com/mrlesmithjr/Logstash_Kibana3
 chmod +x ./Logstash_Kibana3/Cluster_Setup/Logstash-ES-Cluster-Master-data-node.sh
 sudo ./Logstash_Kibana3/Cluster_Setup/Logstash-ES-Cluster-Master-data-node.sh
-```
+```bash
 
 Once these are up and running your new ES cluster (logstash-cluster)
 should be ready to go. However you will want to modify your Java Heap
@@ -315,23 +307,24 @@ default it will be at 1g. And it is commented out by default.
 
 ```bash
 sudo nano /etc/init.d/elasticsearch
-```
+```jinja2
 
 change
 
 ```bash
 #ES_HEAP_SIZE=1g
-```
+```bash
 
 to
 
 ```bash
 ES_HEAP_SIZE=2g
-```
+```bash
 
 Now proceed onto setting up the frontend ELK nodes.
 
-### ELK (Elasticsearch, Logstash and Kibana) Nodes (logstash-1, logstash-2):
+**ELK (Elasticsearch, Logstash and Kibana) Nodes (logstash-1, logstash-2):**
+
 Now we are ready to set up our ELK frontend nodes and again I have a
 script to make this process repeatable and simple. For now we will only
 be setting up two ELK nodes; however you can build out as many as you
@@ -363,7 +356,7 @@ cd ~
 git clone https://github.com/mrlesmithjr/Logstash_Kibana3
 chmod +x ./Logstash_Kibana3/Cluster_Setup/Logstash-ELK-ES-Cluster-client-node.sh
 sudo ./Logstash_Kibana3/Cluster_Setup/Logstash-ELK-ES-Cluster-client-node.sh
-```
+```bash
 
 Once this has been completed make sure to go back up at the end of the
 HAProxy setup and install the logstash instance on each node. Once
@@ -382,14 +375,14 @@ Edit /usr/share/nginx/html/kibana/config.js and change
 
 ```bash
 sudo nano /usr/share/nginx/html/kibana/config.js
-```
+```jinja2
 
 Or you can do the following but replace yourviphostname with the actual
 VIP hostname used for your setup
 
 ```bash
 sed -i -e 's|^elasticsearch: "http://logstash:9200",|elasticsearch: "http://yourviphostname:9200",|' /usr/share/nginx/html/kibana/config.js
-```
+```jinja2
 
 Now all that is left to do is configure your network devices to start
 sending their syslogs to the HAProxy VIP and if your device supports
@@ -401,7 +394,7 @@ type of setup will bring great results!)
 Reference the port list below on configuring some of the devices that
 are pre-configured during the setup.
 
-### Port List
+**Port List**
 _TCP/514_ Syslog (Devices supporting TCP)
 _UDP/514_ Syslog (Devices that do not support TCP - These are captured
 on the HAProxy nodes and shipped to logstash using redis)
@@ -413,7 +406,7 @@ _TCP/3515_ Windows Eventlog (Use NXLog setup from below in device
 setup)
 _TCP/3525_ Windows IIS Logs (Use NXLog setup from below in device setup)
 
-### Device Setup
+**Device Setup**
 For _Windows_ (IIS,Eventlog and VMware vCenter logging)
 install [nxlog ](http://nxlog.org/ "http\://nxlog.org/")and use the
 following nxlog.conf file below to replace everything in C:\\Program
@@ -425,7 +418,7 @@ console.
 
 ```bash
 vi /etc/syslog-ng/syslog-ng.conf
-```
+```ruby
 
 Now add the following to the end of the syslog-ng.conf file
 
@@ -448,13 +441,13 @@ log {
         source(vpxd);
         destination(remote_syslog);
 };
-```
+```bash
 
 Now restart syslog-ng
 
 ```bash
 /etc/init.d/syslog restart
-```
+```bash
 
 For _Linux_ (Ubuntu, etc.) I prefer rsyslog as it is installed by
 default on most.
@@ -547,7 +540,8 @@ down access into the ES nodes forcing access through the nginx proxy and
 HAProxy Load Balancers mitigating access directly to an ES node. This
 will all be in a follow up post very soon.
 
-### Follow up posts
+**Follow up posts**
+
 [Setup all ELK components to work in unicast mode instead of mutlicast discovery mode.](https://everythingshouldbevirtual.com/highly-available-elk-elasticsearch-logstash-kibana-unicast-mode "Highly Available ELK (Elasticsearch, Logstash and Kibana) Unicast Mode")
 
 Here is a quick screenshot of performance from the marvel plugin just
@@ -570,11 +564,3 @@ see how we can help.
 > **If you are looking for a way of deploying this using Ansible head
 > over
 > [here](https://everythingshouldbevirtual.com/ansible-highly-available-elk-stack).**
-
----
-
-### Related Posts
-
-- [2013-11-29-ubuntu-logstash-server-kibana3-front-end-autoinstall](/ubuntu-logstash-server-kibana3-front-end-autoinstall/)
-- [2014-10-24-vmware-nsx-firewall-logging-logstash](/vmware-nsx-firewall-logging-logstash/)
-- [2014-06-09-logstash-elasticsearch-searchphaseexecutionexception-error-2](/logstash-elasticsearch-searchphaseexecutionexception-error-2/)

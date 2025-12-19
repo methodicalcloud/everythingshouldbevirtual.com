@@ -1,12 +1,7 @@
 ---
   title: Nexentastor Drive Failure?
   date: 2013-06-21 06:51:05
-excerpt: "No worries. Global hot spare taking over. This is what I woke up to this morning. It's all good."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 No worries. Global hot spare taking over. This is what I woke up to this
 morning. It's all good.

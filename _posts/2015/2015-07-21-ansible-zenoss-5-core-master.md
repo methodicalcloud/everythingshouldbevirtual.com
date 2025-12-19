@@ -1,11 +1,6 @@
 ---
   title: Ansible - Zenoss 5 Core - Master
-excerpt: "As it has been some time since actually putting something together to install Zenoss I figured I would set out to do just that using Ansible. As I..."
 ---
-
-> **Note**: This post was published over 5 years ago and may contain outdated information. Tool versions, syntax, and best practices may have changed. Please verify current documentation before implementing.
-{: .notice--warning}
-
 
 As it has been some time since actually putting something together to
 install [Zenoss](http://www.zenoss.org/) I figured I would set out to do
@@ -19,13 +14,13 @@ regards to upgrades and etc. However the requirements are extreme.
 
 [docs](http://www.zenoss.com/sites/default/files/documentation/Zenoss_Resource_Manager_Installation_Guide_r5.0.x_d1052.15.196.pdf)
 
--   8 CPU cores (64-bit only; real or virtual)
--   32GB RAM
--   / xfs 90GB Local disk. Includes space for internal services data and
+- 8 CPU cores (64-bit only; real or virtual)
+- 32GB RAM
+- / xfs 90GB Local disk. Includes space for internal services data and
     some backups.
--   (none) swap 15GB Local disk.
--   /var/lib/docker xfs 60GB Local disk.
--   /opt/serviced/var/volumes btrfs 1TB Remote SAN.
+- (none) swap 15GB Local disk.
+- /var/lib/docker xfs 60GB Local disk.
+- /opt/serviced/var/volumes btrfs 1TB Remote SAN.
 
 So just to begin this journey I wanted to share out the playbook to
 deploy the Zenoss Core master server (additional playbooks coming soon).
@@ -38,9 +33,9 @@ Add the following hard drives to your vm when deploying. Do not
 partition SDB and SDC as these will be partitioned, formatted and
 mounted using the playbook.
 
--   SDA - / (Root)  36GB+
--   SDB - docker partition 50GB+
--   SDC - app partition 100GB+
+- SDA - / (Root)  36GB+
+- SDB - docker partition 50GB+
+- SDC - app partition 100GB+
 
 Now that your server is deployed you can run the following playbook to
 setup and configure your Zenoss 5 Core Master server. Feel free to make
@@ -195,11 +190,3 @@ That's all for now but I will be publishing the additional roles soon
 to complete out the install of Zenoss Core.
 
 Enjoy!
-
----
-
-### Related Posts
-
-- [2013-07-25-server-2012-ad-upgrade-notes](/server-2012-ad-upgrade-notes/)
-- [2014-09-26-iptables-cluster-script](/iptables-cluster-script/)
-- [Transforming IT Operations - The Rise of Infrastructure Automation Consulting](/transforming-it-operations-the-rise-of-infrastructure-automation-consulting/)
