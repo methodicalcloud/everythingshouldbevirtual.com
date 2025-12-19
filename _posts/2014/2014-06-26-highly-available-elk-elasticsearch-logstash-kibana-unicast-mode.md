@@ -27,7 +27,7 @@ your settings will be different)
 
 ```bash
 sudo nano /etc/elasticsearch/elasticsearch.yml
-```
+```text
 
 Now at the bottom of the config file you will see the following.
 
@@ -35,7 +35,7 @@ Now at the bottom of the config file you will see the following.
 ##### Uncomment below instead of using multicast and update with your actual ES Master/Data nodenames #####
 #discovery.zen.ping.unicast.hosts: ["es-1", "es-2"]
 #discovery.zen.ping.multicast.enabled: false
-```
+```text
 
 You will need to uncomment these lines out so they look like the
 following.
@@ -70,7 +70,7 @@ following settings.
 
 ```bash
 sudo nano /etc/elasticsearch/elasticsearch.yml
-```
+```text
 
 Now at the bottom of the config file you will see the following.
 
@@ -78,7 +78,7 @@ Now at the bottom of the config file you will see the following.
 ##### Uncomment below instead of using multicast and update with your actual ES Master/Data nodenames #####
 #discovery.zen.ping.unicast.hosts: ["es-1", "es-2"]
 #discovery.zen.ping.multicast.enabled: false
-```
+```text
 
 You will need to uncomment these lines out so they look like the
 following.
@@ -107,9 +107,9 @@ You will see the following at the very bottom of the config file.
 
 ```json
 #### Multicast discovery mode ####
-# Send output to the ES cluster logstash-cluster using a predefined template
-# The following settings will be used during the initial setup which will be used for using multicast ES nodes
-# When changing to unicast discovery mode you need to comment out the following section and configure the unicast discovery mode in the next section
+## Send output to the ES cluster logstash-cluster using a predefined template
+## The following settings will be used during the initial setup which will be used for using multicast ES nodes
+## When changing to unicast discovery mode you need to comment out the following section and configure the unicast discovery mode in the next section
 output {
         elasticsearch {
                 cluster => "logstash-cluster"
@@ -122,19 +122,19 @@ output {
 
 ```json
 #### Unicast discovery mode ####
-# Send output to the ES cluster logstash-cluster using a predefined template
-# The settings below will be used when you change to unicast discovery mode for all ES nodes
-# Make sure to comment out the above multicast discovery mode section
+## Send output to the ES cluster logstash-cluster using a predefined template
+## The settings below will be used when you change to unicast discovery mode for all ES nodes
+## Make sure to comment out the above multicast discovery mode section
 #output {
-#        elasticsearch {
-#                cluster => "logstash-cluster"
-#                host => "logstash"
-#                port => "9300"
-#                protocol => "node"
-#                flush_size => "1"
-#                manage_template => true
-#                template => "/opt/logstash/lib/logstash/outputs/elasticsearch/elasticsearch-template.json"
-#        }
+##        elasticsearch {
+##                cluster => "logstash-cluster"
+##                host => "logstash"
+##                port => "9300"
+##                protocol => "node"
+##                flush_size => "1"
+##                manage_template => true
+##                template => "/opt/logstash/lib/logstash/outputs/elasticsearch/elasticsearch-template.json"
+##        }
 #}
 ```bash
 
@@ -142,22 +142,22 @@ Now change these lines to look like the following.
 
 ```json
 #### Multicast discovery mode ####
-# Send output to the ES cluster logstash-cluster using a predefined template
-# The following settings will be used during the initial setup which will be used for using multicast ES nodes
-# When changing to unicast discovery mode you need to comment out the following section and configure the unicast discovery mode in the next section
+## Send output to the ES cluster logstash-cluster using a predefined template
+## The following settings will be used during the initial setup which will be used for using multicast ES nodes
+## When changing to unicast discovery mode you need to comment out the following section and configure the unicast discovery mode in the next section
 #output {
-#        elasticsearch {
-#                cluster => "logstash-cluster"
-#                flush_size => 1
-#                manage_template => true
-#                template => "/opt/logstash/lib/logstash/outputs/elasticsearch/elasticsearch-template.json"
-#        }
+##        elasticsearch {
+##                cluster => "logstash-cluster"
+##                flush_size => 1
+##                manage_template => true
+##                template => "/opt/logstash/lib/logstash/outputs/elasticsearch/elasticsearch-template.json"
+##        }
 #}
 
 #### Unicast discovery mode ####
-# Send output to the ES cluster logstash-cluster using a predefined template
-# The settings below will be used when you change to unicast discovery mode for all ES nodes
-# Make sure to comment out the above multicast discovery mode section
+## Send output to the ES cluster logstash-cluster using a predefined template
+## The settings below will be used when you change to unicast discovery mode for all ES nodes
+## Make sure to comment out the above multicast discovery mode section
 output {
         elasticsearch {
                 cluster => "logstash-cluster"

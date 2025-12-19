@@ -1,5 +1,6 @@
 ---
   title: Ansible Playbook - GlusterFS - Apache
+  date: 2015-04-01 00:00:00
 ---
 
 I wanted to share some of these playbooks for reference to others who
@@ -118,25 +119,25 @@ reference.
 ---
 - hosts: all
   sudo: yes
-#  remote_user: home
+##  remote_user: home
   roles:
     - disable-firewall
-#    - enable-firewall
+##    - enable-firewall
     - { role: base, enable_cacti_monitoring: false }
     - zabbix-agent
-#    - domain-join
+##    - domain-join
 
-#  vars_prompt:
-#    - name: 'ad_user'
-#      prompt: 'Enter domain user to join hosts to AD'
-#      private: no
-#    - name: 'ad_password'
-#      prompt: 'Enter domain password to join hosts to AD'
-#      private: yes
+##  vars_prompt:
+##    - name: 'ad_user'
+##      prompt: 'Enter domain user to join hosts to AD'
+##      private: no
+##    - name: 'ad_password'
+##      prompt: 'Enter domain password to join hosts to AD'
+##      private: yes
 
 - hosts: web-vms
   roles:
-#    - enable-firewall
+##    - enable-firewall
     - glusterfs
     - apache2
     - memcached
@@ -144,20 +145,20 @@ reference.
 
 - hosts: db-vms
   roles:
-#    - enable-firewall
+##    - enable-firewall
     - mariadb-mysql
     - logstash
 
 - hosts: lb-vms
   roles:
-#    - enable-firewall
+##    - enable-firewall
     - glusterfs
     - keepalived
     - haproxy
 
 - hosts: gs-vms
   roles:
-#    - enable-firewall
+##    - enable-firewall
      - glusterfs
 ```jinja2
 

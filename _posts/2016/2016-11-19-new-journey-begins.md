@@ -1,5 +1,6 @@
 ---
 title: New Journey Begins
+date: 2016-11-19 00:00:00
 categories:
   - Announcements
 redirect_from:

@@ -1,5 +1,6 @@
 ---
   title: "Tech Field Day - #VFD4 - Scale Computing"
+  date: 2015-01-25 00:00:00
 ---
 
 Scale Computing was the last and final vendor to do a presentation last

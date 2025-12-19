@@ -1,5 +1,6 @@
 ---
   title: "ELK Stack demo - #vBrownBag"
+  date: 2015-04-17 00:00:00
 ---
 
 Watch the [#vBrownBag](https://twitter.com/hashtag/vbrownbag) session I did to get an idea of some of the possibilities you can achieve using ELK stack.

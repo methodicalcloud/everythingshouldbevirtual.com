@@ -1,5 +1,6 @@
 ---
   title: Ansible - Generate Rundeck Inventory
+  date: 2015-08-06 00:00:00
 ---
 
 I have been doing some testing with Jenkins and Rundeck along with

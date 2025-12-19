@@ -1,5 +1,6 @@
 ---
   title: Ansible - Installing open-vm-tools
+  date: 2015-07-27 00:00:00
 ---
 
 Just sharing this out in case someone else may be looking for a way to

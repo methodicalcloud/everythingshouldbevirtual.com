@@ -1,5 +1,6 @@
 ---
   title: Docker - Spinning Up A Graphite Container
+  date: 2016-09-23 00:00:00
   categories:
     - Containers
   tags:

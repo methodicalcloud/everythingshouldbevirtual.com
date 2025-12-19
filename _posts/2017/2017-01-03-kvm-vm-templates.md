@@ -1,5 +1,6 @@
 ---
 title: KVM - VM Templates
+date: 2017-01-03 00:00:00
 categories:
   - Virtualization
 tags:

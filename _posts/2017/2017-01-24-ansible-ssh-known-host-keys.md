@@ -1,5 +1,6 @@
 ---
   title: Ansible - SSH Known Host Keys
+  date: 2017-01-24 00:00:00
   categories:
     - Automation
   tags:

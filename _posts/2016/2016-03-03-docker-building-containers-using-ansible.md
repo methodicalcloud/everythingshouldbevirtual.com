@@ -1,5 +1,6 @@
 ---
   title: Docker - Building containers using Ansible
+  date: 2016-03-03 00:00:00
   categories:
     - Automation
     - Containers
@@ -229,7 +230,7 @@ And now building...
 
 ```bash
 docker build -t mysql-ansible-apt .
-```
+```text
 
 And below are the results...
 

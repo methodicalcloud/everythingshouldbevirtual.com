@@ -1,5 +1,6 @@
 ---
   title: Creating vSphere VM's using Ansible
+  date: 2015-03-25 00:00:00
 ---
 
 I am putting this out here in case anyone else may be interested in

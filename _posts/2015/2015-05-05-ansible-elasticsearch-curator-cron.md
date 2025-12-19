@@ -1,5 +1,6 @@
 ---
   title: Ansible - Elasticsearch Curator Cron
+  date: 2015-05-05 00:00:00
 ---
 
 Just wanted to put this together as I was finally just able to get this
@@ -15,10 +16,10 @@ curator_max_keep_days: 14
 curator_close_after_days: 7
 
 ---
-# Install dependancies
+## Install dependancies
 - apt: name=python-pip state=present
 
-# Install Curator
+## Install Curator
 - pip: name=elasticsearch-curator
 
 - name: remove old curator crontab

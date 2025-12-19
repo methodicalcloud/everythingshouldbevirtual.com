@@ -1,5 +1,6 @@
 ---
   title: Migrating VMs from PF9 KVM to ESXi
+  date: 2016-01-12 00:00:00
   categories:
     - Virtualization
   tags:
@@ -47,7 +48,7 @@ sudo virsh list --all
  Id    Name                           State
 ----------------------------------------------------
  -     instance-000000be              shut off
-```
+```text
 
 And sure enough they match and it is shut off as we wanted.
 
@@ -68,7 +69,7 @@ Autostart:      disable
 Managed save:   no
 Security model: none
 Security DOI:   0
-```
+```text
 
 From the above we determine that the UUID is **91ecc01f-41f8-4f1d-a5a6-e25c0e558246**.
 
@@ -107,7 +108,7 @@ create a new VM.
 663e335e-dcaeabe2                       Templates (NAS01)                       e863b35d-c9134f70
 99b256e8-309ffc2e                       Tier-2 (NAS01)                          e8938b46-d28efa89
 /vmfs/volumes #
-```
+```text
 
 I will be using Tier-3 (NAS01) here.
 
@@ -115,7 +116,7 @@ I will be using Tier-3 (NAS01) here.
 cd Tier-3\ \(NAS01\)/
 mkdir gerrit
 cd gerrit
-```
+```text
 
 Now we are ready to import our temp VMDK.
 
@@ -124,7 +125,7 @@ importing from our **HD-Pool (PF9) datastore**.
 
 ```bash
 vmkfstools -i /vmfs/volumes/HD-Pool\ \(PF9\)/91ecc01f-41f8-4f1d-a5a6-e25c0e558246/gerrit.tmp.vmdk -d thin gerrit.vmdk
-```
+```text
 
 After performing the above step you should now have two VMDK files in
 the current directory.
@@ -146,17 +147,17 @@ vi gerrit.vmdk
 Original:
 
 ```bash
-# Disk DescriptorFile
+## Disk DescriptorFile
 version=1
 CID=05e9aba7
 parentCID=ffffffff
 isNativeSnapshot="no"
 createType="vmfs"
 
-# Extent description
+## Extent description
 RW 75497472 VMFS "gerrit-flat.vmdk"
 
-# The Disk Data Base
+## The Disk Data Base
 #DDB
 
 ddb.adapterType = "ide"
@@ -175,17 +176,17 @@ ddb.virtualHWVersion = "6"
 Change to:
 
 ```bash
-# Disk DescriptorFile
+## Disk DescriptorFile
 version=1
 CID=05e9aba7
 parentCID=ffffffff
 isNativeSnapshot="no"
 createType="vmfs"
 
-# Extent description
+## Extent description
 RW 75497472 VMFS "gerrit-flat.vmdk"
 
-# The Disk Data Base
+## The Disk Data Base
 #DDB
 
 ddb.adapterType = "lsilogic"

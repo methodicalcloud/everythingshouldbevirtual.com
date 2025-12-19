@@ -23,7 +23,7 @@ because the tools will be detected.
 \* **\*\*\*\*Disclaimer\*\*\*\* - The information provided below was
 copied from Novell's site for Platespin support.\***
 
-# How to manually install the PlateSpin Block-Based driver onto a Windows source workload
+## How to manually install the PlateSpin Block-Based driver onto a Windows source workload
 
 This document **(7010094)** _is provided subject to the
 [disclaimer](https://kcs.innerweb.novell.com/contactcenter/viewContent.do?externalId=7010094&sliceId=1#disclaimer)

@@ -1,5 +1,6 @@
 ---
   title: Hey, I can DevOPS my Network too! -- Prep-Work (Part 1)
+  date: 2015-09-07 00:00:00
   categories:
     - Automation
   tags:
@@ -199,11 +200,11 @@ Your local editor will open which will look like the following.
 Merge remote-tracking branch 'upstream/master' into dev
 
 
-# Please enter a commit message to explain why this merge is necessary,
-# especially if it merges an updated upstream into a topic branch.
+## Please enter a commit message to explain why this merge is necessary,
+## especially if it merges an updated upstream into a topic branch.
 #
-# Lines starting with '#' will be ignored, and an empty message aborts
-# the commit.
+## Lines starting with '#' will be ignored, and an empty message aborts
+## the commit.
 ```bash
 
 Save the file and you will see the following.

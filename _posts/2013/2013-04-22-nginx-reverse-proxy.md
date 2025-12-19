@@ -27,7 +27,7 @@ proxy.conf file info from below to get your started.
 
 ```bash
  nano /etc/nginx/conf.d/proxy.conf
-```
+```bash
 
 ```bash
 server {
@@ -53,7 +53,7 @@ server {
  proxy_temp_file_write_size 64k;
  }
 }
-```
+```text
 
 Now restart nginx for the config you created above to take affect.
 
@@ -75,7 +75,7 @@ following change.
 
 ```bash
 LogFormat "%v %h %l %u %t \"%r\" %>s %B \"%{Referer}i\" \"%{User-Agent}i\"" combined_ispconfig
-```
+```text
 
 To
 

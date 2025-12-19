@@ -1,5 +1,6 @@
 ---
   title: Ansible - Parsing CSV List Of Hosts (IP, hostname(s), MAC)
+  date: 2017-04-08 00:00:00
   categories:
     - Automation
   tags:

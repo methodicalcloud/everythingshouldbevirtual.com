@@ -1,5 +1,6 @@
 ---
   title: Hey, I can DevOPS my Network too! -- Define Nodes (Part 2)
+  date: 2015-09-07 00:00:00
   categories:
     - Automation
   tags:
@@ -395,24 +396,24 @@ sure to commit those changes and push up to your GitHub repo. Below is
 what our _Vagrantfile_ looks like.
 
 ```ruby
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
+## -*- mode: ruby -*-
+## vi: set ft=ruby :
 
-# Ensure yaml module is loaded
+## Ensure yaml module is loaded
 require 'yaml'
 
-# Read yaml node definitions to create **Update nodes.yml to reflect any changes
+## Read yaml node definitions to create **Update nodes.yml to reflect any changes
 nodes = YAML.load_file('nodes.yml')
 
 Vagrant.configure(2) do |config|
-#  config.ssh.insert_key = false
-#  config.vm.provision :shell, path: "bootstrap.sh"
+##  config.ssh.insert_key = false
+##  config.vm.provision :shell, path: "bootstrap.sh"
 
   nodes.each do |nodes|
     config.vm.define nodes["name"] do |node|
       node.vm.hostname = nodes["name"]
       node.vm.box = nodes["box"]
-#      node.vm.provision :shell, path: "bootstrap_ansible.sh"
+##      node.vm.provision :shell, path: "bootstrap_ansible.sh"
       if nodes["ansible_ssh_host_ip"] != "None"
         node.vm.network "private_network", ip: nodes["ansible_ssh_host_ip"]
       end
@@ -444,9 +445,9 @@ Vagrant.configure(2) do |config|
   config.vm.provision :ansible do |ansible|
     ansible.playbook = "bootstrap.yml"
   end
-#  if Vagrant.has_plugin?("vagrant-cachier")
-#    config.cache.scope = :box
-#  end
+##  if Vagrant.has_plugin?("vagrant-cachier")
+##    config.cache.scope = :box
+##  end
 end
 ```
 

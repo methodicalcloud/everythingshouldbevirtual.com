@@ -1,5 +1,6 @@
 ---
   title: Vagrant - Multi-NIC Definitions via YAML
+  date: 2015-08-27 00:00:00
   categories:
     - Virtualization
   tags:
@@ -87,24 +88,24 @@ Below is the corresponding Vagrantfile to spin up these nodes.
 `Vagrantfile`
 
 ```ruby
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
+## -*- mode: ruby -*-
+## vi: set ft=ruby :
 
-# Ensure yaml module is loaded
+## Ensure yaml module is loaded
 require 'yaml'
 
-# Read yaml node definitions to create **Update nodes.yml to reflect any changes
+## Read yaml node definitions to create **Update nodes.yml to reflect any changes
 nodes = YAML.load_file('nodes.yml')
 
 Vagrant.configure(2) do |config|
-#  config.ssh.insert_key = false
-#  config.vm.provision :shell, path: "bootstrap.sh"
+##  config.ssh.insert_key = false
+##  config.vm.provision :shell, path: "bootstrap.sh"
 
   nodes.each do |nodes|
     config.vm.define nodes["name"] do |node|
       node.vm.hostname = nodes["name"]
       node.vm.box = nodes["box"]
-#      node.vm.provision :shell, path: "bootstrap_ansible.sh"
+##      node.vm.provision :shell, path: "bootstrap_ansible.sh"
       node.vm.network "private_network", ip: nodes["priv_ip_1"]
       ints = nodes["priv_ips"]
       ints.each do |int|
@@ -120,9 +121,9 @@ Vagrant.configure(2) do |config|
   config.vm.provision :ansible do |ansible|
     ansible.playbook = "bootstrap.yml"
   end
-#  if Vagrant.has_plugin?("vagrant-cachier")
-#    config.cache.scope = :box
-#  end
+##  if Vagrant.has_plugin?("vagrant-cachier")
+##    config.cache.scope = :box
+##  end
 end
 ```sql
 
@@ -139,11 +140,11 @@ Hopefully this will help others out as well if searching for such.
 
 ```yaml
 ---
-# Keep in mind....Vagrant will always create an initial interface as a NAT interface..Any definitions below are for adding additional interfaces.
-# for network_name define a var other than remaining blank to define an internal only network. Otherwise leave blank for a host-only network.
-# for DHCP leave ip and network_name vars blank
-# for Static define ip var
-# type should generally be private_network..Other option(s) are: public_network
+## Keep in mind....Vagrant will always create an initial interface as a NAT interface..Any definitions below are for adding additional interfaces.
+## for network_name define a var other than remaining blank to define an internal only network. Otherwise leave blank for a host-only network.
+## for DHCP leave ip and network_name vars blank
+## for Static define ip var
+## type should generally be private_network..Other option(s) are: public_network
 - name: node-1
   box: ubuntu/trusty64
   mem: 512
@@ -175,24 +176,24 @@ Hopefully this will help others out as well if searching for such.
 `Vagrantfile`
 
 ```ruby
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
+## -*- mode: ruby -*-
+## vi: set ft=ruby :
 
-# Ensure yaml module is loaded
+## Ensure yaml module is loaded
 require 'yaml'
 
-# Read yaml node definitions to create **Update nodes.yml to reflect any changes
+## Read yaml node definitions to create **Update nodes.yml to reflect any changes
 nodes = YAML.load_file('nodes.yml')
 
 Vagrant.configure(2) do |config|
-#  config.ssh.insert_key = false
-#  config.vm.provision :shell, path: "bootstrap.sh"
+##  config.ssh.insert_key = false
+##  config.vm.provision :shell, path: "bootstrap.sh"
 
   nodes.each do |nodes|
     config.vm.define nodes["name"] do |node|
       node.vm.hostname = nodes["name"]
       node.vm.box = nodes["box"]
-#      node.vm.provision :shell, path: "bootstrap_ansible.sh"
+##      node.vm.provision :shell, path: "bootstrap_ansible.sh"
       if nodes["ansible_ssh_host_ip"] != "None"
         node.vm.network "private_network", ip: nodes["ansible_ssh_host_ip"]
       end
@@ -221,12 +222,12 @@ Vagrant.configure(2) do |config|
       end
     end
   end
-#  config.vm.provision :ansible do |ansible|
-#    ansible.playbook = "bootstrap.yml"
-#  end
-#  if Vagrant.has_plugin?("vagrant-cachier")
-#    config.cache.scope = :box
-#  end
+##  config.vm.provision :ansible do |ansible|
+##    ansible.playbook = "bootstrap.yml"
+##  end
+##  if Vagrant.has_plugin?("vagrant-cachier")
+##    config.cache.scope = :box
+##  end
 end
 ```
 

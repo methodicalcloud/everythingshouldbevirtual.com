@@ -22,7 +22,7 @@ From a command prompt, execute:
 
 ```powershell
 devcon stack storage\volume
-```
+```text
 
 Below is an example of the output. PsMon will be listed as a upper
 filter.
@@ -37,7 +37,7 @@ psmon\
 Controlling service:\
 volsnap\
 1 matching device(s) found
-```
+```text
 
 Download and extract [PsMonInstall.zip](https://everythingshouldbevirtual.com/wp-content/uploads/2012/08/Platespin-BBT-Installs.zip "http\://everythingshouldbevirtual.com/wp-content/uploads/2012/08/Platespin-BBT-Installs.zip")
 

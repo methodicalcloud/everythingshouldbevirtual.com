@@ -41,14 +41,14 @@ Get-IscsiSession | Register-IscsiSession
 Get-IscsiSession
 Get-Disk | Where-Object BusType –eq “iSCSI”
 Initialize-Disk –Number <Disk_Number> –PartitionStyle GPT –PassThru | New-Partition –AssignDriveLetter –UseMaximumSize | Format-Volume
-```
+```text
 
 Install iSCSI MPIO
 
 ```powershell
 Powershell
 Install-WindowsFeature Multipath-IO
-```
+```text
 
 To allow remote management from another server 2012 the following
 firewall rules need to be added

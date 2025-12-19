@@ -1,5 +1,6 @@
 ---
   title: "Tech Field Day - #VFD4 - Platform9"
+  date: 2015-01-23 00:00:00
 ---
 
 ![Screen Shot 2015-01-23 at 10.07.23 AM](../../assets/Screen-Shot-2015-01-23-at-10.07.23-AM-300x181.png)

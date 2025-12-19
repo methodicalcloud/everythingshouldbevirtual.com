@@ -36,7 +36,7 @@ netsh int tcp set global congestionprovider=None
 netsh int tcp set global ecncapability=Disabled
 netsh int ip set global taskoffload=disabled
 netsh int tcp set global timestamps=Disabled
-```
+```text
 
 To revert changes back to default.
 

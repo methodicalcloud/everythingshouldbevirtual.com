@@ -1,5 +1,6 @@
 ---
   title: Ansible - Generating Host/Groups YAML file
+  date: 2015-07-03 00:00:00
 ---
 
 As I have been working on a nice little project of mine (More on that in

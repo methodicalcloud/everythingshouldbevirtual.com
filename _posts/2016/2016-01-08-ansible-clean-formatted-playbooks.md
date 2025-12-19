@@ -1,5 +1,6 @@
 ---
   title: Ansible - Clean Formatted Playbooks
+  date: 2016-01-08 00:00:00
   categories:
     - Automation
   tags:
@@ -26,7 +27,7 @@ from this as well.
 - name: Configure DDI Nodes
   hosts: ddi-nodes
   become: true
-#  remote_user: remote
+##  remote_user: remote
   roles:
     - role: ansible-manage-lvm
       when: manage_lvm is defined and manage_lvm
@@ -46,7 +47,7 @@ from this as well.
 - name: Configure Quagga on DDI Nameserver Nodes
   hosts: ddi-nameserver-nodes
   become: true
-#  remote_user: remote
+##  remote_user: remote
   roles:
     - role: ansible-quagga
       when: >
@@ -56,7 +57,7 @@ from this as well.
 - name: Configure DDI Services on DDI Nameserver Nodes
   hosts: ddi-nameserver-nodes
   become: true
-#  remote_user: remote
+##  remote_user: remote
   tasks:
     - name: debian | uninstalling ISC-DHCP
       apt:
@@ -76,7 +77,7 @@ from this as well.
 - name: Configure DDI Services on DDI Nameserver RO Nodes
   hosts: ddi-nameserver-ro-nodes
   become: true
-#  remote_user: remote
+##  remote_user: remote
   tasks:
   roles:
     - role: ansible-config-interfaces
@@ -108,7 +109,7 @@ of our plays in our playbook.
 - name: Configure DDI Nodes
   hosts: ddi-nodes
   become: true
-#  remote_user: remote
+##  remote_user: remote
   roles:
     - role: ansible-manage-lvm
       manage_lvm: true
@@ -130,7 +131,7 @@ of our plays in our playbook.
 - name: Configure Quagga on DDI Nameserver Nodes
   hosts: ddi-nameserver-nodes
   become: true
-#  remote_user: remote
+##  remote_user: remote
   roles:
     - role: ansible-quagga
       install_quagga: false
@@ -142,7 +143,7 @@ of our plays in our playbook.
 - name: Configure DDI Services on DDI Nameserver Nodes
   hosts: ddi-nameserver-nodes
   become: true
-#  remote_user: remote
+##  remote_user: remote
   tasks:
     - name: debian | uninstalling ISC-DHCP
       apt:
@@ -165,7 +166,7 @@ of our plays in our playbook.
 - name: Configure DDI Services on DDI Nameserver RO Nodes
   hosts: ddi-nameserver-ro-nodes
   become: true
-#  remote_user: remote
+##  remote_user: remote
   tasks:
   roles:
     - role: ansible-config-interfaces
@@ -193,7 +194,7 @@ applied against all roles.
 - name: Configure DDI Nodes
   hosts: ddi-nodes
   become: true
-#  remote_user: remote
+##  remote_user: remote
   vars:
     install_logstash: false
     manage_lvm: true
@@ -216,7 +217,7 @@ applied against all roles.
 - name: Configure Quagga on DDI Nameserver Nodes
   hosts: ddi-nameserver-nodes
   become: true
-#  remote_user: remote
+##  remote_user: remote
   vars:
     enable_pdns_anycast: false
     install_quagga: false
@@ -229,7 +230,7 @@ applied against all roles.
 - name: Configure DDI Services on DDI Nameserver Nodes
   hosts: ddi-nameserver-nodes
   become: true
-#  remote_user: remote
+##  remote_user: remote
   vars:
     install_dhcp: true
     install_dns: true
@@ -254,7 +255,7 @@ applied against all roles.
 - name: Configure DDI Services on DDI Nameserver RO Nodes
   hosts: ddi-nameserver-ro-nodes
   become: true
-#  remote_user: remote
+##  remote_user: remote
   vars:
     install_dns: true
     install_logstash: true

@@ -82,7 +82,7 @@ rule #5 should be reject.
 ```bash
 iptables -I INPUT 5 -p tcp --dport 8443 -j ACCEPT
 service iptables save
-```
+```text
 
 Now you will need to switch over to the IBM Storage Provider user mode.
 First you will need to set the password for the ibmvp account.
@@ -94,20 +94,20 @@ New password: **********
 Retype new password: **********
 passwd: all authentication tokens updated successfully.
 [root]#
-```
+```text
 
 Now switch over to the ibmvp account.
 
 ```bash
 [root]# su ibmvp
-```
+```text
 
 Now you need to add the username and password required to connect to
 your XIV storage.
 
 ```bash
 ibmvp_storage_credentials set -u username -p ***********
-```
+```text
 
 To list all usernames added for storage credentials.
 
@@ -122,26 +122,26 @@ whatever your domain name is for the email account.
 
 ```bash
 ibmvp_admin_commands add_user -n vcenteradmin -e vcenteradmin@domain.local -p ********
-```
+```text
 
 To list all users added.
 
 ```bash
 ibmvp_admin_commands list_users
-```
+```text
 
 Now we are ready to add an XIV system. Change the x.x.x.x to whatever
 the IP address is of your XIV management interface.
 
 ```bash
 ibmvp_storage_array add -i x.x.x.x
-```
+```text
 
 To list all XIV systems added.
 
 ```bash
 ibmvp_storage_array list
-```
+```text
 
 To list all volume from the XIV system.
 

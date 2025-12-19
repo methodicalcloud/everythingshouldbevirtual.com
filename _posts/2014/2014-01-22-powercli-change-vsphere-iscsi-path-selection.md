@@ -24,15 +24,15 @@ foreach ($vmhost in $vmhosts) {
 $HBANumber = Get-VMHostHba -VMHost $vmhost -Type iSCSI
 Get-ScsiLun –Hba $HBANumber | Set-ScsiLun –MultipathPolicy “RoundRobin”
 }
-```
+```text
 
 The correct way to do this is as below.
 
 PowerCLI Script for building lab hosts
 
 ```powershell
-# @mrlesmithjr
-# EverythingShouldBeVirtual.com
+## @mrlesmithjr
+## EverythingShouldBeVirtual.com
 
 $vi_server = "vcenter"
 $vcuser = "root"
@@ -40,7 +40,7 @@ $vcpass = "vmware1"
 
 Connect-VIServer -Server $vi_server -User $vcuser -Password $vcpass
 
-# Setup variable to use in script for all hosts in vCenter
+## Setup variable to use in script for all hosts in vCenter
 $vmhosts = @(Get-VMHost)
 
 foreach ($vmhost in $vmhosts) {

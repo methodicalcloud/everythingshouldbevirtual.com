@@ -10,23 +10,23 @@ here is a quick PowerCLI script to do this for us. Nothing too fancy but
 it works.
 
 ```powershell
-# PowerCLI Script for adding syslogserver to hosts
-# @mrlesmithjr
-# EverythingShouldBeVirtual.com
-# Change the following to match your environment
-# vi_server is your vCenter
+## PowerCLI Script for adding syslogserver to hosts
+## @mrlesmithjr
+## EverythingShouldBeVirtual.com
+## Change the following to match your environment
+## vi_server is your vCenter
 $vi_server = “vcenterservername”
 $vcuser = "vcenterserverusername"
 $vcpass = "vcenterserverpassword"
-# Make sure to tweak the protocol and ports below to match your environment
+## Make sure to tweak the protocol and ports below to match your environment
 $syslogservers = “udp://graylog2:514,tcp://logstash:514,udp://loginsight:514”
 
 Connect-VIServer -Server $vi_server -User $vcuser -Password $vcpass
 
-# Setup variable to use in script for all hosts in vCenter
+## Setup variable to use in script for all hosts in vCenter
 $vmhosts = @(Get-VMHost)
 
-# Configure syslog on each host in vCenter
+## Configure syslog on each host in vCenter
 foreach ($vmhost in $vmhosts) {
 Write-Host ‘$vmhost = ‘ $vmhost
 Set-VMHostAdvancedConfiguration -Name Syslog.global.logHost -Value "$syslogservers" -VMHost $vmhost

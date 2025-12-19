@@ -55,7 +55,7 @@ gmail-smtp.l.google.com:youremail@gmail.com:PaSsWoRd
 ```bash
 
 Now we need to configure the iptables rules for the redirect to work as
-traffic passes through our bridged utm server and flows through p3scan. 
+traffic passes through our bridged utm server and flows through p3scan.
 This will be accomplished by adding the following rules.
 
 ```bash

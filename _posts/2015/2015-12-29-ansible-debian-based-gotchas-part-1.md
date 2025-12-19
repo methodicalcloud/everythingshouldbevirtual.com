@@ -1,5 +1,6 @@
 ---
   title: Ansible - Debian Based Gotchas - Part-1
+  date: 2015-12-29 00:00:00
   categories:
     - Automation
   tags:
@@ -41,7 +42,7 @@ Docker.
     - 'ca-certificates'
     - 'software-properties-common'
 
-# We are removing the old Docker info
+## We are removing the old Docker info
 - name: debian | Removing Legacy Docker apt-key
   apt_key:
     keyserver: "hkp://p80.pool.sks-keyservers.net:80"
@@ -49,7 +50,7 @@ Docker.
     state: "absent"
   become: true
 
-# We are removing the old Docker info
+## We are removing the old Docker info
 - name: debian | Removing Legacy Docker Repo
   apt_repository:
     repo: "deb https://apt.dockerproject.org/repo {{ ansible_distribution | lower }}-{{ ansible_distribution_release }} main"
@@ -69,8 +70,8 @@ Docker.
     state: present
   become: true
 
-# We remove docker-engine as this is old package to install. The new package is
-# docker-ce
+## We remove docker-engine as this is old package to install. The new package is
+## docker-ce
 - name: debian | uninstalling old docker package (if exists)
   apt:
     name: "{{ item }}"
@@ -164,7 +165,7 @@ Below is the code that is part of the task mentioned above.
 - name: debian | installing python packages
   easy_install:
     name: "{{ item }}"
-#    state: present
+##    state: present
   with_items:
     - pip
   when: ansible_distribution == "Debian"

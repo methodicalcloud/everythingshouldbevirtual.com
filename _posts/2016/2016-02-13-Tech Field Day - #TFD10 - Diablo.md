@@ -1,5 +1,6 @@
 ---
   title: "Tech Field Day - #TFD10 - Diablo"
+  date: 2016-02-13 00:00:00
 ---
 
 While attending Tech Field Day 10 a little over a week ago one of the

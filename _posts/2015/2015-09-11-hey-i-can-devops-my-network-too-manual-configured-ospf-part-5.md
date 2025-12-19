@@ -1,5 +1,6 @@
 ---
   title: Hey, I can DevOPS my Network too! -- Manual-configured OSPF (Part 5)
+  date: 2015-09-11 00:00:00
   categories:
     - Automation
   tags:
@@ -79,7 +80,7 @@ in place we can view _/etc/quagga/ospfd.conf_
 ```bash
 cat /etc/quagga/ospfd.conf
 ....
-# Ansible managed: /etc/ansible/roles/mrlesmithjr.quagga/templates/etc/quagga/ospfd.conf.j2 modified on 2015-09-10 13:10:26 by root on r1
+## Ansible managed: /etc/ansible/roles/mrlesmithjr.quagga/templates/etc/quagga/ospfd.conf.j2 modified on 2015-09-10 13:10:26 by root on r1
 !
 ! Zebra configuration saved from vty
 !   2014/09/28 16:51:40
@@ -122,7 +123,7 @@ does our _/etc/quagga/ospfd.conf_ look like now?
 ```bash
 cat /etc/quagga/ospfd.conf
 ....
-# Ansible managed: /etc/ansible/roles/mrlesmithjr.quagga/templates/etc/quagga/ospfd.conf.j2 modified on 2015-09-10 13:10:26 by root on r1
+## Ansible managed: /etc/ansible/roles/mrlesmithjr.quagga/templates/etc/quagga/ospfd.conf.j2 modified on 2015-09-10 13:10:26 by root on r1
 !
 ! Zebra configuration saved from vty
 !   2014/09/28 16:51:40
@@ -251,7 +252,7 @@ Let's connect to router2 (r2).
 
 ```bash
 vagrant ssh r2
-```
+```text
 
 Validate that there are not any routes as we did on router1 (r1).
 
@@ -264,7 +265,7 @@ default via 10.0.2.2 dev eth0
 192.168.12.0/24 dev eth3  proto kernel  scope link  src 192.168.12.12
 192.168.23.0/24 dev eth2  proto kernel  scope link  src 192.168.23.12
 192.168.250.0/24 dev eth1  proto kernel  scope link  src 192.168.250.102
-```
+```text
 
 Now connect to the OSPF daemon as we did on router1 (r1).
 
@@ -407,7 +408,7 @@ router ospf
 line vty
 !
 end
-```
+```text
 
 Now while still on router2 (r2) let's do the following.
 
@@ -428,7 +429,7 @@ N    192.168.250.0/24      [10] area: 0.0.0.1
 ============ OSPF router routing table =============
 
 ============ OSPF external routing table ===========
-```
+```text
 
 What do you see? You should see we now have an OSPF neighbor which is
 router1 (r1).
@@ -444,7 +445,7 @@ r1# sh ip ospf neighbor
     Neighbor ID Pri State           Dead Time Address         Interface            RXmtL RqstL DBsmL
 192.168.250.102   1 Full/Backup       38.534s 192.168.250.102 eth1:192.168.250.101     0     0     0
 r1#
-```
+```text
 
 We see our OSPF neighbor is indeed router2 (r2) on router1 (r1) now as
 well.
@@ -464,7 +465,7 @@ N    192.168.250.0/24      [10] area: 0.0.0.1
 ============ OSPF external routing table ===========
 
 r1#
-```
+```text
 
 What did you notice on router1 (r1) and router2 (r2) when showing our
 routes?
@@ -480,7 +481,7 @@ wr mem
 r1# wr mem
 Configuration saved to /etc/quagga/ospfd.conf
 r1#
-```
+```text
 
 Router2 (r2):
 
@@ -490,14 +491,14 @@ wr mem
 r2# wr mem
 Configuration saved to /etc/quagga/ospfd.conf
 r2#
-```
+```text
 
 And now exit the OSPF daemon on each router to get us back to a command
 prompt.
 
 ```bash
 exit
-```
+```text
 
 Now back on our command prompt on each router (router1 (r1) and router2
 (r2)). Let's look at our diagram again and run some ping tests to see
@@ -534,7 +535,7 @@ PING 192.168.12.12 (192.168.12.12) 56(84) bytes of data.
 --- 192.168.12.12 ping statistics ---
 4 packets transmitted, 4 received, 0% packet loss, time 3000ms
 rtt min/avg/max/mdev = 0.000/0.237/0.380/0.144 ms
-```
+```text
 
 What happened? We cannot reach the interfaces on router2 (r2) other than
 192.168.12.12 correct? Why is that?
@@ -562,11 +563,11 @@ defined which redistribute modes to add.
 ```yaml
 quagga_ospf_redistribute:
   - connected
-#  - kernel
-#  - static
-#  - isis
-#  - rip
-```
+##  - kernel
+##  - static
+##  - isis
+##  - rip
+```text
 
 But for the sake of validating and learning let's add this on router2
 (r2).
@@ -600,7 +601,7 @@ r2#
 conf t
 router ospf
 redistribute connected
-```
+```text
 
 Now jump back over to router1 (r1) command prompt and run our ping tests
 again.
@@ -631,7 +632,7 @@ PING 192.168.23.12 (192.168.23.12) 56(84) bytes of data.
 --- 192.168.23.12 ping statistics ---
 4 packets transmitted, 4 received, 0% packet loss, time 2998ms
 rtt min/avg/max/mdev = 0.255/0.289/0.313/0.024 ms
-```
+```text
 
 Boom! Look there now! Our routing is working from router1 (r1) to
 router2 (r2) now. But again this is because why? Because we added
@@ -674,7 +675,7 @@ N E2 192.168.23.0/24       [10/20] tag: 0
                            via 192.168.250.102, eth1
 
 r1#
-```
+```text
 
 As you see from the above we now have routes populated from router2 (r2)
 to router1 (r1). How about if we look at our routes on router2 (r2)?
@@ -705,7 +706,7 @@ N    192.168.250.0/24      [10] area: 0.0.0.1
 ============ OSPF external routing table ===========
 
 r2#
-```
+```text
 
 What do you see? No routes have been configured to be redistributed from
 router1 (r1) right?
@@ -732,7 +733,7 @@ PING 192.168.14.11 (192.168.14.11) 56(84) bytes of data.
 4 packets transmitted, 0 received, 100% packet loss, time 3016ms
 
 vagrant@r2:~$
-```
+```text
 
 We are indeed not able to reach those interfaces as you can see. So
 let's solve this another way instead of adding redistribute connected

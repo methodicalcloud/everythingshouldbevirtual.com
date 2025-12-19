@@ -1,5 +1,6 @@
 ---
   title: Docker - Creating An Alpine Image With Ansible
+  date: 2016-09-21 00:00:00
   categories:
     - Containers
   tags:
@@ -39,7 +40,7 @@ To build your image simply create the `Dockerfile` above and then build the imag
 
 ```bash
 docker build -t alpine-ansible .
-```
+```text
 
 So why [Alpine](http://alpinelinux.org/) Linux? Because it is small... How small?
 Let's compare a few base images.
@@ -48,32 +49,32 @@ Let's compare a few base images.
 
 ```bash
 ubuntu 14.04 b1719e1db756 34 hours ago 188 MB
-```
+```bash
 
 `Ubuntu 16.04`
 
 ```bash
 ubuntu 16.04 45bc58500fa3 34 hours ago 126.9 MB
-```
+```bash
 
 `Debian Jessie`
 
 ```bash
 debian jessie a24c3183e910 33 hours ago 123 MB
-```
+```bash
 
 `Alpine 3.4`
 
 ```bash
 alpine 3.4 7d23b3ca3463 28 hours ago 4.799 MB
-```
+```text
 
 Now let's look at what a [Ubuntu](http://www.ubuntu.com/) image looks like with
 [Ansible](https://www.ansible.com/) installed:
 
 ```bash
 mrlesmithjr/ubuntu-ansible latest 69c2195ca7d7 31 hours ago 242.2 MB
-```
+```text
 
 As you can see, installing [Ansible](https://www.ansible.com/) added about
 `~120MB` to our base image. Now let's see what an [Alpine](http://alpinelinux.org/)

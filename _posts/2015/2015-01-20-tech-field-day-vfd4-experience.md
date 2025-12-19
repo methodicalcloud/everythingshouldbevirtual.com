@@ -1,5 +1,6 @@
 ---
   title: "Tech Field Day - #VFD4 Experience"
+  date: 2015-01-20 00:00:00
 ---
 
 Last week I had the honor of being a delegate for [Tech Field VFD4](http://techfieldday.com/event/vfd4/ "http\://techfieldday.com/event/vfd4/")

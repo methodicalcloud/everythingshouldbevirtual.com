@@ -1,5 +1,6 @@
 ---
   title: Docker - Ansible - ELK Stack
+  date: 2016-07-31 00:00:00
   categories:
     - Automation
     - Containers
@@ -45,22 +46,22 @@ FROM ubuntu:14.04
 
 MAINTAINER Larry Smith Jr. <mrlesmithjr@gmail.com>
 
-# Update apt-cache
+## Update apt-cache
 RUN apt-get update
 
-# Install Ansible
+## Install Ansible
 RUN apt-get -y install git software-properties-common && \
     apt-add-repository ppa:ansible/ansible && \
     apt-get update && \
     apt-get -y install ansible
 
-# Copy Ansible Playbook
+## Copy Ansible Playbook
 COPY playbook.yml /playbook.yml
 
-# Run Ansible playbook
+## Run Ansible playbook
 RUN ansible-playbook -i "localhost," -c local /playbook.yml
 
-# Cleanup
+## Cleanup
 RUN apt-get -y clean && \
     apt-get -y autoremove && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -69,10 +70,10 @@ ENV PATH /usr/share/elasticsearch/bin:$PATH
 
 WORKDIR /usr/share/elasticsearch
 
-# Setup entrypoint Ansible Playbook
+## Setup entrypoint Ansible Playbook
 COPY docker-entrypoint.yml /docker-entrypoint.yml
 
-# Setup entrypoint script
+## Setup entrypoint script
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh
@@ -81,13 +82,13 @@ ENTRYPOINT ["docker-entrypoint.sh"]
 
 COPY config /usr/share/elasticsearch/config
 
-# Setup volume
+## Setup volume
 VOLUME /usr/share/elasticsearch/data
 
-# Expose port(s)
+## Expose port(s)
 EXPOSE 9200 9300
 
-# Container start-up
+## Container start-up
 CMD ["elasticsearch"]
 ```jinja2
 
@@ -166,42 +167,42 @@ FROM ubuntu:14.04
 
 MAINTAINER Larry Smith Jr. <mrlesmithjr@gmail.com>
 
-# Update apt-cache
+## Update apt-cache
 RUN apt-get update
 
-# Install Ansible
+## Install Ansible
 RUN apt-get -y install git software-properties-common && \
     apt-add-repository ppa:ansible/ansible && \
     apt-get update && \
     apt-get -y install ansible
 
-# Copy Ansible Playbook
+## Copy Ansible Playbook
 COPY playbook.yml /playbook.yml
 
-# Run Ansible playbook
+## Run Ansible playbook
 RUN ansible-playbook -i "localhost," -c local /playbook.yml
 
-# Cleanup
+## Cleanup
 RUN apt-get -y clean && \
     apt-get -y autoremove && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ENV PATH /opt/logstash/bin:$PATH
 
-# necessary for 5.0+ (overriden via "--path.settings", ignored by < 5.0)
+## necessary for 5.0+ (overriden via "--path.settings", ignored by < 5.0)
 ENV LS_SETTINGS_DIR /etc/logstash
-# comment out some troublesome configuration parameters
-#   path.log: logs should go to stdout
-#   path.config: No config files found: /etc/logstash/conf.d/*
+## comment out some troublesome configuration parameters
+##   path.log: logs should go to stdout
+##   path.config: No config files found: /etc/logstash/conf.d/*
 RUN set -ex \
     && if [ -f "$LS_SETTINGS_DIR/logstash.yml" ]; then \
         sed -ri 's!^(path.log|path.config):!#&!g' "$LS_SETTINGS_DIR/logstash.yml"; \
     fi
 
-# Setup entrypoint Ansible Playbook
+## Setup entrypoint Ansible Playbook
 COPY docker-entrypoint.yml /docker-entrypoint.yml
 
-# Setup entrypoint script
+## Setup entrypoint script
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh
@@ -210,13 +211,13 @@ ENTRYPOINT ["docker-entrypoint.sh"]
 
 COPY config/ /etc/logstash/conf.d
 
-# Setup volume
+## Setup volume
 VOLUME /etc/logstash/conf.d
 
-# Expose Port(s)
+## Expose Port(s)
 EXPOSE 514 514/udp 5044 10514 10514/udp
 
-# Container start-up
+## Container start-up
 CMD ["logstash", "agent", "-f", "/etc/logstash/conf.d/"]
 ```jinja2
 
@@ -291,13 +292,13 @@ CMD ["logstash", "agent", "-f", "/etc/logstash/conf.d/"]
         state: "present"
         install_recommends: no
 
-# We are doing this to redirect TCP/514 and UDP/514 to Logstash on TCP/10514
+## We are doing this to redirect TCP/514 and UDP/514 to Logstash on TCP/10514
     - name: Configuring Rsyslogd 50-default.conf
       lineinfile:
         line: "*.* @@127.0.0.1:10514"
         dest: "/etc/rsyslog.d/50-default.conf"
 
-# We are doing this to enable Rsyslogd to listen on tcp/514 and udp/514
+## We are doing this to enable Rsyslogd to listen on tcp/514 and udp/514
     - name: Configuring Rsyslogd To Listen On TCP/514 and UDP/514
       lineinfile:
         dest: "/etc/rsyslog.conf"
@@ -350,42 +351,42 @@ FROM ubuntu:14.04
 
 MAINTAINER Larry Smith Jr. <mrlesmithjr@gmail.com>
 
-# Update apt-cache
+## Update apt-cache
 RUN apt-get update
 
-# Install Ansible
+## Install Ansible
 RUN apt-get -y install git software-properties-common && \
     apt-add-repository ppa:ansible/ansible && \
     apt-get update && \
     apt-get -y install ansible
 
-# Copy Ansible Playbook
+## Copy Ansible Playbook
 COPY playbook.yml /playbook.yml
 
-# Run Ansible playbook
+## Run Ansible playbook
 RUN ansible-playbook -i "localhost," -c local /playbook.yml
 
-# Cleanup
+## Cleanup
 RUN apt-get -y clean && \
     apt-get -y autoremove && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ENV PATH /opt/kibana/bin:$PATH
 
-# Setup entrypoint Ansible Playbook
+## Setup entrypoint Ansible Playbook
 COPY docker-entrypoint.yml /docker-entrypoint.yml
 
-# Setup entrypoint script
+## Setup entrypoint script
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 
-# Expose port(s)
+## Expose port(s)
 EXPOSE 5601
 
-# Container start-up
+## Container start-up
 CMD ["kibana"]
 ```jinja2
 

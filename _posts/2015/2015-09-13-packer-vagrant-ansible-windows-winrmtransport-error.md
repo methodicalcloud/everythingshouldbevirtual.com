@@ -1,5 +1,6 @@
 ---
   title: Packer - Vagrant - Ansible - Windows
+  date: 2015-09-13 00:00:00
   categories:
     - Automation
     - Virtualization
@@ -55,7 +56,7 @@ if hasattr(ssl, '_create_default_https_context') and hasattr(ssl, '_create_unver
 
 class CallbackModule(object):
     pass
-```
+```text
 
 Now attempt to run your Ansible playbook once again and BOOM!
 
@@ -105,7 +106,7 @@ ok: [vagrant-windows-2012-r2] => {
 }
 
 PLAY RECAP *****************************************************************
-```
+```text
 
 Below is my Ansible hosts file with details.
 
@@ -142,8 +143,8 @@ In case you are interested here is the Vagrantfile that I am
 provisioning from.
 
 ```ruby
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
+## -*- mode: ruby -*-
+## vi: set ft=ruby :
 
 Vagrant.require_version ">= 1.6.2"
 
@@ -197,21 +198,21 @@ Ansible which can also be found
 [here](https://github.com/ansible/ansible/blob/devel/examples/scripts/ConfigureRemotingForAnsible.ps1).
 
 ```powershell
-# Configure a Windows host for remote management with Ansible
-# -----------------------------------------------------------
+## Configure a Windows host for remote management with Ansible
+## -----------------------------------------------------------
 #
-# This script checks the current WinRM/PSRemoting configuration and makes the
-# necessary changes to allow Ansible to connect, authenticate and execute
-# PowerShell commands.
+## This script checks the current WinRM/PSRemoting configuration and makes the
+## necessary changes to allow Ansible to connect, authenticate and execute
+## PowerShell commands.
 #
-# Set $VerbosePreference = "Continue" before running the script in order to
-# see the output messages.
+## Set $VerbosePreference = "Continue" before running the script in order to
+## see the output messages.
 #
-# Written by Trond Hindenes <trond@hindenes.com>
-# Updated by Chris Church <cchurch@ansible.com>
+## Written by Trond Hindenes <trond@hindenes.com>
+## Updated by Chris Church <cchurch@ansible.com>
 #
-# Version 1.0 - July 6th, 2014
-# Version 1.1 - November 11th, 2014
+## Version 1.0 - July 6th, 2014
+## Version 1.1 - November 11th, 2014
 
 Param (
     [string]$SubjectName = $env:COMPUTERNAME,
@@ -264,7 +265,7 @@ Function New-LegacySelfSignedCert
 }
 
 
-# Setup error handling.
+## Setup error handling.
 Trap
 {
     $_
@@ -273,14 +274,14 @@ Trap
 $ErrorActionPreference = "Stop"
 
 
-# Detect PowerShell version.
+## Detect PowerShell version.
 If ($PSVersionTable.PSVersion.Major -lt 3)
 {
     Throw "PowerShell version 3 or higher is required."
 }
 
 
-# Find and start the WinRM service.
+## Find and start the WinRM service.
 Write-Verbose "Verifying WinRM service."
 If (!(Get-Service "WinRM"))
 {
@@ -293,7 +294,7 @@ ElseIf ((Get-Service "WinRM").Status -ne "Running")
 }
 
 
-# WinRM should be running; check that we have a PS session config.
+## WinRM should be running; check that we have a PS session config.
 If (!(Get-PSSessionConfiguration -Verbose:$false) -or (!(Get-ChildItem WSMan:\localhost\Listener)))
 {
     Write-Verbose "Enabling PS Remoting."
@@ -304,7 +305,7 @@ Else
     Write-Verbose "PS Remoting is already enabled."
 }
 
-# Make sure there is a SSL listener.
+## Make sure there is a SSL listener.
 $listeners = Get-ChildItem WSMan:\localhost\Listener
 If (!($listeners | Where {$_.Keys -like "TRANSPORT=HTTPS"}))
 {
@@ -337,7 +338,7 @@ Else
 }
 
 
-# Check for basic authentication.
+## Check for basic authentication.
 $basicAuthSetting = Get-ChildItem WSMan:\localhost\Service\Auth | Where {$_.Name -eq "Basic"}
 If (($basicAuthSetting.Value) -eq $false)
 {
@@ -350,7 +351,7 @@ Else
 }
 
 
-# Configure firewall to allow WinRM HTTPS connections.
+## Configure firewall to allow WinRM HTTPS connections.
 $fwtest1 = netsh advfirewall firewall show rule name="Allow WinRM HTTPS"
 $fwtest2 = netsh advfirewall firewall show rule name="Allow WinRM HTTPS" profile=any
 If ($fwtest1.count -lt 5)
@@ -368,7 +369,7 @@ Else
     Write-Verbose "Firewall rule already exists to allow WinRM HTTPS."
 }
 
-# Test a remoting connection to localhost, which should work.
+## Test a remoting connection to localhost, which should work.
 $httpResult = Invoke-Command -ComputerName "localhost" -ScriptBlock {$env:COMPUTERNAME} -ErrorVariable httpError -ErrorAction SilentlyContinue
 $httpsOptions = New-PSSessionOption -SkipCACheck -SkipCNCheck -SkipRevocationCheck
 

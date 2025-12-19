@@ -1,5 +1,6 @@
 ---
   title: Ansible - Zenoss 5 Core - Master
+  date: 2015-07-21 00:00:00
 ---
 
 As it has been some time since actually putting something together to

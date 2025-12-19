@@ -1,5 +1,6 @@
 ---
   title: Python - NMAP/SSH Fun
+  date: 2016-06-03 00:00:00
   categories:
     - Code
   tags:
@@ -33,8 +34,8 @@ __author__ = "Larry Smith Jr."
 __email___ = "mrlesmithjr@gmail.com"
 __maintainer__ = "Larry Smith Jr."
 __status__ = "Development"
-# https://everythingshouldbevirtual.com
-# @mrlesmithjr
+## https://everythingshouldbevirtual.com
+## @mrlesmithjr
 
 def main(args):
     """
@@ -172,7 +173,7 @@ for an SSH port)...
 
 ```bash
 nmap_fun.py 172.28.128.0/24 22 22 --sshuser vagrant --sshpass vagrant --testssh true
-```
+```text
 
 I would get the following results...Now I could easily use these
 results elsewhere :)
@@ -266,7 +267,7 @@ results elsewhere :)
         }
     }
 }
-```
+```text
 
 But maybe instead of checking for an SSH connection I would like to scan
 a subnet for the common ports defined in the Python script variable
@@ -274,7 +275,7 @@ _common_ports_ and return those results in JSON.
 
 ```bash
 nmap_fun.py 10.0.102.0/24
-```
+```text
 
 I would get some additional information in my JSON results..
 

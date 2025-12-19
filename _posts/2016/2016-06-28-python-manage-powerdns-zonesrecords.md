@@ -1,5 +1,6 @@
 ---
   title: Python - Manage PowerDNS Zones/Records
+  date: 2016-06-28 00:00:00
   categories:
     - Code
   tags:
@@ -43,8 +44,8 @@ __author__ = "Larry Smith Jr."
 __email___ = "mrlesmithjr@gmail.com"
 __maintainer__ = "Larry Smith Jr."
 __status__ = "Development"
-# https://everythingshouldbevirtual.com
-# @mrlesmithjr
+## https://everythingshouldbevirtual.com
+## @mrlesmithjr
 
 EXAMPLES = """
 Create a new Master Zone with info below:
@@ -594,14 +595,14 @@ Create a new Master Zone with info below:
     -   172.28.128.3
     -   172.28.128.4
     -   172.28.128.5
-```
+```text
 
 But before we start let's do a quick query of the existing zones
 defined on our master.
 
 ```bash
 ./pdns.py query_zones --apihost 172.28.128.3
-```
+```text
 
 Results...
 
@@ -662,7 +663,7 @@ Now let's create our new master zone...
 
 ```bash
 ./pdns.py add_zones --apihost 172.28.128.3 --zone dev.vagrant.local --zoneType MASTER --nameservers 172.28.128.3,172.28.128.4,172.28.128.5
-```
+```text
 
 Results of the above ...
 
@@ -724,11 +725,11 @@ below:
 -   Slaves:
     -   172.28.128.4
     -   172.28.128.5
-```
+```bash
 
 ```bash
 ./pdns.py add_zones --apihost 172.28.128.4 --zone dev.vagrant.local --zoneType SLAVE --masters 172.28.128.3
-```
+```text
 
 And the results after running the above ....
 
@@ -749,19 +750,19 @@ And the results after running the above ....
     "records": [],
     "comments": []
 }
-```
+```text
 
 And now repeat the above process on our 172.28.128.5 slave.
 
 ```bash
 ./pdns.py add_zones --apihost 172.28.128.5 --zone dev.vagrant.local --zoneType SLAVE --masters 172.28.128.3
-```
+```text
 
 And to validate that our new zones exist on our Master...
 
 ```bash
 ./pdns.py query_zones --apihost 172.28.128.3
-```
+```text
 
 Results show...
 
@@ -828,7 +829,7 @@ Results show...
         "id": "dev.vagrant.local."
     }
 ]
-```
+```text
 
 And as you can see the new master zone for dev.vagrant.local now exists.
 
@@ -836,7 +837,7 @@ And if we do a quick check on one of our slave nodes...
 
 ```bash
 ./pdns.py query_zones --apihost 172.28.128.4
-```
+```text
 
 Results...
 
@@ -932,7 +933,7 @@ So let's create our A record.
 
 ```bash
 ./pdns.py add_records --zone dev.vagrant.local --name test01 --content 172.28.128.161 --recordType A
-```
+```text
 
 Results...
 
@@ -995,7 +996,7 @@ And now we can create our CNAME record...
 
 ```bash
 ./pdns.py add_records --zone dev.vagrant.local --name development --content test01.dev.vagrant.local --recordType CNAME
-```
+```text
 
 Results...
 

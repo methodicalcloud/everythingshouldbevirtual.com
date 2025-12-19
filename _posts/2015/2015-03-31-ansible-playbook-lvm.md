@@ -1,5 +1,6 @@
 ---
   title: Ansible Playbook - LVM
+  date: 2015-03-31 00:00:00
 ---
 
 In spending the past few weeks learning a ton about Ansible (after
