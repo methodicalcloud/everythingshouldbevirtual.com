@@ -28,11 +28,12 @@ RUN bundle exec jekyll build --destination /site/_site
 # Production stage - nginx
 FROM nginx:alpine AS production
 
+# Copy custom nginx configs for gzip compression and caching
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY default.conf /etc/nginx/conf.d/default.conf
+
 # Copy built site to nginx
 COPY --from=builder /site/_site /usr/share/nginx/html
-
-# Copy custom nginx config if needed
-# COPY nginx.conf /etc/nginx/nginx.conf
 
 # Expose port 80
 EXPOSE 80
