@@ -183,6 +183,7 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-redirect-from
+  - jekyll-archives
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -192,13 +193,27 @@ whitelist:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-redirect-from
+  - jekyll-archives
 
+# Category and Tag Archives (jekyll-archives)
+# Generates individual pages for each category and tag
 category_archive:
-  type: liquid
+  type: jekyll-archives
   path: /categories/
 tag_archive:
-  type: liquid
+  type: jekyll-archives
   path: /tags/
+
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
 
 # HTML Compression
 # - https://jch.penibelst.de/
