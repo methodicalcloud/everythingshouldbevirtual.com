@@ -1,0 +1,43 @@
+# Deploy to Cloudflare Pages
+# Builds Jekyll and deploys to Cloudflare Pages on push to main/develop
+
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - '.gitignore'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+
+      - name: Build Jekyll site
+        run: bundle exec jekyll build --destination _site
+        env:
+          JEKYLL_ENV: production
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy _site --project-name=everythingshouldbevirtual --branch=${{ github.ref_name }} --commit-dirty=true
