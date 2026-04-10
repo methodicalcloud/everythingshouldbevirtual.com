@@ -34,8 +34,8 @@
 **Static Site Generator**: Jekyll (Ruby-based)
 **Theme**: Minimal Mistakes (remote theme: `mmistakes/minimal-mistakes@4.24.0`)
 **Comments**: Disqus
-**Hosting**: GHCR container via Watchtower auto-deployment
-**Build**: Docker-based Jekyll build
+**Hosting**: Cloudflare Pages (`everythingshouldbevirtual` project)
+**Build**: Jekyll via GitHub Actions (Ruby 3.3)
 
 ---
 
@@ -107,14 +107,16 @@ Common categories used:
 **Production Flow**:
 
 ```
-develop (push) → CI builds :develop tag
+develop (push) → CI builds Jekyll → deploys to Cloudflare Pages (preview)
             ↓
     PR: develop → main
             ↓
-main (merge) → build-and-push → :latest tag → Watchtower auto-deploys
+main (merge) → CI builds Jekyll → deploys to Cloudflare Pages (production)
 ```
 
-**Container Image**: `ghcr.io/methodicalcloud/everythingshouldbevirtual.github.io:latest`
+**Live URLs**:
+- Production: `https://everythingshouldbevirtual.com`
+- Pages URL: `https://everythingshouldbevirtual.pages.dev`
 
 **Local Development**:
 
