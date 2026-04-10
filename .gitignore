@@ -37,3 +37,6 @@ _site
 
 # Local environment files (optional)
 .env
+
+# Wrangler (Cloudflare Pages CLI)
+.wrangler/
